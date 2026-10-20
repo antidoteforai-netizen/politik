@@ -23,7 +23,10 @@
     ".subbar a,.subbar button{flex:none;font:inherit;font-size:.86rem;font-weight:500;min-height:34px;display:inline-flex;align-items:center;padding:5px 13px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink-2);text-decoration:none;cursor:pointer}",
     ".subbar a:hover,.subbar button:hover,.subbar a:focus-visible,.subbar button:focus-visible{border-color:var(--accent);color:var(--accent-ink);outline:none}",
     ".subbar a:focus-visible,.subbar button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}",
-    ".subbar [aria-current],.subbar button[aria-pressed=\"true\"]{background:var(--ink);border-color:var(--ink);color:var(--paper);font-weight:700}",
+    ".sous-sommaire.subbar{background-image:linear-gradient(var(--accent),var(--accent));background-repeat:no-repeat;background-position:0 100%;background-size:calc(var(--p,0)*100%) 3px}",
+".sous-sommaire.subbar .subbar-label{position:sticky;left:0;z-index:1;min-width:10.5em;padding-right:10px;background:var(--paper);font-variant-numeric:tabular-nums;color:var(--ink)}",
+".subbar a[aria-current]{box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 35%,transparent)}",
+".subbar [aria-current],.subbar button[aria-pressed=\"true\"]{background:var(--ink);border-color:var(--ink);color:var(--paper);font-weight:700}",
     "@media (pointer:coarse){.subbar a,.subbar button{min-height:44px;padding-inline:16px}}",
     ".subbar.ov,.subbar-row.ov{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 18px,#000 calc(100% - 34px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 18px,#000 calc(100% - 34px),transparent 100%)}",
     ".subbar-fixed{position:fixed;top:var(--nav-h,59px);left:0;right:0;z-index:8;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);visibility:hidden}",
@@ -72,6 +75,11 @@
       ticking = false;
       var sh = parseFloat(getComputedStyle(R).getPropertyValue("--sticky-h")) || 72, cur = null;
       links.forEach(function (a) { var t = D.getElementById(a.getAttribute("href").slice(1)); if (!t) return; var r = t.getBoundingClientRect(); if (r.height > 0 && r.top <= sh + 30) cur = a; });
+      if (!isIndex && bar && lab) {
+        var n = cur ? links.indexOf(cur) + 1 : 0, dh = D.documentElement.scrollHeight - innerHeight;
+        lab.textContent = cur ? "Vous êtes ici " + n + "/" + links.length : "Dans cette page";
+        bar.style.setProperty("--p", dh > 0 ? Math.min(1, Math.max(0, scrollY / dh)).toFixed(4) : 0);
+      }
       links.forEach(function (a) { if (a === cur) { if (a.getAttribute("aria-current") !== "location") { a.setAttribute("aria-current", "location"); center(a); } } else a.removeAttribute("aria-current"); });
       if (isIndex) bar.classList.toggle("on", tabsEl.getBoundingClientRect().bottom <= nav.getBoundingClientRect().height + 4);
     }

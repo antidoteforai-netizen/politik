@@ -145,7 +145,7 @@ page = f"""<!doctype html>
 <meta name="description" content="Ce que font les États-Unis avec leurs données publiques : outils pour voter, suivre les dépenses, chiffrer une loi ou demander l'asile, avec ce qu'on sait de leur effet réel.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="politik.css">
 <style>
 .doc{{max-width:1088px;margin:0 auto;padding-block:28px 56px}}

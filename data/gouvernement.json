@@ -1298,6 +1298,89 @@
       "pages": [],
       "niveau": "V",
       "lu_le": "2026-10-20"
+    },
+    {
+      "date": "2026-10-20",
+      "titre": "Violences du 17 et 18 octobre : une FAQ sur les mesures de soutien aux employeurs et aux salariés",
+      "resume": "Le ministre du Travail annonce l'activité partielle mobilisée immédiatement et une aide exceptionnelle pour les entreprises touchées ; la page répond aux questions pratiques.",
+      "source": "travail-emploi.gouv.fr",
+      "url": "https://travail-emploi.gouv.fr/faq-mesures-de-soutien-aux-employeurs-et-salaries-des-commerces-et-entreprises-impactes-par-les-violences-urbaines-et-degradations-des-17-et-18-octobre-2026",
+      "ministeres": [
+        "travail-solidarites",
+        "pme-commerce"
+      ],
+      "pages": [
+        "17-octobre-2026.html"
+      ],
+      "niveau": "D",
+      "lu_le": "2026-10-20"
+    },
+    {
+      "date": "2026-10-19",
+      "titre": "Né d'une AMP avec donneur : à qui s'adresser pour connaître ses origines ?",
+      "resume": "Plus de 1 000 demandes d'accès aux origines ont été adressées à la CAPADD depuis septembre 2022, qui a apporté 861 réponses ; pour les dons antérieurs à septembre 2022, la réponse dépend du consentement du donneur.",
+      "source": "sante.gouv.fr",
+      "url": "https://sante.gouv.fr/actualites-presse/presse/communiques-de-presse/article/ne-d-une-amp-avec-donneur-a-qui-s-adresser-pour-connaitre-ses-origines",
+      "ministeres": [
+        "sante"
+      ],
+      "pages": [],
+      "niveau": "V",
+      "lu_le": "2026-10-20"
+    },
+    {
+      "date": "2026-10-16",
+      "titre": "Carburant : l'aide pour les travailleurs « grands rouleurs »",
+      "resume": "L'aide est renouvelée pour octobre, novembre et décembre : une indemnité forfaitaire de 100 euros pour trois mois, soit 40 centimes par litre contre 20 auparavant. La demande se fait sur impots.gouv.fr, sous conditions.",
+      "source": "economie.gouv.fr",
+      "url": "https://www.economie.gouv.fr/actualites/carburant-laide-pour-les-travailleurs-grands-rouleurs",
+      "ministeres": [
+        "economie",
+        "action-comptes-publics"
+      ],
+      "pages": [],
+      "niveau": "V",
+      "lu_le": "2026-10-20"
+    },
+    {
+      "date": "2026-10-14",
+      "titre": "Santé cardiovasculaire : une feuille de route nationale 2026-2030",
+      "resume": "Le ministère lance une feuille de route pour renforcer la prévention, repérer plus tôt les facteurs de risque et mieux accompagner les personnes les plus exposées aux maladies cardio-neurovasculaires.",
+      "source": "sante.gouv.fr",
+      "url": "https://sante.gouv.fr/actualites-presse/presse/communiques-de-presse/article/sante-cardiovasculaire-la-france-se-dote-d-une-feuille-de-route-nationale-pour",
+      "ministeres": [
+        "sante"
+      ],
+      "pages": [],
+      "niveau": "D",
+      "lu_le": "2026-10-20"
+    },
+    {
+      "date": "2026-10-13",
+      "titre": "Grippe : vaccination obligatoire des professionnels dès la campagne 2026-2027",
+      "resume": "Issue du vote du Parlement dans la loi de financement de la sécurité sociale pour 2026 et de la recommandation de la Haute Autorité de santé de juillet 2026, la mesure se prépare dès cette année pour les professionnels concernés.",
+      "source": "sante.gouv.fr",
+      "url": "https://sante.gouv.fr/actualites-presse/presse/communiques-de-presse/article/vaccination-obligatoire-des-professionnels-contre-la-grippe-saisonniere-une",
+      "ministeres": [
+        "sante"
+      ],
+      "pages": [],
+      "niveau": "V",
+      "lu_le": "2026-10-20"
+    },
+    {
+      "date": "2026-10-12",
+      "titre": "Journée nationale de la résilience : 5e édition le 13 octobre 2026",
+      "resume": "Les ministères de l'Intérieur et de la Transition écologique sensibilisent les citoyens aux risques majeurs auxquels ils peuvent être exposés, avec un point d'orgue le 13 octobre et des actions toute l'année.",
+      "source": "interieur.gouv.fr",
+      "url": "https://www.interieur.gouv.fr/actualites/dossiers-de-presse/journee-nationale-de-resilience-13-octobre-2026-dossier-de-presse",
+      "ministeres": [
+        "interieur",
+        "transition-ecologique"
+      ],
+      "pages": [],
+      "niveau": "V",
+      "lu_le": "2026-10-20"
     }
   ]
 }

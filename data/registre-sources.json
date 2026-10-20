@@ -2427,6 +2427,60 @@
     },
     {
       "page": "gouvernement",
+      "type": "document",
+      "titre": "Violences du 17 et 18 octobre : une FAQ sur les mesures de soutien aux employeurs et aux salariés",
+      "producteur": "travail-emploi.gouv.fr",
+      "url": "https://travail-emploi.gouv.fr/faq-mesures-de-soutien-aux-employeurs-et-salaries-des-commerces-et-entreprises-impactes-par-les-violences-urbaines-et-degradations-des-17-et-18-octobre-2026",
+      "niveau": "D",
+      "statut": "actualité lue le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Né d'une AMP avec donneur : à qui s'adresser pour connaître ses origines ?",
+      "producteur": "sante.gouv.fr",
+      "url": "https://sante.gouv.fr/actualites-presse/presse/communiques-de-presse/article/ne-d-une-amp-avec-donneur-a-qui-s-adresser-pour-connaitre-ses-origines",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Carburant : l'aide pour les travailleurs « grands rouleurs »",
+      "producteur": "economie.gouv.fr",
+      "url": "https://www.economie.gouv.fr/actualites/carburant-laide-pour-les-travailleurs-grands-rouleurs",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Santé cardiovasculaire : une feuille de route nationale 2026-2030",
+      "producteur": "sante.gouv.fr",
+      "url": "https://sante.gouv.fr/actualites-presse/presse/communiques-de-presse/article/sante-cardiovasculaire-la-france-se-dote-d-une-feuille-de-route-nationale-pour",
+      "niveau": "D",
+      "statut": "actualité lue le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Grippe : vaccination obligatoire des professionnels dès la campagne 2026-2027",
+      "producteur": "sante.gouv.fr",
+      "url": "https://sante.gouv.fr/actualites-presse/presse/communiques-de-presse/article/vaccination-obligatoire-des-professionnels-contre-la-grippe-saisonniere-une",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Journée nationale de la résilience : 5e édition le 13 octobre 2026",
+      "producteur": "interieur.gouv.fr",
+      "url": "https://www.interieur.gouv.fr/actualites/dossiers-de-presse/journee-nationale-de-resilience-13-octobre-2026-dossier-de-presse",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
       "type": "reference",
       "titre": "Site officiel : Premier ministre",
       "producteur": "www.info.gouv.fr",
@@ -3297,7 +3351,7 @@
   "totaux": {
     "api": 19,
     "jeu": 44,
-    "document": 150,
+    "document": 156,
     "reference": 147
   }
 }

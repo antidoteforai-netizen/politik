@@ -1381,6 +1381,49 @@
       "pages": [],
       "niveau": "V",
       "lu_le": "2026-10-20"
+    },
+    {
+      "date": "2026-10-16",
+      "titre": "Crise au Moyen-Orient : toutes les mesures de soutien économique",
+      "resume": "Le Gouvernement annonce la mise sur le marché de 10 millions de barils de diesel, avec une baisse évaluée entre 12 et 18 centimes par litre de gazole pendant trois mois, et recense les aides par secteur : transport, bâtiment, pêche, agriculture, TPE et PME, santé.",
+      "source": "economie.gouv.fr",
+      "url": "https://www.economie.gouv.fr/actualites/crise-au-moyen-orient-toutes-les-mesures-de-soutien-economique",
+      "ministeres": [
+        "economie",
+        "transports",
+        "pme-commerce"
+      ],
+      "pages": [],
+      "niveau": "D",
+      "lu_le": "2026-10-21"
+    },
+    {
+      "date": "2026-10-01",
+      "titre": "France Identité dépasse les 5 millions d'utilisateurs",
+      "resume": "Ouverte au grand public en février 2024, l'application permet d'avoir ses titres officiels sur son smartphone et de prouver son identité. Après une vérification d'identité en mairie, elle donne accès aux démarches les plus sensibles, comme la procuration de vote en ligne.",
+      "source": "interieur.gouv.fr",
+      "url": "https://www.interieur.gouv.fr/actualites/communiques-de-presse/france-identite-franchit-cap-des-5-millions-dutilisateurs",
+      "ministeres": [
+        "interieur"
+      ],
+      "pages": [],
+      "niveau": "V",
+      "lu_le": "2026-10-21"
+    },
+    {
+      "date": "2026-09-30",
+      "titre": "Délinquance enregistrée : un point à mi-année 2026",
+      "resume": "Au 30 juin 2026, les homicides et les tentatives d'homicide sont en baisse de 3 % sur douze mois glissants. La publication ajoute pour la première fois des indicateurs sur les atteintes racistes, xénophobes ou anti-religieuses, les infractions anti-LGBT+, les refus d'obtempérer et les outrages sexistes et sexuels.",
+      "source": "interieur.gouv.fr",
+      "url": "https://www.interieur.gouv.fr/actualites/communiques-de-presse/delinquance-enregistree-par-police-et-gendarmerie-nationale-point-a-mi-annee-2026",
+      "ministeres": [
+        "interieur"
+      ],
+      "pages": [
+        "forces.html"
+      ],
+      "niveau": "V",
+      "lu_le": "2026-10-21"
     }
   ]
 }

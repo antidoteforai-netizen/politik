@@ -2481,6 +2481,33 @@
     },
     {
       "page": "gouvernement",
+      "type": "document",
+      "titre": "Crise au Moyen-Orient : toutes les mesures de soutien économique",
+      "producteur": "economie.gouv.fr",
+      "url": "https://www.economie.gouv.fr/actualites/crise-au-moyen-orient-toutes-les-mesures-de-soutien-economique",
+      "niveau": "D",
+      "statut": "actualité lue le 2026-10-21"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "France Identité dépasse les 5 millions d'utilisateurs",
+      "producteur": "interieur.gouv.fr",
+      "url": "https://www.interieur.gouv.fr/actualites/communiques-de-presse/france-identite-franchit-cap-des-5-millions-dutilisateurs",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-21"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Délinquance enregistrée : un point à mi-année 2026",
+      "producteur": "interieur.gouv.fr",
+      "url": "https://www.interieur.gouv.fr/actualites/communiques-de-presse/delinquance-enregistree-par-police-et-gendarmerie-nationale-point-a-mi-annee-2026",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-21"
+    },
+    {
+      "page": "gouvernement",
       "type": "reference",
       "titre": "Site officiel : Premier ministre",
       "producteur": "www.info.gouv.fr",
@@ -3351,7 +3378,7 @@
   "totaux": {
     "api": 19,
     "jeu": 44,
-    "document": 156,
+    "document": 159,
     "reference": 147
   }
 }

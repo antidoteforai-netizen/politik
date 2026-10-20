@@ -59,6 +59,7 @@ page = f"""<!doctype html>
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#141A2B">
+<meta name="eg-titre" content="Il serait temps qu'on aille voir les systèmes digitaux, solides ou non, que les États-Unis ont mis en place. Pourquoi ne pas en tenir compte et peut-être s'inspirer un peu ?">
 <meta name="description" content="Ce que les États-Unis publient pour leurs décideurs et citoyens, avec liens vers les sources.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

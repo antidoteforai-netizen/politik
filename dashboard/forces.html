@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Forces de l'ordre</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#141A2B">
+<script src="qcm.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="politik.css">
+<style>
+/* Spécifique à cette page ; jetons et composants dans politik.css. */
+.aide{display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:var(--accent-soft);border-radius:14px;padding:12px 16px;margin-top:16px;font-size:.92rem}
+.aide b{font-family:var(--font-display);font-size:1.3rem;letter-spacing:-.01em}
+.grade{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 6px;border-radius:6px;font-size:.72rem;font-weight:700;border:1.5px solid var(--ink-3);color:var(--ink-2);margin-left:4px;vertical-align:1px}
+.grade.A,.grade.B{border-color:var(--lvl-v);color:var(--lvl-v)} .grade.C{border-color:var(--lvl-s);color:var(--lvl-s)} .grade.D{border-color:var(--lvl-a);color:var(--lvl-a)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chips button{font:inherit;font-size:.82rem;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chips button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chips .count{font-size:.84rem;color:var(--ink-3);margin-left:auto}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(44px,1fr));gap:8px;align-items:end;height:200px;margin-top:14px}
+.col{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;min-width:0;gap:4px}
+.col .b{width:100%;max-width:46px;background:var(--c1);border-radius:4px 4px 0 0;position:relative}
+.col .b.c,.col .b.d{background:repeating-linear-gradient(135deg,var(--c1) 0 4px,transparent 4px 8px);border:1.5px solid var(--c1)}
+.col .b.part{background:transparent;border:1.5px dashed var(--c1)}
+.col .b.conf{background:var(--c2)}
+.col .n{font-size:.78rem;font-variant-numeric:tabular-nums;color:var(--ink-2)}
+.col .y{font-size:.74rem;color:var(--ink-3);white-space:nowrap}
+.col.hidden{opacity:.18}
+.leg{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.82rem;margin-top:10px;color:var(--ink-2)}
+.leg i{display:inline-block;width:14px;height:12px;vertical-align:-1px;margin-right:6px;border-radius:2px;background:var(--c1)}
+.leg i.hach{background:repeating-linear-gradient(135deg,var(--c1) 0 3px,transparent 3px 6px);border:1px solid var(--c1)} .leg i.part{background:transparent;border:1.5px dashed var(--c1)} .leg i.conf{background:var(--c2)}
+.hbar{display:grid;grid-template-columns:minmax(120px,34%) 1fr auto;gap:6px 10px;align-items:center;font-size:.9rem}
+.hbar .lab{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hbar .bar{height:14px;background:var(--c1);border-radius:0 4px 4px 0;min-width:2px}
+.hbar .bar.b2{background:var(--c2)} .hbar .bar.b3{background:var(--c3)}
+.hbar .range{height:14px;position:relative;background:var(--surface-2);border-radius:4px}
+.hbar .range i{position:absolute;top:0;bottom:0;background:var(--c1);border-radius:4px}
+.hbar .v{font-variant-numeric:tabular-nums;color:var(--ink-2);white-space:nowrap}
+.btn{font:inherit;font-weight:600;font-size:.88rem;padding:8px 14px;border-radius:8px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.vs{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center}
+.vs .side{text-align:center;padding:14px;border:1px solid var(--line);border-radius:10px}
+.vs .side b{font-family:var(--font-display);font-size:2rem;display:block;letter-spacing:-.02em}
+.vs .mid{font-weight:700;color:var(--ink-3)}
+.todo{display:grid;gap:6px}
+.todo label{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:start;padding:8px 10px;border:1px solid var(--line-2);border-radius:8px;font-size:.9rem;cursor:pointer}
+.todo input{margin-top:4px;accent-color:var(--accent)}
+.todo .pr{font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);white-space:nowrap}
+.todo label.done{opacity:.55;text-decoration:line-through}
+.prog{height:8px;background:var(--surface-2);border-radius:999px;overflow:hidden;margin:8px 0 12px}
+.prog i{display:block;height:100%;background:var(--c3);width:0;transition:width .3s}
+.link{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:inherit}
+.link .kind{font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600;color:var(--accent-ink)}
+.link:hover h3{color:var(--accent-ink)}
+.tip{position:fixed;z-index:20;background:var(--ink);color:var(--paper);font-size:.8rem;padding:6px 9px;border-radius:6px;pointer-events:none;max-width:260px}
+.obs{font-size:.86rem}
+.old{font-size:.72rem;color:var(--trou);margin-left:4px}
+body.falc .hbar,body.falc .obs,body.falc .todo label,body.falc .leg{font-size:1rem}
+@media (max-width:640px){.vs{grid-template-columns:1fr}.vs .mid{text-align:center}.hbar{grid-template-columns:1fr auto}.hbar .bar,.hbar .range{grid-column:1/-1}.cols{height:170px}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Pages Politik">
+  <div class="wrap">
+    <a class="brand" href="index.html" style="display:inline-flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="15" fill="#141A2B"/><rect x="19" y="14" width="8" height="36" rx="4" fill="#fff"/><circle cx="35" cy="26" r="10.5" fill="none" stroke="#fff" stroke-width="8"/><circle cx="35" cy="26" r="3.6" fill="#7A9BEC"/></svg><span style="color:inherit">Politik<span>.</span></span></a>
+    <ul><li><a href="gouvernement.html" title="Le Gouvernement : ministères, ministres, actualité en bref">Gouvernement</a></li><li><a href="index.html" title="Fraude sociale">Fraude</a></li><li><a href="medias.html" title="Qui possède les médias">Médias</a></li><li><a href="forces.html" class="here" aria-current="page" title="Forces de l'ordre : police et gendarmerie">Police</a></li><li><a href="17-octobre-2026.html" title="Le 17 octobre 2026">17 octobre</a></li><li><a href="presidentielle-2027.html" title="Présidentielle 2027">Élection</a></li><li><a href="secteurs.html" title="Comment va la France">France</a></li><li><a href="cybersecurite.html" title="Cybersécurité de l'État">Cyber</a></li><li><a href="donnees.html" title="Sources et données">Sources</a></li></ul>
+    <div class="switch" role="group" aria-label="Niveau de lecture" id="switch"></div>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <p class="eyebrow" data-t="eyebrow"></p>
+  <h1 data-t="h1"></h1>
+  <p class="lede" data-t="lede"></p>
+  <div class="aide" role="note"><b>3114</b><span data-t="aide"></span></div>
+  <div class="grid g4" style="margin-top:22px" id="kpis"></div>
+  <div class="falc-badge" role="note"><span data-t="falc.badge"></span></div>
+  <nav class="sous-sommaire" aria-label="Dans cette page"><a href="#estimer">Testez-vous</a><a href="#suicide">Suicides</a><a href="#taux">Le piège du taux</a><a href="#sante">Santé mentale déclarée</a><a href="#ressources">Soutien de l'État</a><a href="#violences">Violences subies</a><a href="#violences-citoyens">Sur les citoyens</a><a href="#manifestations">Manifestations</a><a href="#donnees">Données</a><a href="#verifier">À vérifier</a><a href="#liens">Ailleurs dans Politik</a><a href="#regles">Règles</a></nav>
+</header>
+
+<main class="wrap">
+<section id="estimer">
+  <div class="sec-head"><h2 data-t="s.est.h"></h2><p data-t="s.est.p"></p></div>
+  <div id="qcm-forces"></div>
+</section>
+
+<section id="suicide">
+  <div class="sec-head"><h2 data-t="s.sui.h"></h2><p data-t="s.sui.p"></p></div>
+  <div class="card">
+    <div class="chips" id="grades" role="group" aria-label="Filtrer par grade de qualité"></div>
+    <p class="lecture" data-t="l.a1"></p>
+    <div class="cols" id="ch-a1" role="img" aria-describedby="a1-desc"></div>
+    <p id="a1-desc" class="small muted" data-t="a1.desc" style="margin-top:8px"></p>
+    <div class="leg" id="a1-leg"></div>
+    <details class="data" style="margin-top:8px"><summary data-t="voir.obs"></summary><div class="tbl" id="tbl-a1"></div></details>
+  </div>
+  <div class="grid g2" style="margin-top:16px">
+    <div class="card"><h3 data-t="conf.h"></h3><p class="small muted" data-t="conf.p"></p><div class="vs" style="margin-top:12px" id="conf"></div></div>
+    <div class="card"><h3 data-t="gn.h"></h3><p class="small muted" data-t="gn.p"></p><p class="lecture" data-t="l.gn"></p><div class="hbar" id="ch-gn" style="margin-top:12px"></div><p class="src" id="gn-src"></p></div>
+  </div>
+</section>
+
+<section id="taux">
+  <div class="sec-head"><h2 data-t="s.taux.h"></h2><p data-t="s.taux.p"></p></div>
+  <div class="card">
+    <div class="chips" id="taux-switch" role="group" aria-label="Type de taux"></div>
+    <p class="lecture" data-t="l.taux"></p><div class="hbar" id="ch-taux" style="margin-top:14px"></div>
+    <p class="small muted" id="taux-note" style="margin-top:10px"></p>
+  </div>
+</section>
+
+<section id="sante">
+  <div class="sec-head"><h2 data-t="s.sante.h"></h2><p data-t="s.sante.p"></p></div>
+  <div class="grid g3" id="sante-tiles"></div>
+  <div class="card" style="margin-top:16px"><h3 data-t="tspt.h"></h3><p class="small muted" data-t="tspt.p"></p><p class="lecture" data-t="l.tspt"></p><div class="hbar" id="ch-tspt" style="margin-top:12px"></div><p class="src" id="tspt-src"></p></div>
+</section>
+
+<section id="ressources">
+  <div class="sec-head"><h2 data-t="s.res.h"></h2><p data-t="s.res.p"></p></div>
+  <div class="grid g2">
+    <div class="card"><h3 data-t="ratio.h"></h3><p class="small muted" data-t="ratio.p"></p><div class="chips" id="ratio-switch" style="margin-top:10px"></div><div class="vs" style="margin-top:12px" id="ratio"></div></div>
+    <div class="card"><h3 data-t="psy.h"></h3><p class="lecture" data-t="l.psy"></p><div class="hbar" id="ch-psy" style="margin-top:12px"></div><p class="src" id="psy-src"></p></div>
+  </div>
+  <div class="grid g3" style="margin-top:16px" id="res-tiles"></div>
+  <div class="card" style="margin-top:16px"><h3 data-t="disp.h"></h3><div class="tbl" id="tbl-disp"></div></div>
+</section>
+
+<section id="violences">
+  <div class="sec-head"><h2 data-t="s.viol.h"></h2><p data-t="s.viol.p"></p></div>
+  <div class="grid g2">
+    <div class="card"><h3 data-t="agr.h"></h3><p class="small muted" data-t="agr.p"></p><p class="lecture" data-t="l.agr"></p><div class="hbar" id="ch-agr" style="margin-top:12px"></div><p class="src" id="agr-src"></p></div>
+    <div class="card"><h3 data-t="bless.h"></h3><p class="small muted" data-t="bless.p"></p><p class="lecture" data-t="l.bless"></p><div class="hbar" id="ch-bless" style="margin-top:12px"></div><p class="src" id="bless-src"></p></div>
+  </div>
+</section>
+
+<section id="violences-citoyens">
+  <div class="sec-head"><h2 data-t="s.vc.h"></h2><p data-t="s.vc.p"></p></div>
+  <div class="card"><h3 data-t="vc.a.h"></h3><p class="small muted" data-t="vc.a.p"></p><p class="lecture" data-t="l.vc"></p><div class="hbar" id="ch-vc" style="margin-top:12px"></div><p class="src" id="vc-src"></p><details class="data"><summary data-t="voir.donnees"></summary><div class="tbl" id="tbl-vc"></div></details></div>
+  <div class="card" style="margin-top:16px"><h3 data-t="vc.b.h"></h3><p class="small muted" data-t="vc.b.p"></p><div class="tbl" id="tbl-agents" style="margin-top:10px"></div><p class="src" data-t="vc.b.src"></p></div>
+  <div class="card" style="margin-top:16px"><h3 data-t="vc.n.h"></h3><p class="small muted" data-t="vc.n.p"></p><ul class="plain" id="vc-num" style="margin:8px 0 0;padding-left:18px"></ul><p class="src" id="vc-num-src"></p></div>
+  <div class="card" style="margin-top:16px"><h3 data-t="vc.c.h"></h3><ul id="vc-limites" style="margin:8px 0 0;padding-left:18px"></ul></div>
+</section>
+
+<section id="manifestations">
+  <div class="sec-head"><h2 data-t="s.manif.h"></h2><p data-t="s.manif.p"></p></div>
+  <div class="card"><p class="lecture" data-t="l.manif"></p><div class="tbl" id="tbl-manif"></div><p class="src" data-t="manif.src"></p></div>
+</section>
+
+<section id="donnees">
+  <div class="sec-head"><h2 data-t="s.data.h"></h2><p data-t="s.data.p"></p></div>
+  <div class="card"><div class="tbl" id="tbl-ds"></div></div>
+</section>
+
+<section id="verifier">
+  <div class="sec-head"><h2 data-t="s.verif.h"></h2><p data-t="s.verif.p"></p></div>
+  <div class="card"><div class="small muted" id="prog-txt"></div><div class="prog"><i id="prog"></i></div><div class="todo" id="todo"></div><p style="margin-top:10px"><button class="btn ghost" type="button" id="reset" data-t="verif.reset"></button></p></div>
+</section>
+
+<section id="liens">
+  <div class="sec-head"><h2 data-t="s.liens.h"></h2><p data-t="s.liens.p"></p></div>
+  <div class="grid g3" id="liens-grid"></div>
+</section>
+
+<section id="regles">
+  <div class="sec-head"><h2 data-t="s.regles.h"></h2><p data-t="s.regles.p"></p></div>
+  <div class="card"><ul id="regles-list" style="margin:0;padding-left:18px"></ul></div>
+</section>
+</main>
+<section class="wrap" id="donnees-page" data-page="forces" style="margin-top:8px"></section>
+<footer class="wrap"><p data-t="footer"></p></footer>
+
+<script>
+const PAGE_LEVELS=["etat","falc"], LEVEL_NAMES={etat:"Termes de l'État", falc:"FALC"};
+let L=PAGE_LEVELS[0]; try{ const s=localStorage.getItem("politik-level-forces"); if(PAGE_LEVELS.includes(s)) L=s; }catch(e){}
+const pick=o=>(o==null?"":(typeof o!=="object"?o:(o[L]??o.etat??"")));
+const $=s=>document.querySelector(s); const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=n=>n.toLocaleString("fr-FR");
+/* Grade du cahier des charges (A publication primaire lue, B officiel rapporté, C associatif / syndical / presse / allégation, D secondaire ou contradictoire)
+   et niveau du site : A, B → V ; C → S ; D → A. */
+const GV={A:"V",B:"V",C:"S",D:"A"};
+const lvl=g=>`<span class="lvl lvl-${GV[g]}">${GV[g]}</span><span class="grade ${g}" title="Grade ${g} : ${TYP[g].etat}">${g}</span>`;
+/* VIOL-START */
+const VIOL = {"calcule_le": "2026-10-20", "jeu": "bases-statistiques-communale-departementale-et-regionale-de-la-delinquance-enregistree-par-la-police-et-la-gendarmerie-nationales", "maj_jeu": "2026-07-09", "url_jeu": "https://www.data.gouv.fr/datasets/bases-statistiques-communale-departementale-et-regionale-de-la-delinquance-enregistree-par-la-police-et-la-gendarmerie-nationales", "annees": [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025], "derniere_annee": 2025, "methode": "Somme des départements de la base départementale du SSMSI (police et gendarmerie nationales), unité de compte « victime » ; faits enregistrés, pas faits réels : de nombreuses victimes ne portent pas plainte (enquête Vécu et ressenti en matière de sécurité).", "series": [{"indicateur": "Homicides", "libelle": "Victimes d'homicide", "points": [{"annee": 2016, "n": 911, "pour_1000": 0.014}, {"annee": 2017, "n": 835, "pour_1000": 0.013}, {"annee": 2018, "n": 845, "pour_1000": 0.013}, {"annee": 2019, "n": 878, "pour_1000": 0.013}, {"annee": 2020, "n": 788, "pour_1000": 0.012}, {"annee": 2021, "n": 840, "pour_1000": 0.012}, {"annee": 2022, "n": 958, "pour_1000": 0.014}, {"annee": 2023, "n": 996, "pour_1000": 0.015}, {"annee": 2024, "n": 976, "pour_1000": 0.014}, {"annee": 2025, "n": 975, "pour_1000": 0.014}], "var_1an_pct": -0.1, "var_moy_annuelle_pct": 0.8}, {"indicateur": "Tentatives d'homicide", "libelle": "Victimes de tentatives d'homicide", "points": [{"annee": 2016, "n": 2259, "pour_1000": 0.034}, {"annee": 2017, "n": 2284, "pour_1000": 0.034}, {"annee": 2018, "n": 2482, "pour_1000": 0.037}, {"annee": 2019, "n": 2718, "pour_1000": 0.04}, {"annee": 2020, "n": 3115, "pour_1000": 0.046}, {"annee": 2021, "n": 3136, "pour_1000": 0.046}, {"annee": 2022, "n": 3584, "pour_1000": 0.053}, {"annee": 2023, "n": 4015, "pour_1000": 0.059}, {"annee": 2024, "n": 4290, "pour_1000": 0.063}, {"annee": 2025, "n": 4477, "pour_1000": 0.066}], "var_1an_pct": 4.4, "var_moy_annuelle_pct": 7.9}, {"indicateur": "Violences physiques hors cadre familial", "libelle": "Violences physiques hors cadre familial", "points": [{"annee": 2016, "n": 163447, "pour_1000": 2.453}, {"annee": 2017, "n": 171894, "pour_1000": 2.574}, {"annee": 2018, "n": 183019, "pour_1000": 2.732}, {"annee": 2019, "n": 185649, "pour_1000": 2.761}, {"annee": 2020, "n": 168658, "pour_1000": 2.502}, {"annee": 2021, "n": 183418, "pour_1000": 2.711}, {"annee": 2022, "n": 200410, "pour_1000": 2.946}, {"annee": 2023, "n": 205896, "pour_1000": 3.012}, {"annee": 2024, "n": 205459, "pour_1000": 3.006}, {"annee": 2025, "n": 215728, "pour_1000": 3.156}], "var_1an_pct": 5.0, "var_moy_annuelle_pct": 3.1}, {"indicateur": "Violences physiques intrafamiliales", "libelle": "Violences physiques intrafamiliales", "points": [{"annee": 2016, "n": 113821, "pour_1000": 1.709}, {"annee": 2017, "n": 117685, "pour_1000": 1.762}, {"annee": 2018, "n": 129216, "pour_1000": 1.929}, {"annee": 2019, "n": 148546, "pour_1000": 2.209}, {"annee": 2020, "n": 163702, "pour_1000": 2.428}, {"annee": 2021, "n": 187743, "pour_1000": 2.775}, {"annee": 2022, "n": 216822, "pour_1000": 3.188}, {"annee": 2023, "n": 238211, "pour_1000": 3.485}, {"annee": 2024, "n": 244360, "pour_1000": 3.575}, {"annee": 2025, "n": 256681, "pour_1000": 3.755}], "var_1an_pct": 5.0, "var_moy_annuelle_pct": 9.5}, {"indicateur": "Violences sexuelles", "libelle": "Violences sexuelles", "points": [{"annee": 2016, "n": 51913, "pour_1000": 0.779}, {"annee": 2017, "n": 57003, "pour_1000": 0.854}, {"annee": 2018, "n": 67472, "pour_1000": 1.007}, {"annee": 2019, "n": 75329, "pour_1000": 1.12}, {"annee": 2020, "n": 77089, "pour_1000": 1.143}, {"annee": 2021, "n": 96385, "pour_1000": 1.424}, {"annee": 2022, "n": 106114, "pour_1000": 1.56}, {"annee": 2023, "n": 114079, "pour_1000": 1.669}, {"annee": 2024, "n": 122444, "pour_1000": 1.791}, {"annee": 2025, "n": 132143, "pour_1000": 1.933}], "var_1an_pct": 7.9, "var_moy_annuelle_pct": 10.9}, {"indicateur": "Destructions et dégradations volontaires", "libelle": "Destructions et dégradations volontaires", "points": [{"annee": 2016, "n": 626565, "pour_1000": 9.405}, {"annee": 2017, "n": 624707, "pour_1000": 9.355}, {"annee": 2018, "n": 603285, "pour_1000": 9.006}, {"annee": 2019, "n": 602790, "pour_1000": 8.964}, {"annee": 2020, "n": 518284, "pour_1000": 7.688}, {"annee": 2021, "n": 530764, "pour_1000": 7.844}, {"annee": 2022, "n": 537329, "pour_1000": 7.9}, {"annee": 2023, "n": 552016, "pour_1000": 8.076}, {"annee": 2024, "n": 528849, "pour_1000": 7.737}, {"annee": 2025, "n": 539112, "pour_1000": 7.887}], "var_1an_pct": 1.9, "var_moy_annuelle_pct": -1.7}, {"indicateur": "Vols violents sans arme", "libelle": "Vols violents sans arme", "points": [{"annee": 2016, "n": 94758, "pour_1000": 1.422}, {"annee": 2017, "n": 89542, "pour_1000": 1.341}, {"annee": 2018, "n": 82972, "pour_1000": 1.239}, {"annee": 2019, "n": 80890, "pour_1000": 1.203}, {"annee": 2020, "n": 65624, "pour_1000": 0.973}, {"annee": 2021, "n": 62071, "pour_1000": 0.917}, {"annee": 2022, "n": 59450, "pour_1000": 0.874}, {"annee": 2023, "n": 54270, "pour_1000": 0.794}, {"annee": 2024, "n": 48292, "pour_1000": 0.707}, {"annee": 2025, "n": 49193, "pour_1000": 0.72}], "var_1an_pct": 1.9, "var_moy_annuelle_pct": -7.0}], "bilan_officiel": {"titre": "Insécurité et délinquance en 2025 : bilan statistique et atlas départemental", "date": "2026-07-09", "url": "https://www.interieur.gouv.fr/actualites/communiques-de-presse/insecurite-et-delinquance-en-2025-bilan-statistique-et-atlas-departemental"}};
+/* VIOL-END */
+const TYP={A:{etat:"publication officielle primaire",falc:"document officiel"},B:{etat:"officiel rapporté : réponse ministérielle, rapport parlementaire ou recherche",falc:"chiffre officiel"},C:{etat:"association, syndicat, mutuelle, presse ou allégation non recoupée",falc:"association, syndicat ou journal"},D:{etat:"source secondaire, non datée ou contradictoire",falc:"source peu sûre"}};
+const typ=g=>pick(TYP[g]||TYP.D);
+
+/* Observations : modèle de la section 3.1 du cahier des charges. v = valeur, q = qualificatif, per = périmètre, g = grade, s = source S#. */
+const OBS=[
+  {kpi:"A1",p:"2008",per:"PN",v:49,q:"exact",g:"B",s:"11"},
+  {kpi:"A1",p:"2017",per:"PN",v:50,q:"exact",g:"B",s:"12"},
+  {kpi:"A1",p:"2018",per:"PN",v:35,q:"exact",g:"C",s:"55",n:{etat:"presse",falc:"journal"}},
+  {kpi:"A1",p:"2019",per:"PN",v:59,q:"exact",g:"B",s:"53, 54",conf:"2019b"},
+  {kpi:"A1",p:"2019",per:"non précisé",v:70,q:"exact",g:"D",s:"16",id:"2019b",conf:"2019",n:{etat:"écart non expliqué",falc:"on ne sait pas pourquoi c'est différent"}},
+  {kpi:"A1",p:"2021",per:"PN+GN (ambigu)",v:48,q:"exact",g:"C",s:"54"},
+  {kpi:"A1",p:"2022",per:"PN+GN+pénitentiaire",v:78,q:"exact",g:"C",s:"9"},
+  {kpi:"A1",p:"2024",per:"PN",v:27,q:"exact",g:"B",s:"4, 5"},
+  {kpi:"A1",p:"2024",per:"PN",v:23,q:"partiel",g:"B",s:"52",n:{etat:"au 8 octobre",falc:"compté jusqu'au 8 octobre"}},
+  {kpi:"A1",p:"2025",per:"PN",v:16,q:"au moins",g:"C",s:"51",n:{etat:"amendement parlementaire",falc:"dit par un député"}},
+  {kpi:"A1",p:"2025",per:"PN",v:12,q:"partiel",g:"C",s:"56",n:{etat:"syndicat, début juillet",falc:"dit par un syndicat, en juillet"}},
+  {kpi:"A1",p:"2026",per:"PN",v:8,q:"au moins, partiel",g:"D",s:"8",n:{etat:"décompte non officiel, fin mai",falc:"compte non officiel, fin mai"}},
+  {kpi:"A2",p:"2019",per:"GN",v:21,q:"exact",g:"B",s:"4"},
+  {kpi:"A2",p:"2024",per:"GN",v:26,q:"exact",g:"B",s:"4"},
+  {kpi:"A2",p:"2026",per:"GN",v:7,q:"au moins, partiel",g:"C",s:"5",n:{etat:"deux mois et demi, probablement sous-estimé",falc:"en deux mois et demi, sûrement plus"}}
+];
+const A1=OBS.filter(o=>o.kpi==="A1"), A2=OBS.filter(o=>o.kpi==="A2");
+let GRADES=new Set(["A","B","C","D"]);
+
+const TXT={
+  eyebrow:{etat:"Santé mentale, violences subies et maintien de l'ordre · police et gendarmerie", falc:"Les policiers et les gendarmes : leur santé, les violences, les manifestations"},
+  h1:{etat:"Forces de l'ordre : ce que les chiffres disent, et sous quelle définition", falc:"Les policiers et les gendarmes, en chiffres"},
+  lede:{etat:"Suicides, détresse déclarée, psychologues disponibles, agressions subies, blessés en manifestation des deux côtés. Chaque chiffre porte son périmètre (police seule, police et gendarmerie, avec ou sans pénitentiaire), son qualificatif (exact, au moins, partiel) et son grade de qualité. Les écarts entre sources sont montrés côte à côte, jamais lissés. Le lien vers chaque publication d'origine n'est pas encore affiché : le grade indique la solidité de la source.", falc:"Combien de policiers se suicident. Combien vont mal. Combien de psychologues pour les aider. Combien sont agressés. Combien de blessés dans les manifestations, des deux côtés.<br>Chaque chiffre dit qui est compté et d'où il vient.<br>Quand deux chiffres ne sont pas d'accord, on montre les deux."},
+  aide:{etat:"numéro national de prévention du suicide, gratuit, 24 h/24. Si vous êtes concerné·e ou inquiet·e pour quelqu'un, appelez.", falc:"C'est le numéro pour parler si on pense au suicide. C'est gratuit, jour et nuit."},
+  "falc.badge":{etat:"Niveau « termes de l'État » : les intitulés officiels sont gardés. Passez en FALC pour une lecture simplifiée.", falc:"Lecture facile.<br>Ce texte suit la méthode FALC.<br>Il n'a pas encore été relu par des personnes concernées."},
+  "s.est.h":{etat:"Testez votre intuition avant de lire", falc:"Testez-vous avant de lire"},
+  "s.est.p":{etat:"Trois ordres de grandeur, hors sujet suicide. Répondre d'abord, lire ensuite : l'écart entre votre intuition et la valeur sourcée montre ce que cette page change.", falc:"Trois questions.<br>Répondez d'abord. Lisez ensuite."},
+  "s.sui.h":{etat:"KPI-A1 : suicides dans la police nationale, 2008-2026", falc:"Suicides de policiers, de 2008 à 2026"},
+  "s.sui.p":{etat:"Douze observations, cinq périmètres, quatre grades. Le filtre par grade montre ce qui reste quand on ne garde que les chiffres officiels rapportés (A et B). Les barres hachurées sont de grade C ou D, les barres en pointillé des valeurs partielles ou « au moins ».", falc:"Douze chiffres. Ils ne comptent pas tous les mêmes personnes.<br>Les boutons A, B, C, D cachent les chiffres les moins sûrs.<br>Barre rayée : chiffre moins sûr. Barre en pointillé : année pas finie."},
+  "a1.desc":{etat:"Une barre par observation, hauteur = nombre de suicides. Les deux valeurs 2019 (59 et 70) sont en conflit et affichées côte à côte (FR-08). Aucune donnée nominative, aucune maille locale.", falc:"Une barre par chiffre. En 2019, deux chiffres différents sont montrés côte à côte."},
+  "voir.obs":{etat:"Voir les observations (périmètre, qualificatif, grade, source)", falc:"Voir le tableau"},
+  "conf.h":{etat:"Un conflit qu'on ne tranche pas : 2019", falc:"En 2019, deux chiffres"},
+  "conf.p":{etat:"Deux sources, deux nombres, aucun périmètre commun établi. Les deux valeurs sont conservées et affichées côte à côte tant que leur écart n'est pas expliqué.", falc:"Deux sources disent deux nombres. On garde les deux jusqu'à ce qu'on sache."},
+  "gn.h":{etat:"KPI-A2 : gendarmerie nationale", falc:"Les gendarmes"},
+  "gn.p":{etat:"Même indicateur, autre institution. Avertissement FR-09 : les périmètres ne sont pas strictement identiques à ceux de la police.", falc:"Le même chiffre pour les gendarmes. Attention, on ne compte pas tout à fait pareil."},
+  "s.taux.h":{etat:"Le piège du taux : brut ou standardisé ?", falc:"Attention aux taux"},
+  "s.taux.p":{etat:"Métaphore : comparer un taux brut entre policiers et population générale, c'est comparer la vitesse de deux voitures sans dire si l'une descend une côte. Les policiers sont surtout des hommes de 25 à 55 ans, groupe où le suicide est déjà plus fréquent ; le taux standardisé corrige cette pente. Règle 5 : jamais les deux sur le même graphique.", falc:"Les policiers sont surtout des hommes jeunes. Chez eux, le suicide est déjà plus fréquent.<br>Le « taux corrigé » tient compte de ça.<br>On ne mélange jamais les deux sortes de taux."},
+  "s.sante.h":{etat:"Santé mentale déclarée : des mesures qui ne se comparent pas entre elles", falc:"Comment vont les policiers"},
+  "s.sante.p":{etat:"Détresse psychologique (échelle K6, mutuelle), dépression (thèse), stress post-traumatique (thèse), épuisement (enquête CNRS 2011-2012). Règle 6 : chaque mesure a sa propre échelle et sa propre population, elles ne se mettent pas sur un même axe.", falc:"Plusieurs enquêtes posent des questions différentes à des personnes différentes.<br>On ne les additionne pas."},
+  "tspt.h":{etat:"KPI-B4 : stress post-traumatique selon l'exposition", falc:"Le stress après un événement grave"},
+  "tspt.p":{etat:"Thèse Lyon 1, 2026, 475 répondants. Petits effectifs : l'intervalle de confiance est à demander à l'auteur (règle de la fiche).", falc:"475 personnes interrogées. C'est peu, le chiffre est fragile."},
+  "s.res.h":{etat:"Les ressources de soutien de l'État", falc:"L'aide donnée par l'État"},
+  "s.res.p":{etat:"Psychologues du service de soutien psychologique opérationnel (SSPO, créé en 1996), ratio d'agents par psychologue, crédits de prévention, sentinelles formées, dispositifs existants.", falc:"Combien de psychologues, combien d'argent, quelles aides existent."},
+  "ratio.h":{etat:"KPI-C2 : agents par psychologue", falc:"Combien de policiers pour un psychologue"},
+  "ratio.p":{etat:"Le même ratio change du simple au double selon que le dénominateur compte les 122 psychologues du SSPO ou les 310 psychologues de l'ensemble du ministère (valeur dérivée). Le périmètre du dénominateur est donc toujours indiqué.", falc:"Selon qui on compte, le résultat change beaucoup."},
+  "psy.h":{etat:"KPI-C1 : psychologues du SSPO", falc:"Les psychologues du SSPO"},
+  "disp.h":{etat:"KPI-C6 : dispositifs documentés", falc:"Les aides qui existent"},
+  "s.viol.h":{etat:"Violences et blessures subies en service", falc:"Les policiers agressés et blessés"},
+  "s.viol.p":{etat:"Les fourchettes sont celles rapportées par un député (grade C) ; les blessés en service viennent d'une réponse ministérielle (B ou C selon lecture). Les seuils d'ITT diffèrent entre sources.", falc:"Des fourchettes dites par un député, et des chiffres du ministère."},
+  "agr.h":{etat:"KPI-D1 et D2 : agressions et ITT", falc:"Agressions et arrêts de travail"},
+  "agr.p":{etat:"Fourchettes basse et haute, 2020 et estimation 2025.", falc:"De combien à combien, en 2020 et en 2025."},
+  "bless.h":{etat:"KPI-D3 : blessés en service, police et gendarmerie", falc:"Blessés au travail"},
+  "bless.p":{etat:"2004 et 2019, réponse ministérielle.", falc:"En 2004 et en 2019."},
+  "voir.donnees":{etat:"Voir les données", falc:"Voir le tableau"},
+  "s.vc.h":{etat:"Violences sur les citoyens : ce qui est enregistré, et ce qu'on peut mesurer des violences d'agents", falc:"Les violences sur les habitants"},
+  "s.vc.p":{etat:"Deux mesures distinctes, qu'il ne faut pas additionner. D'un côté, les violences que la police et la gendarmerie enregistrent sur les personnes, tous auteurs confondus. De l'autre, les violences exercées par des agents sur des citoyens, mesurées par d'autres outils (fichier RBD et enquêtes de l'IGPN) dont la définition et l'exhaustivité diffèrent. Cette page n'emploie pas d'étiquette : elle compte des faits, des blessés et des enquêtes, avec la définition de chaque source.", falc:"Il y a deux sortes de chiffres.<br>Les violences notées par la police sur les habitants, quel que soit l'auteur.<br>Les violences faites par des policiers ou des gendarmes sur des habitants, comptées autrement.<br>On ne les additionne pas."},
+  "vc.a.h":{etat:"Violences enregistrées en 2025, police et gendarmerie, tous auteurs", falc:"Les violences notées par la police en 2025"},
+  "vc.a.p":{etat:"Variation des faits enregistrés entre 2024 et 2025. Ces chiffres comptent des faits enregistrés, pas des faits réels : de très nombreuses victimes ne portent pas plainte.", falc:"Plus ou moins de violences notées qu'en 2024.<br>Beaucoup de victimes ne vont pas voir la police."},
+  "l.vc":{etat:"Ce qu'on voit : les violences physiques enregistrées augmentent de 5 % en 2025 et les violences sexuelles de 8 % ; les homicides sont stables, à 975 victimes.", falc:"À retenir : plus de violences notées en 2025.<br>Coups : 5 de plus sur 100. Violences sexuelles : 8 de plus sur 100.<br>Les morts : à peu près les mêmes, 975."},
+  "vc.b.h":{etat:"Violences exercées par des agents sur des citoyens : ce qui est compté", falc:"Les violences faites par des agents : ce qu'on compte"},
+  "vc.b.p":{etat:"Aucune de ces mesures ne couvre l'ensemble des violences alléguées. Le fichier RBD, par exemple, ne compte que les faits avec enquête judiciaire et incapacité totale de travail d'au moins neuf jours.", falc:"Aucun de ces chiffres ne compte tout.<br>Le fichier RBD compte seulement les cas graves avec enquête."},
+  "vc.b.src":{etat:"Réponses ministérielles, questions parlementaires, rapports de l'IGPN ; le lien vers chaque publication n'est pas encore affiché.", falc:"Chiffres du ministère, de députés et de l'inspection de la police."},
+  "vc.n.h":{etat:"Violences numériques : un démantèlement récent", falc:"Violences sur internet : une affaire récente"},
+  "vc.n.p":{etat:"Un exemple de violence sexuelle en ligne traitée par la justice et la gendarmerie, le 7 octobre 2026. Les faits sont décrits tels que publiés par la Gendarmerie nationale.", falc:"Une affaire récente de photos intimes volées et vendues sur internet."},
+  "vc.c.h":{etat:"Ce que ces chiffres ne permettent pas", falc:"Ce que ces chiffres ne disent pas"},
+  "s.manif.h":{etat:"Manifestations : blessés des deux côtés, définitions différentes", falc:"Les manifestations : des blessés des deux côtés"},
+  "s.manif.p":{etat:"Policiers blessés et manifestants blessés sont présentés côte à côte, chacun avec la définition de celui qui compte, sans qualification de responsabilité. Le fichier RBD de l'IGPN ne compte que les faits avec enquête judiciaire et ITT d'au moins 9 jours, toutes opérations confondues. Pour les événements du 17 octobre 2026, voir <a href='17-octobre-2026.html'>la page dédiée</a>.", falc:"On montre les blessés des deux côtés, sans dire qui a tort.<br>Chaque chiffre est compté différemment."},
+  "manif.src":{etat:"Réponses ministérielles, questions parlementaires, rapports de l'IGPN et sources secondaires ; le lien vers chaque publication n'est pas encore affiché.", falc:"Chiffres du ministère, de députés, de l'inspection de la police et de journaux."},
+  "s.data.h":{etat:"Registre des jeux de données : ce qui existe, ce qui manque", falc:"Les données qui existent, et celles qui manquent"},
+  "s.data.p":{etat:"Constat : aucun jeu dédié aux suicides de policiers ni aux blessés en manifestation sur data.gouv. Même logique que les « trous de mesure » de la page Fraude sociale.", falc:"Sur data.gouv, il n'y a pas de fichier sur les suicides de policiers ni sur les blessés en manifestation."},
+  "s.verif.h":{etat:"Douze points à vérifier", falc:"Douze choses à vérifier"},
+  "s.verif.p":{etat:"La liste des douze points ouverts, cochable. L'état des cases reste dans votre navigateur seulement : c'est un pense-bête, pas une base partagée.", falc:"Une liste à cocher. Les cases restent dans votre navigateur."},
+  "verif.reset":{etat:"Tout décocher", falc:"Tout effacer"},
+  "s.liens.h":{etat:"Ailleurs dans Politik", falc:"Les autres pages"},
+  "s.liens.p":{etat:"Les mêmes outils de lecture servent sur toutes les pages : trous de mesure, contrepoids, périmètres, niveau de confiance.", falc:"Les autres pages du site parlent des mêmes choses."},
+  "s.regles.h":{etat:"Règles éthiques et de restitution", falc:"Nos règles"},
+  "s.regles.p":{etat:"Ces règles s'appliquent à toute la page.", falc:"Les règles qu'on suit sur cette page."},
+  "l.a1":{etat:"Ce qu'on voit : 59 en 2019, 27 en 2024 dans la police nationale, soit moitié moins ; les autres années changent de périmètre ou de source, donc de hauteur.", falc:"À retenir : 59 suicides en 2019, 27 en 2024. C'est deux fois moins.<br>Les autres années ne comptent pas les mêmes personnes."},
+  "l.gn":{etat:"Ce qu'on voit : 21 suicides de gendarmes en 2019, 26 en 2024, sans baisse visible ; les périmètres de la police et de la gendarmerie ne sont pas strictement identiques.", falc:"À retenir : chez les gendarmes, 21 en 2019 et 26 en 2024. Pas de baisse.<br>On ne compte pas tout à fait comme pour la police."},
+  "l.taux":{etat:"Ce qu'on voit : le taux brut dépasse le double de celui de la population ; après correction d'âge et de sexe, selon d'autres sources, le surrisque est d'un tiers.", falc:"À retenir : les policiers se suicident plus que les autres. Une fois corrigé, c'est un tiers de plus."},
+  "l.tspt":{etat:"Ce qu'on voit : le stress post-traumatique est sept fois plus fréquent après une exposition directe que chez les non exposés, sur un petit échantillon.", falc:"À retenir : après un événement grave, le stress est sept fois plus fréquent. Peu de personnes interrogées."},
+  "l.psy":{etat:"Ce qu'on voit : 73 psychologues en poste en 2018, 122 aujourd'hui (date de la source non précisée), pour environ 150 000 agents.", falc:"À retenir : 122 psychologues pour 150 000 policiers. La date du chiffre n'est pas donnée."},
+  "l.agr":{etat:"Ce qu'on voit : les agressions augmentent d'environ un cinquième et les arrêts de travail de plus des deux tiers entre 2020 et 2025, selon des fourchettes non officielles.", falc:"À retenir : plus d'agressions et plus d'arrêts de travail en 2025 qu'en 2020. Chiffres à vérifier."},
+  "l.bless":{etat:"Ce qu'on voit : les blessés en service ont presque doublé entre 2004 et 2019.", falc:"À retenir : presque deux fois plus de blessés en 2019 qu'en 2004."},
+  "l.manif":{etat:"Ce qu'on voit : chaque ligne compte autrement ; un total unique n'existe pas, d'un côté comme de l'autre.", falc:"À retenir : chaque chiffre est compté à sa façon. On ne peut pas les additionner."},
+  footer:{etat:"Politik · page « Forces de l'ordre » · valeurs reprises de réponses ministérielles, rapports parlementaires, études de recherche, syndicats et presse ; liens vers les publications d'origine à venir.", falc:"Politik · page « Forces de l'ordre ».<br>Les chiffres viennent du ministère, de rapports, d'études et de journaux."}
+};
+
+const QCM={id:"forces",qs:[
+  {q:{etat:"Combien d'agressions contre les forces de l'ordre sont estimées en 2025 ?",falc:"Combien de policiers et de gendarmes sont agressés en 2025 ?"},opts:[{etat:"Environ 4 000",falc:"4 000"},{etat:"Environ 38 000",falc:"38 000"},{etat:"Environ 380 000",falc:"380 000"}],ans:1,why:{etat:"Près de 38 000, soit une centaine par jour. C'est une estimation rapportée par un député, pas un décompte officiel.",falc:"Près de 38 000, soit environ 100 par jour.<br>C'est une estimation d'un député."},src:"estimation rapportée par un député (grade C)",lvl:"S"},
+  {q:{etat:"Combien d'agents pour un psychologue du SSPO ?",falc:"Combien de policiers pour un seul psychologue de la police ?"},opts:[{etat:"1 pour 120",falc:"120"},{etat:"1 pour 1 200",falc:"1 200"},{etat:"1 pour 12 000",falc:"12 000"}],ans:1,why:{etat:"1 pour 1 200 au SSPO. Si l'on compte tous les psychologues du ministère, environ 1 pour 490 (valeur dérivée).",falc:"1 pour 1 200.<br>Avec tous les psychologues du ministère, environ 1 pour 490."},src:"valeur officielle rapportée (grade B) ; ratio de 1 pour 490 dérivé par Politik",lvl:"V"},
+  {q:{etat:"Combien de policiers et de gendarmes ont été blessés en service en 2019 ?",falc:"Combien de policiers et de gendarmes se sont blessés au travail en 2019 ?"},opts:[{etat:"Environ 700",falc:"700"},{etat:"Environ 7 400",falc:"7 400"},{etat:"Environ 74 000",falc:"74 000"}],ans:1,why:{etat:"7 399, presque le double de 2004 (3 842).",falc:"7 399.<br>C'est presque deux fois plus qu'en 2004."},src:"réponse ministérielle (grade B ou C selon lecture)",lvl:"V"}
+]};
+const TAUX={
+  brut:{n:{etat:"Taux brut pour 100 000 (moyennes sur dix ans, Sénat 2018)",falc:"Taux simple"},rows:[{l:"Police",v:29},{l:"Gendarmerie",v:25},{l:{etat:"Population générale",falc:"Tout le monde"},v:14}],note:{etat:"Moyennes sur dix ans publiées par le Sénat en 2018. Autre repère cité : 16 contre 30 (interview de Roché). Valeur dérivée 2024 : 27 suicides pour environ 150 000 policiers, soit 18 pour 100 000, non comparable sans standardisation.",falc:"Chiffres du Sénat, 2018. Un calcul pour 2024 donne 18, mais on ne peut pas le comparer directement."}},
+  std:{n:{etat:"Surrisque standardisé (âge et sexe)",falc:"Taux corrigé"},rows:[{l:{etat:"Police nationale 2005-2009",falc:"Police, 2005 à 2009"},v:36,u:" %"},{l:{etat:"Inserm 2010",falc:"Inserm, 2010"},v:36,u:" %"},{l:{etat:"Baromètre MGP (méthode non précisée)",falc:"Mutuelle MGP, méthode inconnue"},v:50,u:" %",alt:true}],note:{etat:"Sénat (2018), Inserm (2010) et baromètre de la mutuelle MGP. Lecture : +36 % de suicides par rapport à ce qu'on attendrait pour une population de même âge et de même sexe.",falc:"+36 %, c'est plus que chez des gens du même âge."}}
+};
+let taux="brut", ratioMode="sspo";
+const SANTE=[
+  {k:{etat:"KPI-B1 · Détresse psychologique (K6)",falc:"En détresse"},v:"39 %",u:{etat:"6 246 répondants, baromètre MGP, vers 2021 (40 % dans la presse)",falc:"6 246 personnes interrogées par leur mutuelle"},g:"C",s:"2, 3"},
+  {k:{etat:"KPI-B2 · Pensées suicidaires, personnelles ou entendues chez des collègues",falc:"Ont pensé au suicide, ou un collègue"},v:"24 %",u:{etat:"46 % si ambiance pas du tout conviviale, 32 % si tensions avec le public",falc:"46 % quand l'ambiance est mauvaise"},g:"C",s:"2"},
+  {k:{etat:"KPI-B3 · Dépression",falc:"Dépression"},v:"11,8 %",u:{etat:"thèse Lyon 1, 2026",falc:"étude de 2026"},g:"B",s:"10"},
+  {k:{etat:"KPI-B6 · Manque d'accomplissement personnel",falc:"Ne se sentent pas utiles"},v:"62,2 %",u:{etat:"CNRS et Alliance, 2011-2012, environ 13 000 répondants ; 80 % fiers du métier",falc:"enquête de 2011, 13 000 personnes ; 80 % sont fiers de leur métier"},g:"B",s:"15",old:true},
+  {k:{etat:"KPI-B5 · Recours aux soins",falc:"Vont voir un médecin"},v:{etat:"jugé insuffisant",falc:"pas assez"},u:{etat:"aucune valeur chiffrée relevée : à renseigner dès publication",falc:"pas de chiffre pour l'instant"},g:"B",s:"10"},
+  {k:{etat:"Repère · population générale",falc:"Pour comparer"},v:{etat:"SNDS, DREES",falc:"Chiffres de tout le monde"},u:{etat:"gestes auto-infligés, publié mais non spécifique aux policiers (DS-11)",falc:"existe, mais pas pour les policiers"},g:"B",s:"73"}
+];
+const RES=[
+  {k:{etat:"KPI-C3 · Postes planifiés",falc:"Postes prévus"},v:"11",u:{etat:"postes (8 ETP) jusqu'en 2028, soit 2 ETP par an ; cible parlementaire 400",falc:"postes d'ici 2028 ; des députés en demandent 400"},g:"B",s:"49, 51"},
+  {k:{etat:"KPI-C4 · Crédits de prévention du suicide",falc:"Argent pour la prévention"},v:{etat:"2,89 → 1,6 M€",falc:"2,9 puis 1,6 millions"},u:{etat:"2024 vers 2025, allégation d'amendement : grade C tant qu'aucun document budgétaire n'est lu",falc:"dit par des députés, pas encore vérifié dans le budget"},g:"C",s:"51"},
+  {k:{etat:"KPI-C5 · Sentinelles formées",falc:"Collègues formés à repérer"},v:"2 537",u:{etat:"agents formés au repérage",falc:"policiers formés"},g:"C",s:"51"}
+];
+const DISP=[
+  [{etat:"SSPO (service de soutien psychologique opérationnel)",falc:"Service de psychologues de la police"},{etat:"existe depuis 1996",falc:"existe"},"B","13"],
+  [{etat:"Numéro vert externalisé",falc:"Numéro de téléphone gratuit"},{etat:"existe",falc:"existe"},"B","52"],
+  [{etat:"Plateforme d'écoute",falc:"Service d'écoute"},{etat:"existe",falc:"existe"},"B","52"],
+  [{etat:"Plan 2025-2029",falc:"Plan pour 2025 à 2029"},{etat:"en réflexion",falc:"pas encore décidé"},"B","52"],
+  [{etat:"Suivi psychologique périodique",falc:"Rendez-vous réguliers avec un psychologue"},{etat:"inconnu",falc:"on ne sait pas"},"D","—"],
+  [{etat:"Enquête de causalité après chaque suicide",falc:"Enquête après chaque suicide"},{etat:"absente en gendarmerie selon un chercheur",falc:"n'existe pas chez les gendarmes, d'après un chercheur"},"C","4"]
+];
+const AGENTS=[
+  [{etat:"Particuliers blessés ou décédés (RBD)",falc:"Habitants blessés ou morts (RBD)"},"IGPN",{etat:"Faits avec enquête judiciaire et ITT d'au moins 9 jours, toutes opérations de police",falc:"Cas graves avec enquête"},{etat:"2021 : 79 blessés, 37 décès",falc:"2021 : 79 blessés, 37 morts"},"B"],
+  [{etat:"Dossiers ouverts par l'IGPN",falc:"Enquêtes de l'inspection de la police"},"IGPN",{etat:"Dossiers toutes catégories, pas seulement des violences",falc:"Toutes sortes d'enquêtes"},{etat:"959 en 2024 (rapport cité)",falc:"959 en 2024"},"C"],
+  [{etat:"Enquêtes liées au maintien de l'ordre, gilets jaunes",falc:"Enquêtes sur la police, gilets jaunes"},"IGPN",{etat:"Enquêtes à la date d'une question parlementaire",falc:"Enquêtes à une date donnée"},{etat:"212",falc:"212"},"B"],
+  [{etat:"Manifestants blessés (centre de veille)",falc:"Manifestants blessés"},{etat:"Ministère de l'Intérieur",falc:"Ministère de l'Intérieur"},{etat:"Blessés recensés par les forces de sécurité intérieure",falc:"Blessés comptés par la police"},{etat:"Gilets jaunes : 2 549",falc:"Gilets jaunes : 2 549"},"B"],
+  [{etat:"Usage des armes (TSUA)",falc:"Usage des armes"},{etat:"Police nationale",falc:"Police nationale"},{etat:"Suivi des usages d'armes",falc:"Quand une arme est utilisée"},{etat:"Non publié, accès inconnu",falc:"Pas public"},"D"]
+];
+const LIMITES={etat:["Comparer les violences enregistrées sur les personnes, tous auteurs confondus, et les violences d'agents : les auteurs, les définitions et les sources diffèrent.","Dire si un usage de la force était proportionné : c'est l'objet d'une enquête et, le cas échéant, d'un jugement, pas d'une statistique.","Chiffrer les blessés du 17 octobre 2026 : aucun bilan officiel n'a été retrouvé dans les sources consultées. Voir la page dédiée à cet événement."],falc:["Comparer les deux sortes de chiffres. Ils ne comptent pas pareil.","Dire si la force était juste. C'est le travail de l'enquête et des juges.","Compter les blessés du 17 octobre 2026. On n'a pas trouvé de bilan officiel."]};
+const MANIF=[
+  [{etat:"Manifestants blessés, gilets jaunes",falc:"Manifestants blessés, gilets jaunes"},"2 549",{etat:"recensés par les forces de sécurité intérieure",falc:"comptés par la police"},"B","63"],
+  [{etat:"Gendarmes blessés, 17 nov. 2018 → 18 févr. 2020",falc:"Gendarmes blessés, gilets jaunes"},"575",{etat:"réponse ministérielle",falc:"chiffre du ministère"},"B","63"],
+  [{etat:"Blessés « dans les rangs », institution tronquée",falc:"Blessés, on ne sait pas de quel côté"},"1 528",{etat:"extrait tronqué : point ouvert n° 6",falc:"à vérifier"},"D","63"],
+  [{etat:"Manifestants blessés, Sainte-Soline 2023",falc:"Manifestants blessés, Sainte-Soline"},"> 200",{etat:"question parlementaire",falc:"dit par un député"},"C","65"],
+  [{etat:"Policiers et gendarmes blessés, 2023, dont Sainte-Soline",falc:"Policiers et gendarmes blessés en 2023"},"441 + 47",{etat:"réponse ministérielle",falc:"chiffre du ministère"},"B","64"],
+  [{etat:"Particuliers blessés / décédés, RBD, toutes opérations, 2020",falc:"Personnes blessées ou mortes, toutes opérations, 2020"},"78 / 32",{etat:"enquête judiciaire et ITT ≥ 9 jours seulement",falc:"seulement les cas graves avec enquête"},"B","66"],
+  [{etat:"Particuliers blessés / décédés, RBD, 2021",falc:"Idem, 2021"},"79 / 37",{etat:"idem",falc:"idem"},"B","66"],
+  [{etat:"Enquêtes IGPN, gilets jaunes",falc:"Enquêtes sur la police, gilets jaunes"},"212",{etat:"à la date d'une question parlementaire",falc:"à une date donnée"},"B","68"],
+  [{etat:"Dossiers IGPN ouverts, 2024, toutes catégories",falc:"Enquêtes sur la police en 2024"},"959",{etat:"rapport cité",falc:"rapport cité"},"C","69"],
+  [{etat:"Affaires examinées, manifestations lycéennes, oct. 2026",falc:"Enquêtes, manifestations de lycéens, 2026"},"24",{etat:"source secondaire : point ouvert n° 7",falc:"à vérifier"},"D","67"]
+];
+const DS=[
+  ["DS-01",{etat:"Bilans sociaux, puis RSU et BDS",falc:"Bilans du ministère"},"Ministère de l'Intérieur",{etat:"à explorer",falc:"à chercher"},"todo"],
+  ["DS-02",{etat:"Rapports annuels de l'IGPN",falc:"Rapports de l'IGPN"},"IGPN",{etat:"PDF à rechercher",falc:"à chercher"},"todo"],
+  ["DS-03",{etat:"Fichier RBD (blessés ou décédés)",falc:"Fichier des blessés"},"IGPN",{etat:"non publié en jeu ouvert",falc:"pas public"},"warn"],
+  ["DS-04",{etat:"Centre de veille (manifestants blessés)",falc:"Blessés en manifestation"},"Ministère de l'Intérieur",{etat:"chiffres via réponses ministérielles",falc:"par réponses au Parlement"},"warn"],
+  ["DS-05",{etat:"TSUA (usage des armes)",falc:"Usage des armes"},"Police nationale",{etat:"accessibilité inconnue",falc:"on ne sait pas"},"warn"],
+  ["DS-06",{etat:"Interstats",falc:"Interstats"},"Ministère de l'Intérieur",{etat:"à explorer",falc:"à chercher"},"todo"],
+  ["DS-07",{etat:"Baromètre santé MGP",falc:"Enquête de la mutuelle"},"Mutuelle MGP",{etat:"communiqué, pas de microdonnées",falc:"résumé seulement"},"warn"],
+  ["DS-08",{etat:"Thèse Lyon 1, 2026",falc:"Étude de 2026"},"Université",{etat:"accessible (theses.fr)",falc:"accessible"},"ok"],
+  ["DS-09",{etat:"Autopsie psychologique 2008",falc:"Étude de 2008"},"Inserm",{etat:"résumé lu",falc:"résumé lu"},"ok"],
+  ["DS-10",{etat:"Questions parlementaires",falc:"Questions des députés"},"Assemblée, Sénat",{etat:"PDF accessibles",falc:"accessibles"},"ok"],
+  ["DS-11",{etat:"SNDS, gestes auto-infligés",falc:"Chiffres de santé de tout le monde"},"DREES",{etat:"publié, non spécifique",falc:"existe, pas pour la police"},"ok"],
+  ["DS-13",{etat:"Base départementale de la délinquance enregistrée (SSMSI)",falc:"Les violences notées par la police, par département"},"SSMSI",{etat:"accessible (data.gouv.fr)",falc:"accessible"},"ok"],
+  ["DS-14",{etat:"Crim'Stream, observatoire territorial (réutilisation de DS-13)",falc:"Un site qui montre ces chiffres sur une carte"},"E. Paguiel, réutilisateur",{etat:"accessible",falc:"accessible"},"ok"],
+  ["DS-15",{etat:"Sources de données du SSMSI (état 4001, enquêtes VRS, CVS, GENESE, TEH)",falc:"Les enquêtes et fichiers de la police"},"SSMSI",{etat:"description publiée, jeux à explorer",falc:"à chercher"},"todo"],
+  ["DS-12",{etat:"Jeu privé « arrêts maladie »",falc:"Fichier privé"},"Producteur privé",{etat:"exclu du périmètre",falc:"pas utilisé"},"warn"]
+];
+const TODO=[
+  [{etat:"Lire l'arrêté du 8 mars 2022 et sa version consolidée sur Légifrance",falc:"Lire la loi du 8 mars 2022"},"haute"],
+  [{etat:"Retrouver les séries suicides officielles dans les bilans sociaux et RSU",falc:"Trouver les chiffres officiels des suicides"},"haute"],
+  [{etat:"Confirmer 2019 : 59 contre 70, et le périmètre de chaque chiffre",falc:"Comprendre pourquoi 59 et 70 en 2019"},"haute"],
+  [{etat:"Retrouver la date et la méthode exactes du baromètre MGP",falc:"Vérifier l'enquête de la mutuelle"},"haute"],
+  [{etat:"Explorer data.gouv : Interstats, base de données sociales, RSU, IGPN, maintien de l'ordre",falc:"Chercher sur data.gouv"},"haute"],
+  [{etat:"Identifier l'institution des 1 528 blessés (gilets jaunes)",falc:"Savoir qui sont les 1 528 blessés"},"moyenne"],
+  [{etat:"Confirmer à la source primaire les chiffres des manifestations lycéennes d'octobre 2026",falc:"Vérifier les chiffres des manifestations de lycéens"},"moyenne"],
+  [{etat:"Vérifier l'existence et l'accès du TSUA",falc:"Vérifier le fichier sur les armes"},"moyenne"],
+  [{etat:"Vérifier les arrêtés des concours d'officier et de commissaire (tests, gestion du stress)",falc:"Vérifier les règles des concours"},"moyenne"],
+  [{etat:"Lire l'article HAL « Le Saulnier » (accès bloqué)",falc:"Lire un article bloqué"},"à définir"],
+  [{etat:"Confirmer les crédits de prévention du suicide dans les documents budgétaires",falc:"Vérifier l'argent dans le budget"},"moyenne"],
+  [{etat:"Rechercher des enquêtes de presse d'investigation",falc:"Chercher des enquêtes de journalistes"},"basse"]
+];
+const LIENS=[
+  {kind:{etat:"Le 17 octobre 2026",falc:"Le 17 octobre"},h:{etat:"Violences, dégradations et aide aux commerçants",falc:"Les violences du 17 octobre"},p:{etat:"Ce que disent les sources officielles sur la manifestation du 17 octobre, les dégâts, la réponse pénale et l'aide aux commerçants, avec ce qui n'est pas encore chiffré.",falc:"Ce que disent les sources officielles. Et ce qu'on ne sait pas encore."},u:"17-octobre-2026.html"},
+  {kind:{etat:"Fraude sociale",falc:"Page fraude"},h:{etat:"Les trous de mesure",falc:"Ce qu'on ne mesure pas"},p:{etat:"Même logique qu'ici : ce que l'État ne compte pas n'est pas zéro. Les suicides de 2026 et le fichier RBD rejoignent la liste.",falc:"Là aussi, l'État ne compte pas tout."},u:"index.html#trous"},
+  {kind:{etat:"Fraude sociale",falc:"Page fraude"},h:{etat:"Que vaut un chiffre entendu ?",falc:"Un chiffre entendu est-il vrai ?"},p:{etat:"Le comparateur de périmètres de la page fraude s'applique mot pour mot au « 70 suicides en 2019 ».",falc:"Les outils pour vérifier un chiffre marchent aussi ici."},u:"index.html#regard"},
+  {kind:{etat:"Fraude sociale",falc:"Page fraude"},h:{etat:"Contrepoids",falc:"L'autre côté"},p:{etat:"Non-recours et surcontrôle là-bas ; ici, blessés des deux côtés et recours aux soins insuffisant.",falc:"Toujours montrer l'autre côté."},u:"index.html#contrepoids"},
+  {kind:{etat:"Comment va la France",falc:"Page des sujets"},h:{etat:"Famille Sécurité et justice",falc:"Sujet police et justice"},p:{etat:"Cette page couvre trois sujets de la famille : santé mentale des forces, violences subies, maintien de l'ordre et IGPN.",falc:"Cette page répond à trois sujets de la liste."},u:"secteurs.html#familles"},
+  {kind:{etat:"Qui possède les médias",falc:"Page médias"},h:{etat:"Qui raconte le maintien de l'ordre",falc:"Qui en parle à la télé"},p:{etat:"Les chaînes qui couvrent les manifestations appartiennent aux familles de la carte ; l'Arcom qui les régule est nommée par l'exécutif.",falc:"Les télés qui montrent les manifestations ont des propriétaires. Voir qui."},u:"medias.html#carte"},
+  {kind:{etat:"Présidentielle 2027",falc:"Page élection"},h:{etat:"La sécurité dans les programmes",falc:"Ce que promettent les candidats"},p:{etat:"La grille de programmes est vide par construction : elle se remplira avec les engagements sourcés sur ces indicateurs.",falc:"La liste des promesses est vide pour l'instant."},u:"presidentielle-2027.html"},
+  {kind:{etat:"Benchmark États-Unis",falc:"Page États-Unis"},h:{etat:"Données publiques sur la police outre-Atlantique",falc:"La police aux États-Unis"},p:{etat:"USAFacts et les tableaux de bord civiques américains publient des séries sur l'usage de la force : un repère de ce qu'un jeu ouvert peut être.",falc:"Aux États-Unis, certaines données sur la police sont publiques."},u:"benchmark-usa.html"}
+];
+const REGLES={
+  etat:["Aucune donnée nominative ou identifiante : pas de nom, de poste, de commissariat ni de circonstance d'un cas individuel.","Aucun détail de méthode : le constat reste agrégé.","Pas de maille fine : national et annuel, pas de cellule sous 5 cas, pas de ventilation par unité.","Cadrage non sensationnaliste : pas d'« épidémie » ni de « vague » ; des taux, des périmètres, des séries longues.","Le 3114 figure sur toute restitution publique.","Les propos de syndicats, d'associations et de parlementaires sont attribués et marqués comme tels (grade C).","Neutralité sur les blessures en manifestation : chiffres côte à côte, définitions différentes, sans qualification de responsabilité.","Le niveau FALC suit la méthode de lecture facile ; il n'a pas encore été relu par des personnes concernées."],
+  falc:["On ne donne jamais de nom ni de lieu précis.","On ne décrit jamais comment une personne est morte.","On ne donne que des chiffres pour toute la France et pour toute l'année.","On n'utilise pas de mots qui font peur.","Le numéro 3114 est toujours affiché.","Quand c'est un syndicat ou un député qui parle, on le dit.","Pour les manifestations, on montre les blessés des deux côtés sans dire qui a tort.","Ce texte en lecture facile n'a pas encore été relu par des personnes concernées."]
+};
+
+let tip=null;
+function showTip(e,txt){ if(!tip){tip=document.createElement("div");tip.className="tip";document.body.appendChild(tip);} tip.textContent=txt; tip.style.left=Math.min(e.clientX+12,window.innerWidth-280)+"px"; tip.style.top=(e.clientY+14)+"px"; }
+function hideTip(){ if(tip){tip.remove();tip=null;} }
+function hbar(rows,opts={}){ const f=opts.fmt||(v=>fmt(v)+(opts.u||"")); const max=opts.max||Math.max(...rows.map(r=>r.hi??r.v))||1; return rows.map(r=>{ const label=pick(r.l); const txt=r.hi!=null?`${fmt(r.v)} à ${fmt(r.hi)}`:f(r.v)+(r.u||""); const aria=`${label} : ${txt}`; const bar=r.hi!=null?`<div class="range" role="img" aria-label="${esc(aria)}" data-tip="${esc(aria)}"><i style="left:${(r.v/max*100).toFixed(1)}%;width:${((r.hi-r.v)/max*100).toFixed(1)}%"></i></div>`:`<div><div class="bar${r.alt?" b2":""}${r.b3?" b3":""}" style="width:${(r.v/max*100).toFixed(1)}%" role="img" aria-label="${esc(aria)}" data-tip="${esc(aria)}"></div></div>`; return `<div class="lab" title="${esc(label)}">${esc(label)}</div>${bar}<div class="v">${esc(txt)}${r.n?` <span class="small muted">${esc(pick(r.n))}</span>`:""}</div>`; }).join(""); }
+
+let done=new Set(); try{ done=new Set(JSON.parse(localStorage.getItem("politik-forces-todo")||"[]")); }catch(e){}
+function saveTodo(){ try{ localStorage.setItem("politik-forces-todo",JSON.stringify([...done])); }catch(e){} }
+
+function renderA1(){
+  const max=Math.max(...A1.map(o=>o.v));
+  $("#ch-a1").innerHTML=A1.map((o,i)=>{ const hid=!GRADES.has(o.g); const cls=(o.g==="C"||o.g==="D"?" c":"")+(/partiel|au moins/.test(o.q)?" part":"")+(o.conf&&o.g==="D"?" conf":""); return `<div class="col${hid?" hidden":""}" aria-hidden="${hid}"><span class="n">${o.v}</span><div class="b${cls}" style="height:${(o.v/max*150).toFixed(0)}px" data-tip="${esc(`${o.p} · ${o.v} (${pick({etat:o.q,falc:o.q})}) · ${o.per} · grade ${o.g}`)}"></div><span class="y">${esc(o.p)}${A1.filter(x=>x.p===o.p).length>1?(o.conf&&o.g==="D"?" (b)":" (a)"):""}</span></div>`; }).join("");
+  const vis=A1.filter(o=>GRADES.has(o.g)).length;
+  $("#grades").innerHTML=["A","B","C","D"].map(g=>`<button type="button" aria-pressed="${GRADES.has(g)}" data-g="${g}">Grade ${g}${g==="A"?" (aucun)":""}</button>`).join("")+`<span class="count">${vis} ${L==="falc"?"chiffres montrés sur":"observations visibles sur"} ${A1.length}</span>`;
+  $("#a1-leg").innerHTML=`<span><i></i>${L==="falc"?"Chiffre officiel (A, B)":"Grade A ou B, valeur exacte"}</span><span><i class="hach"></i>${L==="falc"?"Chiffre moins sûr (C, D)":"Grade C ou D"}</span><span><i class="part"></i>${L==="falc"?"Année pas finie, ou « au moins »":"Partiel ou « au moins »"}</span><span><i class="conf"></i>${L==="falc"?"En désaccord avec un autre chiffre":"En conflit avec une autre observation"}</span>`;
+  const th=L==="falc"?["Année","Nombre","Comment","Qui est compté","Sûr ?","Source","Note"]:["Période","Valeur","Qualificatif","Périmètre","Grade","Source","Commentaire"];
+  $("#tbl-a1").innerHTML=`<table class="obs"><thead><tr>${th.map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${A1.filter(o=>GRADES.has(o.g)).map(o=>`<tr><td>${esc(o.p)}${+o.p.slice(0,4)<=2021?`<span class="old" title="plus de cinq ans">${L==="falc"?"ancien":"> 5 ans"}</span>`:""}</td><td class="num">${o.v}</td><td>${esc(o.q)}</td><td>${esc(o.per)}</td><td>${lvl(o.g)}</td><td class="small muted">${typ(o.g)}</td><td class="small muted">${esc(pick(o.n)||"")}${o.conf?` · ${L==="falc"?"en désaccord avec un autre chiffre":"en conflit avec une autre valeur"}`:""}</td></tr>`).join("")}</tbody></table>`;
+}
+
+function render(){
+  document.body.classList.toggle("falc", L==="falc");
+  document.querySelectorAll("[data-t]").forEach(el=>{ el.innerHTML=pick(TXT[el.dataset.t]); });
+  $("#switch").innerHTML=PAGE_LEVELS.map(k=>`<button type="button" aria-pressed="${k===L}" data-level="${k}">${LEVEL_NAMES[k]}</button>`).join("");
+  const KPIS=[
+    {kind:{etat:"KPI-A1 · Suicides, police nationale, 2024",falc:"Suicides de policiers en 2024"},v:"27",u:{etat:"agents ; 59 en 2019",falc:"personnes. En 2019 : 59"},g:"B",s:"S4, S5"},
+    {kind:{etat:"KPI-C1 · Psychologues du SSPO",falc:"Psychologues de la police"},v:"122",u:{etat:"soit 1 pour 1 200 agents",falc:"pour 1 200 policiers chacun"},g:"B",s:"S49"},
+    {kind:{etat:"KPI-D3 · Blessés en service, 2019",falc:"Blessés au travail en 2019"},v:"7 399",u:{etat:"police et gendarmerie ; 3 842 en 2004",falc:"policiers et gendarmes"},g:"B",s:"S59"},
+    {kind:{etat:"KPI-E3 · RBD, particuliers blessés / décédés, 2021",falc:"Personnes blessées ou mortes par la police, 2021"},v:"79 / 37",u:{etat:"enquête judiciaire et ITT ≥ 9 jours",falc:"cas graves avec enquête seulement"},g:"B",s:"S66"}
+  ];
+  $("#kpis").innerHTML=KPIS.map(k=>`<div class="tile"><span class="kind">${pick(k.kind)}</span><span class="val num">${k.v}<small>${pick(k.u)}</small></span><span class="src">${lvl(k.g)} ${typ(k.g)}</span></div>`).join("");
+  Qcm.draw("#qcm-forces",QCM,L);
+  renderA1();
+  const a=A1.find(o=>o.p==="2019"&&o.g==="B"), b=A1.find(o=>o.id==="2019b");
+  $("#conf").innerHTML=`<div class="side"><b>${a.v}</b><span class="small">${L==="falc"?"Qui est compté : police nationale":"Périmètre : police nationale"}<br>${lvl(a.g)} ${typ(a.g)}</span></div><div class="mid">${L==="falc"?"ou":"contre"}</div><div class="side"><b>${b.v}</b><span class="small">${L==="falc"?"Qui est compté : on ne sait pas":"Périmètre : non précisé"}<br>${lvl(b.g)} ${typ(b.g)}</span></div>`;
+  $("#ch-gn").innerHTML=hbar(A2.map(o=>({l:o.p+(o.q!=="exact"?" ("+o.q+")":""),v:o.v,alt:o.q!=="exact",n:o.n})));
+  $("#gn-src").innerHTML=`${lvl("B")} ${typ("B")}. ${L==="falc"?"2026 : compté sur deux mois et demi seulement.":"2026 : au moins 7 en deux mois et demi, probablement sous-estimé (grade C)."}`;
+  $("#taux-switch").innerHTML=Object.entries(TAUX).map(([k,t])=>`<button type="button" aria-pressed="${k===taux}" data-taux="${k}">${pick(t.n)}</button>`).join("");
+  const T=TAUX[taux]; $("#ch-taux").innerHTML=hbar(T.rows.map(r=>({...r,u:r.u||"",alt:r.alt})),{fmt:v=>taux==="std"?"+"+v:String(v)});
+  $("#taux-note").innerHTML=`${lvl(taux==="brut"?"B":"B")} ${pick(T.note)}`;
+  $("#sante-tiles").innerHTML=SANTE.map(t=>`<div class="tile"><span class="kind">${pick(t.k)}</span><span class="val num" style="font-size:${typeof t.v==="object"?"1.3rem":"2.3rem"}">${pick(t.v)}</span><span class="def">${pick(t.u)}${t.old?`<span class="old">${L==="falc"?"ancien":"> 5 ans"}</span>`:""}</span><span class="src">${lvl(t.g)} ${typ(t.g)}</span></div>`).join("");
+  $("#ch-tspt").innerHTML=hbar([{l:{etat:"Exposition directe (n = 182)",falc:"A vécu un événement grave (182 personnes)"},v:6.6,u:" %"},{l:{etat:"Exposition indirecte (n = 81)",falc:"A vu un événement grave (81 personnes)"},v:1.2,u:" %"},{l:{etat:"Non exposé (n = 212)",falc:"Rien vécu (212 personnes)"},v:0.9,u:" %"}],{fmt:v=>String(v).replace(".",",")});
+  $("#tspt-src").innerHTML=`${lvl("B")} Thèse de recherche (Lyon 1, 2026) ; effectif total 475 (valeur dérivée).`;
+  $("#ratio-switch").innerHTML=[["sspo",{etat:"SSPO seul : 122 psychologues",falc:"Seulement le SSPO"}],["tous",{etat:"Ensemble du ministère : 310 psychologues (dérivé)",falc:"Tous les psychologues du ministère"}]].map(([k,n])=>`<button type="button" aria-pressed="${k===ratioMode}" data-ratio="${k}">${pick(n)}</button>`).join("");
+  $("#ratio").innerHTML=ratioMode==="sspo"?`<div class="side"><b>1</b><span class="small">${L==="falc"?"psychologue":"psychologue du SSPO"}</span></div><div class="mid">${L==="falc"?"pour":"pour"}</div><div class="side"><b>1 200</b><span class="small">${L==="falc"?"policiers":"agents"} · ${lvl("B")} S49</span></div>`:`<div class="side"><b>1</b><span class="small">${L==="falc"?"psychologue":"psychologue, tous services"}</span></div><div class="mid">${L==="falc"?"pour":"pour"}</div><div class="side"><b>≈ 490</b><span class="small">${L==="falc"?"policiers (152 000 divisé par 310)":"agents (152 000 / 310, dérivé, si 310 couvre tous les psychologues)"} · ${lvl("C")} S50</span></div>`;
+  $("#ch-psy").innerHTML=hbar([{l:{etat:"2018 : postes",falc:"2018, postes"},v:82},{l:{etat:"2018 : psychologues en poste",falc:"2018, en poste"},v:73,n:{etat:"+ 18 postes décidés sur trois ans",falc:"et 18 de plus promis"}},{l:{etat:"Aujourd'hui",falc:"Maintenant"},v:122,b3:true}]);
+  $("#psy-src").innerHTML=`${lvl("B")} ${typ("B")}. ${L==="falc"?"La loi visait 85 : c'est dépassé.":"Cible de la loi d'orientation : 85, dépassée."}`;
+  $("#res-tiles").innerHTML=RES.map(t=>`<div class="tile"><span class="kind">${pick(t.k)}</span><span class="val num" style="font-size:${typeof t.v==="object"?"1.5rem":"2.3rem"}">${pick(t.v)}</span><span class="def">${pick(t.u)}</span><span class="src">${lvl(t.g)} ${typ(t.g)}</span></div>`).join("");
+  $("#tbl-disp").innerHTML=`<table><thead><tr><th>${L==="falc"?"Aide":"Dispositif"}</th><th>${L==="falc"?"Existe ?":"État"}</th><th>${L==="falc"?"Sûr ?":"Grade"}</th><th>Source</th></tr></thead><tbody>${DISP.map(d=>`<tr><td>${pick(d[0])}</td><td>${pick(d[1])}</td><td>${lvl(d[2])}</td><td class="small muted">${typ(d[2])}</td></tr>`).join("")}</tbody></table>`;
+  $("#ch-agr").innerHTML=hbar([{l:{etat:"Agressions, 2020",falc:"Agressions en 2020"},v:30000,hi:32000},{l:{etat:"Agressions, estimation 2025",falc:"Agressions en 2025 (estimation)"},v:36000,hi:38000,n:{etat:"« près de 38 000 »",falc:"« près de 38 000 »"}},{l:{etat:"ITT consécutives, 2020",falc:"Arrêts de travail en 2020"},v:1800,hi:2300},{l:{etat:"ITT consécutives, 2025",falc:"Arrêts de travail en 2025"},v:3200,hi:3800}],{max:40000});
+  $("#agr-src").innerHTML=`${lvl("C")} Estimations rapportées par un député (grade C). ${L==="falc"?"La barre 2025 commence à 36 000 pour montrer « près de 38 000 ».":"Pour 2025, « près de 38 000 » est tracé de 36 000 à 38 000, borne basse choisie par Politik."}`;
+  $("#ch-bless").innerHTML=hbar([{l:"2004",v:3842},{l:"2019",v:7399}]);
+  $("#bless-src").innerHTML=`${lvl("B")} Réponse ministérielle (grade B ou C selon lecture). ${L==="falc"?"Pas de chiffre national pour les policiers municipaux (2018).":"Aucune statistique nationale pour les policiers municipaux en 2018."}`;
+  const V=(typeof VIOL!=="undefined"&&VIOL)||null;
+  if(V){ const keep=["Violences physiques hors cadre familial","Violences physiques intrafamiliales","Violences sexuelles","Tentatives d'homicide","Homicides","Destructions et dégradations volontaires"]; const S=keep.map(k=>V.series.find(x=>x.indicateur===k)); const last=V.derniere_annee, prev=last-1;
+    const sign=x=>(x>0?"+":x<0?"−":"")+String(Math.abs(x)).replace(".",",")+" %";
+    $("#ch-vc").innerHTML=hbar(S.map(x=>({l:{etat:x.libelle,falc:({"Victimes d'homicide":"Personnes tuées","Victimes de tentatives d'homicide":"Tentatives de meurtre","Violences physiques hors cadre familial":"Coups hors de la famille","Violences physiques intrafamiliales":"Coups dans la famille","Violences sexuelles":"Violences sexuelles","Destructions et dégradations volontaires":"Destructions et dégâts"})[x.libelle]||x.libelle},v:Math.abs(x.var_1an_pct),alt:x.var_1an_pct<0,n:{etat:x.var_1an_pct>0.4?"hausse":x.var_1an_pct<-0.4?"baisse":"stable",falc:x.var_1an_pct>0.4?"plus":x.var_1an_pct<-0.4?"moins":"pareil"}})),{fmt:v=>String(v).replace(".",",")+" %",max:10});
+    const ph=V.series.find(x=>x.indicateur==="Violences physiques hors cadre familial"), pi=V.series.find(x=>x.indicateur==="Violences physiques intrafamiliales"); const tot=y=>ph.points.find(p=>p.annee===y).n+pi.points.find(p=>p.annee===y).n;
+    $("#vc-src").innerHTML=`${lvl("B")} ${L==="falc"?"Ministère de l'Intérieur, service des statistiques (SSMSI), 2025.":"SSMSI, base départementale (data.gouv.fr, mise à jour "+V.maj_jeu+") et bilan « Insécurité et délinquance en 2025 » du 9 juillet 2026. Violences physiques au total : "+tot(last).toLocaleString("fr-FR")+" faits en "+last+" contre "+tot(2016).toLocaleString("fr-FR")+" en 2016, soit +"+Math.round((tot(last)/tot(2016)-1)*100)+" %. Le bilan publié donne +6 % pour les violences intrafamiliales, la somme de la base départementale +5,0 % : la cause de l'écart n'est pas précisée."} <a href="${esc(V.url_jeu)}" target="_blank" rel="noopener">data.gouv.fr</a>`;
+    $("#tbl-vc").innerHTML=`<table><thead><tr><th>${L==="falc"?"Quoi":"Indicateur"}</th><th class="num">2016</th><th class="num">${prev}</th><th class="num">${last}</th><th>${L==="falc"?"Depuis 2024":"Variation "+last+"/"+prev}</th></tr></thead><tbody>${S.map(x=>`<tr><td>${esc(x.libelle)}</td><td class="num">${x.points.find(p=>p.annee===2016).n.toLocaleString("fr-FR")}</td><td class="num">${x.points.find(p=>p.annee===prev).n.toLocaleString("fr-FR")}</td><td class="num">${x.points.find(p=>p.annee===last).n.toLocaleString("fr-FR")}</td><td>${sign(x.var_1an_pct)}</td></tr>`).join("")}</tbody></table>`; }
+  else { $("#ch-vc").innerHTML=`<p class="muted small">${L==="falc"?"Les chiffres ne sont pas disponibles pour le moment.":"Les données ne sont pas disponibles pour le moment."}</p>`; }
+  $("#tbl-agents").innerHTML=`<table><thead><tr><th>${L==="falc"?"Chiffre":"Mesure"}</th><th>${L==="falc"?"Qui":"Producteur"}</th><th>${L==="falc"?"Ce qu'on compte":"Ce qu'elle compte"}</th><th>${L==="falc"?"Dernier chiffre":"Dernière valeur"}</th><th>${L==="falc"?"Sûr ?":"Grade"}</th></tr></thead><tbody>${AGENTS.map(a=>`<tr><td>${pick(a[0])}</td><td class="small">${pick(a[1])}</td><td class="small">${pick(a[2])}</td><td><b>${pick(a[3])}</b></td><td>${lvl(a[4])}</td></tr>`).join("")}</tbody></table>`;
+  $("#vc-num").innerHTML=(L==="falc"?["Trois sites internet ont été fermés le 7 octobre 2026.","Plus de 17 000 femmes, dont des mineures, ont été victimes.","Deux hommes de 21 et 25 ans ont été arrêtés le 6 octobre dans le Nord.","Plus de 700 000 euros ont été saisis.","Les victimes peuvent écrire à l'Unité nationale cyber de la gendarmerie."]:["Trois sites de diffusion de contenus intimes volés, associés au service NudeLeaksTeens, ont été fermés le 7 octobre 2026, en coopération avec les autorités américaines.","Plus de 17 000 femmes de plusieurs nationalités, dont certaines mineures, ont été victimes de cette plateforme.","Deux frères de 21 et 25 ans, résidant dans le Nord, ont été interpellés le 6 octobre 2026 ; ils sont suspectés d'en être les principaux administrateurs.","Plus de 700 000 euros d'actifs numériques ont été saisis.","Les victimes, françaises ou étrangères, sont invitées à contacter l'Unité nationale cyber de la Gendarmerie nationale."]).map(x=>`<li>${x}</li>`).join("");
+  $("#vc-num-src").innerHTML=`${lvl("B")} ${L==="falc"?"Gendarmerie nationale, 8 octobre 2026.":"Gendarmerie nationale (UNPJ et Gendinfo), 8 octobre 2026, d'après le communiqué de la procureure de la République de Paris. Numéros utiles : 17 (police, gendarmerie), 119 (enfance en danger), 39 19 (violences conjugales)."} <a href="https://www.gendarmerie.interieur.gouv.fr/unpj/actualites/plus-de-17-000-victimes-dont-des-mineures-trois-sites-de-diffusion-de-contenus-intimes-voles-fermes" target="_blank" rel="noopener">UNPJ</a> · <a href="https://www.gendarmerie.interieur.gouv.fr/presentation/a-l-international/cooperation-policiere-et-judiciaire-internationale-demantelement-de-sites-internet-proposant-des-packs-de-contenus-intimes-voles" target="_blank" rel="noopener">Gendinfo</a>`;
+  $("#vc-limites").innerHTML=(LIMITES[L]||LIMITES.etat).map(x=>`<li>${x}</li>`).join("");
+  $("#tbl-manif").innerHTML=`<table><thead><tr><th>${L==="falc"?"Qui":"Indicateur"}</th><th>${L==="falc"?"Combien":"Valeur"}</th><th>${L==="falc"?"Compté comment":"Définition de la source"}</th><th>${L==="falc"?"Sûr ?":"Grade"}</th><th>Source</th></tr></thead><tbody>${MANIF.map(m=>`<tr><td>${pick(m[0])}</td><td class="num"><b>${esc(m[1])}</b></td><td class="small">${pick(m[2])}</td><td>${lvl(m[3])}</td><td class="small muted">${typ(m[3])}</td></tr>`).join("")}</tbody></table>`;
+  const lab={ok:L==="falc"?"accessible":"accessible",todo:L==="falc"?"à chercher":"à explorer",warn:L==="falc"?"bloqué ou partiel":"non ouvert ou partiel"};
+  $("#tbl-ds").innerHTML=`<table><thead><tr><th>ID</th><th>${L==="falc"?"Fichier":"Jeu de données"}</th><th>${L==="falc"?"Qui le fait":"Producteur"}</th><th>${L==="falc"?"Où en est-on":"Statut d'accès"}</th></tr></thead><tbody>${DS.map(d=>`<tr><td class="small muted">${d[0]}</td><td>${pick(d[1])}</td><td class="small">${esc(d[2])}</td><td>${pick(d[3])} <span class="pill ${d[4]}">${lab[d[4]]}</span></td></tr>`).join("")}</tbody></table>`;
+  $("#todo").innerHTML=TODO.map((t,i)=>`<label class="${done.has(i)?"done":""}"><input type="checkbox" data-i="${i}" ${done.has(i)?"checked":""}><span>${i+1}. ${pick(t[0])}</span><span class="pr">${esc(t[1])}</span></label>`).join("");
+  $("#prog").style.width=(done.size/TODO.length*100)+"%"; $("#prog-txt").textContent=`${done.size} / ${TODO.length} ${L==="falc"?"vérifiés":"points vérifiés"}`;
+  $("#liens-grid").innerHTML=LIENS.map(l=>`<a class="card link" href="${esc(l.u)}"><span class="kind">${pick(l.kind)}</span><h3>${pick(l.h)}</h3><p class="small muted">${pick(l.p)}</p></a>`).join("");
+  $("#regles-list").innerHTML=(REGLES[L]||REGLES.etat).map(r=>`<li>${esc(r)}</li>`).join("");
+}
+document.addEventListener("click",e=>{
+  const sw=e.target.closest("#switch button"); if(sw){ L=sw.dataset.level; try{ localStorage.setItem("politik-level-forces",L);}catch(err){} render(); return; }
+  const g=e.target.closest("#grades button"); if(g){ const k=g.dataset.g; if(GRADES.has(k)&&GRADES.size>1) GRADES.delete(k); else GRADES.add(k); renderA1(); return; }
+  const t=e.target.closest("#taux-switch button"); if(t){ taux=t.dataset.taux; render(); return; }
+  const r=e.target.closest("#ratio-switch button"); if(r){ ratioMode=r.dataset.ratio; render(); return; }
+  if(e.target.id==="reset"){ done.clear(); saveTodo(); render(); }
+});
+document.addEventListener("change",e=>{ const c=e.target.closest("#todo input"); if(c){ const i=+c.dataset.i; c.checked?done.add(i):done.delete(i); saveTodo(); c.closest("label").classList.toggle("done",c.checked); $("#prog").style.width=(done.size/TODO.length*100)+"%"; $("#prog-txt").textContent=`${done.size} / ${TODO.length} ${L==="falc"?"vérifiés":"points vérifiés"}`; } });
+document.addEventListener("mousemove",e=>{ const b=e.target.closest&&e.target.closest("[data-tip]"); if(b) showTip(e,b.dataset.tip); else hideTip(); });
+render();
+</script>
+<script src="donnees.js"></script>
+<script src="acronymes.js"></script>
+<script src="gouvernement.js"></script>
+<script src="entete.js"></script>
+<script src="entites.js"></script>
+<script src="visuels.js"></script>
+<script src="sommaire.js"></script>
+<script src="niveau.js"></script>
+<script src="legende.js"></script>
+</body>
+</html>

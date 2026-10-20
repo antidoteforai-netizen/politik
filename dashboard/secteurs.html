@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Comment va la France</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#141A2B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="politik.css">
+<style>
+.fam{display:grid;grid-template-columns:1fr;gap:6px}
+.fam .head{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+.fam ul{margin:4px 0 0;padding-left:18px;font-size:.9rem}
+.fam li{margin:3px 0}
+.fam li .pill{margin-left:6px;vertical-align:1px}
+.kpi{font-family:var(--font-display);font-size:1.5rem;font-weight:600;letter-spacing:-.01em}
+.kpi small{font-size:.85rem;font-weight:500;color:var(--ink-2);margin-left:4px}
+.rank{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.rank .n{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--accent-ink);line-height:1}
+.rank .why{font-size:.88rem;color:var(--ink-2);margin-top:4px}
+body.falc .fam ul,body.falc .rank .why{font-size:1rem}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Pages Politik">
+  <div class="wrap">
+    <a class="brand" href="index.html" style="display:inline-flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="15" fill="#141A2B"/><rect x="19" y="14" width="8" height="36" rx="4" fill="#fff"/><circle cx="35" cy="26" r="10.5" fill="none" stroke="#fff" stroke-width="8"/><circle cx="35" cy="26" r="3.6" fill="#7A9BEC"/></svg><span style="color:inherit">Politik<span>.</span></span></a>
+    <ul><li><a href="gouvernement.html" title="Le Gouvernement : ministères, ministres, actualité en bref">Gouvernement</a></li><li><a href="index.html" title="Fraude sociale">Fraude</a></li><li><a href="medias.html" title="Qui possède les médias">Médias</a></li><li><a href="forces.html" title="Forces de l'ordre : police et gendarmerie">Police</a></li><li><a href="17-octobre-2026.html" title="Le 17 octobre 2026">17 octobre</a></li><li><a href="presidentielle-2027.html" title="Présidentielle 2027">Élection</a></li><li><a href="secteurs.html" class="here" aria-current="page" title="Comment va la France">France</a></li><li><a href="cybersecurite.html" title="Cybersécurité de l'État">Cyber</a></li><li><a href="donnees.html" title="Sources et données">Sources</a></li></ul>
+    <div class="switch" role="group" aria-label="Niveau de lecture" id="switch"></div>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <p class="eyebrow" data-t="eyebrow"></p>
+  <h1 data-t="h1"></h1>
+  <p class="lede" data-t="lede"></p>
+  <div class="grid g4" style="margin-top:22px" id="kpis"></div>
+  <div class="falc-badge" role="note"><span data-t="falc.badge"></span></div>
+<nav class="sous-sommaire" aria-label="Dans cette page"><a href="#familles">15 familles</a><a href="#sujets">Sujets à exposer</a><a href="#methode">Méthode</a></nav>
+</header>
+
+<main class="wrap">
+<section id="familles">
+  <div class="sec-head"><h2 data-t="s.fam.h"></h2><p data-t="s.fam.p"></p></div>
+  <div class="grid g3" id="familles-grid"></div>
+</section>
+
+<section id="sujets">
+  <div class="sec-head"><h2 data-t="s.suj.h"></h2><p data-t="s.suj.p"></p></div>
+  <div class="grid" id="sujets-list" style="gap:10px"></div>
+</section>
+
+<section id="methode">
+  <div class="sec-head"><h2 data-t="s.meth.h"></h2><p data-t="s.meth.p"></p></div>
+  <div class="card"><ul id="regles" style="margin:0;padding-left:18px"></ul></div>
+</section>
+</main>
+<section class="wrap" id="donnees-page" data-page="secteurs" style="margin-top:8px"></section>
+<footer class="wrap"><p data-t="footer"></p></footer>
+
+<script>
+const PAGE_LEVELS=["etat","falc"], LEVEL_NAMES={etat:"Termes de l'État", falc:"FALC"};
+let L=PAGE_LEVELS[0]; try{ const s=localStorage.getItem("politik-level-secteurs"); if(PAGE_LEVELS.includes(s)) L=s; }catch(e){}
+const pick=o=>(o==null?"":(typeof o!=="object"?o:(o[L]??o.etat??"")));
+const $=s=>document.querySelector(s); const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+const TXT={
+  eyebrow:{etat:"État de la France · 15 familles de politiques publiques", falc:"Comment va la France : 15 grands sujets"},
+  h1:{etat:"Comment va la France, mesuré par ses propres administrations.", falc:"Comment va la France, avec les chiffres de l'État."},
+  lede:{etat:"Quinze grands thèmes de politique publique, chacun découpé en sujets mesurables par une source officielle. Pour chaque sujet, la page dit s'il est déjà traité dans Politik (avec un lien) ou pas encore traité, et quelle source permettrait de le traiter. Aucune pondération éditoriale.",
+    falc:"Voici 15 grands sujets.<br>Pour chaque sujet, on dit quel chiffre officiel existe, et si Politik l'a déjà traité."},
+  "falc.badge":{etat:"Version facile à lire et à comprendre : méthode FALC, pas encore relue par des personnes concernées."},
+  "s.fam.h":{etat:"Les quinze familles", falc:"Les 15 grands sujets"},
+  "s.fam.p":{etat:"Les sujets marqués « dans Politik » renvoient à un graphique déjà sourcé ; les sujets « pas encore traités » nomment la source qui le permettrait.", falc:"Les sujets déjà traités sont marqués en vert."},
+  "s.suj.h":{etat:"Les sujets intéressants à exposer ensuite", falc:"Les sujets à faire ensuite"},
+  "s.suj.p":{etat:"Classés selon ce qu'ils apportent au débat public et selon la disponibilité d'une source officielle ouverte. Un sujet entre dans ce classement s'il répond à une question que se posent des citoyens, des journalistes ou des décideurs, s'il peut être rapproché des montants de fraude déjà présentés, et si la donnée existe en open data.", falc:"Les sujets sont classés selon deux questions : est-ce utile ? Est-ce que les chiffres existent ?"},
+  "s.meth.h":{etat:"Méthode", falc:"Nos règles"},
+  "s.meth.p":{etat:"Les règles appliquées à toutes les familles.", falc:"Les règles de cette page."},
+  footer:{etat:"Politik · page « Comment va la France » · sources officielles uniquement · pas de traceur.", falc:"Politik. Page créée le 20 octobre 2026."}
+};
+
+const KPIS=[
+  {kind:{etat:"Taux de pauvreté 2024", falc:"Personnes pauvres"}, v:"15,4", u:{etat:"% (9,8 millions)", falc:"sur 100"}, src:"INSEE, ERFS 2024", lvl:"V"},
+  {kind:{etat:"Fraude sociale détectée 2025", falc:"Fraude trouvée"}, v:"3,1", u:{etat:"Md€ (14 estimés)", falc:"milliards d'euros"}, src:"Bercy, avril 2026 ; HCFiPS", lvl:"V"},
+  {kind:{etat:"Étrangers", falc:"Étrangers"}, v:"8,8", u:{etat:"% de la population", falc:"sur 100"}, src:"INSEE, 2024", lvl:"V"},
+  {kind:{etat:"Abstention, second tour 2022", falc:"N'ont pas voté en 2022"}, v:"28,0", u:{etat:"% des inscrits", falc:"sur 100"}, src:"Conseil constitutionnel", lvl:"V"}
+];
+
+/* statut : ok = déjà dans Politik (ancre), todo = pas encore traité, warn = données partielles */
+const FAMILLES=[
+  {n:{etat:"Protection sociale et fraude", falc:"Les aides et la fraude"}, d:{etat:"Le thème traité en détail sur la page Fraude sociale : estimé, détecté, recouvré, non-recours, contrôles.", falc:"Le sujet traité en détail sur ce site."}, sujets:[
+    ["Fraude sociale estimée, détectée, recouvrée","ok","index.html#cles","HCFiPS, Bercy"],["Non-recours au RSA","ok","index.html#contrepoids","DREES"],["Contrôles CAF et ciblage algorithmique","ok","index.html#contrepoids","CNAF, Défenseur des droits"],["Effet des prestations sur la pauvreté","ok","index.html#contrepoids","INSEE"],["Travail dissimulé","ok","index.html#branches","Open Urssaf"]]},
+  {n:{etat:"Immigration et asile", falc:"L'immigration"}, d:{etat:"Titres de séjour, asile, protection, éloignements : les chiffres de la DGEF et de l'OFPRA.", falc:"Combien de personnes arrivent, et pourquoi."}, sujets:[
+    ["Titres de séjour (premiers titres, stock)","ok","index.html#contexte","DGEF"],["Demandes d'asile et protection","ok","index.html#contexte","OFPRA (API data.gouv)"],["Pauvreté des immigrés","ok","index.html#immigration","INSEE"],["OQTF et éloignements","todo","","DGEF, chiffres clés"],["Coût et contribution budgétaire de l'immigration","todo","","OCDE, CAE, Cour des comptes"]]},
+  {n:{etat:"Revenus, patrimoine et fiscalité", falc:"L'argent : riches, pauvres, impôts"}, d:{etat:"Inégalités, pauvreté, hauts patrimoines, contrôle fiscal.", falc:"Qui a quoi, qui paie quoi."}, sujets:[
+    ["Niveau de vie et inégalités (Gini, S80/S20)","ok","index.html#contexte","INSEE"],["Patrimoine des 10 % et IFI","ok","index.html#contexte","INSEE, DGFiP"],["Contrôle fiscal 2015-2025","ok","index.html#entonnoir","Bercy, MICAF"],["Taux de pauvreté 2016-2024","ok","index.html#contexte","INSEE"],["Héritages et droits de succession","todo","","DGFiP, CAE"],["Optimisation et évasion fiscales (montants estimés)","todo","","CPO, Cour des comptes, EU Tax Observatory"]]},
+  {n:{etat:"Santé", falc:"La santé"}, d:{etat:"Espérance de vie, hôpital, accès aux soins, fraude à l'assurance maladie.", falc:"Les hôpitaux et les médecins."}, sujets:[
+    ["Fraude détectée par l'assurance maladie et dépenses (ONDAM)","ok","index.html#branches","Bercy, CNAM, LFSS"],["Espérance de vie","todo","","INSEE"],["Déserts médicaux et densité","todo","","DREES"],["Capacité hospitalière (lits)","todo","","DREES, SAE"],["Santé mentale","todo","","Santé publique France"]]},
+  {n:{etat:"Emploi et travail", falc:"Le travail"}, d:{etat:"Chômage, emploi, cotisations, égalité salariale.", falc:"Le chômage et les salaires."}, sujets:[
+    ["Écart salarial femmes-hommes","ok","index.html#regard","INSEE"],["Encaissements Urssaf","ok","index.html#branches","Open Urssaf"],["Taux de chômage et halo","todo","","INSEE, DARES"],["Indemnisation chômage","todo","","Unédic, France Travail"],["Accidents du travail","todo","","CNAM-AT/MP"]]},
+  {n:{etat:"Éducation", falc:"L'école"}, d:{etat:"Résultats, décrochage, milieu social des élèves.", falc:"L'école et les élèves."}, sujets:[
+    ["Indice de position sociale des collèges × pauvreté","ok","index.html#contrepoids","data.education.gouv.fr"],["Résultats PISA","todo","","OCDE, DEPP"],["Décrochage scolaire","todo","","DEPP"],["Effectifs enseignants et remplacement (revendication du 17 octobre)","todo","","DEPP, Cour des comptes"]]},
+  {n:{etat:"Sécurité et justice", falc:"La police et la justice"}, d:{etat:"Délinquance enregistrée, escroqueries, prisons, délais.", falc:"Les crimes, les délits, les prisons."}, sujets:[
+    ["Escroqueries et fraudes enregistrées 2012-2025","ok","index.html#entonnoir","SSMSI"],["Faux documents d'identité","ok","index.html#immigration","Intérieur, DCPAF"],["Surpopulation carcérale","todo","","Ministère de la Justice"],["Délais de la justice","todo","","Justice, Cour des comptes"],["Santé mentale et suicides dans les forces de l'ordre","ok","forces.html#suicide","Intérieur, Sénat, MGP, thèse Lyon 1"],["Violences et blessures subies par les forces de l'ordre","ok","forces.html#violences","Réponses ministérielles, Interstats"],["Maintien de l'ordre et IGPN (blessés des deux côtés)","warn","forces.html#manifestations","IGPN (RBD), questions parlementaires"]]},
+  {n:{etat:"Logement", falc:"Le logement"}, d:{etat:"Prix, mal-logement, aides au logement, hébergement d'urgence.", falc:"Les logements et les loyers."}, sujets:[
+    ["Hébergement des demandeurs d'asile (850 M€)","ok","index.html#contexte","Cour des comptes"],["Mal-logement et sans-abrisme","todo","","Fondation Abbé Pierre, INSEE"],["Aides au logement et fraude à la résidence","todo","","CNAF"],["Prix et loyers","todo","","INSEE, notaires"]]},
+  {n:{etat:"Finances publiques", falc:"L'argent de l'État"}, d:{etat:"Dette, déficit, dépenses par mission, recettes.", falc:"Les dettes et les dépenses de l'État."}, sujets:[
+    ["Mission Immigration, asile et intégration (2,3 Md€)","ok","index.html#contexte","Cour des comptes"],["Dette publique (% du PIB)","todo","","INSEE, comptes nationaux"],["Dépenses de l'État par mission (PLF)","todo","","data.gouv « PLF dépenses selon destination »"],["Niches fiscales","todo","","PLF, tome II des voies et moyens"]]},
+  {n:{etat:"Retraites et vieillesse", falc:"Les retraites"}, d:{etat:"Pensions, pauvreté des seniors, fraude à la résidence.", falc:"Les retraités."}, sujets:[
+    ["Pauvreté des 60-74 ans par département","ok","index.html#contrepoids","Caisse des Dépôts, INSEE"],["Fraude détectée par la CNAV (255 M€)","ok","index.html#branches","Bercy"],["Niveau des pensions et réforme","todo","","DREES, COR"],["Minimum vieillesse et non-recours","todo","","DREES"]]},
+  {n:{etat:"Institutions et démocratie", falc:"Le vote et les institutions"}, d:{etat:"Abstention, confiance, parité, financement des partis.", falc:"Les élections."}, sujets:[
+    ["Abstention aux présidentielles 1965-2022","ok","presidentielle-2027.html#historique","Conseil constitutionnel"],["Candidatures 2027","ok","presidentielle-2027.html#candidats","Public Sénat, presse"],["Parité dans les assemblées","todo","","HCE, Assemblée"],["Financement des partis","todo","","CNCCFP"],["Confiance dans les institutions","todo","","Cevipof, baromètre"]]},
+  {n:{etat:"Environnement, énergie et climat", falc:"L'énergie et le climat"}, d:{etat:"Mix électrique, précarité énergétique, canicules, data centers.", falc:"L'électricité, le climat."}, sujets:[
+    ["Précarité énergétique et chèque énergie","todo","","ONPE, ministère de la Transition"],["Mix électrique","todo","","RTE, open data"],["Data centers : consommation et acceptabilité (voir Gallup aux États-Unis)","todo","","RTE, ADEME"],["Canicules et surmortalité","todo","","Santé publique France"]]},
+  {n:{etat:"Transports et mobilité", falc:"Les transports"}, d:{etat:"Ponctualité, sécurité routière, prix du carburant.", falc:"Les trains, les routes, l'essence."}, sujets:[
+    ["Prix des carburants (déclencheur du 17 octobre 2026)","todo","","ministère de la Transition, prix-carburants.gouv.fr"],["Ponctualité des trains","todo","","Autorité de régulation des transports"],["Accidentalité routière","todo","","ONISR"]]},
+  {n:{etat:"Numérique et données publiques", falc:"Le numérique"}, d:{etat:"Open data, algorithmes publics, identité numérique.", falc:"Les ordinateurs de l'État."}, sujets:[
+    ["Catalogue data.gouv : jeux et API utilisés","ok","index.html#catalogue","data.gouv.fr"],["Algorithmes publics (scoring CNAF, DMDE 2026)","ok","index.html#contrepoids","CNAF, Défenseur des droits"],["Carte Vitale numérique et France Identité","ok","index.html#frise","esante.gouv.fr"],["Qualité et fraîcheur de l'open data (jeux archivés)","todo","","data.gouv API"]]},
+  {n:{etat:"International et Europe", falc:"L'Europe et le monde"}, d:{etat:"Comparaisons : fraude, asile, inégalités chez les voisins et aux États-Unis.", falc:"Comparer avec les autres pays."}, sujets:[
+    ["Paiements indus fédéraux américains (PaymentAccuracy.gov) face aux 14 Md€","todo","","GAO, OMB"],["Asile : part de la France dans l'UE","todo","","Eurostat, EUAA"],["Inégalités en Europe (Gini Eurostat)","todo","","Eurostat"],["Benchmark des tableaux de bord civiques américains","ok","benchmark-usa.html","Politik, page États-Unis"]]}
+];
+
+const SUJETS=[
+  {t:{etat:"Prix des carburants, de l'énergie et de l'alimentation, 2020-2026", falc:"Le prix de l'essence et de la nourriture"}, why:{etat:"C'est le déclencheur de la mobilisation du 17 octobre 2026 et le thermomètre de Carinne, Matthieu et Jérôme. Séries officielles quotidiennes (prix-carburants.gouv.fr) et IPC INSEE : croisable avec le RSA et le seuil de pauvreté.", falc:"C'est pour ça que les gens ont manifesté le 17 octobre. Les chiffres existent chaque jour."}, src:"prix-carburants.gouv.fr, INSEE IPC"},
+  {t:{etat:"OQTF et éloignements : prononcés, exécutés, coût", falc:"Les expulsions décidées et faites"}, why:{etat:"Le chiffre le plus brandi du débat migratoire après la fraude ; la DGEF publie prononcés et exécutés, la Cour des comptes le coût. Même traitement que la fraude : décidé, exécuté, coûté.", falc:"On en parle beaucoup. L'État publie les chiffres."}, src:"DGEF, Cour des comptes 2024"},
+  {t:{etat:"Évasion et optimisation fiscales : les ordres de grandeur officiels", falc:"Les riches qui cachent leur argent"}, why:{etat:"Le pendant de la fraude sociale dans le débat « qui triche ». Le Conseil des prélèvements obligatoires et la Cour des comptes donnent des fourchettes ; à mettre sur le même axe que les 14 Md€, avec les mêmes garde-fous de périmètre.", falc:"La fraude des riches, à comparer avec la fraude aux aides."}, src:"CPO 2024, Cour des comptes, EU Tax Observatory (S)"},
+  {t:{etat:"Déserts médicaux et délais d'accès aux soins", falc:"Trouver un médecin"}, why:{etat:"Première préoccupation locale dans la plupart des enquêtes ; données DREES par commune (APL), croisables avec Filosofi et le RSA par département déjà joints.", falc:"Beaucoup de gens n'arrivent pas à trouver un médecin. Les chiffres existent par commune."}, src:"DREES, indicateur APL"},
+  {t:{etat:"Héritages : qui hérite de quoi, et ce que l'État prélève", falc:"Les héritages"}, why:{etat:"Le patrimoine des 10 % (47 %) se transmet ; les droits de succession sont la fiscalité la plus impopulaire et la moins connue. DGFiP et CAE ont les chiffres.", falc:"L'argent qui se transmet dans les familles riches."}, src:"DGFiP, CAE 2021"},
+  {t:{etat:"Effectifs enseignants, remplacements, moyens par élève", falc:"Les professeurs qui manquent"}, why:{etat:"Revendication centrale des lycéens du 17 octobre ; DEPP et Cour des comptes publient les heures non remplacées et la dépense par élève, croisables avec l'IPS déjà chargé.", falc:"Les lycéens ont manifesté pour ça."}, src:"DEPP, Cour des comptes"},
+  {t:{etat:"Surpopulation carcérale et délais de justice", falc:"Les prisons trop pleines"}, why:{etat:"Sujet « sécurité » où les chiffres officiels contredisent souvent le discours ; données mensuelles du ministère de la Justice.", falc:"Les prisons sont pleines, les procès sont longs."}, src:"Ministère de la Justice, statistiques mensuelles"},
+  {t:{etat:"Dette publique et charge d'intérêts, en euros par habitant", falc:"La dette de l'État"}, why:{etat:"Indicateur de référence des finances publiques (115,7 % du PIB selon Politicaa, à vérifier à la source INSEE). Il peut être rapproché des montants de fraude et d'impôt déjà présentés, avec le même avertissement de périmètre.", falc:"Combien l'État doit, et combien ça coûte chaque année."}, src:"INSEE comptes nationaux, Agence France Trésor"},
+  {t:{etat:"Data centers : consommation électrique et acceptabilité locale", falc:"Les centres de données pour l'intelligence artificielle"}, why:{etat:"Le sondage Gallup de mars 2026 montre sept Américains sur dix opposés à un data center près de chez eux ; en France, RTE et l'ADEME chiffrent la consommation, et le sujet arrive dans les municipales. Sujet neuf, peu couvert.", falc:"Aux États-Unis, 7 personnes sur 10 n'en veulent pas près de chez elles."}, src:"Gallup (mars 2026, S), RTE, ADEME"},
+  {t:{etat:"Comparaison internationale des paiements indus", falc:"La fraude aux aides dans les autres pays"}, why:{etat:"Les États-Unis publient chaque année les paiements indus fédéraux par programme (PaymentAccuracy.gov, GAO) : un équivalent transparent du 14 Md€, utile pour situer la France. data.gov restait inaccessible le 20 octobre 2026.", falc:"Comparer la France avec les États-Unis."}, src:"GAO, OMB PaymentAccuracy.gov"}
+];
+
+const REGLES={
+  etat:["Un sujet = une source officielle identifiée, une année, un périmètre.","Chaque famille est présentée dans le même format, sans pondération éditoriale.","Un sujet « dans Politik » renvoie à un graphique déjà sourcé ; un sujet « pas encore traité » nomme la source qui le permettrait.","Les comparaisons internationales sont des ordres de grandeur, jamais des classements.","Les sujets issus de l'actualité (17 octobre 2026) sont traités avec leurs chiffres officiels, pas avec leurs mots d'ordre."],
+  falc:["Chaque sujet a un chiffre officiel.","Tous les sujets sont présentés pareil.","Les sujets déjà faits ont un lien vers le graphique.","Les sujets à faire disent où trouver les chiffres."]
+};
+
+function render(){
+  document.body.classList.toggle("falc", L==="falc");
+  document.querySelectorAll("[data-t]").forEach(el=>{ el.innerHTML=pick(TXT[el.dataset.t]); });
+  $("#switch").innerHTML=PAGE_LEVELS.map(k=>`<button type="button" aria-pressed="${k===L}" data-level="${k}">${LEVEL_NAMES[k]}</button>`).join("");
+  $("#kpis").innerHTML=KPIS.map(k=>`<div class="tile"><span class="kind">${pick(k.kind)}</span><span class="val num">${k.v}<small>${pick(k.u)}</small></span><span class="src"><span class="lvl lvl-${k.lvl}">${k.lvl}</span> ${esc(k.src)}</span></div>`).join("");
+  const lab={ok:L==="falc"?"déjà fait":"dans Politik", todo:L==="falc"?"à faire":"pas encore traité", warn:L==="falc"?"en partie":"partiel"};
+  $("#familles-grid").innerHTML=FAMILLES.map((f,i)=>{ const ok=f.sujets.filter(s=>s[1]==="ok").length; return `<div class="card fam"><div class="head"><h3>${pick(f.n)}</h3><span class="kpi">${ok}<small>/ ${f.sujets.length} ${L==="falc"?"faits":"traités"}</small></span></div><p class="small muted">${pick(f.d)}</p><ul>${f.sujets.map(s=>`<li>${s[2]?`<a href="${esc(s[2])}">${esc(s[0])}</a>`:esc(s[0])}<span class="pill ${s[1]}">${lab[s[1]]}</span><br><span class="small muted">${L==="falc"?"Chiffres : ":"Source : "}${esc(s[3])}</span></li>`).join("")}</ul></div>`; }).join("");
+  $("#sujets-list").innerHTML=SUJETS.map((s,i)=>`<div class="rank"><div class="n">${i+1}</div><div><b>${pick(s.t)}</b><div class="why">${pick(s.why)}</div><div class="small muted" style="margin-top:4px">${L==="falc"?"Chiffres : ":"Source : "}${esc(s.src)}</div></div></div>`).join("");
+  $("#regles").innerHTML=(REGLES[L]||REGLES.etat).map(r=>`<li>${esc(r)}</li>`).join("");
+}
+$("#switch").addEventListener("click",e=>{ const b=e.target.closest("button"); if(!b) return; L=b.dataset.level; try{ localStorage.setItem("politik-level-secteurs",L);}catch(err){} render(); });
+render();
+</script>
+<script src="donnees.js"></script>
+<script src="acronymes.js"></script>
+<script src="gouvernement.js"></script>
+<script src="entete.js"></script>
+<script src="entites.js"></script>
+<script src="visuels.js"></script>
+<script src="sommaire.js"></script>
+<script src="niveau.js"></script>
+<script src="legende.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+name: Mise à jour des données (tous les 2 jours)
+
+on:
+  schedule:
+    - cron: "0 5 */2 * *"   # 05:00 UTC, un jour sur deux
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mise-a-jour-donnees
+  cancel-in-progress: false
+
+jobs:
+  maj:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: "22"
+      - name: Collecte des données publiques
+        run: |
+          python3 scripts/fetch-donnees.py
+          python3 scripts/fetch-aides-presse.py
+          python3 scripts/fetch-violences.py
+      - name: Régénération des pages dérivées
+        run: |
+          node dashboard/build-simple.mjs
+          node scripts/build-gouvernement.mjs
+          node scripts/registre-sources.mjs
+      - name: Vérification croisée (bloque la publication si elle échoue)
+        run: node scripts/verifier-croisements.mjs
+      - name: Enregistrement des changements
+        run: |
+          git config user.name "politik-bot"
+          git config user.email "politik-bot@users.noreply.github.com"
+          git add data dashboard
+          if git diff --cached --quiet; then
+            echo "Aucun changement de données."
+          else
+            git commit -m "Données : mise à jour automatique du $(date -u +%Y-%m-%d)"
+            git push
+          fi

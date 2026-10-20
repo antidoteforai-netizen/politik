@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le Gouvernement</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#141A2B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="politik.css">
+<script src="entites.js"></script>
+<script src="visuels.js"></script>
+<script src="gouvernement.js"></script>
+<style>
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chips button{font:inherit;font-size:.86rem;font-weight:600;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chips button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chips .count{margin-left:auto;font-size:.84rem;color:var(--ink-3)}
+.min{display:flex;flex-direction:column;gap:12px;min-width:0}
+.min .top{display:flex;gap:14px;align-items:center}
+.min .ico{flex:none;display:flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:20px;background:color-mix(in srgb,var(--f) 13%,var(--surface));color:var(--f);border:1px solid color-mix(in srgb,var(--f) 28%,var(--line))}
+.min .ico svg{width:38px;height:38px}
+.min h3{font-size:1.1rem;line-height:1.2}
+.min .officiel{font-size:.8rem;color:var(--ink-3);line-height:1.35}
+.min .who{font-size:.92rem}
+.min .who b{font-weight:600}
+.min details summary{cursor:pointer;color:var(--accent-ink);font-size:.86rem}
+.min ul.d{margin:6px 0 0;padding-left:18px;font-size:.88rem;color:var(--ink-2)}
+.min .pages{display:flex;flex-wrap:wrap;gap:6px}
+.min .pages a{font-size:.8rem;padding:4px 10px;border-radius:999px;border:1px solid var(--line);text-decoration:none;color:var(--ink-2);background:var(--surface-2)}
+.min .pages a:hover{border-color:var(--accent);color:var(--accent-ink)}
+.min .savoir{margin:0;padding-left:18px;font-size:.9rem}
+.min .savoir li{margin:4px 0}
+.min .meta{font-size:.78rem;color:var(--ink-3);margin-top:auto;padding-top:8px;border-top:1px dashed var(--line-2)}
+.prog{height:8px;background:var(--surface-2);border-radius:999px;overflow:hidden;margin:8px 0 4px}
+.prog i{display:block;height:100%;background:var(--c3)}
+.news{display:grid;gap:0}
+.news li{list-style:none;display:grid;grid-template-columns:90px 1fr;gap:14px;padding:12px 0;border-top:1px solid var(--line-2)}
+.news li:first-child{border-top:0}
+.news time{font-family:var(--font-display);font-weight:600;color:var(--accent-ink)}
+.news .src{display:block;font-size:.8rem;color:var(--ink-3);margin-top:3px}
+.news ul{margin:0;padding:0}
+body.falc .min .who,body.falc .min .savoir,body.falc .news li{font-size:1rem}
+@media (max-width:640px){.news li{grid-template-columns:1fr;gap:2px}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Pages Politik">
+  <div class="wrap">
+    <a class="brand" href="index.html" style="display:inline-flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="15" fill="#141A2B"/><rect x="19" y="14" width="8" height="36" rx="4" fill="#fff"/><circle cx="35" cy="26" r="10.5" fill="none" stroke="#fff" stroke-width="8"/><circle cx="35" cy="26" r="3.6" fill="#7A9BEC"/></svg><span style="color:inherit">Politik<span>.</span></span></a>
+    <ul><li><a href="gouvernement.html" class="here" aria-current="page" title="Le Gouvernement : ministères, ministres, actualité en bref">Gouvernement</a></li><li><a href="index.html" title="Fraude sociale">Fraude</a></li><li><a href="medias.html" title="Qui possède les médias">Médias</a></li><li><a href="forces.html" title="Forces de l'ordre : police et gendarmerie">Police</a></li><li><a href="17-octobre-2026.html" title="Le 17 octobre 2026">17 octobre</a></li><li><a href="presidentielle-2027.html" title="Présidentielle 2027">Élection</a></li><li><a href="secteurs.html" title="Comment va la France">France</a></li><li><a href="cybersecurite.html" title="Cybersécurité de l'État">Cyber</a></li><li><a href="donnees.html" title="Sources et données">Sources</a></li></ul>
+    <div class="switch" role="group" aria-label="Niveau de lecture" id="switch"></div>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <p class="eyebrow" data-t="eyebrow"></p>
+  <h1 data-t="h1"></h1>
+  <p class="lede" data-t="lede"></p>
+  <div class="grid g4" style="margin-top:22px" id="kpis"></div>
+  <div class="falc-badge" role="note"><span data-t="falc.badge"></span></div>
+  <nav class="sous-sommaire" aria-label="Dans cette page"><a href="#premier-ministre">Premier ministre</a><a href="#ministeres">Les ministères</a><a href="#autres">Autres acteurs</a><a href="#actualites">Actualité en bref</a><a href="#methode">Méthode et veille</a></nav>
+</header>
+
+<main class="wrap">
+<section id="ministeres">
+  <div class="sec-head"><h2 data-t="s.min.h"></h2><p data-t="s.min.p"></p></div>
+  <div class="card" style="margin-bottom:16px"><div class="chips" id="filtres" role="group" aria-label="Filtrer par famille de ministères"></div></div>
+  <div class="grid g3" id="cartes"></div>
+</section>
+
+<section id="autres">
+  <div class="sec-head"><h2 data-t="s.aut.h"></h2><p data-t="s.aut.p"></p></div>
+  <div class="grid g3" id="cartes-autres"></div>
+</section>
+
+<section id="actualites">
+  <div class="sec-head"><h2 data-t="s.act.h"></h2><p data-t="s.act.p"></p></div>
+  <div class="card"><ul class="news" id="actus"></ul></div>
+</section>
+
+<section id="methode">
+  <div class="sec-head"><h2 data-t="s.meth.h"></h2><p data-t="s.meth.p"></p></div>
+  <div class="card"><div class="prog" aria-hidden="true"><i id="prog"></i></div><p class="small muted" id="prog-txt"></p><ul id="regles" style="margin:12px 0 0;padding-left:18px"></ul></div>
+</section>
+</main>
+<section class="wrap" id="donnees-page" data-page="gouvernement" style="margin-top:8px"></section>
+<footer class="wrap"><p data-t="footer"></p></footer>
+
+<script>
+const PAGE_LEVELS=["etat","falc"], LEVEL_NAMES={etat:"Termes de l'État", falc:"FALC"};
+let L=PAGE_LEVELS[0]; try{ const s=localStorage.getItem("politik-level-gouv"); if(PAGE_LEVELS.includes(s)) L=s; }catch(e){}
+const pick=o=>(o==null?"":(typeof o!=="object"?o:(o[L]??o.etat??"")));
+const $=s=>document.querySelector(s); const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const lvl=k=>`<span class="lvl lvl-${k}">${k}</span>`;
+const G=window.GOUV; const FAM={regalien:"c1",economie:"c2",territoires:"c3",societe:"c4",autres:"c5"};
+const FAMILLES=[["tous",{etat:"Tous",falc:"Tous"}],["regalien",{etat:"Régalien et international",falc:"Sécurité, justice, international"}],["economie",{etat:"Économie et emploi",falc:"Argent et travail"}],["territoires",{etat:"Territoires et environnement",falc:"Territoires, nature, transports"}],["societe",{etat:"Société et savoirs",falc:"Santé, école, culture, sport"}],["autres",{etat:"Autres",falc:"Autres"}]];
+const PAGES_NOMS={"index.html":"Fraude sociale","simple.html":"Fraude sociale","medias.html":"Médias","forces.html":"Forces de l'ordre","17-octobre-2026.html":"Le 17 octobre 2026","presidentielle-2027.html":"Présidentielle 2027","secteurs.html":"La France","donnees.html":"Sources et données","benchmark-usa.html":"États-Unis"};
+let fam="tous";
+const TXT={
+  eyebrow:{etat:"Gouvernement · composition annoncée le 26 février 2026", falc:"Le Gouvernement"},
+  h1:{etat:"Qui fait quoi : les ministères, et les pages Politik qui s'y rattachent", falc:"Les ministères et leurs sujets"},
+  lede:{etat:"Chaque page de Politik traite un sujet qui relève d'un ou de plusieurs ministères. Cette page présente les vingt ministères de la composition officielle du Gouvernement, leur ministre, les pages du site qui les concernent, ce qu'il est utile de savoir pour les citoyens et l'actualité en bref, avec la source officielle de chaque information.", falc:"Chaque page du site parle d'un sujet.<br>Ce sujet dépend d'un ou de plusieurs ministères.<br>Ici, on voit qui est responsable de quoi.<br>Chaque information dit d'où elle vient."},
+  "falc.badge":{etat:"Niveau « termes de l'État » : les intitulés officiels sont gardés. Passez en FALC pour une lecture simplifiée.", falc:"Lecture facile.<br>Ce texte suit la méthode FALC.<br>Il n'a pas encore été relu par des personnes concernées."},
+  "s.min.h":{etat:"Le Premier ministre et les dix-neuf ministères", falc:"Les ministères"},
+  "s.min.p":{etat:"Les ministères sont regroupés par famille pour s'y retrouver ; le regroupement est celui de Politik, pas une classification officielle. Les ministres sont ceux de la composition annoncée le 26 février 2026.", falc:"Les ministères sont classés par sujet. Ce classement est celui de Politik."},
+  "s.aut.h":{etat:"Autres acteurs publics", falc:"Autres acteurs"},
+  "s.aut.p":{etat:"Des organismes qui ne sont pas des ministères mais qu'un citoyen peut avoir besoin de connaître.", falc:"Des organismes utiles qui ne sont pas des ministères."},
+  "s.act.h":{etat:"Actualité en bref", falc:"Les nouvelles"},
+  "s.act.p":{etat:"Actualités lues sur des sites officiels. Chaque ligne donne la date, la source et le lien. Cette liste s'enrichit au fil de la veille.", falc:"Des nouvelles venues de sites officiels."},
+  "s.meth.h":{etat:"Méthode et veille", falc:"Comment on fait"},
+  "s.meth.p":{etat:"Ce que cette page fait, et où elle en est.", falc:"Les règles de cette page."},
+  footer:{etat:"Politik · page « Le Gouvernement » · composition : info.gouv.fr, annoncée le 26 février 2026, lue le 20 octobre 2026.", falc:"Politik · page « Le Gouvernement ».<br>La liste vient du site info.gouv.fr."}
+};
+const REGLES={
+  etat:["La composition (ministères, ministres, délégués) est celle publiée par info.gouv.fr ; un remaniement la rend obsolète.","Chaque ministère est associé à des pages de Politik selon le sujet traité. C'est un choix de Politik : un sujet peut relever de plusieurs ministères.","« À savoir pour les citoyens » et « Actualité en bref » ne reprennent que des informations lues sur un site officiel, avec leur date, leur source et leur lien ; rien n'est repris de mémoire.","Les ministères dont le site officiel n'a pas encore été relu portent la mention « en cours de vérification » : l'absence d'information n'est pas une absence d'actualité.","Les pictogrammes sont dessinés pour Politik. Ce ne sont pas des logos officiels.","Niveau FALC : méthode suivie, relecture par des personnes concernées non faite."],
+  falc:["La liste des ministres vient du site info.gouv.fr.","Chaque ministère est relié aux pages qui parlent de son sujet.","Les informations viennent de sites officiels. Chaque information donne sa source.","« En cours de vérification » veut dire : on n'a pas encore lu le site.","Les dessins sont faits par Politik. Ce ne sont pas des logos officiels."]
+};
+function card(m){
+  const col=`var(--${FAM[m.famille]})`; const pages=[...new Set(m.pages.map(p=>p==="simple.html"?"index.html":p))];
+  const sav=m.a_savoir||[];
+  return `<article class="card min" id="${esc(m.id)}" style="--f:${col}" data-fam="${m.famille}"><div class="top"><span class="ico"><svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">${m.icone}</svg></span><div><h3>${esc(m.court)}</h3><p class="officiel">${esc(m.nom)}</p></div></div>
+  ${m.ministre?`<p class="who" style="display:flex;gap:12px;align-items:center">${window.Ent?Ent.avatar(Ent.slug(m.ministre),40,m.ministre):""}<span><b>${esc(m.ministre)}</b><br><span class="small muted">${m.id==="premier-ministre"?(L==="falc"?"Premier ministre":"Premier ministre"):(L==="falc"?"Ministre":"Ministre")}</span></span></p>`:""}
+  ${m.delegues&&m.delegues.length?`<details><summary>${L==="falc"?"Les autres ministres":"Ministres délégués ("+m.delegues.length+")"}</summary><ul class="d">${m.delegues.map(d=>`<li style="list-style:none;margin-left:-18px;display:flex;gap:8px;align-items:center;margin-bottom:4px">${window.Ent?Ent.avatar(Ent.slug(d.nom),26,d.nom):""}<span><b>${esc(d.nom)}</b>, ${esc(d.role)}</span></li>`).join("")}</ul></details>`:""}
+  <div><p class="eyebrow" style="margin-bottom:6px">${L==="falc"?"Pages du site":"Pages Politik concernées"}</p>${pages.length?`<div class="pages">${pages.map(p=>`<a href="${esc(p)}">${esc(PAGES_NOMS[p]||p)}</a>`).join("")}</div>`:`<p class="small muted">${L==="falc"?"Pas encore de page.":"Aucune page pour le moment."}</p>`}</div>
+  ${sav.length?`<div><p class="eyebrow" style="margin-bottom:6px">${L==="falc"?"À savoir":"À savoir pour les citoyens"}</p><ul class="savoir">${sav.map(s=>`<li>${esc(s.texte)} ${lvl(s.niveau||"V")} <a href="${esc(s.url)}" target="_blank" rel="noopener" class="small">${esc(s.source)}</a></li>`).join("")}</ul></div>`:""}
+  <p class="meta">${m.verifie_le?`${L==="falc"?"Site lu le":"Site officiel lu le"} ${esc(m.verifie_le)}`:(L==="falc"?"En cours de vérification":"En cours de vérification sur le site officiel")}${m.site&&m.site_verifie_le?` · <a href="${esc(m.site)}" target="_blank" rel="noopener">${L==="falc"?"Site officiel":"Site officiel"}</a>`:""}</p></article>`;
+}
+function render(){
+  document.body.classList.toggle("falc", L==="falc");
+  document.querySelectorAll("[data-t]").forEach(el=>{ el.innerHTML=pick(TXT[el.dataset.t]); });
+  $("#switch").innerHTML=PAGE_LEVELS.map(k=>`<button type="button" aria-pressed="${k===L}" data-level="${k}">${LEVEL_NAMES[k]}</button>`).join("");
+  const all=G.ministeres.concat(G.autres_acteurs); const verifies=all.filter(m=>m.verifie_le).length;
+  $("#kpis").innerHTML=[
+    {kind:{etat:"Ministères",falc:"Ministères"},v:String(G.ministeres.length),u:{etat:"dont le Premier ministre",falc:"avec le Premier ministre"},lvl:"V",src:"info.gouv.fr"},
+    {kind:{etat:"Ministres et délégués",falc:"Ministres"},v:String(new Set(G.ministeres.flatMap(m=>[m.ministre].concat(m.delegues.map(d=>d.nom))).filter(Boolean)).size),u:{etat:"personnes citées",falc:"personnes"},lvl:"V",src:"info.gouv.fr"},
+    {kind:{etat:"Actualités vérifiées",falc:"Nouvelles vérifiées"},v:String(G.actualites.length),u:{etat:"avec source et lien",falc:"avec leur source"},lvl:"V",src:"sites officiels"},
+    {kind:{etat:"Sites officiels relus",falc:"Sites lus"},v:`${verifies}/${all.length}`,u:{etat:"veille en cours",falc:"on continue"},lvl:"V",src:"Politik"}
+  ].map(k=>`<div class="tile"><span class="kind">${pick(k.kind)}</span><span class="val num">${k.v}<small>${pick(k.u)}</small></span><span class="src">${lvl(k.lvl)} ${esc(k.src)}</span></div>`).join("");
+  $("#filtres").innerHTML=FAMILLES.map(([k,n])=>`<button type="button" aria-pressed="${k===fam}" data-fam="${k}">${pick(n)}</button>`).join("")+`<span class="count" id="nb"></span>`;
+  const list=G.ministeres.filter(m=>fam==="tous"||m.famille===fam); $("#cartes").innerHTML=list.map(card).join(""); $("#nb").textContent=`${list.length} / ${G.ministeres.length}`;
+  $("#cartes-autres").innerHTML=G.autres_acteurs.map(card).join("");
+  const nm=id=>{ const m=all.find(x=>x.id===id); return m?m.court:id; };
+  $("#actus").innerHTML=[...G.actualites].sort((a,b)=>a.date<b.date?1:-1).map(a=>`<li><time datetime="${a.date}">${a.date.split("-").reverse().join("/")}</time><div><a href="${esc(a.url)}" target="_blank" rel="noopener"><b>${esc(a.titre)}</b></a> ${lvl(a.niveau||"V")}<div class="small muted">${esc(a.resume||"")}</div><span class="src">${esc(a.source)}${a.ministeres.length?" · "+a.ministeres.map(nm).map(esc).join(", "):""}</span></div></li>`).join("");
+  $("#prog").style.width=(verifies/all.length*100)+"%"; $("#prog-txt").textContent=`${verifies} ${L==="falc"?"sites lus sur":"sites officiels relus sur"} ${all.length}`;
+  $("#regles").innerHTML=(REGLES[L]||REGLES.etat).map(r=>`<li>${esc(r)}</li>`).join("");
+}
+document.addEventListener("click",e=>{
+  const sw=e.target.closest("#switch button"); if(sw){ L=sw.dataset.level; try{ localStorage.setItem("politik-level-gouv",L);}catch(err){} render(); return; }
+  const f=e.target.closest("#filtres button"); if(f){ fam=f.dataset.fam; render(); }
+});
+render();
+</script>
+<script src="donnees.js"></script>
+<script src="acronymes.js"></script>
+<script src="sommaire.js"></script>
+<script src="niveau.js"></script>
+<script src="legende.js"></script>
+</body>
+</html>

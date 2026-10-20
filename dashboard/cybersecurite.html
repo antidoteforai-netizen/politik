@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cybersécurité de l'État</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#141A2B">
+<script src="qcm.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="politik.css">
+<link rel="stylesheet" href="politik.css">
+<style>
+.frise{list-style:none;margin:0;padding:0;display:grid}
+.frise li{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:14px 0;border-top:1px solid var(--line-2)}
+.frise li:first-child{border-top:0}
+.frise .d{font-family:var(--font-display);font-weight:600;color:var(--accent-ink)}
+.frise .lvl{margin-left:6px;vertical-align:1px}
+.frise .by{display:block;font-size:.82rem;color:var(--ink-3);margin-top:3px}
+.stack{display:grid;gap:16px}
+.mini{display:grid;gap:10px;margin:8px 0 0;padding:0;list-style:none}
+.mini li{padding:10px 12px;border:1px solid var(--line-2);border-radius:10px;font-size:.92rem}
+.mini li b{display:block;margin-bottom:2px}
+.mini .by{display:block;font-size:.8rem;color:var(--ink-3);margin-top:3px}
+.manque{border:1.5px dashed var(--trou);background:var(--trou-soft);border-radius:14px;padding:18px 20px}
+.manque h3{margin-bottom:8px}
+.manque ul{margin:6px 0 0;padding-left:18px}
+.help{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:10px}
+.help div{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--surface)}
+.help b{display:block;font-family:var(--font-display);font-size:1.3rem}
+body.falc .frise li,body.falc .mini li{font-size:1rem}
+body.falc .frise li{grid-template-columns:1fr}
+@media (max-width:640px){.frise li{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Pages Politik">
+  <div class="wrap">
+    <a class="brand" href="index.html" style="display:inline-flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="15" fill="#141A2B"/><rect x="19" y="14" width="8" height="36" rx="4" fill="#fff"/><circle cx="35" cy="26" r="10.5" fill="none" stroke="#fff" stroke-width="8"/><circle cx="35" cy="26" r="3.6" fill="#7A9BEC"/></svg><span style="color:inherit">Politik<span>.</span></span></a>
+    <ul><li><a href="gouvernement.html" title="Le Gouvernement : ministères, ministres, actualité en bref">Gouvernement</a></li><li><a href="index.html" title="Fraude sociale">Fraude</a></li><li><a href="medias.html" title="Qui possède les médias">Médias</a></li><li><a href="forces.html" title="Forces de l'ordre : police et gendarmerie">Police</a></li><li><a href="17-octobre-2026.html" title="Le 17 octobre 2026">17 octobre</a></li><li><a href="presidentielle-2027.html" title="Présidentielle 2027">Élection</a></li><li><a href="secteurs.html" title="Comment va la France">France</a></li><li><a href="cybersecurite.html" class="here" aria-current="page" title="Cybersécurité de l'État">Cyber</a></li><li><a href="donnees.html" title="Sources et données">Sources</a></li></ul>
+    <div class="switch" role="group" aria-label="Niveau de lecture" id="switch"></div>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <p class="eyebrow" data-t="eyebrow"></p>
+  <h1 data-t="h1"></h1>
+  <p class="lede" data-t="lede"></p>
+  <div class="grid g4" style="margin-top:22px" id="kpis"></div>
+  <div class="falc-badge" role="note"><span data-t="falc.badge"></span></div>
+  <nav class="sous-sommaire" aria-label="Dans cette page"><a href="#plan">Plan d'action</a><a href="#incidents">Incidents</a><a href="#vauban">Vauban</a><a href="#agir">Agir</a><a href="#manque">Inconnues</a><a href="#test">Test</a><a href="#sources">Sources</a></nav>
+</header>
+
+<main class="wrap">
+<section id="plan"><div class="sec-head"><h2 data-t="s.plan.h"></h2><p data-t="s.plan.p"></p></div><div class="grid g2" id="plan-cards"></div></section>
+<section id="incidents"><div class="sec-head"><h2 data-t="s.inc.h"></h2><p data-t="s.inc.p"></p></div><div class="card"><ol class="frise" id="frise"></ol></div></section>
+<section id="vauban"><div class="sec-head"><h2 data-t="s.vauban.h"></h2><p data-t="s.vauban.p"></p></div><div class="grid g2" id="vauban-cards"></div></section>
+<section id="agir"><div class="sec-head"><h2 data-t="s.agir.h"></h2><p data-t="s.agir.p"></p></div><div class="grid g2" id="agir-cards"></div></section>
+<section id="manque"><div class="manque"><h3 data-t="manque.h"></h3><p class="small muted" data-t="manque.p"></p><ul id="manque-list"></ul></div></section>
+<section id="test"><div class="sec-head"><h2 data-t="s.test.h"></h2><p data-t="s.test.p"></p></div><div id="qcm-cyber"></div></section>
+<section id="sources"><div class="sec-head"><h2 data-t="s.src.h"></h2><p data-t="s.src.p"></p></div><div class="card"><div class="tbl" id="tbl-src"></div></div></section>
+</main>
+<section class="wrap" id="donnees-page" data-page="cyber" style="margin-top:8px"></section>
+<footer class="wrap"><p data-t="footer"></p></footer>
+
+<script>
+const PAGE_LEVELS=["etat","falc"], LEVEL_NAMES={etat:"Termes de l'État", falc:"FALC"};
+let L=PAGE_LEVELS[0]; try{ const s=localStorage.getItem("politik-level-cyber"); if(PAGE_LEVELS.includes(s)) L=s; }catch(e){}
+const pick=o=>(o==null?"":(typeof o!=="object"?o:(o[L]??o.etat??"")));
+const $=s=>document.querySelector(s); const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const lvl=k=>`<span class="lvl lvl-${k}">${k}</span>`;
+const SRC_PLAN={t:"info.gouv.fr, « Cybersécurité : le Premier ministre annonce un plan d'action pour renforcer la protection numérique de l'État » (30 avril 2026)",u:"https://www.info.gouv.fr/actualite/cybersecurite-le-premier-ministre-annonce-un-plan-d-action-pour-renforcer-la-protection-numerique-de-l-etat"};
+const SRC_COM={t:"info.gouv.fr, communiqué « Protection des données des Français : l'État poursuit une stratégie accélérée de sécurisation » (17 août 2026)",u:"https://www.info.gouv.fr/communique/protection-des-donnees-des-francais-l-etat-poursuit-une-strategie-acceleree-de-securisation"};
+const SRC_ANSSI={t:"cyber.gouv.fr (ANSSI), rapport d'incident sur les cyberattaques ayant touché la DGFiP (29 septembre 2026)",u:"https://cyber.gouv.fr/actualites/lanssi-publie-le-rapport-dincident-sur-les-cyberattaques-ayant-touche-la-dgfip/"};
+const SRC_EDU={t:"Ministère de l'Éducation nationale, « Incident de sécurité affectant les données de personnels de l'Éducation nationale » (31 juillet 2026)",u:"https://www.education.gouv.fr/incident-de-securite-affectant-les-donnees-de-personnels-de-l-education-nationale-505407"};
+const SRC_CERT={t:"cyber.gouv.fr (CERT-FR), retour d'expérience CERTFR-2026-CTI-008 sur les violations de données applicatives (20 octobre 2026)",u:"https://cert.cyber.gouv.fr/cti/CERTFR-2026-CTI-008/"};
+const SRC_ANSSIH={t:"cyber.gouv.fr (ANSSI), page d'accueil : missions de l'agence",u:"https://cyber.gouv.fr/"};
+const SRC_KIT={t:"Ministère de l'Intérieur, « Lancement du kit de sensibilisation aux risques Cyber » (14 juin 2018)",u:"https://www.interieur.gouv.fr/Archives/Archives-des-actualites/2018-Actualites/Lancement-du-kit-de-sensibilisation-aux-risques-Cyber"};
+const SRC_ITC={t:"IT-Connect, « Cybersécurité : la défense en profondeur »",u:"https://www.it-connect.fr/cybersecurite-defense-en-profondeur/"};
+const SRC_POD={t:"Podcast « La cybersécurité expliquée à ma grand-mère », épisode 34 « Vauban »",u:"https://podcast.ausha.co/la-cyber-securite-expliquee-a-ma-grand-mere/34-vauban"};
+const SRC_VT={t:"vauban-tech.com, site d'une entreprise (page d'accueil)",u:"https://vauban-tech.com/"};
+const srcLink=(s,short)=>`<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(short)}</a>`;
+
+const TXT={
+  eyebrow:{etat:"Cybersécurité de l'État · plan d'action, incidents, ce que chacun peut faire", falc:"La protection des données sur Internet"},
+  h1:{etat:"Cybersécurité : ce que l'État annonce, ce que l'ANSSI constate, et ce qui reste à démontrer", falc:"Protéger les données : ce qu'on sait"},
+  lede:{etat:"En 2026, plusieurs services publics ont subi des vols de données. Cette page distingue ce que l'État annonce (plan d'action, moyens, doctrine), ce que l'agence nationale de cybersécurité (ANSSI) constate dans son rapport sur la DGFiP, et ce que les sources consultées ne disent pas. Elle examine aussi l'appellation « plan Vauban », que les sources officielles n'emploient pas.", falc:"Des services publics ont perdu des données en 2026.<br>Cette page dit ce que l'État annonce.<br>Elle dit aussi ce que l'ANSSI a vu.<br>Elle dit ce qu'on ne sait pas."},
+  "falc.badge":{etat:"Niveau « termes de l'État » : les intitulés officiels sont gardés. Passez en FALC pour une lecture simplifiée.", falc:"Lecture facile.<br>Ce texte suit la méthode FALC.<br>Il n'a pas encore été relu par des personnes concernées."},
+  "s.plan.h":{etat:"Le plan d'action de l'État", falc:"Le plan de l'État"},
+  "s.plan.p":{etat:"Annonces du Premier ministre (30 avril 2026) et communiqué du Gouvernement (17 août 2026). Ce sont des engagements : leur mise en œuvre n'est pas encore mesurée dans les sources consultées.", falc:"Le Premier ministre a annoncé un plan.<br>Ce sont des promesses.<br>On ne sait pas encore si tout est fait."},
+  "s.inc.h":{etat:"Ce qui s'est passé : incidents et constats", falc:"Ce qui s'est passé"},
+  "s.inc.p":{etat:"Dates et constats publiés par les institutions concernées. Un incident est une compromission de données ; il n'est pas lié ici à une autre cause que celle que l'institution indique.", falc:"Des institutions ont dit ce qui est arrivé.<br>On ne dit rien de plus qu'elles."},
+  "s.vauban.h":{etat:"« Plan Vauban » : ce que les sources disent, et ne disent pas", falc:"Le mot « Vauban »"},
+  "s.vauban.p":{etat:"Le nom de Vauban, ingénieur militaire du XVIIe siècle, revient dans des contenus sur la cybersécurité. Une forteresse de Vauban protège un lieu par plusieurs enceintes successives : si la première cède, la suivante retient. Ce principe a un nom en informatique, la défense en profondeur.", falc:"Vauban construisait des forteresses avec plusieurs murs.<br>Si un mur tombe, un autre protège.<br>En informatique, on appelle cela la défense en profondeur."},
+  "s.agir.h":{etat:"Ce que chacun peut faire, d'après les sources officielles", falc:"Ce que je peux faire"},
+  "s.agir.p":{etat:"Seuls les conseils publiés par une institution sont repris. Le kit de sensibilisation du dispositif Cybermalveillance.gouv.fr (2018) couvre quatre thèmes.", falc:"Voici les conseils des sites officiels."},
+  "manque.h":{etat:"Ce qu'on ne sait pas encore", falc:"Ce qu'on ne sait pas"},
+  "manque.p":{etat:"Points sur lesquels les sources consultées ne donnent pas de réponse chiffrée ou vérifiable.", falc:"Les sources ne répondent pas à ces questions."},
+  "s.test.h":{etat:"Tester ce que vous venez de lire", falc:"Un petit test"},
+  "s.test.p":{etat:"Trois questions, sans note. Chaque réponse indique sa source.", falc:"Trois questions. Pas de note."},
+  "s.src.h":{etat:"Sources", falc:"D'où viennent les infos"},
+  "s.src.p":{etat:"Pages lues le 20 octobre 2026. V : publié par l'institution elle-même. S : source secondaire. D : annonce ou position.", falc:"Pages lues le 20 octobre 2026."},
+  footer:{etat:"Politik · données publiques, textes attribués, niveaux de confiance V, S, D, A.", falc:"Politik · infos publiques, avec la source."}
+};
+const KPI=[
+  {kind:{etat:"Moyens annoncés pour le plan d'action",falc:"Argent annoncé"},v:"200 M€",u:{etat:"annonce du Premier ministre, 30 avril",falc:"annoncé le 30 avril"},lvl:"D",src:"info.gouv.fr"},
+  {kind:{etat:"Part du budget numérique de chaque ministère dédiée au cyber dès 2027",falc:"Part de l'argent pour la sécurité"},v:"5 %",u:{etat:"engagement, 17 août",falc:"promesse"},lvl:"D",src:"info.gouv.fr"},
+  {kind:{etat:"Actions prioritaires du plan d'urgence",falc:"Actions urgentes"},v:"40",u:{etat:"suivies tous les trois mois, annonce",falc:"suivies tous les 3 mois"},lvl:"D",src:"info.gouv.fr"},
+  {kind:{etat:"Vols de données par jour depuis janvier 2026",falc:"Vols de données par jour"},v:"3",u:{etat:"en moyenne, selon le Premier ministre",falc:"en moyenne"},lvl:"D",src:"info.gouv.fr"}];
+const PLAN=[
+  {h:{etat:"Trois volets annoncés le 30 avril",falc:"Trois choses annoncées"},lvl:"D",items:[{etat:"Une nouvelle autorité numérique de l'État.",falc:"Une nouvelle autorité pour le numérique de l'État."},{etat:"Une enveloppe de 200 millions d'euros.",falc:"200 millions d'euros."},{etat:"Une doctrine de protection renforcée.",falc:"De nouvelles règles de protection."}],src:[[SRC_PLAN,"info.gouv.fr, 30 avril 2026"]]},
+  {h:{etat:"Stratégie accélérée, communiqué du 17 août",falc:"Ce qui a été dit le 17 août"},lvl:"D",items:[{etat:"Doctrine en cinq verbes : détecter, poursuivre, informer, renforcer, progresser.",falc:"Cinq verbes : détecter, poursuivre, informer, renforcer, progresser."},{etat:"Un plan d'urgence de 40 actions prioritaires, suivi tous les trois mois, qui s'impose à tous les ministères.",falc:"40 actions urgentes pour tous les ministères."},{etat:"Chaque ministère consacre 5 % de son budget numérique à la cybersécurité dès 2027.",falc:"Chaque ministère met 5 % de son argent du numérique dans la sécurité."},{etat:"Les usagers de la DGFiP concernés sont contactés à partir du 17 août.",falc:"Les personnes concernées par la DGFiP sont prévenues à partir du 17 août."}],src:[[SRC_COM,"info.gouv.fr, 17 août 2026"]]},
+  {h:{etat:"Le rôle de l'ANSSI",falc:"Le rôle de l'ANSSI"},lvl:"V",items:[{etat:"L'ANSSI est l'autorité nationale de cybersécurité et de cyberdéfense.",falc:"L'ANSSI protège la France contre les attaques sur Internet."},{etat:"Ses cinq missions : défendre, connaître, partager, accompagner, réguler.",falc:"Elle défend, informe, aide et contrôle."}],src:[[SRC_ANSSIH,"cyber.gouv.fr"]]}
+];
+const INC=[
+  ["2026-04-30",{etat:"Plan d'action de l'État annoncé par le Premier ministre. Il cite en moyenne trois vols de données par jour depuis janvier 2026.",falc:"Le Premier ministre annonce un plan. Il dit : 3 vols de données par jour."},"D",[SRC_PLAN,"info.gouv.fr"]],
+  ["2026-07-31",{etat:"Le ministère de l'Éducation nationale publie un communiqué : accès frauduleux à des données de personnels dans la nuit du 25 juillet 2026, plainte déposée, ANSSI et CNIL saisies, vigilance recommandée face à l'hameçonnage.",falc:"L'Éducation nationale dit : des données de personnels ont été volées le 25 juillet. Il faut faire attention aux faux messages."},"V",[SRC_EDU,"education.gouv.fr"]],
+  ["2026-08-17",{etat:"Communiqué du Gouvernement : stratégie accélérée de sécurisation, usagers de la DGFiP contactés à partir de ce jour.",falc:"Le Gouvernement parle de sécurité. Les personnes de la DGFiP concernées sont prévenues."},"D",[SRC_COM,"info.gouv.fr"]],
+  ["2026-09-29",{etat:"L'ANSSI publie son rapport sur les cyberattaques contre la DGFiP : trois faiblesses (gestion des identités, architecture, détection). Aucune des deux vagues d'exfiltration n'avait été détectée.",falc:"L'ANSSI publie un rapport sur la DGFiP. Elle voit 3 faiblesses. Les 2 vols de données n'avaient pas été vus."},"V",[SRC_ANSSI,"cyber.gouv.fr"]],
+  ["2026-10-20",{etat:"Le CERT-FR publie son retour d'expérience : en 2025, il a suivi près de 200 violations de données issues d'applications web. Dans de nombreux cas, les exfiltrations ont été permises par des actions d'attaquants de faible complexité, sans exploitation de vulnérabilité technique.",falc:"Le CERT-FR publie un rapport. En 2025, il a suivi presque 200 vols de données sur des applications web. Souvent, les voleurs n'avaient pas besoin de techniques compliquées."},"V",[SRC_CERT,"cyber.gouv.fr (CERT-FR)"]]
+];
+const VAUBAN=[
+  {h:{etat:"Ce qui est établi",falc:"Ce qui est sûr"},lvl:"S",items:[{etat:"La défense en profondeur consiste à empiler plusieurs barrières de sécurité, de sorte qu'une seule défaillance ne suffise pas à tout compromettre (IT-Connect).",falc:"On met plusieurs barrières. Si une cède, les autres protègent."},{etat:"Un épisode de podcast intitulé « Vauban » utilise la forteresse comme image de ce principe.",falc:"Un podcast utilise l'image de la forteresse de Vauban."}],src:[[SRC_ITC,"IT-Connect"],[SRC_POD,"podcast Ausha"]]},
+  {h:{etat:"Ce qui n'est pas retrouvé",falc:"Ce qu'on ne trouve pas"},lvl:"A",items:[{etat:"Aucune source officielle consultée (info.gouv.fr, cyber.gouv.fr, ministères) n'emploie l'expression « plan Vauban » pour un plan de l'État.",falc:"Les sites officiels ne parlent pas d'un « plan Vauban »."},{etat:"Aucune source consultée ne mentionne un « gilet violet » ni un « Plan Violet » de cybersécurité.",falc:"Aucun site ne parle d'un « gilet violet »."}],src:[[SRC_PLAN,"info.gouv.fr"],[SRC_ANSSIH,"cyber.gouv.fr"]]},
+  {h:{etat:"Un acteur privé du même nom",falc:"Une entreprise qui s'appelle Vauban"},lvl:"D",items:[{etat:"vauban-tech.com est le site d'une entreprise. Ce qu'elle présente est son propre discours commercial, pas une décision de l'État.",falc:"C'est le site d'une entreprise. Ce n'est pas l'État."},{etat:"Un gilet tactique connecté a été présenté par un industriel comme prototype pour les forces de sécurité : c'est une source de fabricant, sans décision publique d'achat retrouvée.",falc:"Un gilet connecté est un prototype d'une entreprise. Aucune décision d'achat n'a été trouvée."}],src:[[SRC_VT,"vauban-tech.com"]]}
+];
+const AGIR=[
+  {h:{etat:"Le kit de sensibilisation (2018)",falc:"Le kit de conseils"},lvl:"V",items:[{etat:"Quatre thèmes : l'hameçonnage, la gestion des mots de passe, la sécurisation des appareils mobiles, la sécurité des usages personnels et professionnels.",falc:"4 sujets : faux messages, mots de passe, téléphone, usages perso et travail."},{etat:"Vidéos, mémos, fiches pratiques et fiches « réflexe », en licence libre (Etalab 2.0), pour tous niveaux.",falc:"Des vidéos et des fiches pour tout le monde."}],link:{u:"https://www.cybermalveillance.gouv.fr/",t:{etat:"Cybermalveillance.gouv.fr (dispositif national)",falc:"Le site Cybermalveillance.gouv.fr"}},src:[[SRC_KIT,"interieur.gouv.fr, 14 juin 2018"]]},
+  {h:{etat:"Après un incident",falc:"Après un vol de données"},lvl:"V",items:[{etat:"L'Éducation nationale recommande la vigilance face à l'hameçonnage après l'incident de juillet 2026.",falc:"Faites attention aux faux messages."},{etat:"Les usagers de la DGFiP concernés sont contactés par l'administration à partir du 17 août (communiqué du Gouvernement).",falc:"Si vous êtes concerné, l'administration vous écrit."}],src:[[SRC_EDU,"education.gouv.fr"],[SRC_COM,"info.gouv.fr"]]}
+];
+const MANQUE={etat:["Le nombre de personnes dont les données ont été volées à la DGFiP : les sources consultées ne donnent pas de total.","L'avancement réel des 40 actions prioritaires : un suivi tous les trois mois est annoncé, aucun point d'étape n'a été retrouvé.","L'identité des auteurs des attaques : l'ANSSI décrit des faiblesses techniques, pas des responsables.","Le calendrier de la nouvelle autorité numérique de l'État.","Une éventuelle décision publique d'achat de gilets connectés."],falc:["Combien de personnes sont touchées à la DGFiP.","Où en sont les 40 actions.","Qui a fait les attaques.","Quand la nouvelle autorité existera.","Si l'État achète des gilets connectés."]};
+const QCM={id:"cyber",qs:[
+  {q:{etat:"Que désigne la « défense en profondeur » ?",falc:"Que veut dire « défense en profondeur » ?"},opts:[{etat:"Une seule barrière très solide",falc:"Un seul mur très fort"},{etat:"Plusieurs barrières successives",falc:"Plusieurs murs, l'un après l'autre"},{etat:"Un plan officiel appelé Vauban",falc:"Un plan officiel Vauban"}],ans:1,why:{etat:"Plusieurs barrières successives (IT-Connect). Aucune source officielle consultée n'appelle un plan de l'État « Vauban ».",falc:"Plusieurs murs. Aucun site officiel ne parle d'un plan Vauban."},src:"IT-Connect",lvl:"S"},
+  {q:{etat:"Selon l'ANSSI, qu'est-ce qui n'avait pas été détecté dans l'attaque contre la DGFiP ?",falc:"Qu'est-ce que l'ANSSI n'avait pas vu ?"},opts:[{etat:"Aucune des deux vagues d'exfiltration",falc:"Aucun des 2 vols de données"},{etat:"Seulement la première vague",falc:"Seulement le 1er vol"},{etat:"Tout avait été détecté",falc:"Tout avait été vu"}],ans:0,why:{etat:"Aucune des deux vagues n'avait été détectée (rapport du 29 septembre 2026).",falc:"Aucun des 2 vols n'avait été vu (rapport du 29 septembre)."},src:"cyber.gouv.fr, 29 septembre 2026",lvl:"V"},
+  {q:{etat:"Quelle part de son budget numérique chaque ministère doit-il consacrer au cyber dès 2027 ?",falc:"Quelle part de l'argent pour la sécurité ?"},opts:[{etat:"0,5 %",falc:"0,5 sur 100"},{etat:"5 %",falc:"5 sur 100"},{etat:"50 %",falc:"50 sur 100"}],ans:1,why:{etat:"5 %, d'après le communiqué du 17 août. C'est un engagement, pas un bilan.",falc:"5 sur 100. C'est une promesse."},src:"info.gouv.fr, 17 août 2026",lvl:"D"}
+]};
+const SOURCES=[[SRC_PLAN,"V"],[SRC_COM,"V"],[SRC_ANSSI,"V"],[SRC_EDU,"V"],[SRC_CERT,"V"],[SRC_ANSSIH,"V"],[SRC_KIT,"V"],[SRC_ITC,"S"],[SRC_POD,"S"],[SRC_VT,"D"]];
+const dateLong=d=>{const m=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],p=d.split("-");return (+p[2]===1?"1er":+p[2])+" "+m[+p[1]-1]+" "+p[0];};
+function card(c){ return `<div class="card"><h3>${pick(c.h)} ${lvl(c.lvl)}</h3><ul class="mini">${c.items.map(i=>`<li>${pick(i)}</li>`).join("")}</ul>${c.link?`<p style="margin-top:10px"><a href="${esc(c.link.u)}" target="_blank" rel="noopener">${pick(c.link.t)}</a></p>`:""}<p class="src">${c.src.map(s=>srcLink(s[0],s[1])).join(" · ")}</p></div>`; }
+function render(){
+  document.body.classList.toggle("falc", L==="falc");
+  document.querySelectorAll("[data-t]").forEach(el=>{ el.innerHTML=pick(TXT[el.dataset.t]); });
+  $("#switch").innerHTML=PAGE_LEVELS.map(k=>`<button type="button" aria-pressed="${k===L}" data-level="${k}">${LEVEL_NAMES[k]}</button>`).join("");
+  $("#kpis").innerHTML=KPI.map(k=>`<div class="tile"><span class="kind">${pick(k.kind)}</span><span class="val num">${k.v}<small>${pick(k.u)}</small></span><span class="src">${lvl(k.lvl)} ${esc(k.src)}</span></div>`).join("");
+  $("#plan-cards").innerHTML=PLAN.map(card).join("");
+  $("#frise").innerHTML=INC.map(f=>`<li><span class="d">${dateLong(f[0])}</span><span>${pick(f[1])}${lvl(f[2])}<span class="by">${srcLink(f[3][0],f[3][1])}</span></span></li>`).join("");
+  $("#vauban-cards").innerHTML=VAUBAN.map(card).join("");
+  $("#agir-cards").innerHTML=AGIR.map(card).join("");
+  $("#manque-list").innerHTML=(MANQUE[L]||MANQUE.etat).map(x=>`<li>${x}</li>`).join("");
+  Qcm.draw("#qcm-cyber",QCM,L);
+  $("#tbl-src").innerHTML=`<table><thead><tr><th>Source</th><th>${L==="falc"?"Sûr ?":"Niveau"}</th></tr></thead><tbody>${SOURCES.map(s=>`<tr><td><a href="${esc(s[0].u)}" target="_blank" rel="noopener">${esc(s[0].t)}</a></td><td>${lvl(s[1])}</td></tr>`).join("")}</tbody></table>`;
+}
+$("#switch").addEventListener("click",e=>{ const b=e.target.closest("button"); if(!b) return; L=b.dataset.level; try{ localStorage.setItem("politik-level-cyber",L);}catch(err){} render(); });
+render();
+</script>
+<script src="donnees.js"></script>
+<script src="acronymes.js"></script>
+<script src="gouvernement.js"></script>
+<script src="entete.js"></script>
+<script src="entites.js"></script>
+<script src="visuels.js"></script>
+<script src="sommaire.js"></script>
+<script src="niveau.js"></script>
+<script src="legende.js"></script>
+</body>
+</html>

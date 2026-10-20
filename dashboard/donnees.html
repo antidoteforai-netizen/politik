@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sources et données</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#141A2B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="politik.css">
+<script src="entites.js"></script>
+<script src="visuels.js"></script>
+<style>
+.filtres{display:flex;flex-direction:column;gap:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chips .lab{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600;color:var(--ink-3);margin-right:4px}
+.chips button{font:inherit;font-size:.82rem;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chips button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chips .count{font-size:.84rem;color:var(--ink-3);margin-left:auto}
+.search{font:inherit;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);width:100%;max-width:420px}
+.type{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:5px;background:var(--surface-2);color:var(--ink-2);white-space:nowrap}
+.type.api{color:var(--c1)} .type.jeu{color:var(--c3)} .type.document{color:var(--c4)} .type.reference{color:var(--ink-3)}
+.pg{font-size:.8rem;color:var(--ink-3);white-space:nowrap}
+.reg td{vertical-align:top}
+.reg td.t{min-width:260px}
+.hbar{display:grid;grid-template-columns:minmax(120px,30%) 1fr auto;gap:6px 10px;align-items:center;font-size:.9rem}
+.hbar .bar{height:14px;background:var(--c1);border-radius:0 4px 4px 0;min-width:2px}
+.hbar .v{font-variant-numeric:tabular-nums;color:var(--ink-2)}
+body.falc .reg,body.falc .hbar{font-size:1rem}
+@media (max-width:640px){.hbar{grid-template-columns:1fr auto}.hbar .bar{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Pages Politik">
+  <div class="wrap">
+    <a class="brand" href="index.html" style="display:inline-flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="15" fill="#141A2B"/><rect x="19" y="14" width="8" height="36" rx="4" fill="#fff"/><circle cx="35" cy="26" r="10.5" fill="none" stroke="#fff" stroke-width="8"/><circle cx="35" cy="26" r="3.6" fill="#7A9BEC"/></svg><span style="color:inherit">Politik<span>.</span></span></a>
+    <ul><li><a href="gouvernement.html" title="Le Gouvernement : ministères, ministres, actualité en bref">Gouvernement</a></li><li><a href="index.html" title="Fraude sociale">Fraude</a></li><li><a href="medias.html" title="Qui possède les médias">Médias</a></li><li><a href="forces.html" title="Forces de l'ordre : police et gendarmerie">Police</a></li><li><a href="17-octobre-2026.html" title="Le 17 octobre 2026">17 octobre</a></li><li><a href="presidentielle-2027.html" title="Présidentielle 2027">Élection</a></li><li><a href="secteurs.html" title="Comment va la France">France</a></li><li><a href="cybersecurite.html" title="Cybersécurité de l'État">Cyber</a></li><li><a href="donnees.html" class="here" aria-current="page" title="Sources et données">Sources</a></li></ul>
+    <div class="switch" role="group" aria-label="Niveau de lecture" id="switch"></div>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <p class="eyebrow" data-t="eyebrow"></p>
+  <h1 data-t="h1"></h1>
+  <p class="lede" data-t="lede"></p>
+  <div class="grid g4" style="margin-top:22px" id="kpis"></div>
+  <div class="falc-badge" role="note"><span data-t="falc.badge"></span></div>
+  <nav class="sous-sommaire" aria-label="Dans cette page"><a href="#par-page">Par page</a><a href="#registre">Le registre</a><a href="#methode">Méthode</a><a href="#credits">Crédits des images</a></nav>
+</header>
+
+<main class="wrap">
+<section id="par-page">
+  <div class="sec-head"><h2 data-t="s.pp.h"></h2><p data-t="s.pp.p"></p></div>
+  <div class="card"><div class="hbar" id="ch-pages"></div></div>
+</section>
+
+<section id="registre" data-noent>
+  <div class="sec-head"><h2 data-t="s.reg.h"></h2><p data-t="s.reg.p"></p></div>
+  <div class="card filtres">
+    <div class="chips" id="f-page"></div>
+    <div class="chips" id="f-type"></div>
+    <div class="chips" id="f-niveau"></div>
+    <input class="search" type="search" id="q" autocomplete="off">
+  </div>
+  <div class="card" style="margin-top:16px"><div class="tbl" id="tbl"></div></div>
+</section>
+
+<section id="credits" data-noent>
+  <div class="sec-head"><h2 data-t="s.cr.h"></h2><p data-t="s.cr.p"></p></div>
+  <div class="card"><div class="tbl" id="tbl-credits"></div></div>
+</section>
+
+<section id="methode">
+  <div class="sec-head"><h2 data-t="s.meth.h"></h2><p data-t="s.meth.p"></p></div>
+  <div class="card"><ul id="regles" style="margin:0;padding-left:18px"></ul></div>
+</section>
+</main>
+<footer class="wrap"><p data-t="footer"></p></footer>
+
+<script src="donnees.js"></script>
+<script>
+const PAGE_LEVELS=["etat","falc"], LEVEL_NAMES={etat:"Termes de l'État", falc:"FALC"};
+let L=PAGE_LEVELS[0]; try{ const s=localStorage.getItem("politik-level-donnees"); if(PAGE_LEVELS.includes(s)) L=s; }catch(e){}
+const pick=o=>(o==null?"":(typeof o!=="object"?o:(o[L]??o.etat??"")));
+const $=s=>document.querySelector(s); const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const lvl=k=>`<span class="lvl lvl-${k}">${k}</span>`;
+const R=window.REGISTRE||{pages:[],entrees:[],totaux:{},genere_le:""};
+const TYPES={api:{etat:"API appelée",falc:"Appel de données"},jeu:{etat:"Jeu de données",falc:"Fichier de données"},document:{etat:"Document officiel",falc:"Document officiel"},reference:{etat:"Référence",falc:"Autre source"}};
+const NIV={V:{etat:"V vérifié",falc:"V sûr"},S:{etat:"S secondaire",falc:"S à recouper"},D:{etat:"D déclaratif",falc:"D une opinion"},A:{etat:"A à vérifier",falc:"A pas vérifié"}};
+let fPage=(location.hash||"").slice(1); if(!R.pages.some(p=>p.id===fPage)) fPage="";
+let fType="", fNiv="", q="";
+const TXT={
+  eyebrow:{etat:"Registre commun · généré depuis les six pages du site", falc:"D'où viennent tous les chiffres du site"},
+  h1:{etat:"Sources, API et jeux de données utilisés", falc:"Les sources de Politik"},
+  lede:{etat:"Tout ce que Politik lit, appelle ou cite, en un seul endroit : chaque entrée garde sa page d'origine, son type, son niveau de confiance et son statut d'usage (croisé, utilisé, cité, inaccessible). Le registre est mis à jour automatiquement avec les pages : il ne se tient pas à la main.", falc:"Ici, on liste tout ce que le site utilise : les fichiers, les appels de données, les documents, les articles.<br>Pour chaque source, on dit sur quelle page elle sert, et si elle est sûre.<br>La liste est faite par un programme, pas à la main."},
+  "falc.badge":{etat:"Niveau « termes de l'État » : les intitulés officiels sont gardés. Passez en FALC pour une lecture simplifiée.", falc:"Lecture facile.<br>Ce texte suit la méthode FALC.<br>Il n'a pas encore été relu par des personnes concernées."},
+  "s.pp.h":{etat:"Combien de sources par page", falc:"Combien de sources par page"},
+  "s.pp.p":{etat:"Une page bien outillée n'est pas forcément celle qui cite le plus : la page Forces de l'ordre a douze jeux recensés, dont la moitié non ouverts.", falc:"Plus de sources ne veut pas dire plus sûr."},
+  "s.reg.h":{etat:"Le registre", falc:"La liste"},
+  "s.reg.p":{etat:"Filtrez par page, par type ou par niveau, ou cherchez un producteur (INSEE, OFPRA, Arcom…). Le lien vers la page d'origine mène à la section où la source est utilisée.", falc:"Choisissez une page, un type ou un niveau. Ou tapez un mot."},
+  "s.meth.h":{etat:"Méthode", falc:"Comment la liste est faite"},
+  "s.meth.p":{etat:"Ce que le script fait et ne fait pas.", falc:"Les règles."},
+  "s.cr.h":{etat:"Crédits des images", falc:"D'où viennent les images"},
+  "s.cr.p":{etat:"Photos des personnes citées et logos des institutions, médias et entreprises, servis depuis le site. Les photos viennent de Wikimedia Commons et portent une licence libre ; les logos sont des marques de leur détenteur, utilisés uniquement pour identifier l'organisation. Une personne sans photo libre n'a pas d'image.", falc:"Les photos viennent de Wikimedia Commons. Elles sont libres de droits.<br>Les logos servent seulement à reconnaître l'organisation."},
+  footer:{etat:"Politik · registre des sources et des jeux de données, mis à jour le {d}.", falc:"Politik · liste mise à jour le {d}."}
+};
+const REGLES={
+  etat:["Le registre rassemble les sources, API et jeux de données cités ou utilisés sur chaque page du site : documents officiels, jeux de données ouverts, appels d'API et références de presse.","Une entrée correspond à une page : une source utilisée sur deux pages apparaît deux fois, avec sa page. On voit ainsi où elle sert.","Le niveau V, S, D ou A est celui que la page d'origine lui donne. Pour les références sans niveau explicite, V est attribué aux producteurs officiels reconnus et S aux autres : c'est une approximation.","Le statut d'usage dit ce qui a été fait de la source : croisée avec d'autres données, utilisée, remplacée, non croisable, inaccessible, ou simplement citée.","Les valeurs de la page Forces de l'ordre proviennent de réponses ministérielles, de rapports parlementaires, de recherches, de syndicats et de la presse ; le lien vers chaque publication d'origine n'est pas encore affiché.","Ce registre additionne les sections « Sources » de chaque page ; il ne les remplace pas."],
+  falc:["Cette page liste toutes les sources du site.","Si une source sert sur deux pages, elle est écrite deux fois.","Le niveau (V, S, D, A) vient de la page où la source est utilisée.","Pour les chiffres de la page police, le lien vers chaque document n'est pas encore affiché."]
+};
+function rows(){ return R.entrees.filter(e=>(!fPage||e.page===fPage)&&(!fType||e.type===fType)&&(!fNiv||e.niveau===fNiv)&&(!q||(e.titre+" "+(e.producteur||"")+" "+(e.statut||"")+" "+(e.url||"")).toLowerCase().includes(q))); }
+function render(){
+  document.body.classList.toggle("falc", L==="falc");
+  document.querySelectorAll("[data-t]").forEach(el=>{ el.innerHTML=pick(TXT[el.dataset.t]).replace("{d}",R.genere_le); });
+  $("#switch").innerHTML=PAGE_LEVELS.map(k=>`<button type="button" aria-pressed="${k===L}" data-level="${k}">${LEVEL_NAMES[k]}</button>`).join("");
+  const t=R.totaux;
+  $("#kpis").innerHTML=[["api",t.api],["jeu",t.jeu],["document",t.document],["reference",t.reference]].map(([k,v])=>`<div class="tile"><span class="kind">${pick(TYPES[k])}${k==="api"||k==="jeu"?"s":"s"}</span><span class="val num">${v||0}</span><span class="def">${L==="falc"?"sur tout le site":"sur l'ensemble du site, "+R.pages.length+" pages"}</span></div>`).join("");
+  const max=Math.max(...R.pages.map(p=>R.entrees.filter(e=>e.page===p.id).length))||1;
+  $("#ch-pages").innerHTML=R.pages.map(p=>{const n=R.entrees.filter(e=>e.page===p.id).length;return `<div><a href="#${p.id}" data-page="${p.id}">${esc(p.titre)}</a></div><div><div class="bar" style="width:${(n/max*100).toFixed(1)}%" role="img" aria-label="${esc(p.titre+" : "+n)}"></div></div><div class="v">${n}</div>`;}).join("");
+  const chip=(id,lab,opts,cur)=>{ $(id).innerHTML=`<span class="lab">${lab}</span>`+[["",L==="falc"?"Tout":"Toutes"],...opts].map(([k,n])=>`<button type="button" aria-pressed="${k===cur}" data-k="${k}">${esc(n)}</button>`).join(""); };
+  chip("#f-page",L==="falc"?"Page":"Page",R.pages.map(p=>[p.id,p.titre]),fPage);
+  chip("#f-type",L==="falc"?"Type":"Type",Object.entries(TYPES).map(([k,v])=>[k,pick(v)]),fType);
+  chip("#f-niveau",L==="falc"?"Niveau":"Niveau",Object.entries(NIV).map(([k,v])=>[k,pick(v)]),fNiv);
+  $("#q").placeholder=L==="falc"?"Chercher un mot (INSEE, Arcom…)":"Chercher un producteur, un titre, un statut";
+  const rs=rows(); const pg=id=>R.pages.find(p=>p.id===id)||{};
+  $("#f-niveau").insertAdjacentHTML("beforeend",`<span class="count">${rs.length} / ${R.entrees.length}</span>`);
+  $("#tbl").innerHTML=`<table class="reg"><thead><tr><th>${L==="falc"?"Source":"Source"}</th><th>Type</th><th>${L==="falc"?"Qui la produit":"Producteur"}</th><th>${L==="falc"?"Sûr ?":"Niveau"}</th><th>${L==="falc"?"Utilisation":"Statut d'usage"}</th><th>Page</th></tr></thead><tbody>${rs.map(e=>`<tr><td class="t">${e.url?`<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.titre)}</a>`:esc(e.titre)}${e.description?`<br><span class="small muted">${esc(e.description)}</span>`:""}</td><td><span class="type ${e.type}">${pick(TYPES[e.type])}</span></td><td class="small">${esc(e.producteur||"")}</td><td>${lvl(e.niveau||"A")}</td><td class="small">${esc(e.statut||"")}</td><td class="pg"><a href="${esc(pg(e.page).fichier||"index.html")}">${esc(pg(e.page).titre||e.page)}</a></td></tr>`).join("")||`<tr><td colspan="6" class="muted">${L==="falc"?"Rien trouvé.":"Aucune entrée pour ces filtres."}</td></tr>`}</tbody></table>`;
+  const EN=window.ENTITES||{}; const imgs=Object.entries(EN).filter(([k,v])=>v.img).sort((a,b)=>(a[1].credit.type_image+a[1].nom).localeCompare(b[1].credit.type_image+b[1].nom,"fr"));
+  $("#tbl-credits").innerHTML=`<table><thead><tr><th>${L==="falc"?"Qui":"Nom"}</th><th>Type</th><th>${L==="falc"?"Auteur":"Auteur"}</th><th>${L==="falc"?"Droits":"Licence"}</th><th>Fichier</th></tr></thead><tbody>${imgs.map(([k,v])=>`<tr><td><img src="${esc(v.img)}" alt="" width="28" height="28" loading="lazy" style="vertical-align:middle;margin-right:8px;border-radius:${v.type==="personne"?"50%":"6px"};object-fit:${v.type==="personne"?"cover":"contain"};background:#fff;border:1px solid var(--line)">${esc(v.nom)}</td><td>${v.credit.type_image==="photo"?"Photo":"Logo"}</td><td class="small">${esc(v.credit.auteur||"—")}</td><td class="small">${esc(v.credit.licence||"")}</td><td class="small"><a href="${esc(v.credit.source||v.wiki)}" target="_blank" rel="noopener">source</a></td></tr>`).join("")}</tbody></table>`;
+  $("#regles").innerHTML=(REGLES[L]||REGLES.etat).map(r=>`<li>${esc(r)}</li>`).join("");
+}
+document.addEventListener("click",e=>{
+  const sw=e.target.closest("#switch button"); if(sw){ L=sw.dataset.level; try{ localStorage.setItem("politik-level-donnees",L);}catch(err){} render(); return; }
+  const b=e.target.closest(".chips button"); if(b){ const id=b.closest(".chips").id, k=b.dataset.k; if(id==="f-page"){fPage=k; history.replaceState(null,"","#"+k);} else if(id==="f-type") fType=k; else fNiv=k; render(); return; }
+  const a=e.target.closest("#ch-pages a[data-page]"); if(a){ e.preventDefault(); fPage=a.dataset.page; history.replaceState(null,"","#"+fPage); render(); $("#registre").scrollIntoView({behavior:"smooth"}); }
+});
+$("#q").addEventListener("input",e=>{ q=e.target.value.trim().toLowerCase(); render(); $("#q").value=e.target.value; $("#q").focus(); });
+render();
+</script>
+<script src="acronymes.js"></script>
+<script src="gouvernement.js"></script>
+<script src="entete.js"></script>
+<script src="sommaire.js"></script>
+<script src="niveau.js"></script>
+<script src="legende.js"></script>
+</body>
+</html>

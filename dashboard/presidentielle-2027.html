@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Politik 2027</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#141A2B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="politik.css">
+</head>
+<body>
+<nav class="nav" aria-label="Pages Politik">
+  <div class="wrap">
+    <a class="brand" href="index.html" style="display:inline-flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="15" fill="#141A2B"/><rect x="19" y="14" width="8" height="36" rx="4" fill="#fff"/><circle cx="35" cy="26" r="10.5" fill="none" stroke="#fff" stroke-width="8"/><circle cx="35" cy="26" r="3.6" fill="#7A9BEC"/></svg><span style="color:inherit">Politik<span>.</span></span></a>
+    <ul><li><a href="gouvernement.html" title="Le Gouvernement : ministères, ministres, actualité en bref">Gouvernement</a></li><li><a href="index.html" title="Fraude sociale">Fraude</a></li><li><a href="medias.html" title="Qui possède les médias">Médias</a></li><li><a href="forces.html" title="Forces de l'ordre : police et gendarmerie">Police</a></li><li><a href="17-octobre-2026.html" title="Le 17 octobre 2026">17 octobre</a></li><li><a href="presidentielle-2027.html" class="here" aria-current="page" title="Présidentielle 2027">Élection</a></li><li><a href="secteurs.html" title="Comment va la France">France</a></li><li><a href="cybersecurite.html" title="Cybersécurité de l'État">Cyber</a></li><li><a href="donnees.html" title="Sources et données">Sources</a></li></ul>
+    <div class="switch" role="group" aria-label="Niveau de lecture" id="switch"></div>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <p class="eyebrow" data-t="eyebrow"></p>
+  <h1 data-t="h1"></h1>
+  <p class="lede" data-t="lede"></p>
+  <div class="card" style="margin-top:22px;max-width:620px">
+    <p class="eyebrow" data-t="count.label"></p>
+    <p class="count num" id="count"></p>
+    <p class="small muted" data-t="count.note"></p>
+  </div>
+  <div class="falc-badge" role="note"><span data-t="falc.badge"></span></div>
+<nav class="sous-sommaire" aria-label="Dans cette page"><a href="#candidats">Candidats</a><a href="#programmes">Programmes</a><a href="#historique">Historique 1958-2022</a><a href="#methode">Méthode</a></nav>
+</header>
+
+<main class="wrap">
+
+<section id="candidats">
+  <div class="sec-head"><h2 data-t="s.cand.h"></h2><p data-t="s.cand.p"></p></div>
+  <div class="grid g2">
+    <div class="card">
+      <h3 data-t="c.liste.h"></h3>
+      <p class="small muted" data-t="c.liste.p"></p>
+      <div id="liste"></div>
+    </div>
+    <div class="card">
+      <h3 data-t="c.statut.h"></h3>
+      <div class="chart" id="ch-statut"></div>
+      <p class="nedit" data-t="c.statut.n"></p>
+      <h3 style="margin-top:8px" data-t="c.cal.h"></h3>
+      <div class="tbl" id="calendrier"></div>
+      <p class="src">Ministère de l'Intérieur et info.gouv.fr (dates du scrutin) <span class="lvl lvl-V">V</span> · Conseil constitutionnel (parrainages, liste officielle) <span class="lvl lvl-V">V</span>.</p>
+    </div>
+  </div>
+</section>
+
+<section id="programmes">
+  <div class="sec-head"><h2 data-t="s.prog.h"></h2><p data-t="s.prog.p"></p></div>
+  <div class="grid g2">
+    <div class="card">
+      <h3 data-t="c.grille.h"></h3>
+      <div class="tbl" id="grille"></div>
+      <p class="nedit" data-t="c.grille.n"></p>
+    </div>
+  </div>
+</section>
+
+<section id="historique">
+  <div class="sec-head"><h2 data-t="s.hist.h"></h2><p data-t="s.hist.p"></p></div>
+  <div class="grid g2">
+    <div class="card">
+      <h3 data-t="c.second.h"></h3>
+      <div class="chart" id="ch-second"></div>
+      <p class="nedit" data-t="c.second.n"></p>
+    </div>
+    <div class="card">
+      <h3 data-t="c.abst.h"></h3>
+      <div class="chart" id="ch-abst"></div>
+      <p class="nedit" data-t="c.abst.n"></p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:16px">
+    <h3 data-t="c.table.h"></h3>
+    <div class="tbl" id="hist-table"></div>
+    <p class="src" data-t="c.table.src"></p>
+  </div>
+</section>
+
+<section id="methode">
+  <div class="sec-head"><h2 data-t="s.meth.h"></h2><p data-t="s.meth.p"></p></div>
+  <div class="card"><ul id="regles" style="margin:0;padding-left:18px"></ul></div>
+</section>
+
+</main>
+<section class="wrap" id="donnees-page" data-page="presidentielle" style="margin-top:8px"></section>
+<footer class="wrap"><p data-t="footer"></p></footer>
+
+<script>
+const PAGE_LEVELS = ["etat","falc"];
+const LEVEL_NAMES = {etat:"Termes de l'État", falc:"FALC"};
+let L = PAGE_LEVELS[0];
+try{ const s = localStorage.getItem("politik-level-2027"); if(PAGE_LEVELS.includes(s)) L = s; }catch(e){}
+const pick = o => (o==null?"":(typeof o!=="object"?o:(o[L] ?? o.etat ?? "")));
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+const TXT = {
+  eyebrow:{etat:"Élection présidentielle · 18 avril et 2 mai 2027", falc:"Élection du président de la République, les 18 avril et 2 mai 2027"},
+  h1:{etat:"Présidentielle 2027 : qui est candidat, ce qu'ils proposent, ce que disent les scrutins passés.", falc:"Présidentielle 2027 : qui est candidat, et ce qui s'est passé avant."},
+  lede:{etat:"Page de suivi du scrutin : candidats en ordre alphabétique, jamais par sondage ; chaque déclaration est sourcée ; aucune prévision n'est produite ici. La liste officielle n'existera qu'après la validation des parrainages par le Conseil constitutionnel.",
+    falc:"Cette page suit l'élection.<br>Les candidats sont rangés par ordre alphabétique, jamais selon les sondages.<br>Chaque candidature a sa source.<br>La liste officielle sera connue en mars 2027."},
+  "count.label":{etat:"Compte à rebours", falc:"Il reste"},
+  "count.note":{etat:"Premier tour le dimanche 18 avril 2027, second tour le dimanche 2 mai 2027 (outre-mer et Polynésie la veille). Décret de convocation attendu au plus tard le 7 février 2027.", falc:"Premier tour le dimanche 18 avril 2027. Second tour le dimanche 2 mai 2027."},
+  "falc.badge":{etat:"Version facile à lire et à comprendre : méthode FALC, pas encore relue par des personnes concernées."},
+  "s.cand.h":{etat:"Candidats déclarés", falc:"Qui est candidat"},
+  "s.cand.p":{etat:"Est listée toute personne ayant déclaré publiquement sa candidature, ou désignée par son parti, relevée dans la presse de référence au 20 octobre 2026. Ordre alphabétique. Le statut distingue déclaré, désigné par un parti, et sous réserve d'un vote interne.",
+    falc:"Voici les personnes qui ont dit : « je suis candidat ».<br>Elles sont rangées par ordre alphabétique.<br>Certaines doivent encore être choisies par leur parti."},
+  "c.liste.h":{etat:"Liste au 20 octobre 2026", falc:"La liste au 20 octobre 2026"},
+  "c.liste.p":{etat:"Sources : Public Sénat (28 septembre 2026), Politicaa (hub 2027, relayant France 24, Le Point et Le Parisien), liste Politik du 14 septembre 2026. Les candidats peu connus cités par Public Sénat figurent en fin de liste.", falc:"Sources : Public Sénat, France 24, Le Point, Le Parisien."},
+  "c.statut.h":{etat:"Par famille politique (décompte, pas un sondage)", falc:"Combien de candidats par famille"},
+  "c.statut.n":{etat:"<b>Ce que ce graphique ne dit pas :</b> rien sur les intentions de vote. Il compte des candidatures annoncées, dont beaucoup ne réuniront pas 500 parrainages. En 2022, 12 candidats sur une quarantaine de déclarés figuraient sur la liste officielle.", falc:"<b>Attention :</b><br>Ce dessin compte les candidats, pas les votes.<br>Beaucoup ne seront pas sur la liste officielle."},
+  "c.cal.h":{etat:"Calendrier officiel", falc:"Les dates"},
+  "s.prog.h":{etat:"Programmes : comparer sur des indicateurs réels", falc:"Les programmes"},
+  "s.prog.p":{etat:"Cette grille compare les positions des candidats sur les sujets que Politik documente (fraude, prestations, immigration, impôts) : une cellule n'est remplie que par une position publique, datée et sourcée. Au 20 octobre 2026, la grille est vide : aucune position n'a encore été vérifiée à la source.",
+    falc:"On comparera les programmes sur quelques sujets : la fraude, les aides, l'immigration, les impôts.<br>Pour l'instant, la grille est vide.<br>On la remplira avec les programmes officiels."},
+  "c.grille.h":{etat:"Grille Politik (à remplir, positions sourcées uniquement)", falc:"La grille à remplir"},
+  "c.grille.n":{etat:"<b>Règle :</b> une case = une citation ou un document officiel du candidat, avec date et lien. Pas de synthèse générée, pas de déduction. Les indicateurs de référence sont ceux de la page Fraude sociale (14 Md€ estimés, 3,1 Md€ détectés, 680 M€ recouvrés, 736 534 personnes protégées, 32,8 % de pauvreté chez les immigrés, 2,3 Md€ d'IFI).", falc:"<b>Règle :</b> on écrit seulement ce que le candidat a dit ou écrit, avec la date et le lien."},
+  "s.hist.h":{etat:"Historique 1958-2022 : douze scrutins", falc:"Les douze élections depuis 1958"},
+  "s.hist.p":{etat:"Résultats du second tour et abstention, tels que proclamés par le Conseil constitutionnel. 1958 est à part : le président fut élu par un collège de grands électeurs, le suffrage universel direct date de 1962.", falc:"Les résultats du second tour depuis 1958.<br>En 1958, ce ne sont pas tous les Français qui ont voté, mais des grands électeurs."},
+  "c.second.h":{etat:"Score de l'élu au second tour", falc:"Score du gagnant au second tour"},
+  "c.second.n":{etat:"<b>Lecture :</b> trois scrutins sortent du lot : 2002 (82,2 %, front républicain), 2017 (66,1 %) et 1974 (50,8 %, le plus serré). Les trois derniers seconds tours ont opposé le même duo.", falc:"<b>Lecture :</b><br>En 2002, le gagnant a eu plus de 8 voix sur 10.<br>En 1974, l'élection s'est jouée à très peu de voix."},
+  "c.abst.h":{etat:"Abstention au second tour (% des inscrits)", falc:"Combien de personnes n'ont pas voté au second tour"},
+  "c.abst.n":{etat:"<b>Lecture :</b> l'abstention au second tour passe de 12,7 % en 1974 à 28,0 % en 2022, record hors 1969 (31,1 %, un second tour droite contre centre). C'est l'un des sujets « Institutions et démocratie » de la page Comment va la France.", falc:"<b>Lecture :</b><br>De plus en plus de personnes ne votent pas.<br>En 2022, 28 personnes sur 100 n'ont pas voté au second tour."},
+  "c.table.h":{etat:"Les douze scrutins", falc:"Les douze élections"},
+  "c.table.src":{etat:"Proclamations du Conseil constitutionnel, relevées via la page « Élection présidentielle en France » de Wikipédia et les fiches de chaque scrutin ; pourcentages des suffrages exprimés au second tour ; abstention en % des inscrits. Niveau V pour les résultats, à recontrôler ligne à ligne sur conseil-constitutionnel.fr avant publication large.", falc:"Source : Conseil constitutionnel."},
+  "s.meth.h":{etat:"Règles de cette page", falc:"Nos règles"},
+  "s.meth.p":{etat:"Une élection en cours est le sujet le plus sensible d'un site de données. Les règles ci-dessous s'appliquent à cette page sans exception.", falc:"Une élection, c'est un sujet sensible.<br>Voici nos règles."},
+  footer:{etat:"Politik · page Présidentielle 2027 créée le 20 octobre 2026 · aucun sondage, aucune prévision, aucune donnée fictive · pas de traceur.", falc:"Politik. Page créée le 20 octobre 2026. Pas de sondage. Pas de surveillance."}
+};
+
+const CANDIDATS = [
+  {nom:"Nathalie Arthaud", parti:"Lutte ouvrière", fam:"Extrême gauche", statut:"déclarée", src:"liste Politik du 14 sept. 2026, à recouper avec la presse"},
+  {nom:"François Asselineau", parti:"Union populaire républicaine", fam:"Divers", statut:"déclaré", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Gabriel Attal", parti:"Renaissance", fam:"Centre", statut:"déclaré le 22 mai 2026", src:"France 24 (via Politicaa)"},
+  {nom:"Delphine Batho", parti:"Génération Écologie", fam:"Gauche", statut:"déclarée", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Olivier Becht", parti:"« extrême-centre »", fam:"Centre", statut:"déclaré", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Xavier Bertrand", parti:"ex-LR, dissident", fam:"Droite", statut:"intention déclarée", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Karim Bouamrane", parti:"Parti socialiste (hors primaire)", fam:"Gauche", statut:"déclaré", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Juan Branco", parti:"sans étiquette", fam:"Divers", statut:"déclaré", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Nicolas Dupont-Aignan", parti:"Debout la France", fam:"Extrême droite et souverainistes", statut:"déclaré", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Sylvain Durif", parti:"sans étiquette", fam:"Divers", statut:"déclaré", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Clara Egger", parti:"Solution démocratique", fam:"Divers", statut:"déclarée", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Raphaël Glucksmann", parti:"Place publique, vainqueur de la primaire sociale-démocrate", fam:"Gauche", statut:"désigné par primaire (oct. 2026)", src:"Public Sénat, 28 sept. 2026 ; Touteleurope"},
+  {nom:"Francis Lalanne", parti:"France libre", fam:"Divers", statut:"déclaré", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Jean Lassalle", parti:"Résistons", fam:"Divers", statut:"déclaré", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Jean-François Legendre", parti:"À nous maintenant", fam:"Divers", statut:"déclaré", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Marine Le Pen", parti:"Rassemblement national", fam:"Extrême droite et souverainistes", statut:"déclarée le 7 juillet 2026 (condamnation en appel, pourvoi en cassation)", src:"France 24 (via Politicaa) ; Public Sénat"},
+  {nom:"David Lisnard", parti:"Nouvelle Énergie (ex-LR)", fam:"Droite", statut:"déclaré", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Mira Markovic", parti:"Parti animaliste", fam:"Divers", statut:"déclarée", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Benoît Mathieu", parti:"sans étiquette", fam:"Divers", statut:"déclaré", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Jean-Luc Mélenchon", parti:"La France insoumise", fam:"Gauche", statut:"déclaré le 3 mai 2026", src:"France 24 (via Politicaa)"},
+  {nom:"Antoine Mikolajczak", parti:"Équinoxe", fam:"Divers", statut:"déclaré", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Manolo Mlekuz", parti:"Trajectoire", fam:"Divers", statut:"déclaré", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Édouard Philippe", parti:"Horizons", fam:"Centre", statut:"déclaré le 3 septembre 2024", src:"Le Point (via Politicaa)"},
+  {nom:"Florian Philippot", parti:"Les Patriotes", fam:"Extrême droite et souverainistes", statut:"déclaré", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Gilles Platret", parti:"ex-LR, dissident", fam:"Droite", statut:"intention déclarée", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Natacha Polony", parti:"sans étiquette", fam:"Divers", statut:"déclarée", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Bruno Retailleau", parti:"Les Républicains", fam:"Droite", statut:"désigné par les militants LR (avril 2026)", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Fabien Roussel", parti:"Parti communiste français", fam:"Gauche", statut:"déclaré le 6 septembre 2026", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Ségolène Royal", parti:"Parti socialiste (candidate à la primaire, battue)", fam:"Gauche", statut:"déclarée le 10 juillet 2026 à la primaire ; issue de la primaire à vérifier", src:"Le Parisien (via Politicaa)"},
+  {nom:"François Ruffin", parti:"Debout !", fam:"Gauche", statut:"déclaré", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Marine Tondelier", parti:"Les Écologistes", fam:"Gauche", statut:"candidate, sous réserve du vote des militants le 13 décembre 2026", src:"Public Sénat, 28 sept. 2026"},
+  {nom:"Éric Zemmour", parti:"Reconquête !", fam:"Extrême droite et souverainistes", statut:"déclaré le 17 septembre 2026", src:"Public Sénat, 28 sept. 2026"}
+];
+
+const CALENDRIER = [
+  ["7 février 2027 au plus tard","Décret de convocation des électeurs (dix semaines avant le premier tour)","V"],
+  ["Février à mars 2027","Dépôt des 500 parrainages d'élus au Conseil constitutionnel","V"],
+  ["26 mars 2027 au plus tard","Publication de la liste officielle des candidats par le Conseil constitutionnel","V"],
+  ["Dimanche 18 avril 2027","Premier tour (samedi 17 en outre-mer et en Polynésie)","V"],
+  ["Dimanche 2 mai 2027","Second tour","V"],
+  ["Mai 2027","Proclamation des résultats par le Conseil constitutionnel, investiture","V"]
+];
+
+const HIST = [
+  {an:1958, elu:"Charles de Gaulle", pct:78.5, adv:"Georges Marrane", abst:null, note:"Collège de 81 764 grands électeurs, un seul tour"},
+  {an:1965, elu:"Charles de Gaulle", pct:55.2, adv:"François Mitterrand", abst:15.7},
+  {an:1969, elu:"Georges Pompidou", pct:58.2, adv:"Alain Poher", abst:31.1},
+  {an:1974, elu:"Valéry Giscard d'Estaing", pct:50.8, adv:"François Mitterrand", abst:12.7},
+  {an:1981, elu:"François Mitterrand", pct:51.8, adv:"Valéry Giscard d'Estaing", abst:14.1},
+  {an:1988, elu:"François Mitterrand", pct:54.0, adv:"Jacques Chirac", abst:15.9},
+  {an:1995, elu:"Jacques Chirac", pct:52.6, adv:"Lionel Jospin", abst:20.3},
+  {an:2002, elu:"Jacques Chirac", pct:82.2, adv:"Jean-Marie Le Pen", abst:20.3},
+  {an:2007, elu:"Nicolas Sarkozy", pct:53.1, adv:"Ségolène Royal", abst:16.0},
+  {an:2012, elu:"François Hollande", pct:51.6, adv:"Nicolas Sarkozy", abst:19.7},
+  {an:2017, elu:"Emmanuel Macron", pct:66.1, adv:"Marine Le Pen", abst:25.4},
+  {an:2022, elu:"Emmanuel Macron", pct:58.5, adv:"Marine Le Pen", abst:28.0}
+];
+
+const REGLES = {
+  etat:["Ordre alphabétique uniquement, jamais de tri par intention de vote.","Aucune moyenne de sondages, aucune prévision, aucun score produit ici.","Chaque candidature porte sa source datée ; un retrait n'est affiché que sur annonce publique.","Format identique pour tous les candidats, du plus connu au moins connu.","La grille des programmes n'accepte que des positions publiques datées et sourcées ; pas de synthèse générée.","La liste est révisée à la main et chaque changement est daté ; aucune modification silencieuse en période électorale.","Après la publication de la liste officielle du Conseil constitutionnel, elle seule fait foi."],
+  falc:["Les candidats sont rangés par ordre alphabétique.","On ne donne jamais de sondage ni de prévision.","Chaque candidat a une source avec une date.","Tous les candidats sont présentés de la même façon.","On n'écrit que ce que les candidats ont vraiment dit.","Les changements sont notés dans un journal."]
+};
+
+function hbar(id, rows, opt={}){
+  const W=640, rowH=30, padL=8, padR=opt.padR||90, top=8, labelH=16, H=top+rows.length*(rowH+labelH)+22;
+  const max=opt.max||Math.max(...rows.map(r=>r.v)); const x=v=>padL+(v/max)*(W-padL-padR);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(opt.aria||"")}"><g class="grid">${[1,2,3,4].map(i=>`<line x1="${x(max*i/4)}" y1="${top}" x2="${x(max*i/4)}" y2="${H-18}"/>`).join("")}</g>`;
+  rows.forEach((r,i)=>{ const y=top+i*(rowH+labelH); const w=Math.max(2,x(r.v)-x(0));
+    s+=`<text class="lbl" x="${padL}" y="${y+12}">${esc(r.l)}</text><rect x="${x(0)}" y="${y+labelH+3}" width="${w}" height="${rowH-12}" rx="4" fill="var(--${r.c||"c1"})"><title>${esc(r.tip||r.l)}</title></rect><text class="val" x="${x(0)+w+8}" y="${y+labelH+3+(rowH-12)/2+4.5}">${esc(opt.fmt?opt.fmt(r.v):r.v)}</text>`; });
+  s+=`<line class="axis" x1="${x(0)}" y1="${top}" x2="${x(0)}" y2="${H-18}"/><text class="cap" x="${x(0)}" y="${H-4}">0</text><text class="cap" x="${x(max)}" y="${H-4}" text-anchor="end">${esc(opt.fmt?opt.fmt(max):max)}</text></svg>`;
+  $(id).innerHTML=s;
+}
+
+function render(){
+  document.body.classList.toggle("falc", L==="falc");
+  document.querySelectorAll("[data-t]").forEach(el=>{ el.innerHTML = pick(TXT[el.dataset.t]); });
+  $("#switch").innerHTML = PAGE_LEVELS.map(k=>`<button type="button" aria-pressed="${k===L}" data-level="${k}">${LEVEL_NAMES[k]}</button>`).join("");
+  // compte à rebours
+  const tour1 = new Date("2027-04-18T08:00:00+02:00"); const now = new Date(); const days = Math.max(0, Math.ceil((tour1-now)/864e5));
+  $("#count").innerHTML = `${days.toLocaleString("fr-FR")}<small>${L==="falc"?"jours avant le premier tour":"jours avant le premier tour, le 18 avril 2027"}</small>`;
+  // liste
+  const sorted = CANDIDATS.slice().sort((a,b)=>a.nom.localeCompare(b.nom,"fr"));
+  $("#liste").innerHTML = sorted.map(c=>`<div class="cand"><div class="ini">${esc(c.nom.split(/[\s-]+/).map(p=>p[0]).join("").slice(0,2))}</div><div><b>${esc(c.nom)}</b> <span class="pill">${esc(c.fam)}</span><div class="meta">${esc(c.parti)} · ${esc(c.statut)}<br><span class="small">${L==="falc"?"Source : ":"Source : "}${esc(c.src)}</span></div></div></div>`).join("");
+  // par famille
+  const fam = {}; CANDIDATS.forEach(c=>fam[c.fam]=(fam[c.fam]||0)+1);
+  const cols = {"Gauche":"c2","Extrême gauche":"c2","Centre":"c1","Droite":"c4","Extrême droite et souverainistes":"c5","Divers":"c3"};
+  hbar("#ch-statut", Object.entries(fam).sort((a,b)=>b[1]-a[1]).map(([k,v])=>({l:k, v, c:cols[k]||"c3", tip:`${v} candidature(s) annoncée(s)`})), {aria:"Candidatures annoncées par famille politique", fmt:v=>v+(L==="falc"?" candidats":"")});
+  $("#calendrier").innerHTML = `<table><thead><tr><th>${L==="falc"?"Quand":"Date"}</th><th>${L==="falc"?"Quoi":"Étape"}</th></tr></thead><tbody>${CALENDRIER.map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1])} <span class="lvl lvl-${r[2]}">${r[2]}</span></td></tr>`).join("")}</tbody></table>`;
+  // grille programmes (vide par construction)
+  const sujets = L==="falc" ? ["La fraude","Les aides","L'immigration","Les impôts des riches"] : ["Fraude sociale (estimé, détecté, recouvré)","Prestations et non-recours","Immigration et asile","Fiscalité des hauts patrimoines"];
+  const tetes = sorted.filter(c=>/Attal|Glucksmann|Le Pen|Mélenchon|Philippe|Retailleau|Roussel|Tondelier|Zemmour|Lisnard/.test(c.nom));
+  $("#grille").innerHTML = `<table><thead><tr><th>${L==="falc"?"Sujet":"Indicateur de référence"}</th>${tetes.map(c=>`<th>${esc(c.nom.split(" ").pop())}</th>`).join("")}</tr></thead><tbody>${sujets.map(s=>`<tr><td>${esc(s)}</td>${tetes.map(()=>`<td class="n"><span class="pill todo">${L==="falc"?"à remplir":"position sourcée à saisir"}</span></td>`).join("")}</tr>`).join("")}</tbody></table><p class="small muted" style="margin-top:6px">${L==="falc"?"Seuls les candidats les plus connus sont dans ce tableau, pour qu'il tienne sur l'écran. Les autres auront la même grille.":"Colonnes limitées aux candidatures les plus médiatisées pour la lisibilité ; la grille complète suit le même format pour chaque candidat (règle d'égalité de traitement)."}</p>`;
+  // historique
+  const pf = v=>L==="falc"?`${v.toLocaleString("fr-FR")} sur 100`:`${v.toLocaleString("fr-FR")} %`;
+  hbar("#ch-second", HIST.map(h=>({l:`${h.an} · ${h.elu}`, v:h.pct, c:h.an===1958?"c5":"c1", tip:`${h.an} : ${h.elu} ${h.pct} % face à ${h.adv}${h.note?" ("+h.note+")":""}`})), {max:100, aria:"Score de l'élu au second tour, 1958 à 2022", fmt:pf, padR:110});
+  hbar("#ch-abst", HIST.filter(h=>h.abst!=null).map(h=>({l:String(h.an), v:h.abst, c:h.abst>=25?"c2":"c1", tip:`${h.an} : abstention ${h.abst} % des inscrits au second tour`})), {max:35, aria:"Abstention au second tour, 1965 à 2022", fmt:pf, padR:110});
+  $("#hist-table").innerHTML = `<table><thead><tr><th>${L==="falc"?"Année":"Scrutin"}</th><th>${L==="falc"?"Gagnant":"Élu"}</th><th>${L==="falc"?"Score":"Second tour"}</th><th>${L==="falc"?"Contre":"Adversaire"}</th><th>Abstention</th></tr></thead><tbody>${HIST.map(h=>`<tr><td>${h.an}</td><td>${esc(h.elu)}</td><td class="n">${pf(h.pct)}</td><td>${esc(h.adv)}${h.note?` <span class="small muted">(${esc(h.note)})</span>`:""}</td><td class="n">${h.abst==null?"—":pf(h.abst)}</td></tr>`).join("")}</tbody></table>`;
+  $("#regles").innerHTML = (REGLES[L]||REGLES.etat).map(r=>`<li>${esc(r)}</li>`).join("");
+}
+$("#switch").addEventListener("click", e=>{ const b=e.target.closest("button"); if(!b) return; L=b.dataset.level; try{ localStorage.setItem("politik-level-2027", L);}catch(err){} render(); });
+render();
+</script>
+<script src="donnees.js"></script>
+<script src="acronymes.js"></script>
+<script src="gouvernement.js"></script>
+<script src="entete.js"></script>
+<script src="entites.js"></script>
+<script src="visuels.js"></script>
+<script src="sommaire.js"></script>
+<script src="niveau.js"></script>
+<script src="legende.js"></script>
+</body>
+</html>

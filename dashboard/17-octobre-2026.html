@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le 17 octobre 2026</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#141A2B">
+<script src="qcm.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="politik.css">
+<style>
+.frise{list-style:none;margin:0;padding:0;display:grid}
+.frise li{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:14px 0;border-top:1px solid var(--line-2)}
+.frise li:first-child{border-top:0}
+.frise .d{font-family:var(--font-display);font-weight:600;color:var(--accent-ink)}
+.frise .lvl{margin-left:6px;vertical-align:1px}
+.frise .by{display:block;font-size:.82rem;color:var(--ink-3);margin-top:3px}
+.stack{display:grid;gap:16px}
+.mini{display:grid;gap:10px;margin:8px 0 0;padding:0;list-style:none}
+.mini li{padding:10px 12px;border:1px solid var(--line-2);border-radius:10px;font-size:.92rem}
+.mini li b{display:block;margin-bottom:2px}
+.mini .by{display:block;font-size:.8rem;color:var(--ink-3);margin-top:3px}
+.manque{border:1.5px dashed var(--trou);background:var(--trou-soft);border-radius:14px;padding:18px 20px}
+.manque h3{margin-bottom:8px}
+.manque ul{margin:6px 0 0;padding-left:18px}
+.help{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:10px}
+.help div{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--surface)}
+.help b{display:block;font-family:var(--font-display);font-size:1.3rem}
+body.falc .frise li,body.falc .mini li{font-size:1rem}
+body.falc .frise li{grid-template-columns:1fr}
+@media (max-width:640px){.frise li{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Pages Politik">
+  <div class="wrap">
+    <a class="brand" href="index.html" style="display:inline-flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="15" fill="#141A2B"/><rect x="19" y="14" width="8" height="36" rx="4" fill="#fff"/><circle cx="35" cy="26" r="10.5" fill="none" stroke="#fff" stroke-width="8"/><circle cx="35" cy="26" r="3.6" fill="#7A9BEC"/></svg><span style="color:inherit">Politik<span>.</span></span></a>
+    <ul><li><a href="gouvernement.html" title="Le Gouvernement : ministères, ministres, actualité en bref">Gouvernement</a></li><li><a href="index.html" title="Fraude sociale">Fraude</a></li><li><a href="medias.html" title="Qui possède les médias">Médias</a></li><li><a href="forces.html" title="Forces de l'ordre : police et gendarmerie">Police</a></li><li><a href="17-octobre-2026.html" class="here" aria-current="page" title="Le 17 octobre 2026">17 octobre</a></li><li><a href="presidentielle-2027.html" title="Présidentielle 2027">Élection</a></li><li><a href="secteurs.html" title="Comment va la France">France</a></li><li><a href="cybersecurite.html" title="Cybersécurité de l'État">Cyber</a></li><li><a href="donnees.html" title="Sources et données">Sources</a></li></ul>
+    <div class="switch" role="group" aria-label="Niveau de lecture" id="switch"></div>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <p class="eyebrow" data-t="eyebrow"></p>
+  <h1 data-t="h1"></h1>
+  <p class="lede" data-t="lede"></p>
+  <div class="grid g4" style="margin-top:22px" id="kpis"></div>
+  <div class="falc-badge" role="note"><span data-t="falc.badge"></span></div>
+  <nav class="sous-sommaire" aria-label="Dans cette page"><a href="#chrono">Chronologie</a><a href="#qui">Qui dit quoi</a><a href="#degats">Dégâts et mobilisation</a><a href="#commercants">Aide aux commerçants</a><a href="#justice">Réponse pénale</a><a href="#ordre">Maintien de l'ordre</a><a href="#manque">Ce qu'on ne sait pas</a><a href="#test">Testez-vous</a><a href="#sources">Sources</a></nav>
+</header>
+
+<main class="wrap">
+<section id="chrono">
+  <div class="sec-head"><h2 data-t="s.chrono.h"></h2><p data-t="s.chrono.p"></p></div>
+  <div class="card"><ol class="frise" id="frise"></ol></div>
+</section>
+
+<section id="qui">
+  <div class="sec-head"><h2 data-t="s.qui.h"></h2><p data-t="s.qui.p"></p></div>
+  <div class="card"><div class="tbl" id="tbl-qui"></div></div>
+  <div class="card" style="margin-top:16px"><h3 data-t="mots.h"></h3><p class="small muted" data-t="mots.p"></p><div class="tbl" id="tbl-mots" style="margin-top:10px"></div></div>
+</section>
+
+<section id="degats">
+  <div class="sec-head"><h2 data-t="s.deg.h"></h2><p data-t="s.deg.p"></p></div>
+  <div class="grid g2" id="deg-cards"></div>
+</section>
+
+<section id="commercants">
+  <div class="sec-head"><h2 data-t="s.com.h"></h2><p data-t="s.com.p"></p></div>
+  <div class="grid g2" id="com-cards"></div>
+</section>
+
+<section id="justice">
+  <div class="sec-head"><h2 data-t="s.jus.h"></h2><p data-t="s.jus.p"></p></div>
+  <div class="grid g2" id="jus-cards"></div>
+</section>
+
+<section id="ordre">
+  <div class="sec-head"><h2 data-t="s.ord.h"></h2><p data-t="s.ord.p"></p></div>
+  <div class="grid g2" id="ord-cards"></div>
+</section>
+
+<section id="manque">
+  <div class="manque"><h3 data-t="manque.h"></h3><p class="small muted" data-t="manque.p"></p><ul id="manque-list"></ul></div>
+</section>
+
+<section id="test">
+  <div class="sec-head"><h2 data-t="s.test.h"></h2><p data-t="s.test.p"></p></div>
+  <div id="qcm-17"></div>
+</section>
+
+<section id="sources">
+  <div class="sec-head"><h2 data-t="s.src.h"></h2><p data-t="s.src.p"></p></div>
+  <div class="card"><div class="tbl" id="tbl-src"></div></div>
+  <div class="card" style="margin-top:16px"><h3 data-t="aide.h"></h3><p class="small muted" data-t="aide.p"></p><div class="help" id="help"></div></div>
+</section>
+</main>
+<section class="wrap" id="donnees-page" data-page="oct17" style="margin-top:8px"></section>
+<footer class="wrap"><p data-t="footer"></p></footer>
+
+<script>
+const PAGE_LEVELS=["etat","falc"], LEVEL_NAMES={etat:"Termes de l'État", falc:"FALC"};
+let L=PAGE_LEVELS[0]; try{ const s=localStorage.getItem("politik-level-oct17"); if(PAGE_LEVELS.includes(s)) L=s; }catch(e){}
+const pick=o=>(o==null?"":(typeof o!=="object"?o:(o[L]??o.etat??"")));
+const $=s=>document.querySelector(s); const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const lvl=k=>`<span class="lvl lvl-${k}">${k}</span>`;
+/* Niveaux sur cette page : V = fait rapporté par la source officielle elle-même (ses propres actions, un texte publié) ;
+   D = déclaration ou appréciation d'un responsable, pas un fait établi ; A = chiffre cité sans source retrouvée. */
+
+const TXT={
+  eyebrow:{etat:"Manifestation du 17 octobre 2026 · violences, dégradations, mobilisation et aides", falc:"Ce qui s'est passé le 17 octobre 2026"},
+  h1:{etat:"Le 17 octobre 2026 : ce que disent les sources officielles, et ce qui n'est pas encore chiffré", falc:"Le 17 octobre 2026 : ce qu'on sait"},
+  lede:{etat:"Après la manifestation du 17 octobre, des violences et des pillages ont eu lieu à Paris et dans d'autres villes. Cette page rassemble ce que les sources officielles consultées établissent (mobilisation des agents, aide aux commerçants, réponse pénale) et ce qu'elles déclarent seulement (appréciations, chiffres annoncés). Chaque phrase dit qui parle et avec quel niveau de confiance. Aucun bilan officiel chiffré des blessés, des interpellations et des dégâts n'a été retrouvé : la page le dit plutôt que de le deviner.", falc:"Après la manifestation du 17 octobre, il y a eu des violences et des pillages.<br>Cette page dit ce que les sources officielles disent.<br>Pour chaque phrase, on dit qui parle.<br>Certains chiffres n'existent pas encore."},
+  "falc.badge":{etat:"Niveau « termes de l'État » : les intitulés officiels sont gardés. Passez en FALC pour une lecture simplifiée.", falc:"Lecture facile.<br>Ce texte suit la méthode FALC.<br>Il n'a pas encore été relu par des personnes concernées."},
+  "s.chrono.h":{etat:"Chronologie, du 17 octobre au 5 novembre", falc:"Les dates"},
+  "s.chrono.p":{etat:"Dates tirées des quatre sources officielles consultées. Les dates à venir sont celles annoncées par des responsables ou citées dans une interview : elles peuvent changer.", falc:"Les dates viennent de sources officielles.<br>Les dates à venir peuvent changer."},
+  "s.qui.h":{etat:"Qui dit quoi", falc:"Qui dit quoi"},
+  "s.qui.p":{etat:"Les déclarations sont reproduites comme telles (niveau D), avec leur auteur, leur date et le lieu où elles ont été faites. Ce ne sont pas des faits établis par cette page.", falc:"On écrit qui a dit quoi.<br>Ce sont des paroles, pas des preuves."},
+  "mots.h":{etat:"Des mots employés par des responsables", falc:"Des mots employés"},
+  "mots.p":{etat:"Ces termes sont ceux des personnes citées. Cette page les reproduit pour que le lecteur sache qui les a employés ; elle ne les reprend pas à son compte.", falc:"Ces mots sont ceux de ces personnes.<br>Ce site ne les reprend pas."},
+  "s.deg.h":{etat:"Violences, dégradations et mobilisation", falc:"Les dégâts et les agents mobilisés"},
+  "s.deg.p":{etat:"Ce que la Ville de Paris établit sur ses propres opérations, ce que des responsables déclarent sur les violences, et les chiffres cités sans source.", falc:"Ce que Paris a fait. Ce que des responsables disent. Les chiffres sans source."},
+  "s.com.h":{etat:"Aide aux commerçants", falc:"L'aide pour les commerçants"},
+  "s.com.p":{etat:"Deux niveaux d'aide ont été annoncés : la cellule d'urgence de la Ville de Paris et les mesures nationales annoncées par le Premier ministre. Les modalités détaillées n'étaient pas encore publiées dans les sources consultées.", falc:"Paris a une cellule pour aider les commerçants.<br>Le Premier ministre a annoncé d'autres aides.<br>Les détails ne sont pas encore connus."},
+  "s.jus.h":{etat:"Réponse pénale et enquêtes", falc:"La justice"},
+  "s.jus.p":{etat:"Éléments annoncés par le Premier ministre le 19 octobre, et rappel d'un texte publié au Journal officiel sur la justice dans un État de droit.", falc:"Ce que le Premier ministre a dit. Et un texte officiel sur la justice."},
+  "s.ord.h":{etat:"Maintien de l'ordre : décisions annoncées et débat sur la doctrine", falc:"Le maintien de l'ordre"},
+  "s.ord.p":{etat:"Le maintien de l'ordre désigne l'encadrement des rassemblements par la police et la gendarmerie. Pour les chiffres de blessés et d'enquêtes sur des violences d'agents, voir <a href='forces.html#violences-citoyens'>la page Forces de l'ordre</a>.", falc:"Le maintien de l'ordre, c'est la façon dont la police et la gendarmerie encadrent les manifestations.<br>Pour les chiffres, voir <a href='forces.html#violences-citoyens'>la page Forces de l'ordre</a>."},
+  "manque.h":{etat:"Ce qu'on ne sait pas encore", falc:"Ce qu'on ne sait pas encore"},
+  "manque.p":{etat:"Dans les sources consultées au 20 octobre 2026, ces informations ne sont pas publiées. Ce ne sont pas des zéros : ce sont des trous de mesure.", falc:"Le 20 octobre 2026, ces chiffres n'étaient pas publiés."},
+  "s.test.h":{etat:"Testez votre lecture", falc:"Testez-vous"},
+  "s.test.p":{etat:"Trois questions sur ce que disent les sources, avec leur niveau de confiance.", falc:"Trois questions."},
+  "s.src.h":{etat:"Sources et niveaux", falc:"D'où viennent les informations"},
+  "s.src.p":{etat:"Toutes ces sources sont publiques et ont été lues le 20 octobre 2026. Le niveau V indique que le texte est publié par l'institution ; les propos qu'il rapporte restent des déclarations (D).", falc:"Toutes les sources sont publiques.<br>Une source sûre peut rapporter une parole qui reste une parole."},
+  "aide.h":{etat:"Numéros utiles", falc:"Numéros utiles"},
+  "aide.p":{etat:"Numéros d'urgence et d'écoute indiqués sur le site de la Gendarmerie nationale.", falc:"Numéros pour demander de l'aide."},
+  footer:{etat:"Politik · page « Le 17 octobre 2026 » · sources officielles consultées le 20 octobre 2026.", falc:"Politik · page « Le 17 octobre 2026 ».<br>Les sources sont publiques."}
+};
+
+const SRC_PARIS={t:"Ville de Paris, « Violences et dégradations : près de 2 000 agents mobilisés, une cellule d'aide pour les commerçants » (mis à jour le 19/10/2026)",u:"https://www.paris.fr/pages/manifestations-du-17-octobre-pres-de-1000-agents-mobilises-une-cellule-d-aide-pour-les-commercants-36918"};
+const SRC_PM={t:"info.gouv.fr, « Cellule interministérielle de crise : point de situation du Premier ministre » (19 octobre 2026)",u:"https://www.info.gouv.fr/discours/cellule-interministerielle-de-crise-point-de-situation-du-premier-ministre"};
+const SRC_BR={t:"Vie publique, interview de Maud Bregeon, porte-parole du Gouvernement, sur LCI (19 octobre 2026)",u:"https://www.vie-publique.fr/discours/305028-maud-bregeon-19102026-violences-pillages-manifestation-17-octobre-ordre"};
+const SRC_ECO={t:"economie.gouv.fr, « Revente des produits pillés, le Gouvernement mobilise les plateformes » (20 octobre 2026)",u:"https://www.economie.gouv.fr/actualites/revente-des-produits-pilles-le-gouvernement-mobilise-les-plateformes"};
+const SRC_CN={t:"Légifrance, JORF n° 0229 du 1er octobre 2026, texte n° 81 : CNCDH, déclaration « Défendre la Justice dans un État de droit »",u:"https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054930933"};
+const srcLink=(s,short)=>`<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(short)}</a>`;
+
+/* Chronologie : [date, texte, niveau, source] */
+const FRISE=[
+  [{etat:"Samedi 17 octobre",falc:"Samedi 17 octobre"},{etat:"Manifestations en France, notamment sur le pouvoir d'achat (interview LCI du 19 octobre). Violences et pillages dans plusieurs quartiers de Paris, selon la Ville de Paris ; la porte-parole du Gouvernement cite aussi des attaques contre des policiers, des gendarmes, des pompiers, des mairies et des commissariats.",falc:"Il y a eu des manifestations. Il y a eu des violences et des pillages à Paris et ailleurs."},"D",[["Ville de Paris",SRC_PARIS],["interview LCI",SRC_BR]]],
+  [{etat:"Nuit du 17 au 18 octobre",falc:"Dans la nuit"},{etat:"Les équipes municipales de la propreté interviennent dans les quartiers touchés de Paris : nettoyage des chaussées et des trottoirs, enlèvement des débris, remise en état de l'espace public.",falc:"Les agents de la ville de Paris nettoient les rues."},"V",[["Ville de Paris",SRC_PARIS]]],
+  [{etat:"Dimanche 18 octobre",falc:"Dimanche 18 octobre"},{etat:"La cellule de crise de la Ville de Paris, activée dès le samedi matin, se poursuit : le maire, Emmanuel Grégoire, réunit les maires d'arrondissement à 11 h 30. Selon l'interview du 19 octobre, le président de la République s'est adressé à la nation ce jour-là.",falc:"Le maire de Paris réunit les maires des quartiers. Le président de la République parle aux Français."},"V",[["Ville de Paris",SRC_PARIS],["interview LCI",SRC_BR]]],
+  [{etat:"Avant le 19 octobre",falc:"Avant le 19 octobre"},{etat:"Le ministre de l'Intérieur, Laurent Nuñez, présente sa démission au président de la République, qui la refuse « au nom de la continuité de l'État » (porte-parole du Gouvernement, 19 octobre).",falc:"Le ministre de l'Intérieur propose de partir. Le président dit non."},"D",[["interview LCI",SRC_BR]]],
+  [{etat:"Lundi 19 octobre",falc:"Lundi 19 octobre"},{etat:"Cellule interministérielle de crise. Le Premier ministre, Sébastien Lecornu, annonce une réponse pénale, des couvre-feux partiels demandés aux préfets, un fonds de soutien, le chômage partiel et un travail avec les assureurs.",falc:"Le Premier ministre annonce des mesures : la justice, des couvre-feux, de l'aide pour les commerçants."},"D",[["Premier ministre",SRC_PM]]],
+  [{etat:"Mardi 20 octobre",falc:"Mardi 20 octobre"},{etat:"Le ministre des PME, du Commerce et du Pouvoir d'achat, Serge Papin, et la ministre déléguée chargée de l'Intelligence artificielle et du Numérique, Anne Le Hénanff, réunissent en urgence les plateformes de vente en ligne : quatre engagements contre la revente de produits volés, cellule VigE-commerce activée, premier bilan attendu sous 48 heures. Le ministère indique qu'au moins 3 000 commerces ont été touchés à Paris, Marseille, Lille et dans d'autres villes.",falc:"Le Gouvernement réunit les sites de vente en ligne pour bloquer la revente des produits volés. Au moins 3 000 commerces ont été touchés."},"V",[["economie.gouv.fr",SRC_ECO]]],
+  [{etat:"Mardi 20 octobre",falc:"Mardi 20 octobre"},{etat:"Date à laquelle le chômage partiel à 100 % annoncé pour les salariés des commerces touchés doit s'appliquer, par instruction ministérielle (« dès demain », selon le Premier ministre le 19).",falc:"Le chômage partiel doit commencer."},"D",[["Premier ministre",SRC_PM]]],
+  [{etat:"24 octobre",falc:"24 octobre"},{etat:"Des appels à manifester sont cités pour cette date dans l'interview du 19 octobre ; ils ne sont pas détaillés.",falc:"Des appels à manifester sont cités pour ce jour."},"A",[["interview LCI",SRC_BR]]],
+  [{etat:"27 octobre",falc:"27 octobre"},{etat:"Examen au Sénat du projet de loi dit « casseurs-payeurs », prévu à cette date selon la journaliste de l'interview du 19 octobre.",falc:"Le Sénat doit examiner une loi pour faire payer les casseurs."},"A",[["interview LCI",SRC_BR]]],
+  [{etat:"5 novembre",falc:"5 novembre"},{etat:"Préavis de manifestation déposé par des organisations syndicales (Premier ministre, 19 octobre) ; le Premier ministre dit vouloir examiner avec elles les conditions de sécurité.",falc:"Des syndicats ont prévu une manifestation."},"D",[["Premier ministre",SRC_PM]]]
+];
+/* Qui dit quoi : [qui, quoi, où, niveau] */
+const QUI=[
+  [{etat:"Maud Bregeon, porte-parole du Gouvernement",falc:"La porte-parole du Gouvernement"},{etat:"« La République a été attaquée » ; policiers, gendarmes, pompiers et mairies attaqués. Elle attribue au président le constat d'un manque d'anticipation, d'un nombre de manifestants sous-estimé « dans la quasi-totalité des villes » et d'une doctrine de maintien de l'ordre « qui n'a pas fonctionné ». Elle ajoute que policiers et gendarmes ont fait un travail « remarquable » dans des conditions très difficiles.",falc:"Elle dit que la République a été attaquée. Elle dit que la police n'avait pas prévu assez de monde."},"LCI, 19 octobre","D"],
+  [{etat:"Sébastien Lecornu, Premier ministre",falc:"Le Premier ministre"},{etat:"Réponse pénale « massive » ; couvre-feux partiels demandés aux préfets ; fonds de soutien ; chômage partiel à 100 %. Il affirme qu'il n'y a pas eu de personnes tuées le samedi et parle d'un « miracle » que le bilan ne soit pas plus lourd. Il dit que les services de renseignement lui ont décrit un mouvement d'ultra-gauche voulant organiser du désordre jusqu'à la présidentielle.",falc:"Il annonce des mesures. Il dit que personne n'est mort le samedi."},"Point de situation, 19 octobre","D"],
+  [{etat:"Ville de Paris (maire : Emmanuel Grégoire)",falc:"La ville de Paris"},{etat:"Violences et pillages dans plusieurs quartiers ; bilan « particulièrement lourd » pour l'espace public, évaluation précise en cours ; près de 2 000 agents de la propreté mobilisés ; cellule d'urgence pour les commerçants.",falc:"Paris dit qu'il y a beaucoup de dégâts. Elle a mobilisé 2 000 agents."},"paris.fr, 19 octobre","V"],
+  [{etat:"Serge Papin (PME, Commerce, Pouvoir d'achat) et Anne Le Hénanff (Intelligence artificielle et Numérique)",falc:"Deux ministres"},{etat:"Ont réuni en urgence les plateformes de vente en ligne : quatre engagements contre la revente des produits pillés, cellule VigE-commerce activée, premier bilan sous 48 heures. Le ministère indique qu'au moins 3 000 commerces ont été touchés.",falc:"Ils ont réuni les sites de vente. Ils disent : au moins 3 000 commerces touchés."},"economie.gouv.fr, 20 octobre","V"],
+  [{etat:"Laurent Nuñez, ministre de l'Intérieur",falc:"Le ministre de l'Intérieur"},{etat:"Aurait déclaré sur France Inter : « Je suis responsable de tout » (propos rapportés par la journaliste de LCI, non vérifiés ici).",falc:"Il aurait dit qu'il est responsable de tout."},"Cité dans l'interview LCI","A"]
+];
+/* Mots employés : [mot, qui, contexte] */
+const MOTS=[
+  [{etat:"« factieux » et « racailles »",falc:"« factieux » et « racailles »"},{etat:"Maud Bregeon, 19 octobre",falc:"La porte-parole"},{etat:"Pour désigner les auteurs de pillages et d'attaques contre des représentants de l'État.",falc:"Pour parler des auteurs des pillages."}],
+  [{etat:"« décivilisation »",falc:"« décivilisation »"},{etat:"Maud Bregeon, 19 octobre",falc:"La porte-parole"},{etat:"Mot qu'elle attribue au président de la République « il y a quelques années », et qu'elle reprend à son compte.",falc:"Un mot attribué au président."}],
+  [{etat:"« ultra-gauche »",falc:"« ultra-gauche »"},{etat:"Sébastien Lecornu, 19 octobre",falc:"Le Premier ministre"},{etat:"Mouvement qui voudrait organiser du désordre jusqu'à la présidentielle, d'après les services de renseignement cités par le Premier ministre. Non vérifié ici.",falc:"Un groupe qui voudrait du désordre. Pas vérifié ici."}]
+];
+const DEG=[
+  {h:{etat:"Mobilisation de la Ville de Paris",falc:"Ce que Paris a fait"},lvl:"V",items:[{etat:"Près de 2 000 agents de la propreté mobilisés depuis la nuit du 17 au 18 octobre, dont certains ont interrompu leurs vacances.",falc:"2 000 agents ont nettoyé les rues."},{etat:"Nettoyage des chaussées et trottoirs, enlèvement des débris, remise en état de l'espace public, notamment place de la République.",falc:"Ils ont nettoyé et réparé."},{etat:"Des riverains se sont joints aux agents pour le nettoyage.",falc:"Des habitants ont aidé."}],src:[["Ville de Paris",SRC_PARIS]],note:{etat:"L'adresse de la page mentionne « près de 1000 agents », le titre actuel « près de 2 000 » : le chiffre a été revu.",falc:"Le chiffre a changé : d'abord 1 000, puis 2 000."}},
+  {h:{etat:"Dégâts : ce qui est établi, ce qui est déclaré",falc:"Les dégâts"},lvl:"D",items:[{etat:"Ville de Paris : « bilan particulièrement lourd », avec d'importants dommages à l'espace public ; l'évaluation précise est en cours (établi par la Ville).",falc:"Paris dit : beaucoup de dégâts. Le chiffre exact n'est pas connu."},{etat:"Porte-parole du Gouvernement : des mairies ont été brûlées, des commissariats et des offices du tourisme attaqués (déclaration).",falc:"La porte-parole parle de mairies brûlées et de commissariats attaqués."},{etat:"Ministère de l'Économie (20 octobre) : au moins 3 000 commerces touchés par des dégradations ou des pillages à Paris, Marseille, Lille et dans d'autres villes.",falc:"Le ministère de l'Économie dit : au moins 3 000 commerces touchés."}],src:[["Ville de Paris",SRC_PARIS],["interview LCI",SRC_BR],["economie.gouv.fr",SRC_ECO]],note:{etat:"Le chiffre de 3 000 commerces est un minimum ; aucun bilan chiffré définitif des dégâts n'a été retrouvé.",falc:"3 000 commerces, c'est un minimum. Le chiffre final n'est pas connu."}},
+  {h:{etat:"Chiffres cités sans source",falc:"Des chiffres sans source"},lvl:"A",items:[{etat:"« Plus de 500 000 manifestants dans le pays » : cité par la journaliste de LCI.",falc:"500 000 manifestants : dit par la journaliste."},{etat:"« 1 500 commerces pillés, saccagés dans tout le pays » : cité par la journaliste de LCI le 19 octobre, puis dépassé par le chiffre du ministère de l'Économie du 20 octobre (au moins 3 000).",falc:"1 500 commerces : dit le 19 octobre. Le 20 octobre, le ministère dit : au moins 3 000."},{etat:"« 30 000 casseurs à Marseille » : chiffre mentionné dans une question de téléspectateur, repris par la journaliste.",falc:"30 000 casseurs à Marseille : une question de téléspectateur."}],src:[["interview LCI",SRC_BR]],note:{etat:"Ces chiffres ne sont confirmés par aucune source officielle retrouvée : à ne pas reprendre sans vérification.",falc:"Ces chiffres ne sont pas confirmés."}}
+];
+const COM=[
+  {h:{etat:"Cellule d'urgence de la Ville de Paris",falc:"La cellule de Paris"},lvl:"V",items:[{etat:"Recenser les dommages subis par les commerces parisiens.",falc:"Compter les dégâts des commerces."},{etat:"Accompagner les commerçants dans leurs démarches administratives et d'assurance.",falc:"Aider pour les papiers et les assurances."},{etat:"Faciliter la reprise de leur activité.",falc:"Aider à rouvrir."}],src:[["Ville de Paris",SRC_PARIS]],link:{t:{etat:"Contacter un service de la Ville de Paris (formulaire)",falc:"Écrire à la Ville de Paris"},u:"https://sollicitations.paris.fr/ticketing/jsp/site/Portal.jsp?page=mylutece&action=login&form=1"}},
+  {h:{etat:"Revente des produits pillés : engagements des plateformes",falc:"Les produits volés sur internet"},lvl:"V",items:[{etat:"Coopérer avec les autorités pour identifier et signaler les contenus illicites et partager les données utiles à l'identification des receleurs.",falc:"Aider la police à repérer les ventes de produits volés."},{etat:"Renforcer la veille et la modération : prix anormalement bas, lots de produits neufs, antivols, mention du vol, y compris les demandes d'achat.",falc:"Surveiller les annonces louches."},{etat:"Informer les consommateurs des risques et des sanctions encourus en cas de recel.",falc:"Prévenir les acheteurs : acheter un objet volé est puni."},{etat:"Remettre aux autorités un bilan chiffré des retraits d'annonces et des signalements, premier bilan attendu sous 48 heures.",falc:"Donner un bilan des annonces retirées sous 48 heures."}],src:[["economie.gouv.fr",SRC_ECO]],note:{etat:"Le Gouvernement a aussi activé la cellule VigE-commerce, qui coordonne les services ministériels et surveille les ventes sur ces plateformes. Annonce du 20 octobre : la mise en œuvre n'est pas vérifiée ici.",falc:"Une cellule du Gouvernement surveille les ventes. C'est une annonce."}},
+  {h:{etat:"Mesures annoncées par le Premier ministre",falc:"Ce que le Premier ministre a annoncé"},lvl:"D",items:[{etat:"Chômage partiel déclenché « dès demain » (20 octobre) par instruction ministérielle, à 100 % et non à 70 %.",falc:"Chômage partiel à 100 %, dès le 20 octobre."},{etat:"Fonds de soutien spécifique pour les commerces, modalités à préciser par les ministres après concertation (le choix entre exonérations sociales et fiscales ou fonds restait discuté).",falc:"Un fonds de soutien. Les détails viendront."},{etat:"Discussion avec les assureurs : expertises accélérées, guichets ouverts rapidement, acomptes.",falc:"Les assureurs doivent aller plus vite."},{etat:"Responsabilité civile des personnes condamnées ; projet de loi permettant de saisir des allocations sociales pour indemniser.",falc:"Les condamnés doivent payer les dégâts."}],src:[["Premier ministre",SRC_PM]],note:{etat:"Ce sont des annonces du 19 octobre ; leur mise en œuvre n'est pas vérifiée ici.",falc:"Ce sont des annonces. On ne sait pas encore si c'est fait."}}
+];
+const JUS=[
+  {h:{etat:"Réponse pénale annoncée",falc:"La justice"},lvl:"D",items:[{etat:"Taux de poursuite « pratiquement 80 % » pour les interpellations ayant donné lieu à une garde à vue.",falc:"Presque 80 poursuites sur 100."},{etat:"Parmi les personnes concernées : deux tiers de majeurs, « pratiquement que des hommes », souvent déjà connues des services de police (selon le Premier ministre).",falc:"Deux tiers sont majeurs. Presque que des hommes."},{etat:"Une opération judiciaire « à froid » : près de 200 enquêteurs de la préfecture de police de Paris pour analyser les images ; des outils pour que les citoyens contribuent aux enquêtes, annoncés par le préfet de police et le ministre de l'Intérieur.",falc:"200 enquêteurs regardent les images."}],src:[["Premier ministre",SRC_PM]],note:{etat:"Aucun bilan officiel chiffré des interpellations et gardes à vue n'a été retrouvé.",falc:"Pas de chiffre officiel des arrestations."}},
+  {h:{etat:"Contexte : la justice dans un État de droit",falc:"Un texte officiel sur la justice"},lvl:"V",items:[{etat:"La CNCDH a adopté à l'unanimité, en assemblée plénière le 24 septembre 2026, une déclaration publiée au Journal officiel du 1er octobre 2026.",falc:"Un organisme officiel a adopté un texte à l'unanimité."},{etat:"Elle y dénonce des critiques virulentes visant l'institution judiciaire, souligne l'insuffisance des moyens de la justice et affirme que la justice ne peut rester seule face aux défis de société.",falc:"Le texte parle des attaques contre les juges et du manque de moyens."}],src:[["Légifrance",SRC_CN]],note:{etat:"Ce texte est antérieur au 17 octobre et ne porte pas sur cet événement.",falc:"Ce texte est plus ancien que le 17 octobre."}}
+];
+const ORD=[
+  {h:{etat:"Décisions et annonces",falc:"Ce qui a été annoncé"},lvl:"D",items:[{etat:"Le président de la République a demandé une réflexion sur la doctrine de maintien de l'ordre (porte-parole du Gouvernement).",falc:"Le président veut réfléchir au maintien de l'ordre."},{etat:"Le Premier ministre a demandé aux préfets de déclencher des couvre-feux partiels, localisés, après discussion avec les maires et les chambres de commerce.",falc:"Des couvre-feux partiels ont été demandés aux préfets."},{etat:"Le Premier ministre veut réunir les partis politiques et rencontrer les organisations syndicales sur la sécurité des manifestations et celle de la campagne présidentielle.",falc:"Il veut réunir les partis et les syndicats."},{etat:"La porte-parole ne dit pas exclure un couvre-feu « par principe », mais refuse d'en faire la « réponse unique ».",falc:"Le couvre-feu n'est pas la seule réponse."}],src:[["interview LCI",SRC_BR],["Premier ministre",SRC_PM]]},
+  {h:{etat:"Bilan humain : ce qui est dit",falc:"Les blessés et les morts"},lvl:"D",items:[{etat:"Selon le Premier ministre, il n'y a pas eu de personnes tuées le samedi et c'est un « miracle » que le bilan ne soit pas plus lourd.",falc:"Le Premier ministre dit : personne n'est mort le samedi."},{etat:"Le Premier ministre dit aussi que, depuis trois semaines, le débat public a porté sur une police qui « tue » ou « blesse », puis sur son efficacité.",falc:"Il parle d'un débat sur la police depuis trois semaines."}],src:[["Premier ministre",SRC_PM]],note:{etat:"Aucun bilan officiel chiffré des blessés, côté forces de l'ordre comme côté manifestants, n'a été retrouvé. Les définitions et les chiffres disponibles sur les blessés en manifestation sont sur la page Forces de l'ordre.",falc:"Pas de chiffre officiel des blessés."}}
+];
+const MANQUE={etat:["Bilan officiel chiffré des interpellations, des gardes à vue et des déferrements.","Nombre de blessés parmi les forces de l'ordre, les manifestants et les passants, et nombre d'enquêtes de l'inspection générale ouvertes.","Montant des dégâts, en dehors de l'évaluation en cours à Paris, et nombre définitif de commerces touchés (le ministère de l'Économie indique « au moins 3 000 »).","Nombre réel de manifestants (le chiffre de 500 000 est cité sans source).","Modalités et montants du fonds de soutien, et conditions d'indemnisation hors de Paris.","Résultats de la réflexion sur la doctrine de maintien de l'ordre."],falc:["Le nombre de personnes arrêtées.","Le nombre de blessés, des deux côtés.","Le montant des dégâts et le nombre final de commerces touchés.","Le nombre de manifestants.","Les détails de l'aide pour les commerçants.","Ce que donnera la réflexion sur le maintien de l'ordre."]};
+const QCM={id:"oct17",qs:[
+  {q:{etat:"Combien d'agents de la propreté la Ville de Paris a-t-elle mobilisés ?",falc:"Combien d'agents ont nettoyé les rues de Paris ?"},opts:[{etat:"Environ 200",falc:"200"},{etat:"Près de 2 000",falc:"2 000"},{etat:"Environ 20 000",falc:"20 000"}],ans:1,why:{etat:"Près de 2 000 agents, d'après la Ville de Paris (mise à jour du 19 octobre 2026).",falc:"2 000 agents, d'après la ville de Paris."},src:"Ville de Paris, 19 octobre 2026",lvl:"V"},
+  {q:{etat:"Quel taux de poursuite le Premier ministre a-t-il annoncé pour les gardes à vue ?",falc:"Combien de poursuites a annoncé le Premier ministre ?"},opts:[{etat:"20 %",falc:"20 sur 100"},{etat:"50 %",falc:"50 sur 100"},{etat:"Pratiquement 80 %",falc:"Presque 80 sur 100"}],ans:2,why:{etat:"Pratiquement 80 %. C'est une déclaration du 19 octobre, pas un bilan chiffré publié.",falc:"Presque 80 sur 100. C'est une parole, pas un bilan."},src:"info.gouv.fr, 19 octobre 2026",lvl:"D"},
+  {q:{etat:"Combien de commerces ont été touchés au moins les 17 et 18 octobre, selon le ministère de l'Économie ?",falc:"Combien de commerces ont été touchés, au moins ?"},opts:[{etat:"300",falc:"300"},{etat:"3 000",falc:"3 000"},{etat:"30 000",falc:"30 000"}],ans:1,why:{etat:"Au moins 3 000 commerces, à Paris, Marseille, Lille et dans d'autres villes (20 octobre). La veille, une interview citait 1 500 : le chiffre a été revu à la hausse.",falc:"Au moins 3 000. La veille, on disait 1 500."},src:"economie.gouv.fr, 20 octobre 2026",lvl:"V"},
+  {q:{etat:"Quel niveau de chômage partiel a été annoncé pour les salariés des commerces touchés ?",falc:"Quel chômage partiel a été annoncé pour les commerces ?"},opts:[{etat:"50 %",falc:"50 sur 100"},{etat:"70 %",falc:"70 sur 100"},{etat:"100 %",falc:"100 sur 100"}],ans:2,why:{etat:"100 %, « dès demain » par instruction ministérielle, et non 70 % (Premier ministre, 19 octobre).",falc:"100 sur 100, dès le 20 octobre."},src:"info.gouv.fr, 19 octobre 2026",lvl:"D"}
+]};
+const SOURCES=[
+  [SRC_PARIS.t,SRC_PARIS.u,"V"],[SRC_PM.t,SRC_PM.u,"V"],[SRC_ECO.t,SRC_ECO.u,"V"],[SRC_BR.t,SRC_BR.u,"V"],[SRC_CN.t,SRC_CN.u,"V"],
+  ["Ministère de l'Intérieur, SSMSI, « Insécurité et délinquance en 2025 : bilan statistique et atlas départemental » (9 juillet 2026) : contexte sur les violences enregistrées, voir la page Forces de l'ordre","https://www.interieur.gouv.fr/actualites/communiques-de-presse/insecurite-et-delinquance-en-2025-bilan-statistique-et-atlas-departemental","V"]
+];
+const AIDE=[["17","Police, gendarmerie"],["112","Urgence en Europe"],["119","Enfance en danger"],["39 19","Violences conjugales"],["15","Samu"],["18","Pompiers"]];
+
+function card(c){ return `<div class="card"><h3>${pick(c.h)} ${lvl(c.lvl)}</h3><ul class="mini">${c.items.map(i=>`<li>${pick(i)}</li>`).join("")}</ul>${c.note?`<p class="small muted" style="margin-top:10px">${pick(c.note)}</p>`:""}${c.link?`<p style="margin-top:10px"><a href="${esc(c.link.u)}" target="_blank" rel="noopener">${pick(c.link.t)}</a></p>`:""}<p class="src">${c.src.map(s=>srcLink(s[1],s[0])).join(" · ")}</p></div>`; }
+function render(){
+  document.body.classList.toggle("falc", L==="falc");
+  document.querySelectorAll("[data-t]").forEach(el=>{ el.innerHTML=pick(TXT[el.dataset.t]); });
+  $("#switch").innerHTML=PAGE_LEVELS.map(k=>`<button type="button" aria-pressed="${k===L}" data-level="${k}">${LEVEL_NAMES[k]}</button>`).join("");
+  const K=[
+    {kind:{etat:"Agents de la propreté mobilisés à Paris",falc:"Agents qui ont nettoyé Paris"},v:"2 000",u:{etat:"près de, selon la Ville",falc:"environ"},lvl:"V",src:"Ville de Paris, 19 oct. 2026"},
+    {kind:{etat:"Taux de poursuite annoncé, gardes à vue",falc:"Poursuites annoncées"},v:"≈ 80 %",u:{etat:"déclaration du Premier ministre",falc:"parole du Premier ministre"},lvl:"D",src:"info.gouv.fr, 19 oct. 2026"},
+    {kind:{etat:"Commerces touchés les 17 et 18 octobre",falc:"Commerces touchés"},v:"≥ 3 000",u:{etat:"au moins, selon le ministère de l'Économie",falc:"au moins"},lvl:"V",src:"economie.gouv.fr, 20 oct. 2026"},
+    {kind:{etat:"Chômage partiel annoncé, commerces touchés",falc:"Chômage partiel annoncé"},v:"100 %",u:{etat:"dès le 20 octobre, annoncé",falc:"dès le 20 octobre"},lvl:"D",src:"info.gouv.fr, 19 oct. 2026"}];
+  $("#kpis").innerHTML=K.map(k=>`<div class="tile"><span class="kind">${pick(k.kind)}</span><span class="val num">${k.v}<small>${pick(k.u)}</small></span><span class="src">${lvl(k.lvl)} ${esc(k.src)}</span></div>`).join("");
+  $("#frise").innerHTML=FRISE.map(f=>`<li><span class="d">${pick(f[0])}</span><span>${pick(f[1])}${lvl(f[2])}<span class="by">${f[3].map(s=>srcLink(s[1],s[0])).join(" · ")}</span></span></li>`).join("");
+  $("#tbl-qui").innerHTML=`<table><thead><tr><th>${L==="falc"?"Qui":"Qui parle"}</th><th>${L==="falc"?"Ce qui est dit":"Ce qui est déclaré"}</th><th>${L==="falc"?"Où":"Où et quand"}</th><th>${L==="falc"?"Sûr ?":"Niveau"}</th></tr></thead><tbody>${QUI.map(q=>`<tr><td>${pick(q[0])}</td><td>${pick(q[1])}</td><td class="small muted">${esc(q[2])}</td><td>${lvl(q[3])}</td></tr>`).join("")}</tbody></table>`;
+  $("#tbl-mots").innerHTML=`<table><thead><tr><th>${L==="falc"?"Mot":"Terme"}</th><th>${L==="falc"?"Qui":"Qui l'emploie"}</th><th>${L==="falc"?"Pour dire quoi":"Contexte"}</th></tr></thead><tbody>${MOTS.map(m=>`<tr><td>${pick(m[0])}</td><td class="small">${pick(m[1])}</td><td>${pick(m[2])}</td></tr>`).join("")}</tbody></table>`;
+  $("#deg-cards").innerHTML=DEG.map(card).join(""); $("#com-cards").innerHTML=COM.map(card).join(""); $("#jus-cards").innerHTML=JUS.map(card).join(""); $("#ord-cards").innerHTML=ORD.map(card).join("");
+  $("#manque-list").innerHTML=(MANQUE[L]||MANQUE.etat).map(x=>`<li>${x}</li>`).join("");
+  Qcm.draw("#qcm-17",QCM,L);
+  $("#tbl-src").innerHTML=`<table><thead><tr><th>Source</th><th>${L==="falc"?"Sûr ?":"Niveau"}</th></tr></thead><tbody>${SOURCES.map(s=>`<tr><td><a href="${esc(s[1])}" target="_blank" rel="noopener">${esc(s[0])}</a></td><td>${lvl(s[2])}</td></tr>`).join("")}</tbody></table>`;
+  $("#help").innerHTML=AIDE.map(a=>`<div><b>${a[0]}</b><span class="small muted">${a[1]}</span></div>`).join("");
+}
+$("#switch").addEventListener("click",e=>{ const b=e.target.closest("button"); if(!b) return; L=b.dataset.level; try{ localStorage.setItem("politik-level-oct17",L);}catch(err){} render(); });
+render();
+</script>
+<script src="donnees.js"></script>
+<script src="acronymes.js"></script>
+<script src="gouvernement.js"></script>
+<script src="entete.js"></script>
+<script src="entites.js"></script>
+<script src="visuels.js"></script>
+<script src="sommaire.js"></script>
+<script src="niveau.js"></script>
+<script src="legende.js"></script>
+</body>
+</html>

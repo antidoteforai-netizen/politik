@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" role="img" aria-label="Politik">
+  <title>Politik</title>
+  <!-- Repère : un P dont le creux est un point de donnée. Texte en Outfit 700 (police du site, repli sans-serif). -->
+  <rect width="64" height="64" rx="15" fill="#141A2B"/>
+  <rect x="19" y="14" width="8" height="36" rx="4" fill="#FFFFFF"/>
+  <circle cx="35" cy="26" r="10.5" fill="none" stroke="#FFFFFF" stroke-width="8"/>
+  <circle cx="35" cy="26" r="3.6" fill="#7A9BEC"/>
+  <text x="80" y="45" font-family="Outfit, 'Host Grotesk', system-ui, sans-serif" font-size="40" font-weight="700" letter-spacing="-0.8" fill="#141A2B">Politik<tspan fill="#2F5BC9">.</tspan></text>
+</svg>

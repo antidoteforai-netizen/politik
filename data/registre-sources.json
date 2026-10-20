@@ -2364,6 +2364,33 @@
     },
     {
       "page": "gouvernement",
+      "type": "document",
+      "titre": "PAC 2026 : plus de 5 milliards d'euros versés dès le 16 octobre",
+      "producteur": "agriculture.gouv.fr",
+      "url": "https://agriculture.gouv.fr/pac-2026-plus-de-5-milliards-deuros-verses-des-le-16-octobre-pour-soutenir-la-tresorerie",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Service national : les premiers appelés passent de la formation aux missions",
+      "producteur": "defense.gouv.fr",
+      "url": "https://www.defense.gouv.fr/actualites/service-national-premiers-appeles-passent-formation-aux-missions",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Consignes de sécurité pour les Français de l'étranger : situation au Moyen-Orient",
+      "producteur": "diplomatie.gouv.fr",
+      "url": "https://www.diplomatie.gouv.fr/fr/presse-et-ressources/decouvrir-et-informer/actualites/consignes-de-securite-et-contacts-pour-les-francais-de-l-etranger-situation-au-moyen-orient",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
       "type": "reference",
       "titre": "Site officiel : Premier ministre",
       "producteur": "www.info.gouv.fr",
@@ -2379,6 +2406,33 @@
       "url": "https://www.interieur.gouv.fr/",
       "niveau": "V",
       "statut": "relu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "reference",
+      "titre": "Site officiel : Ministère des Armées et des Anciens combattants",
+      "producteur": "www.defense.gouv.fr",
+      "url": "https://www.defense.gouv.fr/",
+      "niveau": "V",
+      "statut": "relu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Service national : la France fait évoluer son modèle d'armée en mêlant militaires d'active, réservistes et appelés du se",
+      "producteur": "defense.gouv.fr",
+      "url": "https://www.defense.gouv.fr/ministere/dossiers-evenementiels-thematiques/service-national-nouveau-modele-darmee",
+      "niveau": "D",
+      "statut": "à savoir, lu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Le ministère annonce une nouvelle aide pour faciliter le quotidien des familles en cas d'absence professionnelle d'un mi",
+      "producteur": "defense.gouv.fr",
+      "url": "https://www.defense.gouv.fr/sga/actualites/absence-professionnelle-nouvelle-aide-faciliter-quotidien-familles",
+      "niveau": "V",
+      "statut": "à savoir, lu le 2026-10-20"
     },
     {
       "page": "gouvernement",
@@ -2464,6 +2518,33 @@
     {
       "page": "gouvernement",
       "type": "reference",
+      "titre": "Site officiel : Ministère de l'Agriculture, de l'Agro-alimentaire et de la Souveraineté alimentaire",
+      "producteur": "agriculture.gouv.fr",
+      "url": "https://agriculture.gouv.fr/",
+      "niveau": "V",
+      "statut": "relu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Le ministère annonce des mesures de soutien aux agriculteurs, dont jusqu'à 35 centimes par litre de gazole non routier.",
+      "producteur": "agriculture.gouv.fr",
+      "url": "https://agriculture.gouv.fr/gazole-non-routier-jusqua-35-centimes-par-litre-de-soutien-pour-les-agriculteurs-grace-aux-mesures",
+      "niveau": "D",
+      "statut": "à savoir, lu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Un comité national de pilotage du plan de prévention du mal-être en agriculture a publié une fiche des dispositifs d'aid",
+      "producteur": "agriculture.gouv.fr",
+      "url": "https://agriculture.gouv.fr/comite-national-de-pilotage-du-plan-de-prevention-du-mal-etre-en-agriculture-parution-dune-fiche",
+      "niveau": "V",
+      "statut": "à savoir, lu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "reference",
       "titre": "Site officiel : Ministère de l'Éducation nationale",
       "producteur": "www.education.gouv.fr",
       "url": "https://www.education.gouv.fr/",
@@ -2485,6 +2566,24 @@
       "titre": "Les inscriptions aux concours de recrutement d'enseignants sont signalées sur la page d'accueil du ministère, avec renvo",
       "producteur": "education.gouv.fr",
       "url": "https://www.devenirenseignant.gouv.fr/node/1061",
+      "niveau": "V",
+      "statut": "à savoir, lu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "reference",
+      "titre": "Site officiel : Ministère de l'Europe et des Affaires étrangères",
+      "producteur": "www.diplomatie.gouv.fr",
+      "url": "https://www.diplomatie.gouv.fr/fr/",
+      "niveau": "V",
+      "statut": "relu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Le site publie des conseils aux voyageurs et une page sur l'action diplomatique de la France en Ukraine.",
+      "producteur": "diplomatie.gouv.fr",
+      "url": "https://www.diplomatie.gouv.fr/fr/priorites-et-actions/grands-dossiers/l-action-diplomatique-de-la-france-en-ukraine",
       "niveau": "V",
       "statut": "à savoir, lu le 2026-10-20"
     },
@@ -2774,7 +2873,7 @@
   "totaux": {
     "api": 19,
     "jeu": 44,
-    "document": 137,
-    "reference": 97
+    "document": 145,
+    "reference": 100
   }
 }

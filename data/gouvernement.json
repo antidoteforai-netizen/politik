@@ -123,10 +123,25 @@
       "famille": "regalien",
       "icone": "<g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 18l12-8 12 8\"/><path d=\"M12 28l12-8 12 8\"/><path d=\"M12 38l12-8 12 8\"/></g>",
       "pages": [],
-      "site": null,
-      "site_verifie_le": null,
-      "a_savoir": [],
-      "verifie_le": null
+      "site": "https://www.defense.gouv.fr/",
+      "site_verifie_le": "2026-10-20",
+      "a_savoir": [
+        {
+          "texte": "Service national : la France fait évoluer son modèle d'armée en mêlant militaires d'active, réservistes et appelés du service national. Le ministère publie un dossier et indique que les premiers appelés passent de la formation aux missions.",
+          "url": "https://www.defense.gouv.fr/ministere/dossiers-evenementiels-thematiques/service-national-nouveau-modele-darmee",
+          "source": "defense.gouv.fr",
+          "niveau": "D",
+          "lu_le": "2026-10-20"
+        },
+        {
+          "texte": "Le ministère annonce une nouvelle aide pour faciliter le quotidien des familles en cas d'absence professionnelle d'un militaire.",
+          "url": "https://www.defense.gouv.fr/sga/actualites/absence-professionnelle-nouvelle-aide-faciliter-quotidien-familles",
+          "source": "defense.gouv.fr",
+          "niveau": "V",
+          "lu_le": "2026-10-20"
+        }
+      ],
+      "verifie_le": "2026-10-20"
     },
     {
       "id": "travail-solidarites",
@@ -364,10 +379,32 @@
       "pages": [
         "secteurs.html"
       ],
-      "site": null,
-      "site_verifie_le": null,
-      "a_savoir": [],
-      "verifie_le": null
+      "site": "https://agriculture.gouv.fr/",
+      "site_verifie_le": "2026-10-20",
+      "a_savoir": [
+        {
+          "texte": "Politique agricole commune 2026 : 5,04 milliards d'euros d'avances versés du 16 au 20 octobre 2026 à 261 723 exploitations, selon le ministère. Le taux d'avance du premier pilier passe de 70 % à 75 % et reste à 85 % pour l'indemnité compensatoire de handicaps naturels.",
+          "url": "https://agriculture.gouv.fr/pac-2026-plus-de-5-milliards-deuros-verses-des-le-16-octobre-pour-soutenir-la-tresorerie",
+          "source": "agriculture.gouv.fr, 16 octobre 2026",
+          "niveau": "V",
+          "lu_le": "2026-10-20"
+        },
+        {
+          "texte": "Le ministère annonce des mesures de soutien aux agriculteurs, dont jusqu'à 35 centimes par litre de gazole non routier.",
+          "url": "https://agriculture.gouv.fr/gazole-non-routier-jusqua-35-centimes-par-litre-de-soutien-pour-les-agriculteurs-grace-aux-mesures",
+          "source": "agriculture.gouv.fr",
+          "niveau": "D",
+          "lu_le": "2026-10-20"
+        },
+        {
+          "texte": "Un comité national de pilotage du plan de prévention du mal-être en agriculture a publié une fiche des dispositifs d'aide et d'accompagnement existants.",
+          "url": "https://agriculture.gouv.fr/comite-national-de-pilotage-du-plan-de-prevention-du-mal-etre-en-agriculture-parution-dune-fiche",
+          "source": "agriculture.gouv.fr",
+          "niveau": "V",
+          "lu_le": "2026-10-20"
+        }
+      ],
+      "verifie_le": "2026-10-20"
     },
     {
       "id": "education",
@@ -437,10 +474,25 @@
       "pages": [
         "secteurs.html"
       ],
-      "site": null,
-      "site_verifie_le": null,
-      "a_savoir": [],
-      "verifie_le": null
+      "site": "https://www.diplomatie.gouv.fr/fr/",
+      "site_verifie_le": "2026-10-20",
+      "a_savoir": [
+        {
+          "texte": "Français de l'étranger, situation au Moyen-Orient : rester en sécurité, suivre les consignes des autorités locales, consulter le site France Diplomatie et celui de l'ambassade, s'inscrire sur Ariane, et ne pas aller à l'aéroport sans confirmation de vol (page mise à jour le 22 avril 2026).",
+          "url": "https://www.diplomatie.gouv.fr/fr/presse-et-ressources/decouvrir-et-informer/actualites/consignes-de-securite-et-contacts-pour-les-francais-de-l-etranger-situation-au-moyen-orient",
+          "source": "diplomatie.gouv.fr",
+          "niveau": "V",
+          "lu_le": "2026-10-20"
+        },
+        {
+          "texte": "Le site publie des conseils aux voyageurs et une page sur l'action diplomatique de la France en Ukraine.",
+          "url": "https://www.diplomatie.gouv.fr/fr/priorites-et-actions/grands-dossiers/l-action-diplomatique-de-la-france-en-ukraine",
+          "source": "diplomatie.gouv.fr",
+          "niveau": "V",
+          "lu_le": "2026-10-20"
+        }
+      ],
+      "verifie_le": "2026-10-20"
     },
     {
       "id": "sante",
@@ -1106,6 +1158,45 @@
       "url": "https://www.ecologie.gouv.fr/acheter-investir-renover",
       "ministeres": [
         "ville-logement"
+      ],
+      "pages": [],
+      "niveau": "V",
+      "lu_le": "2026-10-20"
+    },
+    {
+      "date": "2026-10-16",
+      "titre": "PAC 2026 : plus de 5 milliards d'euros versés dès le 16 octobre",
+      "resume": "Avances versées à 261 723 exploitations pour soutenir leur trésorerie après la sécheresse et la canicule.",
+      "source": "agriculture.gouv.fr",
+      "url": "https://agriculture.gouv.fr/pac-2026-plus-de-5-milliards-deuros-verses-des-le-16-octobre-pour-soutenir-la-tresorerie",
+      "ministeres": [
+        "agriculture"
+      ],
+      "pages": [],
+      "niveau": "V",
+      "lu_le": "2026-10-20"
+    },
+    {
+      "date": "2026-10-20",
+      "titre": "Service national : les premiers appelés passent de la formation aux missions",
+      "resume": "Actualité publiée par le ministère des Armées et des Anciens combattants.",
+      "source": "defense.gouv.fr",
+      "url": "https://www.defense.gouv.fr/actualites/service-national-premiers-appeles-passent-formation-aux-missions",
+      "ministeres": [
+        "armees"
+      ],
+      "pages": [],
+      "niveau": "V",
+      "lu_le": "2026-10-20"
+    },
+    {
+      "date": "2026-04-22",
+      "titre": "Consignes de sécurité pour les Français de l'étranger : situation au Moyen-Orient",
+      "resume": "Recommandations du Centre de crise et de soutien, mises à jour le 22 avril 2026.",
+      "source": "diplomatie.gouv.fr",
+      "url": "https://www.diplomatie.gouv.fr/fr/presse-et-ressources/decouvrir-et-informer/actualites/consignes-de-securite-et-contacts-pour-les-francais-de-l-etranger-situation-au-moyen-orient",
+      "ministeres": [
+        "europe-affaires-etrangeres"
       ],
       "pages": [],
       "niveau": "V",

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Police et gendarmerie : l'essentiel en trois pages · Politik</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="politik.css">
+<style>
+@page{size:A4;margin:0}
+html,body{background:#e9ecf3}
+body{margin:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;margin:0 auto 10mm;padding:11mm 13mm 9mm;box-sizing:border-box;background:var(--paper,#f4f5f9);position:relative;overflow:hidden;display:flex;flex-direction:column;gap:4mm;break-after:page;page-break-after:always}
+.page:last-child{break-after:auto;page-break-after:auto;margin-bottom:0}
+@media print{html,body{background:none}.page{margin:0}}
+.top{display:flex;align-items:center;justify-content:space-between;gap:10mm}
+.brand{display:flex;align-items:center;gap:3mm;font-family:var(--font-display);font-weight:700;font-size:15pt;color:var(--ink)}
+.brand svg{width:9mm;height:9mm}
+.brand span{color:var(--accent)}
+.meta{font-size:7.5pt;color:var(--ink-3);text-align:right;line-height:1.35}
+h1{font-family:var(--font-display);font-size:23pt;line-height:1.08;margin:0;letter-spacing:-.02em;max-width:150mm}
+.lede{font-size:9.5pt;color:var(--ink-2);margin:0;max-width:165mm;line-height:1.4}
+.hero{position:relative;padding:5mm 7mm;border-radius:6mm;background:linear-gradient(135deg,var(--surface),color-mix(in srgb,var(--accent-soft) 85%,var(--surface)));border:.3mm solid var(--line)}
+h2{font-family:var(--font-display);font-size:11.5pt;margin:0 0 2.5mm;display:flex;align-items:center;gap:2mm}
+h2:before{content:"";width:2.4mm;height:2.4mm;border-radius:50%;background:var(--accent)}
+.sub{font-size:7.5pt;color:var(--ink-3);margin:-1.5mm 0 2.5mm}
+.grid{display:grid;gap:3.5mm}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--surface);border:.3mm solid var(--line);border-radius:4mm;padding:3.4mm 4.2mm;min-width:0}
+.big{font-family:var(--font-display);font-weight:700;font-size:21pt;line-height:1;letter-spacing:-.02em}
+.big small{font-size:9pt;font-weight:500;color:var(--ink-2);margin-left:1mm;letter-spacing:0}
+.kind{font-size:6.8pt;text-transform:uppercase;letter-spacing:.07em;font-weight:700;color:var(--accent-ink);margin-bottom:1.5mm}
+.cap{font-size:7.6pt;color:var(--ink-2);margin-top:1.5mm;line-height:1.35}
+.src{font-size:6.6pt;color:var(--ink-3);margin-top:1.5mm}
+.lvl{display:inline-block;min-width:4mm;text-align:center;padding:.2mm 1.3mm;border-radius:1mm;font-size:6.5pt;font-weight:800;color:#fff;margin-right:1mm}
+.lvl-V{background:#2d6a4f}.lvl-S{background:#8a6a14}.lvl-D{background:#9b3550}.lvl-A{background:#6b7280}
+.bars{display:flex;align-items:flex-end;gap:2.2mm;height:30mm;padding-top:2mm}
+.bars .b{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:1mm;min-width:0;height:100%}
+.bars .col{width:100%;background:var(--c1);border-radius:1mm 1mm 0 0}
+.bars .col.c{background:repeating-linear-gradient(45deg,var(--c1) 0 1mm,color-mix(in srgb,var(--c1) 40%,#fff) 1mm 2mm)}
+.bars .col.p{background:none;border:.35mm dashed var(--c1)}
+.bars .col.k{background:#9b3550}
+.bars .v{font-family:var(--font-display);font-weight:700;font-size:8pt}
+.bars .y{font-size:6.2pt;color:var(--ink-3);text-align:center;line-height:1.1}
+.legend{display:flex;flex-wrap:wrap;gap:1mm 4mm;font-size:6.8pt;color:var(--ink-2);margin-top:2mm}
+.legend i{display:inline-block;width:3mm;height:2.4mm;margin-right:1mm;vertical-align:-.3mm;border-radius:.5mm}
+.row{display:grid;grid-template-columns:34mm 1fr auto;gap:1.2mm 2.5mm;align-items:center;font-size:7.6pt}
+.row .bar{height:3mm;background:var(--c1);border-radius:0 1mm 1mm 0}
+.row .bar.o{background:#c8622b}
+.row b{font-family:var(--font-display)}
+ul.pts{margin:0;padding-left:4mm;font-size:8pt;line-height:1.4;color:var(--ink)}
+ul.pts li{margin-bottom:1.2mm}
+.corps h3{font-family:var(--font-display);font-size:10pt;margin:0 0 1mm}
+.corps .niv{display:inline-block;padding:.3mm 2mm;border-radius:99px;background:var(--accent-soft);color:var(--accent-ink);font-size:6.6pt;font-weight:800;margin-left:1.5mm}
+.corps p{margin:0 0 1.2mm;font-size:7.6pt;line-height:1.35}
+.help{display:flex;align-items:center;gap:4mm;padding:3.5mm 5mm;border-radius:4mm;background:#14203b;color:#fff;font-size:8pt}
+.help b{font-family:var(--font-display);font-size:16pt;color:#9fb8ff}
+.foot{margin-top:auto;display:flex;justify-content:space-between;gap:6mm;font-size:6.8pt;color:var(--ink-3);border-top:.3mm solid var(--line);padding-top:2.5mm}
+.nb{font-size:6.8pt;color:var(--ink-3)}
+.roomy ul.pts{font-size:9.4pt;line-height:1.45}.roomy ul.pts li{margin-bottom:1.6mm}.roomy .cap{font-size:8.8pt}.roomy .row{font-size:8.8pt}.roomy .sub{font-size:8.4pt}.roomy .corps p{font-size:8.8pt}.roomy .src{font-size:7.4pt}.roomy .card{padding:4mm 4.6mm}.roomy h2{font-size:12.5pt}.roomy .big{font-size:24pt}.roomy .corps .big{font-size:20pt!important}.roomy .help{font-size:9pt}
+</style>
+</head>
+<body>
+
+<section class="page" id="p1">
+  <div class="top">
+    <div class="brand"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#141A2B"/><rect x="19" y="14" width="8" height="36" rx="4" fill="#fff"/><circle cx="35" cy="26" r="10.5" fill="none" stroke="#fff" stroke-width="8"/><circle cx="35" cy="26" r="3.6" fill="#7A9BEC"/></svg>Politik<span>.</span></div>
+    <div class="meta">Résumé de la page Police et gendarmerie<br>20 octobre 2026 · politik-eta.vercel.app/forces.html</div>
+  </div>
+  <div class="hero">
+    <h1>Police et gendarmerie : ce que disent les chiffres, et comment ils sont comptés</h1>
+    <p class="lede" style="margin-top:2.5mm">Suicides, détresse déclarée, soutien psychologique, violences subies, blessés en manifestation. Chaque chiffre dit qui est compté, d'où il vient et à quel point on peut s'y fier.</p>
+  </div>
+
+  <div class="grid g3">
+    <div class="card"><div class="kind">Suicides, police nationale, 2024</div><div class="big">27<small>agents</small></div><div class="cap">Contre 59 en 2019 (périmètre police nationale). Gendarmerie : 26 en 2024, 21 en 2019.</div><div class="src"><span class="lvl lvl-V">V</span>Réponses ministérielles, rapport du Sénat</div></div>
+    <div class="card"><div class="kind">Détresse psychologique déclarée</div><div class="big">39<small>%</small></div><div class="cap">Échelle de Kessler, 6 246 policiers, environ 2021. Échantillon de volontaires d'une mutuelle.</div><div class="src"><span class="lvl lvl-S">S</span>Baromètre MGP</div></div>
+    <div class="card"><div class="kind">Psychologues du soutien opérationnel</div><div class="big">122<small>psychologues</small></div><div class="cap">Soit 1 pour 1 200 agents. 11 postes prévus d'ici 2028, soit 2 équivalents temps plein par an.</div><div class="src"><span class="lvl lvl-V">V</span>Réponses ministérielles, AEF</div></div>
+    <div class="card"><div class="kind">Blessés en service, 2019</div><div class="big">7 399<small>agents</small></div><div class="cap">Police et gendarmerie. 3 842 en 2004 : le nombre a presque doublé.</div><div class="src"><span class="lvl lvl-V">V</span>Question parlementaire</div></div>
+    <div class="card"><div class="kind">Agressions contre les forces de l'ordre</div><div class="big">≈ 38 000<small>en 2025</small></div><div class="cap">Estimation rapportée par un député ; 30 000 à 32 000 en 2020.</div><div class="src"><span class="lvl lvl-S">S</span>Question parlementaire, estimation</div></div>
+    <div class="card"><div class="kind">Violences enregistrées, 2025</div><div class="big">+5<small>% physiques</small></div><div class="cap">+8 % pour les violences sexuelles ; 975 victimes d'homicide, un chiffre stable. Faits enregistrés, pas faits réels.</div><div class="src"><span class="lvl lvl-V">V</span>SSMSI, ministère de l'Intérieur</div></div>
+  </div>
+
+  <div class="card">
+    <h2>Suicides dans la police nationale, de 2008 à 2026</h2>
+    <p class="sub">Une barre par observation ; les périmètres et les sources diffèrent. Les deux valeurs de 2019 se contredisent et restent côte à côte.</p>
+    <div class="bars" role="img" aria-label="Suicides dans la police nationale par année et par source">
+      <div class="b"><span class="v">49</span><div class="col" style="height:49%"></div><span class="y">2008</span></div>
+      <div class="b"><span class="v">50</span><div class="col" style="height:50%"></div><span class="y">2017</span></div>
+      <div class="b"><span class="v">35</span><div class="col c" style="height:35%"></div><span class="y">2018</span></div>
+      <div class="b"><span class="v">59</span><div class="col" style="height:59%"></div><span class="y">2019</span></div>
+      <div class="b"><span class="v">70</span><div class="col k" style="height:70%"></div><span class="y">2019<br>autre<br>source</span></div>
+      <div class="b"><span class="v">48</span><div class="col c" style="height:48%"></div><span class="y">2021<br>police+<br>gend.</span></div>
+      <div class="b"><span class="v">78</span><div class="col c" style="height:78%"></div><span class="y">2022<br>avec pénit.</span></div>
+      <div class="b"><span class="v">27</span><div class="col" style="height:27%"></div><span class="y">2024</span></div>
+      <div class="b"><span class="v">23</span><div class="col p" style="height:23%"></div><span class="y">2024<br>au 8 oct.</span></div>
+      <div class="b"><span class="v">16</span><div class="col p" style="height:16%"></div><span class="y">2025<br>au moins</span></div>
+      <div class="b"><span class="v">12</span><div class="col p" style="height:12%"></div><span class="y">2025<br>juillet</span></div>
+      <div class="b"><span class="v">8</span><div class="col p" style="height:8%"></div><span class="y">2026<br>mai</span></div>
+    </div>
+    <div class="legend"><span><i style="background:var(--c1)"></i>officiel rapporté (B)</span><span><i style="background:repeating-linear-gradient(45deg,var(--c1) 0 1mm,#bcc7ee 1mm 2mm)"></i>presse, syndicat, périmètre élargi (C)</span><span><i style="background:#9b3550"></i>écart non expliqué (D)</span><span><i style="border:.3mm dashed var(--c1)"></i>partiel ou « au moins »</span></div>
+  </div>
+
+  <div class="help"><b>3114</b><span>Numéro national de prévention du suicide, gratuit, 24 h sur 24. Si vous êtes concerné·e ou inquiet·e pour quelqu'un, appelez.</span></div>
+  <div class="foot"><span>Niveaux de confiance : <span class="lvl lvl-V">V</span>publié par l'institution <span class="lvl lvl-S">S</span>source secondaire <span class="lvl lvl-D">D</span>déclaration <span class="lvl lvl-A">A</span>à vérifier</span><span>Page 1 sur 3</span></div>
+</section>
+
+<section class="page roomy" id="p2">
+  <div class="top">
+    <div class="brand"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#141A2B"/><rect x="19" y="14" width="8" height="36" rx="4" fill="#fff"/><circle cx="35" cy="26" r="10.5" fill="none" stroke="#fff" stroke-width="8"/><circle cx="35" cy="26" r="3.6" fill="#7A9BEC"/></svg>Politik<span>.</span></div>
+    <div class="meta">Police et gendarmerie · suite<br>politik-eta.vercel.app/forces.html</div>
+  </div>
+
+  <div class="grid g2">
+    <div class="card"><h2>Le piège du taux</h2>
+      <div class="row"><span>Police, sur dix ans</span><span class="bar" style="width:100%"></span><b>29</b></div>
+      <div class="row"><span>Gendarmerie, sur dix ans</span><span class="bar" style="width:86%"></span><b>25</b></div>
+      <div class="row"><span>Population générale</span><span class="bar o" style="width:48%"></span><b>14</b></div>
+      <div class="cap">Pour 100 000, taux bruts (Sénat, 2018). Les policiers sont surtout des hommes de 25 à 55 ans : après correction de l'âge et du sexe, le surrisque est de 36 % pour la police nationale (2005-2009). On ne place jamais un taux brut et un taux corrigé sur le même graphique.</div>
+      <div class="src"><span class="lvl lvl-V">V</span>Sénat, rapport 2018</div></div>
+    <div class="card"><h2>Des mesures qui ne se comparent pas</h2>
+      <ul class="pts"><li><b>Détresse psychologique</b> 39 % (mutuelle MGP)</li><li><b>Dépression</b> 11,8 % (thèse Lyon 1, 2026)</li><li><b>Stress post-traumatique</b> 6,6 % après exposition directe, 0,9 % sans exposition</li><li><b>Manque d'accomplissement</b> 62,2 % (CNRS et Alliance, 2011-2012)</li></ul>
+      <div class="cap">Chaque mesure a sa propre échelle et sa propre population : elles ne se placent pas sur un même axe.</div></div>
+  </div>
+  <div class="card">
+    <h2>Qui sont les policiers : diplôme exigé et salaire</h2>
+    <p class="sub">Diplôme exigé à l'entrée du concours externe (police nationale), effectifs 2020 (Cour des comptes) et salaire net moyen par mois en 2023 en équivalent temps plein (Insee), via data.gouv.fr.</p>
+    <div class="grid g3 corps">
+      <div class="card" style="background:var(--surface-2)"><h3>Gardiens de la paix <span class="niv">Bac</span></h3><p>Gardien de la paix, brigadier-chef, major de police.</p><p><b>107 600</b> gardiens en 2020, plus 10 300 policiers adjoints.</p><div class="big" style="font-size:17pt">2 787 €<small>par mois</small></div><p class="nb">Ligne « agents de police de l'État »</p></div>
+      <div class="card" style="background:var(--surface-2)"><h3>Officiers <span class="niv">Bac+3</span></h3><p>Capitaine, commandant, commandant divisionnaire.</p><p><b>9 200</b> commissaires et officiers en 2020, les deux corps ensemble.</p><div class="big" style="font-size:17pt">3 315 €<small>par mois</small></div><p class="nb">Ligne « inspecteurs et officiers de police »</p></div>
+      <div class="card" style="background:var(--surface-2)"><h3>Commissaires <span class="niv">Bac+5</span></h3><p>Commissaire, commissaire divisionnaire, commissaire général.</p><p>Compris dans les 9 200 ci-contre.</p><div class="big" style="font-size:17pt">n. d.</div><p class="nb">Pas de ligne propre dans le jeu de l'Insee</p></div>
+    </div>
+    <div class="grid g2" style="margin-top:3.5mm">
+      <div>
+        <div class="row"><span>Agents de police</span><span class="bar" style="width:77%"></span><b>2 787 €</b></div>
+        <div class="row"><span>Officiers de police</span><span class="bar" style="width:92%"></span><b>3 315 €</b></div>
+        <div class="row"><span>Polices municipales</span><span class="bar o" style="width:74%"></span><b>2 678 €</b></div>
+        <div class="row"><span>Tous agents de l'État</span><span class="bar o" style="width:80%"></span><b>2 886 €</b></div>
+      </div>
+      <ul class="pts"><li>Un agent gagne <b>3,4 % de moins</b> que la moyenne de l'État ; un officier <b>14,9 % de plus</b>.</li><li>Chez les agents, de <b>2 089 €</b> avant 30 ans à <b>3 206 €</b> entre 50 et 59 ans.</li><li>Les femmes gagnent <b>6,5 % de moins</b> (agents) et <b>7,8 % de moins</b> (officiers), sans correction du grade, de l'âge ni du temps de travail.</li></ul>
+    </div>
+    <div class="cap"><b>Ce qu'on ne sait pas</b> : le diplôme réel des policiers en poste et toute mesure d'« excellence ». Aucun jeu de data.gouv.fr ne les publie.</div>
+    <div class="src"><span class="lvl lvl-V">V</span>Insee (2023), Cour des comptes, site de la police nationale</div>
+  </div>
+
+  <div class="foot"><span>Politik · données publiques, textes attribués · politik-eta.vercel.app/forces.html</span><span>Page 2 sur 3</span></div>
+</section>
+
+<section class="page roomy" id="p3">
+  <div class="top">
+    <div class="brand"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#141A2B"/><rect x="19" y="14" width="8" height="36" rx="4" fill="#fff"/><circle cx="35" cy="26" r="10.5" fill="none" stroke="#fff" stroke-width="8"/><circle cx="35" cy="26" r="3.6" fill="#7A9BEC"/></svg>Politik<span>.</span></div>
+    <div class="meta">Police et gendarmerie · suite<br>politik-eta.vercel.app/forces.html</div>
+  </div>
+
+  <div class="grid g2">
+    <div class="card"><h2>Soutien de l'État</h2>
+      <ul class="pts"><li><b>1 psychologue pour 1 200 agents</b> au service de soutien (122 psychologues) ; 1 pour 490 si l'on compte les 310 psychologues de tout le ministère (valeur calculée).</li><li><b>Crédits de prévention</b> : 2,89 M€ en 2024, 1,6 M€ en 2025, selon un amendement sénatorial, non vérifié dans un document budgétaire.</li><li><b>2 537 sentinelles</b> formées au repérage.</li><li>Cible parlementaire : 400 psychologues.</li></ul>
+      <div class="src"><span class="lvl lvl-S">S</span>Réponses ministérielles, amendement 2025</div></div>
+    <div class="card"><h2>Manifestations : blessés des deux côtés</h2>
+      <ul class="pts"><li><b>Gilets jaunes</b> : 2 549 manifestants blessés recensés par les forces de sécurité ; 575 gendarmes blessés.</li><li><b>Retraites et Sainte-Soline, 2023</b> : 441 policiers et gendarmes blessés, plus 47 ; plus de 200 manifestants blessés selon un député.</li><li><b>Fichier RBD (IGPN)</b> : 79 blessés et 37 décès en 2021, seulement les faits avec enquête judiciaire et ITT d'au moins 9 jours.</li><li><b>212 enquêtes</b> de l'IGPN sur les gilets jaunes.</li></ul>
+      <div class="cap">Chaque ligne compte autrement : aucun total unique n'existe, d'un côté comme de l'autre.</div></div>
+  </div>
+
+  <div class="card">
+    <h2>Études, enquêtes et critiques</h2>
+    <div class="grid g2">
+      <ul class="pts"><li><b>Thèse Lyon 1, 2026</b> : dépression 11,8 %, stress post-traumatique 6,6 % si exposition directe.</li><li><b>Autopsie psychologique des 49 suicides de 2008</b> : pas de profil unique ; prévention par le dépistage de la souffrance.</li><li><b>CNRS et Alliance, 2011-2012</b> : 13 000 policiers, 80 % fiers de leur métier.</li></ul>
+      <ul class="pts"><li><b>Désaccord sur les causes</b> : un ministre a lié les suicides à la vie personnelle ; la mutuelle montre le poids de l'environnement de travail.</li><li><b>Dispositifs</b> : un numéro vert externalisé existe ; aucun suivi psychologique périodique identifié.</li><li><b>Entrée dans la police</b> : tests psychotechniques de 2 heures, non notés, aide à la décision du jury.</li></ul>
+    </div>
+  </div>
+
+  <div class="card" style="border-style:dashed">
+    <h2>Ce que ces chiffres ne permettent pas</h2>
+    <ul class="pts"><li>Additionner les violences enregistrées sur les personnes et les violences d'agents sur des citoyens : ce sont deux mesures distinctes.</li><li>Comparer police et gendarmerie sans réserve : les périmètres ne sont pas strictement identiques.</li><li>Conclure sur 2025 et 2026 : ces chiffres viennent surtout de décomptes non officiels.</li><li>Désigner une responsabilité : la page n'en qualifie aucune.</li></ul>
+    <div class="nb" style="margin-top:2mm">Aucune donnée nominative ni locale. Aucun détail de méthode. Chiffres nationaux et annuels.</div>
+  </div>
+
+  <div class="help"><b>3114</b><span>Prévention du suicide, gratuit, 24 h sur 24. · Données publiques : 82 sources citées, liens sur la page.</span></div>
+  <div class="foot"><span>Politik · données publiques, textes attribués · politik-eta.vercel.app/forces.html</span><span>Page 3 sur 3</span></div>
+</section>
+
+</body>
+</html>

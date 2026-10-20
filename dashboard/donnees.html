@@ -85,7 +85,7 @@ body.falc .reg,body.falc .hbar{font-size:1rem}
 
 <script src="donnees.js"></script>
 <script>
-const PAGE_LEVELS=["etat","falc"], LEVEL_NAMES={etat:"Termes de l'État", falc:"FALC"};
+const PAGE_LEVELS=["etat","falc"], LEVEL_NAMES={etat:"Termes de l'État", falc:"Facile À Lire et à Comprendre (FALC)"};
 let L=PAGE_LEVELS[0]; try{ const s=localStorage.getItem("politik-level-donnees"); if(PAGE_LEVELS.includes(s)) L=s; }catch(e){}
 const pick=o=>(o==null?"":(typeof o!=="object"?o:(o[L]??o.etat??"")));
 const $=s=>document.querySelector(s); const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));

@@ -82,3 +82,29 @@ Chaque page : commutateur Termes de l'État / FALC, même position.
   la page montrent tout (règle : `print` affiche tous les pôles).
 - Hors périmètre : repeindre aux couleurs d'une autre marque (chartreuse, opales), ajouter un moteur de
   recherche, séparer la page en plusieurs fichiers.
+
+## Arborescence au 20 octobre 2026
+
+Le menu du haut reprend cet arbre (menus déroulants accessibles au clavier). Le fil d'Ariane et le plan du site en pied de page en sont la copie.
+
+```
+Accueil (accueil.html)                    ← le logo y mène ; fil d'Ariane sur toutes les autres pages
+├── Ministères
+│   ├── Tous les ministères et composition du Gouvernement (gouvernement.html)
+│   └── Un ministère, une page : 21 pages ministere-<id>.html, groupées en 5 familles
+│       (pouvoirs régaliens, économie et travail, territoires et transitions, société, autres acteurs)
+├── États des lieux
+│   ├── Fraude sociale (index.html, version simple : simple.html)
+│   ├── Police et gendarmerie (forces.html) ── infographie PDF à télécharger en haut de page
+│   ├── Cybersécurité de l'État (cybersecurite.html)
+│   └── Comment va la France (secteurs.html)
+├── Dossiers (décorrélés des états des lieux)
+│   ├── Qui possède les médias (medias.html)
+│   └── Le 17 octobre 2026 (17-octobre-2026.html)
+└── Plus
+    ├── Présidentielle 2027 (presidentielle-2027.html)
+    ├── Benchmark États-Unis (benchmark-usa.html)
+    └── Sources et données (donnees.html)
+```
+
+Principes : un seul chemin pour atteindre une page (pas de doublon entre menu, fil d'Ariane et plan) ; les ministères passent en premier, car chaque citoyen dépend d'abord d'un ministère ; les dossiers (médias, 17 octobre) sont séparés des états des lieux parce qu'ils suivent un cas précis et changent plus vite ; chaque page ministère propose les ministères de la même famille et un lien vers le précédent et le suivant.

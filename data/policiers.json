@@ -1,0 +1,120 @@
+{
+ "genere_le": "2026-10-20",
+ "salaires": {
+  "millesime": 2023,
+  "unite": "euros nets par mois, en équivalent temps plein",
+  "groupes": {
+   "531A": {
+    "nom": "Agents de police de l'État",
+    "salaire": 2787.4,
+    "eqtp": 114769.5,
+    "F": 2644.8,
+    "H": 2829.5,
+    "effF": 26143.3,
+    "effH": 88626.2,
+    "age": {
+     "Y_LT30": {
+      "salaire": 2088.9,
+      "eqtp": 21313.5
+     },
+     "Y30T39": {
+      "salaire": 2622.9,
+      "eqtp": 24270.7
+     },
+     "Y40T49": {
+      "salaire": 2962.0,
+      "eqtp": 42718.8
+     },
+     "Y50T59": {
+      "salaire": 3206.3,
+      "eqtp": 25480.9
+     },
+     "Y_GE60": {
+      "salaire": 3550.3,
+      "eqtp": 985.5
+     }
+    }
+   },
+   "452A": {
+    "nom": "Inspecteurs et officiers de police",
+    "salaire": 3314.8,
+    "eqtp": 7667.4,
+    "F": 3122.5,
+    "H": 3385.5,
+    "effF": 2060.7,
+    "effH": 5606.7,
+    "age": {
+     "Y40T49": {
+      "salaire": 3421.4,
+      "eqtp": 2669.0
+     },
+     "Y50T59": {
+      "salaire": 3538.7,
+      "eqtp": 2887.7
+     }
+    }
+   },
+   "531B": {
+    "nom": "Agents des polices municipales",
+    "salaire": 2678.2,
+    "eqtp": 24383.4,
+    "F": 2579.0,
+    "H": 2707.2,
+    "effF": 5510.5,
+    "effH": 18872.9,
+    "age": {
+     "Y_LT30": {
+      "salaire": 2331.2,
+      "eqtp": 1764.9
+     },
+     "Y30T39": {
+      "salaire": 2562.7,
+      "eqtp": 6512.7
+     },
+     "Y40T49": {
+      "salaire": 2731.0,
+      "eqtp": 7939.8
+     },
+     "Y50T59": {
+      "salaire": 2788.4,
+      "eqtp": 6940.6
+     },
+     "Y_GE60": {
+      "salaire": 2825.7,
+      "eqtp": 1225.5
+     }
+    }
+   }
+  },
+  "reperes": {
+   "FPE_ensemble": 2885.6,
+   "FPE_titulaires": 3115.9,
+   "FPE_A": 3373.2,
+   "FPE_B": 2720.3,
+   "FPE_C": 2283.1
+  },
+  "police_nationale_moyenne_calculee": 2820.0,
+  "source": {
+   "titre": "Salaires dans la fonction publique par catégorie socioprofessionnelle détaillée",
+   "producteur": "Insee",
+   "url": "https://www.data.gouv.fr/datasets/salaires-dans-la-fonction-publique-par-categorie-socioprofessionnelle-detaillee",
+   "licence": "lov2",
+   "maj": "2026-10-09"
+  }
+ },
+ "effectifs": {
+  "annee": 2020,
+  "actifs": 126000,
+  "commissaires_officiers": 9200,
+  "gardiens": 107600,
+  "adjoints": 10300,
+  "formule": "un peu plus de 126 000",
+  "source": {
+   "titre": "La formation des policiers",
+   "producteur": "Cour des comptes",
+   "url": "https://www.data.gouv.fr/datasets/la-formation-des-policiers",
+   "licence": "odc-odbl",
+   "maj": "2022-05-24"
+  }
+ }
+}

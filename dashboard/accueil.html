@@ -50,13 +50,13 @@ body.falc .porte-q,body.falc .porte-stats .lab,body.falc .actu li{font-size:1rem
 .hero-accueil{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:28px 44px;align-items:center;padding-block:38px 14px;position:relative}
 .hero-accueil:before{content:"";position:absolute;inset:8px 0 0 0;border-radius:28px;background:radial-gradient(120% 90% at 85% 10%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 60%),linear-gradient(135deg,var(--surface),color-mix(in srgb,var(--accent-soft) 80%,var(--surface)));border:1px solid var(--line);z-index:0}
 .hero-accueil>*{position:relative;z-index:1}
-.hero-accueil .hero-txt{padding:18px 0 18px 34px}
+.hero-accueil .hero-txt{padding:18px 0 18px 34px;min-width:0}
 .hero-accueil h1{max-width:16ch;font-size:clamp(2.2rem,5vw,3.6rem)}
 .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 0;padding:0;list-style:none}
 .hero-chips li{display:flex;flex-direction:column;padding:10px 14px;border:1px solid var(--line);border-radius:14px;background:var(--surface);min-width:112px}
 .hero-chips b{font-family:var(--font-display);font-size:1.5rem;line-height:1.1}
 .hero-chips span{font-size:.78rem;color:var(--ink-2)}
-.mosaique{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:18px 34px 18px 0;align-self:stretch;align-content:center}
+.mosaique{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:18px 34px 18px 0;align-self:stretch;align-content:center}
 .mosaique a{display:flex;align-items:center;justify-content:center;aspect-ratio:1;border-radius:22px;background:linear-gradient(150deg,color-mix(in srgb,var(--f) 26%,var(--surface)),color-mix(in srgb,var(--f) 8%,var(--surface)));border:1.5px solid color-mix(in srgb,var(--f) 40%,var(--line));color:var(--f);text-decoration:none}
 .mosaique a:hover,.mosaique a:focus-visible{border-color:var(--f);outline:none}
 .mosaique a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
@@ -77,8 +77,31 @@ body.falc .porte-q,body.falc .porte-stats .lab,body.falc .actu li{font-size:1rem
 .porte.dossier{border-style:dashed;background:color-mix(in srgb,var(--accent-soft) 40%,var(--surface))}
 .porte.dossier .porte-n{color:var(--ink-2)}
 .note-dossier{margin:0 0 14px;padding:10px 14px;border-left:3px solid var(--accent-ink);background:var(--surface-2);border-radius:0 10px 10px 0;font-size:.9rem;color:var(--ink-2);max-width:75ch}
-@media (max-width:860px){.hero-accueil{grid-template-columns:1fr}.hero-accueil .hero-txt{padding:18px 18px 0}.mosaique{padding:0 18px 18px;grid-template-columns:repeat(5,1fr)}.hero-accueil:before{inset:0}}
-@media (max-width:480px){.mosaique{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:860px){.hero-accueil{grid-template-columns:minmax(0,1fr)}.hero-accueil .hero-txt{padding:18px 18px 0}.mosaique{padding:0 18px 18px;grid-template-columns:repeat(5,minmax(0,1fr))}.hero-accueil:before{inset:0}}
+@media (max-width:480px){.mosaique{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.mosaique .lib{font-size:.56rem}}
+
+.ast{color:var(--accent-ink);font-weight:800;text-decoration:none;padding:0 6px;border-radius:6px;font-size:1.7em;line-height:0;vertical-align:-.28em}
+.ast:hover,.ast:focus-visible{background:var(--accent-soft);outline:none}
+.ast:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.od-badge{display:inline-flex;align-items:center;gap:9px;margin:16px 0 0;padding:8px 14px;border-radius:999px;background:#14203b;color:#fff;font-size:.86rem;text-decoration:none;max-width:100%}
+.od-badge b{color:#9fb8ff}
+.od-badge:hover,.od-badge:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.od-dot{flex:none;width:9px;height:9px;border-radius:50%;background:#7fe0a8;box-shadow:0 0 0 3px rgba(127,224,168,.25)}
+.mosaique a{flex-direction:column;gap:3px;padding:8px 4px 6px;text-align:center;min-width:0;overflow:hidden}
+.mosaique svg{width:42%;height:42%}
+.mosaique .lib{visibility:hidden;min-height:2.3em;display:flex;align-items:flex-start;justify-content:center;font-size:.64rem;font-weight:700;line-height:1.15;color:var(--ink);overflow-wrap:anywhere}
+.mosaique:hover .lib,.mosaique:focus-within .lib{visibility:visible}
+@media (hover:none){.mosaique .lib{visibility:visible}}
+#dossiers{margin-block:36px;padding:34px 30px 30px;border-radius:28px;background:linear-gradient(135deg,color-mix(in srgb,var(--c3) 22%,var(--surface)) 0%,color-mix(in srgb,var(--accent) 18%,var(--surface)) 100%);border:1px solid color-mix(in srgb,var(--c3) 38%,var(--line))}
+#dossiers .sec-head h2:before{content:"Dossiers";display:inline-block;margin-right:12px;padding:3px 10px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;vertical-align:5px;font-family:var(--font-body,inherit)}
+#dossiers .porte.dossier{background:var(--surface);border:1px solid color-mix(in srgb,var(--c3) 45%,var(--line));box-shadow:0 10px 24px -16px color-mix(in srgb,var(--c3) 60%,transparent)}
+#dossiers .note-dossier{background:var(--surface);border-left-color:var(--c3)}
+@media (max-width:640px){#dossiers{padding:24px 16px 20px;border-radius:22px}}
+.min-filtre{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:0 0 6px}
+.min-filtre input{flex:1 1 280px;max-width:420px;font:inherit;padding:10px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink)}
+.min-filtre input:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-color:var(--accent)}
+.min-filtre .n{font-size:.86rem;color:var(--ink-2)}
+.min-vide{padding:14px 16px;border:1px dashed var(--line);border-radius:12px;color:var(--ink-2)}
 </style>
 </head>
 <body>
@@ -92,9 +115,10 @@ body.falc .porte-q,body.falc .porte-stats .lab,body.falc .actu li{font-size:1rem
 
 <header class="hero hero-accueil wrap">
   <div class="hero-txt">
-    <p class="eyebrow" data-t="eyebrow"></p>
+    <p class="eyebrow"><span data-t="eyebrow"></span> <a class="ast" href="#methode-section" aria-label="Voir la neutralité et la méthode" title="Neutralité et méthode">*</a></p>
     <h1 data-t="h1"></h1>
     <p class="lede" data-t="lede"></p>
+    <a class="od-badge" href="https://www.data.gouv.fr/" target="_blank" rel="noopener" id="od-badge"><span class="od-dot" aria-hidden="true"></span><span id="od-txt"></span></a>
     <ul class="hero-chips" id="chips"></ul>
     <a class="cta" href="#ministeres" data-t="cta"></a>
   </div>
@@ -102,7 +126,9 @@ body.falc .porte-q,body.falc .porte-stats .lab,body.falc .actu li{font-size:1rem
 </header>
 
 <main class="wrap">
-<section id="ministeres"><div class="sec-head"><h2 data-t="s.min.h"></h2><p data-t="s.min.p"></p></div><div id="min-groupes"></div><p class="plus-lien"><a href="gouvernement.html" data-t="min.tous"></a></p></section>
+<section id="ministeres"><div class="sec-head"><h2 data-t="s.min.h"></h2><p data-t="s.min.p"></p></div>
+<div class="min-filtre" role="search"><label for="min-q" class="sr-only" data-t="min.label"></label><input id="min-q" type="search" autocomplete="off" data-ph="min.ph"><span class="n" id="min-n" aria-live="polite"></span></div>
+<div id="min-groupes"></div><p class="plus-lien"><a href="gouvernement.html" data-t="min.tous"></a></p></section>
 <section id="etats"><div class="sec-head"><h2 data-t="s.etats.h"></h2><p data-t="s.etats.p"></p></div><div class="portes" id="portes"></div></section>
 <section id="dossiers"><div class="sec-head"><h2 data-t="s.dos.h"></h2><p data-t="s.dos.p"></p></div><p class="note-dossier" data-t="dos.note"></p><div class="portes" id="dossiers-grid"></div></section>
 <section id="actualite"><div class="sec-head"><h2 data-t="s.actu.h"></h2><p data-t="s.actu.p"></p></div><div class="card"><ul class="actu" id="actu"></ul></div></section>
@@ -112,8 +138,9 @@ body.falc .porte-q,body.falc .porte-stats .lab,body.falc .actu li{font-size:1rem
 <footer class="wrap"><p data-t="footer"></p></footer>
 
 <script src="gouvernement.js"></script>
+<script src="donnees.js"></script>
 <script>
-const PAGE_LEVELS=["etat","falc"], LEVEL_NAMES={etat:"Termes de l'État", falc:"FALC"};
+const PAGE_LEVELS=["etat","falc"], LEVEL_NAMES={etat:"Termes de l'État", falc:"Facile À Lire et à Comprendre (FALC)"};
 let L=PAGE_LEVELS[0]; try{ const s=localStorage.getItem("politik-level-accueil"); if(PAGE_LEVELS.includes(s)) L=s; }catch(e){}
 const pick=o=>(o==null?"":(typeof o!=="object"?o:(o[L]??o.etat??"")));
 const $=s=>document.querySelector(s); const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -122,24 +149,26 @@ const lvl=k=>`<span class="lvl lvl-${k}">${k}</span>`;
 const TXT={
   eyebrow:{etat:"Données publiques · sources officielles · aucun parti pris", falc:"Les infos publiques, avec leur source"},
   h1:{etat:"Qui gouverne la France, et ce que disent les chiffres.", falc:"Qui gouverne&nbsp;? Que disent les chiffres&nbsp;?"},
-  lede:{etat:"Politik rassemble des données publiques et dit d'où vient chaque chiffre. Choisissez un ministère ou un sujet.", falc:"Politik rassemble des infos publiques.<br>Chaque chiffre dit d'où il vient.<br>Choisissez un ministère ou un sujet."},
+  lede:{etat:"Politik réunit les données ouvertes de data.gouv.fr et les publications des sites officiels. Chaque chiffre dit d'où il vient. Choisissez un ministère ou un sujet.", falc:"Politik utilise les données ouvertes de l'État (data.gouv.fr).<br>Chaque chiffre dit d'où il vient.<br>Choisissez un ministère ou un sujet."},
   cta:{etat:"Voir les ministères", falc:"Voir les ministères"},
   "s.portes.h":{etat:"États des lieux", falc:"États des lieux"},
   "s.portes.p":{etat:"Chaque carte donne les trois chiffres à retenir, leur niveau de confiance et un bouton vers la page complète.", falc:"Chaque carte montre 3 chiffres.<br>Le bouton ouvre la page complète."},
   "s.min.h":{etat:"Un ministère, une page", falc:"Un ministère, une page"},
-  "s.min.p":{etat:"Chaque ministère a sa page : ce qu'il faut savoir, l'actualité lue sur son site officiel et les pages de Politik qui s'y rattachent.", falc:"Chaque ministère a sa page."},
+  "s.min.p":{etat:"Chaque ministère a sa propre page : l'essentiel à savoir, l'actualité lue sur son site officiel et les pages de Politik qui le concernent.", falc:"Chaque ministère a sa page."},
   "min.tous":{etat:"Voir la composition complète du Gouvernement →", falc:"Voir tout le Gouvernement →"},
+  "min.label":{etat:"Trouver un ministère", falc:"Trouver un ministère"},
+  "min.ph":{etat:"Un ministère ou un nom de ministre…", falc:"Un ministère ou un nom…"},
   "s.etats.h":{etat:"Les états des lieux", falc:"Les états des lieux"},
-  "s.etats.p":{etat:"Des chiffres de référence sur un grand sujet, avec leur source et leur niveau de confiance.", falc:"Des chiffres sur un grand sujet."},
+  "s.etats.p":{etat:"Un grand sujet, les chiffres à retenir et, pour chacun, sa source et son niveau de confiance.", falc:"Un grand sujet. Les chiffres à retenir."},
   "s.dos.h":{etat:"Les dossiers décryptés", falc:"Les dossiers"},
-  "s.dos.p":{etat:"Des pages qui suivent un sujet précis, à part des états des lieux.", falc:"Des pages sur un sujet précis."},
-  "dos.note":{etat:"Un dossier suit une situation précise (qui possède quoi, ce qui s'est passé à une date donnée). Il évolue plus vite qu'un état des lieux et ne remplace pas les pages ministère.", falc:"Un dossier suit un cas précis. Il change plus vite."},
+  "s.dos.p":{etat:"Des pages consacrées à un cas précis, distinctes des états des lieux.", falc:"Des pages sur un cas précis."},
+  "dos.note":{etat:"Un dossier porte sur un cas précis : qui possède quel média, ce qui s'est passé un jour donné. Il change plus vite qu'un état des lieux et ne remplace pas les pages des ministères.", falc:"Un dossier suit un cas précis. Il change plus vite."},
   "s.actu.h":{etat:"Actualité vérifiée sur les sites officiels", falc:"Les nouvelles officielles"},
-  "s.actu.p":{etat:"Dates et liens vers la page lue sur le site de l'institution. Les annonces sont signalées comme telles sur les pages.", falc:"Chaque nouvelle a une date et un lien."},
+  "s.actu.p":{etat:"Chaque actualité donne sa date, sa source et un lien vers la page lue sur le site de l'institution.", falc:"Chaque nouvelle a une date et un lien."},
   "s.roles.h":{etat:"Vous cherchez quelque chose de précis&nbsp;?", falc:"Je cherche quelque chose"},
-  "s.roles.p":{etat:"Raccourcis selon ce que vous venez faire.", falc:"Choisissez ce qui vous ressemble."},
+  "s.roles.p":{etat:"Des raccourcis selon ce que vous cherchez.", falc:"Choisissez ce qui vous ressemble."},
   "s.methode.h":{etat:"Neutralité et méthode", falc:"Comment on travaille"},
-  "s.methode.p":{etat:"Quatre règles s'appliquent à chaque page.", falc:"4 règles pour toutes les pages."},
+  "s.methode.p":{etat:"Chaque chiffre du site porte l'une de ces quatre pastilles.", falc:"Chaque chiffre a une pastille."},
   footer:{etat:"Politik · données publiques, textes attribués, niveaux de confiance V, S, D, A.", falc:"Politik · infos publiques, avec la source."}
 };
 const ETATS=[
@@ -174,6 +203,13 @@ const METHODE=[
 ];
 const dateCourte=d=>{const m=["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.","oct.","nov.","déc."],p=d.split("-");return (+p[2])+" "+m[+p[1]-1];};
 const dateLong=d=>{const m=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],p=d.split("-");return (+p[2]===1?"1er":+p[2])+" "+m[+p[1]-1]+" "+p[0];};
+function filtrerMin(){
+  const q=($("#min-q").value||"").trim().toLowerCase(); let n=0, tot=0;
+  document.querySelectorAll(".min-tile").forEach(a=>{ tot++; const ok=!q||a.textContent.toLowerCase().includes(q)||(a.dataset.mots||"").includes(q); a.hidden=!ok; if(ok) n++; });
+  document.querySelectorAll("#min-groupes .groupe").forEach(h=>{ const g=h.nextElementSibling; h.hidden=g.querySelectorAll(".min-tile:not([hidden])").length===0; g.hidden=h.hidden; });
+  $("#min-n").textContent=q?(n?`${n} sur ${tot}`:(L==="falc"?"Aucun résultat":"Aucun ministère trouvé")):"";
+  let v=$("#min-vide"); if(q&&!n){ if(!v){ v=document.createElement("p"); v.id="min-vide"; v.className="min-vide"; $("#min-groupes").appendChild(v); } v.textContent=L==="falc"?"Aucun ministère ne correspond.":"Aucun ministère ne correspond à cette recherche."; } else if(v) v.remove();
+}
 function render(){
   document.body.classList.toggle("falc", L==="falc");
   document.querySelectorAll("[data-t]").forEach(el=>{ el.innerHTML=pick(TXT[el.dataset.t]); });
@@ -182,8 +218,11 @@ function render(){
   const FAM={regalien:["Pouvoirs régaliens","var(--c1)"],economie:["Économie et travail","var(--c2)"],territoires:["Territoires et transitions","var(--c3)"],societe:["Société","var(--c4)"],autres:["Autres acteurs","var(--c5)"]};
   const tous=G.ministeres.concat(G.autres_acteurs); const releves=tous.filter(m=>m.verifie_le).length;
   $("#chips").innerHTML=[[G.ministeres.length,L==="falc"?"ministères":"ministères"],[releves+" / "+tous.length,L==="falc"?"relus sur leur site":"relus sur leur site officiel"],[G.actualites.length,L==="falc"?"nouvelles vérifiées":"actualités vérifiées"]].map(c=>`<li><b>${c[0]}</b><span>${c[1]}</span></li>`).join("");
-  $("#mosaique").innerHTML=G.ministeres.slice(0,20).map(m=>`<a href="ministere-${esc(m.id)}.html" style="--f:${FAM[m.famille][1]}" title="${esc(m.court)}" aria-label="${esc(m.court)}"><svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">${m.icone}</svg></a>`).join("");
-  $("#min-groupes").innerHTML=["regalien","economie","territoires","societe","autres"].map(f=>{const L2=tous.filter(m=>m.famille===f); if(!L2.length) return ""; return `<h3 class="groupe" style="--f:${FAM[f][1]}"><i></i>${FAM[f][0]}</h3><div class="min-grid">${L2.map(m=>`<a class="min-tile" href="ministere-${esc(m.id)}.html" style="--f:${FAM[f][1]}"><span class="pic"><svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">${m.icone}</svg></span><b>${esc(m.court)}</b><span class="who">${esc(m.ministre||"")}</span><span class="st ${m.verifie_le?"ok":""}">${m.verifie_le?(L==="falc"?"Relu":"Relu le "+esc(dateCourte(m.verifie_le))):(L==="falc"?"À relire":"À relire")}</span></a>`).join("")}</div>`;}).join("");
+  $("#mosaique").innerHTML=G.ministeres.slice(0,20).map(m=>`<a href="ministere-${esc(m.id)}.html" style="--f:${FAM[m.famille][1]}" title="${esc(m.court)}" aria-label="${esc(m.court)}"><svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">${m.icone}</svg><span class="lib" aria-hidden="true">${esc(m.court)}</span></a>`).join("");
+  $("#min-groupes").innerHTML=["regalien","economie","territoires","societe","autres"].map(f=>{const L2=tous.filter(m=>m.famille===f); if(!L2.length) return ""; return `<h3 class="groupe" style="--f:${FAM[f][1]}"><i></i>${FAM[f][0]}</h3><div class="min-grid">${L2.map(m=>`<a class="min-tile" href="ministere-${esc(m.id)}.html" style="--f:${FAM[f][1]}" data-mots="${esc((m.nom||"").toLowerCase())}"><span class="pic"><svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">${m.icone}</svg></span><b>${esc(m.court)}</b><span class="who">${esc(m.ministre||"")}</span><span class="st ${m.verifie_le?"ok":""}">${m.verifie_le?(L==="falc"?"Relu":"Relu le "+esc(dateCourte(m.verifie_le))):(L==="falc"?"À relire":"À relire")}</span></a>`).join("")}</div>`;}).join("");
+  const R=(window.REGISTRE&&window.REGISTRE.entrees)||[]; const od=new Set(R.filter(e=>(e.type==="jeu"||e.type==="api")&&/data\.gouv\.fr/.test((e.url||"")+" "+(e.producteur||""))).map(e=>e.titre)).size;
+  $("#od-txt").innerHTML=L==="falc"?`<b>Open data</b> : ${od?od+" jeux de données":"des jeux de données"} de data.gouv.fr`:`<b>Open data</b> : ${od?od+" jeux de données et API":"des jeux de données"} de data.gouv.fr utilisés sur ce site`;
+  const q=$("#min-q"); q.placeholder=pick(TXT["min.ph"]); filtrerMin();
   const porte=(p,i,tot,dossier)=>`<article class="porte${dossier?" dossier":""}" id="${p.id}"><p class="porte-n">${dossier?(L==="falc"?"Dossier":"Dossier"):(i+1)+" / "+tot}</p><h3>${pick(p.t)}</h3><p class="porte-q">${pick(p.q)}</p><ul class="porte-stats">${p.stats.map(s=>`<li><span class="num">${s[0]}</span><span class="lab">${pick(s[1])} ${lvl(s[2])}</span></li>`).join("")}</ul><a class="porte-btn" href="${p.href}">${pick(p.btn)} <span aria-hidden="true">→</span></a><p class="src">${esc(p.src)}</p></article>`;
   $("#portes").innerHTML=ETATS.map((p,i)=>porte(p,i,ETATS.length,false)).join("");
   $("#dossiers-grid").innerHTML=DOSSIERS.map((p,i)=>porte(p,i,DOSSIERS.length,true)).join("");
@@ -192,6 +231,7 @@ function render(){
   $("#roles").innerHTML=ROLES.map(r=>`<a class="role" href="${r[2]}"><b>${pick(r[0])}</b><span>${pick(r[1])} <span aria-hidden="true">→</span></span></a>`).join("");
   $("#methode").innerHTML=METHODE.map(m=>`<li>${lvl(m[0])} <span>${pick(m[1])}</span></li>`).join("");
 }
+$("#min-q").addEventListener("input",filtrerMin);
 $("#switch").addEventListener("click",e=>{ const b=e.target.closest("button"); if(!b) return; L=b.dataset.level; try{ localStorage.setItem("politik-level-accueil",L);}catch(err){} render(); });
 render();
 </script>

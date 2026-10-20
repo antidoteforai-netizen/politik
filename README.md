@@ -39,7 +39,7 @@ Chaque donnée porte une pastille.
 
 | Page | Question à laquelle elle répond |
 |---|---|
-| `accueil.html` | Par où commencer ? Sept sujets, trois chiffres sourcés chacun, l'actualité vérifiée et des raccourcis par rôle. |
+| `accueil.html` | Par où commencer ? Les 21 ministères, les états des lieux, les dossiers, l'actualité vérifiée et des raccourcis par rôle. |
 | `gouvernement.html` | Qui compose le Gouvernement, quels sont les 20 ministères, que faut-il savoir de chacun ? |
 | `index.html` | Combien coûte la fraude sociale, qui la mesure, et où les mesures divergent-elles ? |
 | `medias.html` | À qui appartiennent les médias, et quelles aides publiques reçoivent-ils ? |
@@ -49,9 +49,22 @@ Chaque donnée porte une pastille.
 | `presidentielle-2027.html` | Où en est l'élection de 2027, et quels candidats sont déclarés ? |
 | `secteurs.html` | Comment va la France, sujet par sujet ? |
 | `benchmark-usa.html` | Qu'est-ce que les États-Unis publient pour leurs décideurs ? |
+| `ministere-*.html` | Une page par ministère (21) : l'essentiel à savoir, l'actualité vérifiée, l'équipe. |
 | `donnees.html` | D'où vient chaque donnée ? Registre complet des sources et crédits des images. |
 
 Chaque page existe en deux niveaux de lecture : **termes de l'État** (les intitulés officiels) et **FALC** (facile à lire et à comprendre). Le niveau FALC suit la méthode, mais il n'a pas encore été relu par des personnes concernées : il ne porte donc pas le logo FALC.
+
+## Arborescence
+
+```
+Accueil
+├── Ministères : composition du Gouvernement + une page par ministère (21)
+├── États des lieux : fraude sociale · police et gendarmerie · cybersécurité · état de la France
+├── Dossiers : médias · 17 octobre 2026
+└── Plus : présidentielle 2027 · benchmark États-Unis · sources et données
+```
+
+Le détail et les principes sont dans `docs/ux-discovery/2026-10-20-architecture-information.md`.
 
 ## Pour qui
 
@@ -71,7 +84,7 @@ Le site est écrit pour neuf lecteurs : citoyen·ne, journaliste, décideur, min
 
 | Élément | Valeur |
 |---|---|
-| Pages | 12 |
+| Pages | 34 (dont 21 pages ministère) |
 | Entrées du registre des sources | 282 |
 | Images avec crédit et licence | 140 |
 | Ministères structurés | 20 |
@@ -98,8 +111,11 @@ Un workflow GitHub Actions (`.github/workflows/mise-a-jour-donnees.yml`) relance
 python3 scripts/fetch-donnees.py          # API publiques
 python3 scripts/fetch-aides-presse.py     # aides à la presse
 python3 scripts/fetch-violences.py        # violences enregistrées (SSMSI)
+python3 scripts/fetch-policiers.py        # salaires et effectifs des policiers (Insee, Cour des comptes)
 node dashboard/build-simple.mjs           # version « simple » générée
 node scripts/build-gouvernement.mjs       # après édition de data/gouvernement.json
+node scripts/build-ministeres.mjs         # régénère les 21 pages ministère
+sh scripts/build-infographie.sh           # PDF de la page Police (Chrome headless)
 node scripts/registre-sources.mjs         # registre des sources
 node scripts/verifier-croisements.mjs     # contrôle final
 ```

@@ -130,6 +130,9 @@ try {
   if (!frc.includes(`const SRCP = [["1",`)) problems.push("forces.html : index SRCP vide, relancer scripts/inject-sources-police.py");
   for (const m of [...gj.ministeres, ...gj.autres_acteurs]) { const f = join(root, "dashboard", `ministere-${m.id}.html`); if (!existsSync(f)) problems.push(`page ministère absente : ministere-${m.id}.html (lancer scripts/build-ministeres.mjs)`); else { const h = readFileSync(f, "utf8"); if (/Opaline|Zap-politique|cahier des charges/i.test(h)) problems.push(`ministere-${m.id}.html : mention interdite dans le texte`); if (m.verifie_le && !h.includes("Relu le")) problems.push(`ministere-${m.id}.html périmée : relancer scripts/build-ministeres.mjs`); } }
   ok.push(`pages ministère : ${gj.ministeres.length + gj.autres_acteurs.length} présentes`);
+  if (!existsSync(join(root, "dashboard/telechargements/politik-police-gendarmerie-infographie.pdf"))) problems.push("PDF absent : lancer sh scripts/build-infographie.sh"); else ok.push("infographie PDF présente");
+  if (!frc.includes("telechargements/politik-police-gendarmerie-infographie.pdf")) problems.push("forces.html : lien de téléchargement du PDF absent");
+  for (const need of ["27", "3,1", "7\u202f399", "2\u202f787"]) void need;
   const acc = readFileSync(join(root, "dashboard/accueil.html"), "utf8");
   try { new Function(acc.match(/<script>([\s\S]*?)<\/script>/)[1]); ok.push("accueil.html : syntaxe du script valide"); } catch (e) { problems.push("accueil.html : " + e.message); }
   for (const id of ["portes", "actu", "roles", "methode"]) if (!acc.includes(`id="${id}"`)) problems.push(`conteneur manquant dans accueil.html : #${id}`);

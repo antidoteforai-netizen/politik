@@ -39,6 +39,13 @@
 .liens-pol{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0}
 .liens-pol a{display:inline-block;padding:9px 14px;border:1.5px solid var(--accent-ink);border-radius:10px;font-weight:600;text-decoration:none;color:var(--accent-ink)}
 .liens-pol a:hover,.liens-pol a:focus-visible{background:var(--accent-soft);outline:none}
+.pn{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:stretch;margin-top:30px}
+.pn a{display:flex;flex-direction:column;gap:2px;padding:12px 16px;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);text-decoration:none;min-width:0}
+.pn a[rel=next]{text-align:right;align-items:flex-end}
+.pn a.all{justify-content:center;font-weight:700;color:var(--accent-ink);text-align:center}
+.pn small{font-size:.74rem;color:var(--ink-3);text-transform:uppercase;letter-spacing:.07em}
+.pn a:hover,.pn a:focus-visible{border-color:var(--accent-ink);outline:none}
+@media (max-width:640px){.pn{grid-template-columns:1fr 1fr}.pn a.all{grid-column:1/-1;order:3}}
 @media (max-width:640px){.hero-min{grid-template-columns:1fr}.actu li{grid-template-columns:1fr}.min-pic{width:92px;height:92px;border-radius:26px}.min-pic svg{width:54px;height:54px}}
 </style>
 </head>
@@ -56,7 +63,7 @@
   <div>
     <p class="eyebrow">Pouvoirs régaliens · <a href="gouvernement.html">Le Gouvernement</a></p>
     <h1>Ministère de la Justice</h1>
-    <p class="lede">Ce que les citoyens peuvent retenir du site officiel du ministère, relu le 20 octobre 2026.</p>
+    <p class="lede">L'essentiel à retenir du site officiel du ministère, lu le 20 octobre 2026.</p>
     <ul class="min-facts">
       <li>Ministre : <b>Gérald Darmanin</b></li>
       <li>Site officiel : <a href="https://www.justice.gouv.fr/" target="_blank" rel="noopener">justice.gouv.fr</a></li>
@@ -66,14 +73,16 @@
 </header>
 
 <main class="wrap">
-<section id="savoir"><div class="sec-head"><h2>À savoir pour les citoyens</h2><p>Une information par ligne, avec sa source et la date de lecture. V : publié par l'institution. D : annonce ou position.</p></div>
+<section id="savoir"><div class="sec-head"><h2>À savoir pour les citoyens</h2><p>Chaque information donne sa source et sa date de lecture. V : publié par l'institution elle-même. D : annonce ou position, pas un fait établi.</p></div>
 <ul class="savoir"><li><span>Depuis le 1er septembre 2026, 85 unités judiciaires à priorité éducative (UJPE) remplacent les centres éducatifs fermés publics et les unités d'hébergement collectif pour les mineurs condamnés ; 123 sont prévues d'ici 2028.</span><span class="by"><span class="lvl lvl-V">V</span><a href="https://www.justice.gouv.fr/actualites/actualite/justice-mineurs-premieres-unites-judiciaires-priorite-educative-entrent-fonction" target="_blank" rel="noopener">Ministère de la Justice, 1er septembre 2026</a><span>lu le 20 octobre 2026</span></span></li><li><span>Les UJPE accueillent des jeunes de 13 à 21 ans condamnés pour une infraction ; c'est l'autorité judiciaire qui décide du placement, adapté à chaque situation.</span><span class="by"><span class="lvl lvl-V">V</span><a href="https://www.justice.gouv.fr/actualites/actualite/justice-mineurs-premieres-unites-judiciaires-priorite-educative-entrent-fonction" target="_blank" rel="noopener">Ministère de la Justice, 1er septembre 2026</a><span>lu le 20 octobre 2026</span></span></li><li><span>Le ministère oriente les personnes vers les points-justice et le numéro 3039 pour une aide personnalisée, et vers le site « Je suis victime » (détail non lisible le 20 octobre 2026 : justice.fr était en maintenance).</span><span class="by"><span class="lvl lvl-V">V</span><a href="https://www.justice.gouv.fr/" target="_blank" rel="noopener">Ministère de la Justice, page d'accueil</a><span>lu le 20 octobre 2026</span></span></li></ul></section>
-<section id="actualite"><div class="sec-head"><h2>Actualité vérifiée</h2><p>Dates et liens vers les pages lues sur les sites officiels.</p></div>
+<section id="actualite"><div class="sec-head"><h2>Actualité vérifiée</h2><p>Chaque actualité renvoie à la page lue sur le site officiel.</p></div>
 <div class="card"><ul class="actu"><li><time datetime="2026-10-19">19 octobre 2026</time><span><a href="https://www.info.gouv.fr/discours/cellule-interministerielle-de-crise-point-de-situation-du-premier-ministre" target="_blank" rel="noopener">Cellule interministérielle de crise : point de situation du Premier ministre</a><span class="by">info.gouv.fr · <span class="lvl lvl-V">V</span></span></span></li><li><time datetime="2026-10-15">15 octobre 2026</time><span><a href="https://www.interieur.gouv.fr/actualites/communiques-de-presse/traite-et-lexploitation-des-etres-humains-bilan-statististique-sur-10-ans-2016-2025" target="_blank" rel="noopener">La traite et l'exploitation des êtres humains : bilan statistique sur 10 ans (2016-2025)</a><span class="by">Ministère de l'Intérieur · <span class="lvl lvl-V">V</span></span></span></li><li><time datetime="2026-10-08">8 octobre 2026</time><span><a href="https://www.gendarmerie.interieur.gouv.fr/unpj/actualites/plus-de-17-000-victimes-dont-des-mineures-trois-sites-de-diffusion-de-contenus-intimes-voles-fermes" target="_blank" rel="noopener">Contenus intimes volés : trois sites fermés, plus de 17 000 victimes</a><span class="by">Gendarmerie nationale · <span class="lvl lvl-V">V</span></span></span></li><li><time datetime="2026-10-01">1er octobre 2026</time><span><a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054930933" target="_blank" rel="noopener">CNCDH : déclaration « Défendre la Justice dans un État de droit »</a><span class="by">Légifrance (Journal officiel) · <span class="lvl lvl-V">V</span></span></span></li><li><time datetime="2026-09-01">1er septembre 2026</time><span><a href="https://www.justice.gouv.fr/actualites/actualite/justice-mineurs-premieres-unites-judiciaires-priorite-educative-entrent-fonction" target="_blank" rel="noopener">Justice des mineurs : les premières unités judiciaires à priorité éducative entrent en fonction</a><span class="by">Ministère de la Justice · <span class="lvl lvl-V">V</span></span></span></li></ul></div></section>
-<section id="equipe"><div class="sec-head"><h2>Qui est concerné</h2><p>Composition indiquée par info.gouv.fr.</p></div><ul class="equipe"><li><b data-ent="Gérald Darmanin">Gérald Darmanin</b><span>Ministre</span></li></ul></section>
-<section id="dans-politik"><div class="sec-head"><h2>Dans Politik</h2><p>Les pages qui s'appuient sur ce ministère.</p></div><ul class="liens-pol"><li><a href="index.html">Fraude sociale</a></li><li><a href="forces.html">Police et gendarmerie</a></li><li><a href="17-octobre-2026.html">Le 17 octobre 2026</a></li><li><a href="secteurs.html">Comment va la France</a></li></ul></section>
+<section id="equipe"><div class="sec-head"><h2>Qui dirige ce ministère</h2><p>D'après la composition du Gouvernement publiée sur info.gouv.fr.</p></div><ul class="equipe"><li><b data-ent="Gérald Darmanin">Gérald Darmanin</b><span>Ministre</span></li></ul></section>
+<section id="dans-politik"><div class="sec-head"><h2>Dans Politik</h2><p>Les pages de Politik qui parlent de ce ministère.</p></div><ul class="liens-pol"><li><a href="index.html">Fraude sociale</a></li><li><a href="forces.html">Police et gendarmerie</a></li><li><a href="17-octobre-2026.html">Le 17 octobre 2026</a></li><li><a href="secteurs.html">Comment va la France</a></li></ul></section>
+<section id="famille"><div class="sec-head"><h2>Autres ministères : pouvoirs régaliens</h2><p>Les ministères de la même famille.</p></div><ul class="liens-pol"><li><a href="ministere-premier-ministre.html">Premier ministre</a></li><li><a href="ministere-interieur.html">Intérieur</a></li><li><a href="ministere-armees.html">Armées</a></li><li><a href="ministere-europe-affaires-etrangeres.html">Europe et Affaires étrangères</a></li></ul></section>
+<nav class="pn" aria-label="Ministère précédent et suivant"><a rel="prev" href="ministere-transition-ecologique.html"><span aria-hidden="true">←</span> <small>Précédent</small><b>Transition écologique</b></a><a class="all" href="gouvernement.html">Tous les ministères</a><a rel="next" href="ministere-economie.html"><small>Suivant</small><b>Économie et Finances</b> <span aria-hidden="true">→</span></a></nav>
 </main>
-<footer class="wrap"><p>Politik · page générée à partir de la composition du Gouvernement (info.gouv.fr) et des sites officiels, avec leur date de lecture.</p></footer>
+<footer class="wrap"><p>Politik · composition du Gouvernement d'après info.gouv.fr, informations lues sur les sites officiels à la date indiquée.</p></footer>
 
 <script src="gouvernement.js"></script>
 <script src="entites.js"></script>

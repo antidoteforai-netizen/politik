@@ -100,7 +100,7 @@
 
 <script>
 const PAGE_LEVELS = ["etat","falc"];
-const LEVEL_NAMES = {etat:"Termes de l'État", falc:"FALC"};
+const LEVEL_NAMES = {etat:"Termes de l'État", falc:"Facile À Lire et à Comprendre (FALC)"};
 let L = PAGE_LEVELS[0];
 try{ const s = localStorage.getItem("politik-level-2027"); if(PAGE_LEVELS.includes(s)) L = s; }catch(e){}
 const pick = o => (o==null?"":(typeof o!=="object"?o:(o[L] ?? o.etat ?? "")));

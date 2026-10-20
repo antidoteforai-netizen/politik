@@ -617,6 +617,46 @@
    "categorie": "O",
    "niveau": "V",
    "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S80",
+   "titre": "Police nationale, officier de police, concours externe (diplôme exigé)",
+   "url": "https://www.police-nationale.interieur.gouv.fr/nous-rejoindre/nos-voies-dacces/devenir-policier/off/ext",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S81",
+   "titre": "Police nationale, commissaire de police, concours externe (diplôme exigé)",
+   "url": "https://www.police-nationale.interieur.gouv.fr/nous-rejoindre/nos-voies-dacces/devenir-policier/cre/ext",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S82",
+   "titre": "Police nationale, gardien de la paix (ordre hiérarchique des grades)",
+   "url": "https://www.police-nationale.interieur.gouv.fr/nous-rejoindre/nos-voies-dacces/devenir-policier/gpx",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S83",
+   "titre": "Insee, data.gouv.fr, « Salaires dans la fonction publique par catégorie socioprofessionnelle détaillée » (2023)",
+   "url": "https://www.data.gouv.fr/datasets/salaires-dans-la-fonction-publique-par-categorie-socioprofessionnelle-detaillee",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S84",
+   "titre": "Cour des comptes, data.gouv.fr, « La formation des policiers » (données 2015-2020)",
+   "url": "https://www.data.gouv.fr/datasets/la-formation-des-policiers",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
   }
  ]
 }

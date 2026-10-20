@@ -142,7 +142,7 @@ body.falc .frise li{grid-template-columns:1fr}
 <footer class="wrap"><p data-t="footer"></p></footer>
 
 <script>
-const PAGE_LEVELS=["etat","falc"], LEVEL_NAMES={etat:"Termes de l'État", falc:"FALC"};
+const PAGE_LEVELS=["etat","falc"], LEVEL_NAMES={etat:"Termes de l'État", falc:"Facile À Lire et à Comprendre (FALC)"};
 let L=PAGE_LEVELS[0]; try{ const s=localStorage.getItem("politik-level-medias"); if(PAGE_LEVELS.includes(s)) L=s; }catch(e){}
 const pick=o=>(o==null?"":(typeof o!=="object"?o:(o[L]??o.etat??"")));
 const $=s=>document.querySelector(s); const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));

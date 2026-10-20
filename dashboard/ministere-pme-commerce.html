@@ -39,6 +39,13 @@
 .liens-pol{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0}
 .liens-pol a{display:inline-block;padding:9px 14px;border:1.5px solid var(--accent-ink);border-radius:10px;font-weight:600;text-decoration:none;color:var(--accent-ink)}
 .liens-pol a:hover,.liens-pol a:focus-visible{background:var(--accent-soft);outline:none}
+.pn{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:stretch;margin-top:30px}
+.pn a{display:flex;flex-direction:column;gap:2px;padding:12px 16px;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);text-decoration:none;min-width:0}
+.pn a[rel=next]{text-align:right;align-items:flex-end}
+.pn a.all{justify-content:center;font-weight:700;color:var(--accent-ink);text-align:center}
+.pn small{font-size:.74rem;color:var(--ink-3);text-transform:uppercase;letter-spacing:.07em}
+.pn a:hover,.pn a:focus-visible{border-color:var(--accent-ink);outline:none}
+@media (max-width:640px){.pn{grid-template-columns:1fr 1fr}.pn a.all{grid-column:1/-1;order:3}}
 @media (max-width:640px){.hero-min{grid-template-columns:1fr}.actu li{grid-template-columns:1fr}.min-pic{width:92px;height:92px;border-radius:26px}.min-pic svg{width:54px;height:54px}}
 </style>
 </head>
@@ -56,7 +63,7 @@
   <div>
     <p class="eyebrow">Économie et travail · <a href="gouvernement.html">Le Gouvernement</a></p>
     <h1>Ministère des Petites et moyennes entreprises, du Commerce, de l'Artisanat et du Tourisme et du Pouvoir d'achat</h1>
-    <p class="lede">Ce que les citoyens peuvent retenir du site officiel du ministère, relu le 20 octobre 2026.</p>
+    <p class="lede">L'essentiel à retenir du site officiel du ministère, lu le 20 octobre 2026.</p>
     <ul class="min-facts">
       <li>Ministre : <b>Serge Papin</b></li>
       <li>Site officiel : <a href="https://www.entreprises.gouv.fr/" target="_blank" rel="noopener">entreprises.gouv.fr</a></li>
@@ -66,14 +73,16 @@
 </header>
 
 <main class="wrap">
-<section id="savoir"><div class="sec-head"><h2>À savoir pour les citoyens</h2><p>Une information par ligne, avec sa source et la date de lecture. V : publié par l'institution. D : annonce ou position.</p></div>
+<section id="savoir"><div class="sec-head"><h2>À savoir pour les citoyens</h2><p>Chaque information donne sa source et sa date de lecture. V : publié par l'institution elle-même. D : annonce ou position, pas un fait établi.</p></div>
 <ul class="savoir"><li><span>Le commerce, l'artisanat et la restauration sont le premier pourvoyeur d'emplois en France, selon la Direction générale des Entreprises : 714 643 entreprises de commerce (2021) et 3 408 700 salariés du commerce (2022).</span><span class="by"><span class="lvl lvl-V">V</span><a href="https://www.entreprises.gouv.fr/secteurs-dactivite/les-secteurs-du-commerce-de-lartisanat-et-de-la-restauration-en-france" target="_blank" rel="noopener">entreprises.gouv.fr (DGE)</a><span>lu le 20 octobre 2026</span></span></li><li><span>Le secteur des cafés, hôtels, restaurants et discothèques représente 78,4 milliards d'euros de chiffre d'affaires, soit 7 % du PIB, et environ 1 million d'actifs.</span><span class="by"><span class="lvl lvl-V">V</span><a href="https://www.entreprises.gouv.fr/secteurs-dactivite/les-secteurs-du-commerce-de-lartisanat-et-de-la-restauration-en-france" target="_blank" rel="noopener">entreprises.gouv.fr (DGE)</a><span>lu le 20 octobre 2026</span></span></li><li><span>Les ouvertures de grandes surfaces relèvent de la Commission nationale d'aménagement commercial (CNAC).</span><span class="by"><span class="lvl lvl-V">V</span><a href="https://www.entreprises.gouv.fr/cnac" target="_blank" rel="noopener">entreprises.gouv.fr</a><span>lu le 20 octobre 2026</span></span></li></ul></section>
-<section id="actualite"><div class="sec-head"><h2>Actualité vérifiée</h2><p>Dates et liens vers les pages lues sur les sites officiels.</p></div>
+<section id="actualite"><div class="sec-head"><h2>Actualité vérifiée</h2><p>Chaque actualité renvoie à la page lue sur le site officiel.</p></div>
 <div class="card"><ul class="actu"><li><time datetime="2026-10-20">20 octobre 2026</time><span><a href="https://www.economie.gouv.fr/actualites/revente-des-produits-pilles-le-gouvernement-mobilise-les-plateformes" target="_blank" rel="noopener">Revente des produits pillés, le Gouvernement mobilise les plateformes</a><span class="by">economie.gouv.fr · <span class="lvl lvl-V">V</span></span></span></li><li><time datetime="2026-10-19">19 octobre 2026</time><span><a href="https://www.info.gouv.fr/discours/cellule-interministerielle-de-crise-point-de-situation-du-premier-ministre" target="_blank" rel="noopener">Cellule interministérielle de crise : point de situation du Premier ministre</a><span class="by">info.gouv.fr · <span class="lvl lvl-V">V</span></span></span></li></ul></div></section>
-<section id="equipe"><div class="sec-head"><h2>Qui est concerné</h2><p>Composition indiquée par info.gouv.fr.</p></div><ul class="equipe"><li><b data-ent="Serge Papin">Serge Papin</b><span>Ministre</span></li></ul></section>
-<section id="dans-politik"><div class="sec-head"><h2>Dans Politik</h2><p>Les pages qui s'appuient sur ce ministère.</p></div><ul class="liens-pol"><li><a href="17-octobre-2026.html">Le 17 octobre 2026</a></li></ul></section>
+<section id="equipe"><div class="sec-head"><h2>Qui dirige ce ministère</h2><p>D'après la composition du Gouvernement publiée sur info.gouv.fr.</p></div><ul class="equipe"><li><b data-ent="Serge Papin">Serge Papin</b><span>Ministre</span></li></ul></section>
+<section id="dans-politik"><div class="sec-head"><h2>Dans Politik</h2><p>Les pages de Politik qui parlent de ce ministère.</p></div><ul class="liens-pol"><li><a href="17-octobre-2026.html">Le 17 octobre 2026</a></li></ul></section>
+<section id="famille"><div class="sec-head"><h2>Autres ministères : économie et travail</h2><p>Les ministères de la même famille.</p></div><ul class="liens-pol"><li><a href="ministere-travail-solidarites.html">Travail et Solidarités</a></li><li><a href="ministere-economie.html">Économie et Finances</a></li><li><a href="ministere-action-comptes-publics.html">Action et Comptes publics</a></li></ul></section>
+<nav class="pn" aria-label="Ministère précédent et suivant"><a rel="prev" href="ministere-economie.html"><span aria-hidden="true">←</span> <small>Précédent</small><b>Économie et Finances</b></a><a class="all" href="gouvernement.html">Tous les ministères</a><a rel="next" href="ministere-agriculture.html"><small>Suivant</small><b>Agriculture</b> <span aria-hidden="true">→</span></a></nav>
 </main>
-<footer class="wrap"><p>Politik · page générée à partir de la composition du Gouvernement (info.gouv.fr) et des sites officiels, avec leur date de lecture.</p></footer>
+<footer class="wrap"><p>Politik · composition du Gouvernement d'après info.gouv.fr, informations lues sur les sites officiels à la date indiquée.</p></footer>
 
 <script src="gouvernement.js"></script>
 <script src="entites.js"></script>

@@ -1177,6 +1177,42 @@
     {
       "page": "forces",
       "type": "jeu",
+      "titre": "DS-16 · Salaires dans la fonction publique par catégorie socioprofessionnelle (Insee, 2023)",
+      "producteur": "Insee",
+      "url": "",
+      "niveau": "V",
+      "statut": "accessible : accessible (data.gouv.fr)"
+    },
+    {
+      "page": "forces",
+      "type": "jeu",
+      "titre": "DS-17 · La formation des policiers, données 2015-2020 (Cour des comptes)",
+      "producteur": "Cour des comptes",
+      "url": "",
+      "niveau": "V",
+      "statut": "accessible : accessible, volumes et coûts de formation"
+    },
+    {
+      "page": "forces",
+      "type": "jeu",
+      "titre": "DS-18 · Effectif géré par la DRH du ministère de l'Intérieur",
+      "producteur": "Ministère de l'Intérieur",
+      "url": "",
+      "niveau": "A",
+      "statut": "non ouvert : ne couvre pas les corps actifs de la police"
+    },
+    {
+      "page": "forces",
+      "type": "jeu",
+      "titre": "DS-19 · Niveau de diplôme réel des policiers en poste",
+      "producteur": "aucun",
+      "url": "",
+      "niveau": "A",
+      "statut": "à explorer : aucun jeu trouvé sur data.gouv.fr"
+    },
+    {
+      "page": "forces",
+      "type": "jeu",
       "titre": "DS-12 · Jeu privé « arrêts maladie »",
       "producteur": "Producteur privé",
       "url": "",
@@ -1920,6 +1956,51 @@
       "url": "https://orbi.umons.ac.be/handle/20.500.12907/54687",
       "niveau": "S",
       "statut": "cité (index de la synthèse du 20 oct. 2026, recherche publiée)"
+    },
+    {
+      "page": "forces",
+      "type": "document",
+      "titre": "S80 · Police nationale, officier de police, concours externe (diplôme exigé)",
+      "producteur": "www.police-nationale.interieur.gouv.fr",
+      "url": "https://www.police-nationale.interieur.gouv.fr/nous-rejoindre/nos-voies-dacces/devenir-policier/off/ext",
+      "niveau": "V",
+      "statut": "cité (index de la synthèse du 20 oct. 2026, institution (texte officiel, rapport ou réponse parlementaire))"
+    },
+    {
+      "page": "forces",
+      "type": "document",
+      "titre": "S81 · Police nationale, commissaire de police, concours externe (diplôme exigé)",
+      "producteur": "www.police-nationale.interieur.gouv.fr",
+      "url": "https://www.police-nationale.interieur.gouv.fr/nous-rejoindre/nos-voies-dacces/devenir-policier/cre/ext",
+      "niveau": "V",
+      "statut": "cité (index de la synthèse du 20 oct. 2026, institution (texte officiel, rapport ou réponse parlementaire))"
+    },
+    {
+      "page": "forces",
+      "type": "document",
+      "titre": "S82 · Police nationale, gardien de la paix (ordre hiérarchique des grades)",
+      "producteur": "www.police-nationale.interieur.gouv.fr",
+      "url": "https://www.police-nationale.interieur.gouv.fr/nous-rejoindre/nos-voies-dacces/devenir-policier/gpx",
+      "niveau": "V",
+      "statut": "cité (index de la synthèse du 20 oct. 2026, institution (texte officiel, rapport ou réponse parlementaire))"
+    },
+    {
+      "page": "forces",
+      "type": "document",
+      "titre": "S83 · Insee, data.gouv.fr, « Salaires dans la fonction publique par catégorie socioprofessionnelle détaillée » (2023)",
+      "producteur": "www.data.gouv.fr",
+      "url": "https://www.data.gouv.fr/datasets/salaires-dans-la-fonction-publique-par-categorie-socioprofessionnelle-detaillee",
+      "niveau": "V",
+      "statut": "cité (index de la synthèse du 20 oct. 2026, institution (texte officiel, rapport ou réponse parlementaire))"
+    },
+    {
+      "page": "forces",
+      "type": "document",
+      "titre": "S84 · Cour des comptes, data.gouv.fr, « La formation des policiers » (données 2015-2020)",
+      "producteur": "www.data.gouv.fr",
+      "url": "https://www.data.gouv.fr/datasets/la-formation-des-policiers",
+      "niveau": "V",
+      "statut": "cité (index de la synthèse du 20 oct. 2026, institution (texte officiel, rapport ou réponse parlementaire))"
     },
     {
       "page": "cyber",
@@ -2692,8 +2773,8 @@
   ],
   "totaux": {
     "api": 19,
-    "jeu": 40,
-    "document": 132,
+    "jeu": 44,
+    "document": 137,
     "reference": 97
   }
 }

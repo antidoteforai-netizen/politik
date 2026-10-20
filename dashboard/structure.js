@@ -1,5 +1,5 @@
 /* Politik — structure commune du site.
-   - Menu du haut en arborescence : Accueil, Ministères, États des lieux, Dossiers, Plus (menus accessibles au clavier).
+   - Barre d'arborescence toujours visible (seconde ligne du bandeau) : Accueil, Ministères, États des lieux, Dossiers, Plus, sans menu déroulant.
    - Fil d'Ariane sur toutes les pages sauf l'accueil.
    - Plan du site en pied de page, avec la liste des ministères, et note sur la mesure d'audience.
    - Libellé long du niveau FALC sur grand écran, sigle sur petit écran ; en-têtes de tableaux déclarés (scope).
@@ -18,26 +18,38 @@
     { k: "ministeres", label: "Ministères", menu: "ministeres", href: "gouvernement.html" },
     { k: "etats", label: "États des lieux", items: ["index.html", "forces.html", "cybersecurite.html", "secteurs.html"] },
     { k: "dossiers", label: "Dossiers", items: ["medias.html", "17-octobre-2026.html"] },
-    { k: "plus", label: "Plus", items: ["presidentielle-2027.html", "benchmark-usa.html", "donnees.html"] }
+    { k: "plus", label: "Aussi", items: ["presidentielle-2027.html", "benchmark-usa.html", "donnees.html"] }
   ];
   var CSS = [
-    ".nav-menu{position:relative}",
-    ".nav-menu>button{font:inherit;font-size:.84rem;padding:6px 10px;border-radius:6px;border:0;background:transparent;color:var(--ink-2);cursor:pointer;white-space:nowrap}",
-    ".nav-menu>button:hover,.nav-menu>button:focus-visible,.nav-menu>button[aria-expanded=true]{background:var(--accent-soft);color:var(--accent-ink);outline:none}",
-    ".nav-menu>button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}",
-    ".nav-menu>button.here{font-weight:600;color:var(--ink);background:var(--accent-soft)}",
-    ".nav-panel{position:fixed;z-index:20;min-width:230px;max-width:calc(100vw - 32px);max-height:calc(100vh - 90px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:8px;box-shadow:0 12px 32px rgba(20,26,43,.16)}",
-    ".nav-panel[hidden]{display:none}",
-    ".nav-panel a{display:block;padding:9px 12px;border-radius:8px;font-size:.92rem;color:var(--ink);text-decoration:none}",
-    ".nav-panel a:hover,.nav-panel a:focus-visible{background:var(--accent-soft);color:var(--accent-ink);outline:none}",
-    ".nav-panel a[aria-current]{font-weight:700}",
-    ".nav-panel.wide{width:min(760px,calc(100vw - 32px));padding:14px}",
-    ".nav-panel .all{display:flex;justify-content:space-between;align-items:center;margin:0 0 8px;padding:10px 12px;border-radius:10px;background:var(--accent-soft);color:var(--accent-ink);font-weight:700}",
-    ".nav-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px 18px}",
-    ".nav-cols h3{margin:6px 12px 2px;font-size:.7rem;text-transform:uppercase;letter-spacing:.09em;color:var(--ink-3);font-weight:700;display:flex;align-items:center;gap:6px}",
-    ".nav-cols h3 i{width:8px;height:8px;border-radius:50%;background:var(--f)}",
-    ".nav-cols ul{list-style:none;margin:0;padding:0}",
-    ".nav-cols a{padding:6px 12px;font-size:.88rem}",
+    ".nav.has-tree>.wrap>ul{display:none}",
+    ".nav.has-tree>.wrap{padding-block:8px}",
+    ".nav.has-tree .switch{margin-left:auto}",
+    ".nav-tree{border-top:1px solid var(--line);background:color-mix(in srgb,var(--surface) 55%,transparent)}",
+    ".nav-tree .wrap{padding-block:7px;max-width:1400px}",
+    ".nav-tree ul{list-style:none;margin:0;padding:0}",
+    ".nav-tree .tree{display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;padding-block:2px}",
+    ".nav-tree .tree>li{flex:none;display:flex;align-items:center}",
+    ".nav-tree a{text-decoration:none;white-space:nowrap}",
+    ".nav-tree .t-solo a{display:inline-flex;align-items:center;gap:7px;min-height:38px;padding:6px 14px;border-radius:999px;font-size:.92rem;font-weight:700;color:var(--ink);border:1.5px solid var(--line);background:var(--surface)}",
+    ".nav-tree .t-solo.cur a,.nav-tree .t-solo a.here{background:var(--ink);color:var(--paper);border-color:var(--ink)}",
+    ".nav-tree .cnt{font-size:.74rem;font-weight:800;padding:1px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent-ink)}",
+    ".nav-tree .cnt:empty{display:none}",
+    ".nav-tree .t-solo.cur .cnt{background:rgba(255,255,255,.22);color:inherit}",
+    ".nav-tree .t-grp{display:flex;align-items:center;gap:2px;padding:3px 4px 3px 12px;border:1.5px solid var(--line);border-radius:999px;background:var(--surface)}",
+    ".nav-tree .t-grp.cur{border-color:var(--accent)}",
+    ".nav-tree .t-lab{font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap;margin-right:4px;display:inline-flex;align-items:center;gap:6px}",
+    ".nav-tree .t-lab:before{content:\"\";width:7px;height:7px;border-radius:50%;background:var(--ink-3)}",
+    ".nav-tree .t-grp.cur .t-lab{color:var(--accent-ink)}",
+    ".nav-tree .t-grp.cur .t-lab:before{background:var(--accent)}",
+    ".nav-tree .t-grp ul{display:flex;gap:2px}",
+    ".nav-tree .t-grp a{display:inline-flex;align-items:center;min-height:32px;padding:4px 11px;border-radius:999px;font-size:.88rem;font-weight:600;color:var(--ink)}",
+    ".nav-tree .t-grp a:hover,.nav-tree .t-solo a:hover{background:var(--accent-soft);color:var(--accent-ink)}",
+    ".nav-tree .t-solo a:hover{border-color:var(--accent)}",
+    ".nav-tree a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}",
+    ".nav-tree .t-grp a.here{background:var(--accent);color:#fff;font-weight:800}",
+    "@media (pointer:coarse){.nav-tree .t-solo a{min-height:44px}.nav-tree .t-grp a{min-height:40px}}",
+    "@media (max-width:760px){.nav-tree .tree{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;padding-bottom:6px}.nav-tree .tree.ov{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 36px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 36px),transparent)}}",
+    "@media (max-width:640px){.nav-tree .t-solo a{padding:6px 11px;font-size:.86rem}.nav-tree .t-grp a{padding:4px 9px;font-size:.84rem}}",
     ".fil{margin:0;padding:10px 0 0}",
     ".fil ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:2px 0;font-size:.82rem;color:var(--ink-3)}",
     ".fil li:not(:last-child):after{content:\"›\";margin:0 8px;color:var(--ink-3)}",
@@ -46,7 +58,7 @@
     ".plan{margin:28px 0 8px;padding:20px 0 0;border-top:1px solid var(--line)}",
     ".plan h2{font-size:.74rem;text-transform:uppercase;letter-spacing:.09em;color:var(--ink-3);margin:0 0 12px;font-weight:600}",
     ".plan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px 24px}",
-    ".mesure-note{margin:16px 0 0;font-size:.8rem;color:var(--ink-3);max-width:70ch}",
+    ".mesure-note{margin:18px auto 0;font-size:.8rem;color:var(--ink-2);max-width:70ch;text-align:center}",
     ".plan-grid h3{font-size:.86rem;margin:0 0 6px;color:var(--ink)}",
     ".plan-grid ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}",
     ".plan-grid a{display:inline-block;padding:5px 0;font-size:.9rem;color:var(--ink-2)}",
@@ -64,54 +76,28 @@
     if (window.GOUV) return cb(window.GOUV);
     var s = document.createElement("script"); s.src = "gouvernement.js"; s.onload = function () { cb(window.GOUV); }; s.onerror = function () { cb(null); }; document.head.appendChild(s);
   }
-  var openPanel = null, openBtn = null;
-  function closeAll() { if (openPanel) { openPanel.hidden = true; openBtn.setAttribute("aria-expanded", "false"); openPanel = openBtn = null; } }
-  function place(btn, panel) { var b = btn.getBoundingClientRect(), w = panel.offsetWidth; panel.style.top = (b.bottom + 6) + "px"; panel.style.left = Math.max(16, Math.min(b.left, window.innerWidth - w - 16)) + "px"; }
-  function addMenu(ul, node, fill) {
-    var li = document.createElement("li"); li.className = "nav-menu";
-    var id = "nav-panel-" + node.k;
-    li.innerHTML = '<button type="button" aria-expanded="false" aria-controls="' + id + '" aria-haspopup="true"' + (curGroup === node.k ? ' class="here"' : "") + ">" + esc(node.label) + ' <span aria-hidden="true">▾</span></button>';
-    var panel = document.createElement("div"); panel.id = id; panel.className = "nav-panel" + (node.menu ? " wide" : ""); panel.hidden = true; document.body.appendChild(panel);
-    var btn = li.firstChild, filled = false;
-    btn.addEventListener("click", function () {
-      if (!panel.hidden) { closeAll(); return; }
-      closeAll();
-      function show() { panel.hidden = false; btn.setAttribute("aria-expanded", "true"); openPanel = panel; openBtn = btn; place(btn, panel); var a = panel.querySelector("a"); if (a) a.focus(); }
-      if (!filled) { fill(panel, function () { filled = true; show(); }); } else show();
-    });
-    panel.addEventListener("keydown", function (e) { if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return; var l = [].slice.call(panel.querySelectorAll("a")), i = l.indexOf(document.activeElement); e.preventDefault(); l[(i + (e.key === "ArrowDown" ? 1 : l.length - 1)) % l.length].focus(); });
-    ul.appendChild(li);
-  }
-  function fillItems(node) {
-    return function (panel, done) {
-      panel.innerHTML = node.items.map(function (f) { return '<a href="' + f + '"' + (f === here ? ' aria-current="page"' : "") + ">" + esc(PAGES[f][0]) + "</a>"; }).join("");
-      done();
-    };
-  }
-  function fillMinisteres(panel, done) {
-    loadGouv(function (G) {
-      var all = G ? G.ministeres.concat(G.autres_acteurs) : [];
-      var cols = FAMILLES.map(function (f) {
-        var L = all.filter(function (m) { return m.famille === f[0]; }); if (!L.length) return "";
-        var col = { regalien: "var(--c1)", economie: "var(--c2)", territoires: "var(--c3)", societe: "var(--c4)", autres: "var(--c5)" }[f[0]];
-        return '<div><h3 style="--f:' + col + '"><i></i>' + esc(f[1]) + "</h3><ul>" + L.map(function (m) { var h = "ministere-" + m.id + ".html"; return '<li><a href="' + h + '"' + (h === here ? ' aria-current="page"' : "") + ">" + esc(m.court) + "</a></li>"; }).join("") + "</ul></div>";
-      }).join("");
-      panel.innerHTML = '<a class="all" href="gouvernement.html">Tous les ministères et la composition du Gouvernement <span aria-hidden="true">→</span></a><div class="nav-cols">' + cols + "</div>";
-      done();
-    });
-  }
+  var SHORT = { "index.html": "Fraude", "forces.html": "Police", "cybersecurite.html": "Cyber", "secteurs.html": "France", "medias.html": "Médias", "17-octobre-2026.html": "17 octobre", "presidentielle-2027.html": "Élection", "benchmark-usa.html": "États-Unis", "donnees.html": "Sources" };
+  function link(f, label, title) { return '<a href="' + f + '"' + (title ? ' title="' + esc(title) + '"' : "") + (f === here || (f === "gouvernement.html" && isMin) ? ' class="here" aria-current="page"' : "") + ">" + label + "</a>"; }
   function buildNav() {
-    var ul = document.querySelector("nav.nav ul"); if (!ul) return;
-    ul.innerHTML = "";
-    TREE.forEach(function (n) {
-      if (n.items) return addMenu(ul, n, fillItems(n));
-      if (n.menu) return addMenu(ul, n, fillMinisteres);
-      var li = document.createElement("li"); li.innerHTML = '<a href="' + n.href + '"' + (curGroup === n.k ? ' class="here" aria-current="page"' : "") + ">" + esc(n.label) + "</a>"; ul.appendChild(li);
+    var nav = document.querySelector("nav.nav"); if (!nav) return;
+    var row = document.createElement("div"); row.className = "nav-tree";
+    var groups = TREE.filter(function (n) { return n.items; }).map(function (n) {
+      return '<li class="t-grp' + (curGroup === n.k ? " cur" : "") + '" role="group" aria-labelledby="tl-' + n.k + '"><span class="t-lab" id="tl-' + n.k + '">' + esc(n.label) + '</span><ul>' + n.items.map(function (f) { return "<li>" + link(f, esc(SHORT[f] || PAGES[f][0]), PAGES[f][0]) + "</li>"; }).join("") + "</ul></li>";
     });
-    document.addEventListener("click", function (e) { if (openPanel && !openPanel.contains(e.target) && !openBtn.parentNode.contains(e.target)) closeAll(); });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && openPanel) { var b = openBtn; closeAll(); b.focus(); } });
-    window.addEventListener("scroll", closeAll, { passive: true });
-    window.addEventListener("resize", closeAll);
+    row.innerHTML = '<div class="wrap"><ul class="tree">'
+      + '<li class="t-solo' + (curGroup === "accueil" ? " cur" : "") + '">' + link("accueil.html", "Accueil") + "</li>"
+      + '<li class="t-solo' + (curGroup === "ministeres" ? " cur" : "") + '">' + link("gouvernement.html", 'Ministères <span class="cnt" id="nav-cnt"></span>', "Les ministères et la composition du Gouvernement") + "</li>"
+      + groups.join("") + "</ul></div>";
+    nav.appendChild(row); nav.classList.add("has-tree");
+    var tree = row.querySelector(".tree");
+    function ov() { var o = tree.scrollWidth > tree.clientWidth + 2; tree.classList.toggle("ov", o); if (o) tree.setAttribute("tabindex", "0"); else tree.removeAttribute("tabindex"); }
+    ov(); window.addEventListener("resize", ov); if (document.fonts && document.fonts.ready) document.fonts.ready.then(ov);
+    row.addEventListener("keydown", function (e) {
+      if (["ArrowRight", "ArrowLeft", "Home", "End"].indexOf(e.key) < 0) return;
+      var items = [].slice.call(row.querySelectorAll("a")), i = items.indexOf(document.activeElement); if (i < 0) return; e.preventDefault();
+      var n = e.key === "Home" ? 0 : e.key === "End" ? items.length - 1 : Math.max(0, Math.min(items.length - 1, i + (e.key === "ArrowRight" ? 1 : -1))); items[n].focus();
+    });
+    loadGouv(function (G) { var c = document.getElementById("nav-cnt"); if (G && c) c.textContent = G.ministeres.length + G.autres_acteurs.length; });
   }
   function buildCrumbs() {
     if (here === "accueil.html") return;

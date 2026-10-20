@@ -1,7 +1,108 @@
 {
- "origine": "Pixabay",
- "licence": "Pixabay Content License (usage libre, sans attribution obligatoire)",
+ "origine": "Wikimedia Commons (photographies) et Pixabay (image de partage)",
  "lu_le": "2026-10-20",
+ "photos": [
+  {
+   "id": "ministeres",
+   "fichier": "img/photos/ministeres.jpg",
+   "auteur": "ScareCriterion12",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:H%C3%B4tel_de_Matignon_2017.jpg",
+   "titre": "Hôtel de Matignon 2017.jpg",
+   "origine": "Wikimedia Commons"
+  },
+  {
+   "id": "fraude",
+   "fichier": "img/photos/fraude.jpg",
+   "auteur": "Fabio Gargano",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:CAF_(Caisse_d%27Allocations_Familiales),_Paris_15.JPG",
+   "titre": "CAF (Caisse d'Allocations Familiales), Paris 15.JPG",
+   "origine": "Wikimedia Commons"
+  },
+  {
+   "id": "police",
+   "fichier": "img/photos/police.jpg",
+   "auteur": "flightlog",
+   "licence": "CC BY 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:Citroen_Berlingo_in_French_police_livree.jpg",
+   "titre": "Citroen Berlingo in French police livree.jpg",
+   "origine": "Wikimedia Commons"
+  },
+  {
+   "id": "cyber",
+   "fichier": "img/photos/cyber.jpg",
+   "auteur": "ProjectManhattan",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:Network_cables_in_server_room.jpg",
+   "titre": "Network cables in server room.jpg",
+   "origine": "Wikimedia Commons"
+  },
+  {
+   "id": "france",
+   "fichier": "img/photos/france.jpg",
+   "auteur": "Elliott Brown",
+   "licence": "CC BY 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:Roussillon_-_market_(5845973759).jpg",
+   "titre": "Roussillon - market (5845973759).jpg",
+   "origine": "Wikimedia Commons"
+  },
+  {
+   "id": "medias",
+   "fichier": "img/photos/medias.jpg",
+   "auteur": "Benoît Prieur",
+   "licence": "CC0",
+   "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:Kiosque_%C3%A0_journaux,_avenue_Marceau_(Paris)_en_janvier_2020.jpg",
+   "titre": "Kiosque à journaux, avenue Marceau (Paris) en janvier 2020.jpg",
+   "origine": "Wikimedia Commons"
+  },
+  {
+   "id": "oct17",
+   "fichier": "img/photos/oct17.jpg",
+   "auteur": "flightlog",
+   "licence": "CC BY 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:Propret%C3%A9_de_Paris,_23_August_2013.jpg",
+   "titre": "Propreté de Paris, 23 August 2013.jpg",
+   "origine": "Wikimedia Commons"
+  },
+  {
+   "id": "election",
+   "fichier": "img/photos/election.jpg",
+   "auteur": "Jamain",
+   "licence": "CC BY 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:Isoloirs_J1.jpg",
+   "titre": "Isoloirs J1.jpg",
+   "origine": "Wikimedia Commons"
+  },
+  {
+   "id": "usa",
+   "fichier": "img/photos/usa.jpg",
+   "auteur": "Alvesgaspar",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:Capitol_Washington_October_2016-3.jpg",
+   "titre": "Capitol Washington October 2016-3.jpg",
+   "origine": "Wikimedia Commons"
+  },
+  {
+   "id": "donnees",
+   "fichier": "img/photos/donnees.jpg",
+   "auteur": "Simon Hattinga Verschure",
+   "licence": "CC0",
+   "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:Typing_on_a_laptop_(Unsplash).jpg",
+   "titre": "Typing on a laptop (Unsplash).jpg",
+   "origine": "Wikimedia Commons"
+  }
+ ],
  "images": [
   {
    "id": "hero",
@@ -11,96 +112,6 @@
    "source": "https://cdn.pixabay.com/photo/2023/05/30/08/19/people-8027909_1280.jpg",
    "licence": "Pixabay Content License",
    "octets": 515158
-  },
-  {
-   "id": "ministeres",
-   "fichier": "img/pixabay/ministeres.png",
-   "pixabay_id": "1469583",
-   "page": "https://pixabay.com/illustrations/houses-of-parliament-parliament-1469583/",
-   "source": "https://cdn.pixabay.com/photo/2016/06/20/19/53/parliament-1469583_640.png",
-   "licence": "Pixabay Content License",
-   "octets": 81133
-  },
-  {
-   "id": "fraude",
-   "fichier": "img/pixabay/fraude.jpg",
-   "pixabay_id": "4319002",
-   "page": "https://pixabay.com/illustrations/fake-money-fraud-bank-bankrupt-4319002/",
-   "source": "https://cdn.pixabay.com/photo/2019/07/05/16/52/fake-4319002_640.jpg",
-   "licence": "Pixabay Content License",
-   "octets": 14868
-  },
-  {
-   "id": "police",
-   "fichier": "img/pixabay/police.jpg",
-   "pixabay_id": "8847071",
-   "page": "https://pixabay.com/illustrations/police-station-police-buildings-8847071/",
-   "source": "https://cdn.pixabay.com/photo/2024/06/22/22/58/police-station-8847071_640.jpg",
-   "licence": "Pixabay Content License",
-   "octets": 41283
-  },
-  {
-   "id": "cyber",
-   "fichier": "img/pixabay/cyber.jpg",
-   "pixabay_id": "8819383",
-   "page": "https://pixabay.com/illustrations/cyber-security-cyber-security-8819383/",
-   "source": "https://cdn.pixabay.com/photo/2024/06/09/20/07/cyber-security-8819383_640.jpg",
-   "licence": "Pixabay Content License",
-   "octets": 20835
-  },
-  {
-   "id": "france",
-   "fichier": "img/pixabay/france.png",
-   "pixabay_id": "1290790",
-   "page": "https://pixabay.com/illustrations/france-map-french-flag-png-tricolor-1290790/",
-   "source": "https://cdn.pixabay.com/photo/2016/03/30/15/08/map-of-france-1290790_640.png",
-   "licence": "Pixabay Content License",
-   "octets": 57365
-  },
-  {
-   "id": "medias",
-   "fichier": "img/pixabay/medias.jpg",
-   "pixabay_id": "1074604",
-   "page": "https://pixabay.com/illustrations/news-newspaper-globe-read-paper-1074604/",
-   "source": "https://cdn.pixabay.com/photo/2015/12/03/10/12/news-1074604_640.jpg",
-   "licence": "Pixabay Content License",
-   "octets": 52894
-  },
-  {
-   "id": "oct17",
-   "fichier": "img/pixabay/oct17.jpg",
-   "pixabay_id": "10224288",
-   "page": "https://pixabay.com/illustrations/people-group-protest-crowd-10224288/",
-   "source": "https://cdn.pixabay.com/photo/2026/04/13/07/15/tylijura-people-10224288_640.jpg",
-   "licence": "Pixabay Content License",
-   "octets": 59192
-  },
-  {
-   "id": "election",
-   "fichier": "img/pixabay/election.jpg",
-   "pixabay_id": "3569999",
-   "page": "https://pixabay.com/illustrations/vote-voting-voting-ballot-box-3569999/",
-   "source": "https://cdn.pixabay.com/photo/2018/07/29/11/59/vote-3569999_640.jpg",
-   "licence": "Pixabay Content License",
-   "octets": 15233
-  },
-  {
-   "id": "usa",
-   "fichier": "img/pixabay/usa.png",
-   "pixabay_id": "5660507",
-   "page": "https://pixabay.com/illustrations/capitol-congress-icon-us-congress-5660507/",
-   "source": "https://cdn.pixabay.com/photo/2020/10/16/19/29/capitol-5660507_640.png",
-   "licence": "Pixabay Content License",
-   "octets": 60755
-  },
-  {
-   "id": "donnees",
-   "fichier": "img/pixabay/donnees.jpg",
-   "pixabay_id": "3050965",
-   "page": "https://pixabay.com/illustrations/report-expenses-management-3050965/",
-   "source": "https://cdn.pixabay.com/photo/2017/12/30/20/59/report-3050965_640.jpg",
-   "licence": "Pixabay Content License",
-   "octets": 13163
   }
  ]
 }

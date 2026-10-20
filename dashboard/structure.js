@@ -37,6 +37,7 @@
     ".mega-panel[hidden]{display:none}",
     ".mega-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px}",
     ".mega-card{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:300px;border-radius:18px;overflow:hidden;color:#fff;text-decoration:none;background:var(--bg,#1f2a44);isolation:isolate}",
+    ".mega-card .cr{position:absolute;top:10px;right:12px;z-index:1;max-width:calc(100% - 24px);font-size:.66rem;letter-spacing:.02em;color:#fff;padding:2px 8px;border-radius:999px;background:rgba(10,16,38,.62);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}",
     ".mega-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}",
     ".mega-card:after{content:\"\";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 35%,rgba(10,16,38,.78) 100%)}",
     ".mega-card .tx{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;padding:16px 16px 16px 18px}",
@@ -86,15 +87,16 @@
   }
   var SHORT = { "index.html": "Fraude", "forces.html": "Police", "cybersecurite.html": "Cyber", "secteurs.html": "France", "medias.html": "Médias", "17-octobre-2026.html": "17 octobre", "presidentielle-2027.html": "Élection", "benchmark-usa.html": "États-Unis", "donnees.html": "Sources" };
   function link(f, label, title) { return '<a href="' + f + '"' + (title ? ' title="' + esc(title) + '"' : "") + (f === here || (f === "gouvernement.html" && isMin) ? ' class="here" aria-current="page"' : "") + ">" + label + "</a>"; }
-  var ILLU = { index: "fraude.jpg", forces: "police.jpg", cybersecurite: "cyber.jpg", secteurs: "france.png", medias: "medias.jpg", "17-octobre-2026": "oct17.jpg", "presidentielle-2027": "election.jpg", "benchmark-usa": "usa.png", donnees: "donnees.jpg", gouvernement: "ministeres.png" };
+  var ILLU = { index: "photos/fraude.jpg", forces: "photos/police.jpg", cybersecurite: "photos/cyber.jpg", secteurs: "photos/france.jpg", medias: "photos/medias.jpg", "17-octobre-2026": "photos/oct17.jpg", "presidentielle-2027": "photos/election.jpg", "benchmark-usa": "photos/usa.jpg", donnees: "photos/donnees.jpg", gouvernement: "photos/ministeres.jpg" };
   var DESC = { "index.html": "Ce que l'État estime, détecte et récupère", "forces.html": "Violences, soutien, diplôme et salaire", "cybersecurite.html": "Plan d'action, incidents et constats", "secteurs.html": "Quinze familles de sujets, chiffre par chiffre", "medias.html": "Qui possède quoi, et quelles aides publiques", "17-octobre-2026.html": "Ce que disent les sources officielles", "presidentielle-2027.html": "Candidats et repères avant le scrutin", "benchmark-usa.html": "Ce que font les Américains de leurs données", "donnees.html": "D'où vient chaque chiffre du site" };
   var CHEV = '<svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4.5 6 8.5 10 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   var openPanel = null, openBtn = null, hoverT = null;
   function closeAll() { clearTimeout(hoverT); if (openPanel) { openPanel.hidden = true; openBtn.setAttribute("aria-expanded", "false"); openPanel = openBtn = null; } }
-  function img(f) { return '<img src="img/pixabay/' + f + '" alt="" loading="lazy" width="640" height="480"' + (/\.png$/.test(f) ? ' class="contain"' : "") + ">"; }
+  var CRED = {"index": "Fabio Gargano", "forces": "flightlog", "cybersecurite": "ProjectManhattan", "secteurs": "Elliott Brown", "medias": "Benoît Prieur", "17-octobre-2026": "flightlog", "presidentielle-2027": "Jamain", "benchmark-usa": "Alvesgaspar", "donnees": "Simon Hattinga Verschure", "gouvernement": "ScareCriterion12"};
+  function img(f) { return '<img src="img/' + f + '" alt="" loading="lazy" width="640" height="480">'; }
   function card(f) {
     var key = f.replace(/\.html$/, "");
-    return '<a class="mega-card' + (/\.png$/.test(ILLU[key] || "") ? " clair" : "") + '" href="' + f + '"' + (f === here ? ' aria-current="page"' : "") + '>' + img(ILLU[key]) + '<span class="tx"><span><b>' + esc(PAGES[f][0]) + "</b><small>" + esc(DESC[f] || "") + '</small></span><span class="go" aria-hidden="true">→</span></span></a>';
+    return '<a class="mega-card' + (/\.png$/.test(ILLU[key] || "") ? " clair" : "") + '" href="' + f + '"' + (f === here ? ' aria-current="page"' : "") + '>' + img(ILLU[key]) + (CRED[key] ? '<span class="cr">Photo : ' + esc(CRED[key]) + '</span>' : '') + '<span class="tx"><span><b>' + esc(PAGES[f][0]) + "</b><small>" + esc(DESC[f] || "") + '</small></span><span class="go" aria-hidden="true">→</span></span></a>';
   }
   function fillCards(node) { return function (panel, done) { panel.innerHTML = '<div class="mega-cards">' + node.items.map(card).join("") + "</div>"; done(); }; }
   function fillMinisteres(panel, done) {

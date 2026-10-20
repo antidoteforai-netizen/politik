@@ -148,4 +148,4 @@ Chaque page porte un titre et une description propres, une adresse canonique, le
 
 ## Licence et crédits
 
-Les illustrations viennent de Pixabay (Pixabay Content License), créditées sur `donnees.html`. Aucune licence n'est encore choisie pour le code et les textes : tous droits réservés tant que ce choix n'est pas fait. Les données publiques gardent leur licence d'origine, et les crédits des images figurent sur `donnees.html`.
+Les photographies du menu viennent de Wikimedia Commons (CC BY, CC BY-SA, CC0), créditées sur chaque carte et sur `donnees.html` ; l'image de partage vient de Pixabay. Aucune licence n'est encore choisie pour le code et les textes : tous droits réservés tant que ce choix n'est pas fait. Les données publiques gardent leur licence d'origine, et les crédits des images figurent sur `donnees.html`.

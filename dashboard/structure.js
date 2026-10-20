@@ -2,11 +2,12 @@
    Sans JavaScript, le menu complet reste affiché (dégradation propre). */
 (function () {
   var PAGES = {
+    "accueil.html": ["Accueil", "Se repérer"],
     "gouvernement.html": ["Le Gouvernement", "L'État"], "cybersecurite.html": ["Cybersécurité de l'État", "L'État"],
     "presidentielle-2027.html": ["Présidentielle 2027", "L'État"],
     "index.html": ["Fraude sociale", "Argent et médias"], "medias.html": ["Qui possède les médias", "Argent et médias"],
     "forces.html": ["Forces de l'ordre", "Sécurité"], "17-octobre-2026.html": ["Le 17 octobre 2026", "Sécurité"],
-    "secteurs.html": ["Comment va la France", "Comprendre"], "benchmark-usa.html": ["Benchmark États-Unis", "Comprendre"], "donnees.html": ["Sources et données", "Comprendre"]
+    "secteurs.html": ["Comment va la France", "Comprendre"], "benchmark-usa.html": ["Benchmark États-Unis", "Comprendre"], "donnees.html": ["Sources et données", "Se repérer"]
   };
   var CSS = [
     ".nav-plus{position:relative}",
@@ -27,7 +28,7 @@
     ".plan-grid a[aria-current]{font-weight:600;color:var(--ink)}",
     "@media print{.plan{display:none}}"
   ].join("\n");
-  var here = location.pathname.split("/").pop() || "index.html"; if (here === "simple.html") here = "index.html";
+  var here = location.pathname.split("/").pop() || "accueil.html"; if (here === "simple.html") here = "index.html";
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function init() {
     var st = document.createElement("style"); st.textContent = CSS; document.head.appendChild(st);

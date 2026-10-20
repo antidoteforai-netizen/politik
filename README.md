@@ -39,6 +39,7 @@ Chaque donnée porte une pastille.
 
 | Page | Question à laquelle elle répond |
 |---|---|
+| `accueil.html` | Par où commencer ? Sept sujets, trois chiffres sourcés chacun, l'actualité vérifiée et des raccourcis par rôle. |
 | `gouvernement.html` | Qui compose le Gouvernement, quels sont les 20 ministères, que faut-il savoir de chacun ? |
 | `index.html` | Combien coûte la fraude sociale, qui la mesure, et où les mesures divergent-elles ? |
 | `medias.html` | À qui appartiennent les médias, et quelles aides publiques reçoivent-ils ? |
@@ -70,7 +71,7 @@ Le site est écrit pour neuf lecteurs : citoyen·ne, journaliste, décideur, min
 
 | Élément | Valeur |
 |---|---|
-| Pages | 11 |
+| Pages | 12 |
 | Entrées du registre des sources | 188 |
 | Images avec crédit et licence | 140 |
 | Ministères structurés | 20 |
@@ -84,7 +85,7 @@ Les données chiffrées viennent d'API publiques (data.gouv.fr, OFPRA, DGFiP, ge
 
 ```bash
 python3 -m http.server -d dashboard 8765
-# puis ouvrir http://127.0.0.1:8765/
+# puis ouvrir http://127.0.0.1:8765/accueil.html
 ```
 
 ## Mise à jour des données

@@ -22,6 +22,6 @@ Méthode : exploration automatisée des 11 pages dans un vrai navigateur (bureau
 ## Restant
 
 - Les boutons de glossaire dans le texte de la page fraude mesurent 16 à 24 px de haut : ils sont dans des phrases (cas toléré par WCAG 2.2) mais restent petits au doigt.
-- Pas de page d'accueil qui oriente vers les neuf rôles : la page Fraude joue ce rôle. À décider.
+- Page d'accueil ajoutée (`accueil.html`), inspirée de politicaa.app : promesse en une phrase, portes numérotées, trois chiffres par sujet. La racine du site publié ouvre encore la page Fraude (`index.html`) : à décider.
 - Pas de mesure Lighthouse (poids des images, LCP) : à lancer sur le site publié.
 - Pas de fil d'Ariane : deux pages en ont un, les autres non.

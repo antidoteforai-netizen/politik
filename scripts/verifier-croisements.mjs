@@ -2,7 +2,7 @@
 // Contrôle que chaque source collectée est présente, non vide, injectée dans la page, rendue dans un
 // conteneur existant, et que chaque ligne du catalogue porte un statut d'usage explicite.
 // Sort en 0 si tout passe, 1 sinon.   node Politik/scripts/verifier-croisements.mjs
-import { readFileSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -121,6 +121,10 @@ try {
   for (const [page, list] of Object.entries(gj.pages)) if (page !== "simple.html" && !list.length) problems.push(`page ${page} sans ministère rattaché`);
   const pagesIdx = ["index.html", "simple.html", "medias.html", "forces.html", "17-octobre-2026.html", "cybersecurite.html", "presidentielle-2027.html", "secteurs.html", "donnees.html", "benchmark-usa.html"];
   for (const pg of pagesIdx) { const h = readFileSync(join(root, "dashboard", pg), "utf8"); for (const need of ["entete.js", "gouvernement.js", "visuels.js", 'href="gouvernement.html"']) if (!h.includes(need)) problems.push(`${pg} : ${need} absent`); if (!gj.pages[pg]) problems.push(`${pg} : aucun ministère défini dans gouvernement.json`); }
+  const acc = readFileSync(join(root, "dashboard/accueil.html"), "utf8");
+  try { new Function(acc.match(/<script>([\s\S]*?)<\/script>/)[1]); ok.push("accueil.html : syntaxe du script valide"); } catch (e) { problems.push("accueil.html : " + e.message); }
+  for (const id of ["portes", "actu", "roles", "methode"]) if (!acc.includes(`id="${id}"`)) problems.push(`conteneur manquant dans accueil.html : #${id}`);
+  for (const m of acc.matchAll(/href:"([^"#]+)"/g)) if (!existsSync(join(root, "dashboard", m[1]))) problems.push(`accueil.html : lien vers une page absente : ${m[1]}`);
   const ent = JSON.parse(readFileSync(join(root, "data/entites.json"), "utf8")).entites;
   let manque = 0, sansCredit = 0, nImg = 0;
   for (const [k, e] of Object.entries(ent)) if (e.img) { nImg++; try { readFileSync(join(root, "dashboard", e.img)); } catch { manque++; } if (!e.credit || !e.credit.licence) sansCredit++; }

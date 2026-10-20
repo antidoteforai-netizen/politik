@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Politik : comprendre qui gouverne en un coup d'œil</title>
+<meta name="description" content="Gouvernement, fraude sociale, médias, police, 17 octobre, cybersécurité, état de la France : trois chiffres sourcés par sujet, sans parti pris.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#141A2B">
+<script src="qcm.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="politik.css">
+<link rel="stylesheet" href="politik.css">
+<link rel="stylesheet" href="politik.css">
+<style>
+.hero-accueil{padding-block:34px 8px}
+.hero-accueil h1{max-width:22ch;text-wrap:balance}
+.hero-accueil .cta{display:inline-block;margin-top:18px;padding:11px 18px;border-radius:10px;background:var(--accent-ink);color:#fff;font-weight:600;text-decoration:none}
+.hero-accueil .cta:hover,.hero-accueil .cta:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.portes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:16px}
+.porte{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.porte-n{margin:0;font-size:.74rem;letter-spacing:.09em;font-weight:600;color:var(--accent-ink)}
+.porte h3{margin:0;font-size:1.25rem}
+.porte-q{margin:0;color:var(--ink-2);font-size:.95rem}
+.porte-stats{list-style:none;margin:6px 0 4px;padding:0;display:grid;gap:12px}
+.porte-stats li{display:grid;grid-template-columns:112px 1fr;gap:6px 14px;align-items:baseline;padding-top:10px;border-top:1px solid var(--line-2)}
+.porte-stats .num{font-family:var(--font-display);font-size:1.7rem;font-weight:600;letter-spacing:-.02em;line-height:1}
+.porte-stats .lab{font-size:.88rem;color:var(--ink-2)}
+.porte-btn{margin-top:auto;display:inline-flex;align-items:center;gap:8px;align-self:flex-start;padding:10px 14px;border-radius:10px;border:1.5px solid var(--accent-ink);color:var(--accent-ink);font-weight:600;text-decoration:none}
+.porte-btn:hover,.porte-btn:focus-visible{background:var(--accent-soft);outline:none}
+.porte .src{margin:0;font-size:.78rem;color:var(--ink-3)}
+.actu{list-style:none;margin:0;padding:0;display:grid}
+.actu li{display:grid;grid-template-columns:150px 1fr;gap:14px;padding:12px 0;border-top:1px solid var(--line-2)}
+.actu li:first-child{border-top:0}
+.actu time{font-family:var(--font-display);font-weight:600;color:var(--accent-ink);font-size:.9rem}
+.actu .by{display:block;font-size:.8rem;color:var(--ink-3);margin-top:2px}
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:10px}
+.role{display:flex;flex-direction:column;gap:2px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);text-decoration:none}
+.role span{color:var(--accent-ink);font-size:.9rem}
+.role:hover,.role:focus-visible{border-color:var(--accent-ink);outline:none}
+.methode{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:10px}
+.methode li{display:flex;gap:10px;align-items:baseline;padding:12px 14px;border:1px solid var(--line-2);border-radius:12px}
+body.falc .porte-q,body.falc .porte-stats .lab,body.falc .actu li{font-size:1rem}
+@media (max-width:640px){.actu li{grid-template-columns:1fr}.porte-stats li{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Pages Politik">
+  <div class="wrap">
+    <a class="brand" href="accueil.html" style="display:inline-flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="15" fill="#141A2B"/><rect x="19" y="14" width="8" height="36" rx="4" fill="#fff"/><circle cx="35" cy="26" r="10.5" fill="none" stroke="#fff" stroke-width="8"/><circle cx="35" cy="26" r="3.6" fill="#7A9BEC"/></svg><span style="color:inherit">Politik<span>.</span></span></a>
+    <ul><li><a href="gouvernement.html" title="Le Gouvernement : ministères, ministres, actualité en bref">Gouvernement</a></li><li><a href="index.html" title="Fraude sociale">Fraude</a></li><li><a href="medias.html" title="Qui possède les médias">Médias</a></li><li><a href="forces.html" title="Forces de l'ordre : police et gendarmerie">Police</a></li><li><a href="cybersecurite.html" title="Cybersécurité de l'État">Cyber</a></li><li><a href="17-octobre-2026.html" title="Le 17 octobre 2026">17 octobre</a></li><li><a href="presidentielle-2027.html" title="Présidentielle 2027">Élection</a></li><li><a href="secteurs.html" title="Comment va la France">France</a></li><li><a href="benchmark-usa.html" title="Benchmark États-Unis">États-Unis</a></li><li><a href="donnees.html" title="Sources et données">Sources</a></li></ul>
+    <div class="switch" role="group" aria-label="Niveau de lecture" id="switch"></div>
+  </div>
+</nav>
+
+<header class="hero hero-accueil wrap">
+  <p class="eyebrow" data-t="eyebrow"></p>
+  <h1 data-t="h1"></h1>
+  <p class="lede" data-t="lede"></p>
+  <a class="cta" href="#portes" data-t="cta"></a>
+</header>
+
+<main class="wrap">
+<section id="sujets"><div class="sec-head"><h2 data-t="s.portes.h"></h2><p data-t="s.portes.p"></p></div><div class="portes" id="portes"></div></section>
+<section id="actualite"><div class="sec-head"><h2 data-t="s.actu.h"></h2><p data-t="s.actu.p"></p></div><div class="card"><ul class="actu" id="actu"></ul></div></section>
+<section id="raccourcis"><div class="sec-head"><h2 data-t="s.roles.h"></h2><p data-t="s.roles.p"></p></div><div class="roles" id="roles"></div></section>
+<section id="methode-section"><div class="sec-head"><h2 data-t="s.methode.h"></h2><p data-t="s.methode.p"></p></div><ul class="methode" id="methode"></ul></section>
+</main>
+<footer class="wrap"><p data-t="footer"></p></footer>
+
+<script src="gouvernement.js"></script>
+<script>
+const PAGE_LEVELS=["etat","falc"], LEVEL_NAMES={etat:"Termes de l'État", falc:"FALC"};
+let L=PAGE_LEVELS[0]; try{ const s=localStorage.getItem("politik-level-accueil"); if(PAGE_LEVELS.includes(s)) L=s; }catch(e){}
+const pick=o=>(o==null?"":(typeof o!=="object"?o:(o[L]??o.etat??"")));
+const $=s=>document.querySelector(s); const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const lvl=k=>`<span class="lvl lvl-${k}">${k}</span>`;
+/* Les chiffres de cette page sont ceux affichés, avec leur source, sur chaque page ouverte par le bouton de la porte. */
+const TXT={
+  eyebrow:{etat:"Données publiques · sources officielles · aucun parti pris", falc:"Les infos publiques, avec leur source"},
+  h1:{etat:"Comprendre qui gouverne, ce qui s'est passé et ce que l'État mesure, en un coup d'œil.", falc:"Comprendre qui gouverne et ce qui se passe en France."},
+  lede:{etat:"Politik rassemble les données publiques sur le Gouvernement, l'argent public, les médias, la police et la cybersécurité. Chaque chiffre dit qui l'a produit et à quel point on peut s'y fier. Aucune ligne politique.", falc:"Politik rassemble des infos publiques.<br>Chaque chiffre dit d'où il vient.<br>Le site ne prend pas parti."},
+  cta:{etat:"Choisir un sujet", falc:"Choisir un sujet"},
+  "s.portes.h":{etat:"Sept sujets, trois chiffres chacun", falc:"Sept sujets"},
+  "s.portes.p":{etat:"Chaque carte donne les trois chiffres à retenir, leur niveau de confiance et un bouton vers la page complète.", falc:"Chaque carte montre 3 chiffres.<br>Le bouton ouvre la page complète."},
+  "s.actu.h":{etat:"Actualité vérifiée sur les sites officiels", falc:"Les nouvelles officielles"},
+  "s.actu.p":{etat:"Dates et liens vers la page lue sur le site de l'institution. Les annonces sont signalées comme telles sur les pages.", falc:"Chaque nouvelle a une date et un lien."},
+  "s.roles.h":{etat:"Vous cherchez quelque chose de précis ?", falc:"Je cherche quelque chose"},
+  "s.roles.p":{etat:"Raccourcis selon ce que vous venez faire.", falc:"Choisissez ce qui vous ressemble."},
+  "s.methode.h":{etat:"Neutralité et méthode", falc:"Comment on travaille"},
+  "s.methode.p":{etat:"Quatre règles s'appliquent à chaque page.", falc:"4 règles pour toutes les pages."},
+  footer:{etat:"Politik · données publiques, textes attribués, niveaux de confiance V, S, D, A.", falc:"Politik · infos publiques, avec la source."}
+};
+const PORTES=[
+ {id:"gouvernement",href:"gouvernement.html",t:{etat:"Le Gouvernement",falc:"Le Gouvernement"},q:{etat:"Qui compose le Gouvernement et que faut-il savoir de chaque ministère ?",falc:"Qui sont les ministres ?"},
+  stats:[["20",{etat:"ministères, dont le Premier ministre",falc:"ministères"},"V"],["35",{etat:"ministres et délégués cités",falc:"ministres et délégués"},"V"],["19",{etat:"actualités vérifiées avec source et lien",falc:"nouvelles vérifiées"},"V"]],src:"info.gouv.fr ; sites officiels des ministères",btn:{etat:"Ouvrir le Gouvernement",falc:"Voir le Gouvernement"}},
+ {id:"fraude",href:"index.html",t:{etat:"Fraude sociale",falc:"La fraude sociale"},q:{etat:"Combien coûte la fraude, combien est détecté, combien est récupéré ?",falc:"Combien d'argent est fraudé ?"},
+  stats:[["14 Md€",{etat:"par an, fraude estimée (HCFiPS, janvier 2026)",falc:"par an : estimé"},"V"],["3,1 Md€",{etat:"détectés, évités ou redressés en 2025 (Bercy)",falc:"trouvés en 2025"},"V"],["680 M€",{etat:"recouvrés (HCFiPS, année probable 2024)",falc:"récupérés"},"V"]],src:"HCFiPS ; ministère de l'Économie",btn:{etat:"Ouvrir la fraude sociale",falc:"Voir la fraude"}},
+ {id:"medias",href:"medias.html",t:{etat:"Médias",falc:"Les médias"},q:{etat:"À qui appartiennent les médias et quelles aides publiques reçoivent-ils ?",falc:"À qui sont les médias ?"},
+  stats:[["194 M€",{etat:"d'aides à la presse en 2023",falc:"d'aides à la presse"},"V"],["809",{etat:"titres aidés en 2023",falc:"journaux aidés"},"V"],["6",{etat:"familles de détention cartographiées, plus le service public",falc:"familles de propriétaires"},"S"]],src:"ministère de la Culture, data.gouv.fr ; sources citées sur la page",btn:{etat:"Ouvrir les médias",falc:"Voir les médias"}},
+ {id:"police",href:"forces.html",t:{etat:"Police et gendarmerie",falc:"Police et gendarmerie"},q:{etat:"Que disent les sources sur les agents, les violences et les moyens ?",falc:"Que dit-on de la police ?"},
+  stats:[["27",{etat:"suicides dans la police nationale en 2024 (59 en 2019)",falc:"suicides en 2024"},"V"],["122",{etat:"psychologues du service de soutien, soit 1 pour 1 200 agents",falc:"psychologues"},"V"],["7 399",{etat:"blessés en service en 2019, police et gendarmerie",falc:"blessés en 2019"},"V"]],src:"réponses ministérielles, rapports parlementaires (officiel rapporté)",btn:{etat:"Ouvrir police et gendarmerie",falc:"Voir la police"}},
+ {id:"oct17",href:"17-octobre-2026.html",t:{etat:"Le 17 octobre 2026",falc:"Le 17 octobre 2026"},q:{etat:"Que savons-nous des violences, des dégâts et des aides ?",falc:"Que s'est-il passé ?"},
+  stats:[["≥ 3 000",{etat:"commerces touchés les 17 et 18 octobre (ministère de l'Économie)",falc:"commerces touchés"},"V"],["2 000",{etat:"agents de la propreté mobilisés à Paris, environ",falc:"agents ont nettoyé Paris"},"V"],["≈ 80 %",{etat:"taux de poursuite annoncé par le Premier ministre",falc:"poursuites annoncées"},"D"]],src:"economie.gouv.fr ; Ville de Paris ; info.gouv.fr",btn:{etat:"Ouvrir le 17 octobre",falc:"Voir le 17 octobre"}},
+ {id:"cyber",href:"cybersecurite.html",t:{etat:"Cybersécurité de l'État",falc:"La protection des données"},q:{etat:"Que fait l'État contre les vols de données ?",falc:"Les données sont-elles protégées ?"},
+  stats:[["200 M€",{etat:"de moyens annoncés pour le plan d'action",falc:"annoncés"},"D"],["5 %",{etat:"du budget numérique de chaque ministère pour le cyber dès 2027",falc:"de l'argent pour la sécurité"},"D"],["40",{etat:"actions prioritaires, suivies tous les trois mois",falc:"actions urgentes"},"D"]],src:"info.gouv.fr ; cyber.gouv.fr",btn:{etat:"Ouvrir la cybersécurité",falc:"Voir la protection"}},
+ {id:"france",href:"secteurs.html",t:{etat:"Comment va la France",falc:"Comment va la France"},q:{etat:"Où en sont la pauvreté, la population, la participation électorale ?",falc:"Comment va le pays ?"},
+  stats:[["15,4 %",{etat:"taux de pauvreté en 2024, soit 9,8 millions de personnes",falc:"de pauvreté"},"V"],["8,8 %",{etat:"d'étrangers dans la population en 2024",falc:"d'étrangers"},"V"],["28,0 %",{etat:"d'abstention au second tour de 2022",falc:"d'abstention en 2022"},"V"]],src:"INSEE ; Conseil constitutionnel",btn:{etat:"Ouvrir l'état de la France",falc:"Voir la France"}}
+];
+const ROLES=[
+ [{etat:"Citoyen·ne",falc:"Citoyen·ne"},{etat:"Savoir qui gouverne",falc:"Savoir qui gouverne"},"gouvernement.html"],
+ [{etat:"Journaliste",falc:"Journaliste"},{etat:"Retrouver une source",falc:"Trouver une source"},"donnees.html"],
+ [{etat:"Décideur",falc:"Décideur"},{etat:"Comparer les indicateurs",falc:"Voir les chiffres du pays"},"secteurs.html"],
+ [{etat:"Commerçant·e",falc:"Commerçant·e"},{etat:"Aides après le 17 octobre",falc:"Les aides"},"17-octobre-2026.html#commercants"],
+ [{etat:"Salarié·e, freelance, agent de caisse",falc:"Salarié·e, freelance"},{etat:"Comprendre la fraude sociale",falc:"La fraude sociale"},"index.html"],
+ [{etat:"Immigrant·e, élu·e, ministre",falc:"Ministre, élu·e"},{etat:"Ministères et ministres",falc:"Les ministères"},"gouvernement.html"]
+];
+const METHODE=[
+ ["V",{etat:"Publié par l'institution elle-même.",falc:"Publié par l'institution."}],
+ ["S",{etat:"Source secondaire : presse, étude, association.",falc:"Presse, étude ou association."}],
+ ["D",{etat:"Déclaration ou annonce : pas un fait établi.",falc:"Une parole, pas une preuve."}],
+ ["A",{etat:"Chiffre cité sans source retrouvée.",falc:"Chiffre sans source."}]
+];
+const dateLong=d=>{const m=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],p=d.split("-");return (+p[2]===1?"1er":+p[2])+" "+m[+p[1]-1]+" "+p[0];};
+function render(){
+  document.body.classList.toggle("falc", L==="falc");
+  document.querySelectorAll("[data-t]").forEach(el=>{ el.innerHTML=pick(TXT[el.dataset.t]); });
+  $("#switch").innerHTML=PAGE_LEVELS.map(k=>`<button type="button" aria-pressed="${k===L}" data-level="${k}">${LEVEL_NAMES[k]}</button>`).join("");
+  const nAct=window.GOUV?String(window.GOUV.actualites.length):null; PORTES[0].stats[2][0]=nAct||PORTES[0].stats[2][0];
+  $("#portes").innerHTML=PORTES.map((p,i)=>`<article class="porte" id="${p.id}"><p class="porte-n">${String(i+1).padStart(2,"0")} / ${String(PORTES.length).padStart(2,"0")}</p><h3>${pick(p.t)}</h3><p class="porte-q">${pick(p.q)}</p><ul class="porte-stats">${p.stats.map(s=>`<li><span class="num">${s[0]}</span><span class="lab">${pick(s[1])} ${lvl(s[2])}</span></li>`).join("")}</ul><a class="porte-btn" href="${p.href}">${pick(p.btn)} <span aria-hidden="true">→</span></a><p class="src">${esc(p.src)}</p></article>`).join("");
+  const G=window.GOUV; const acts=G?G.actualites.slice().sort((a,b)=>a.date<b.date?1:-1).slice(0,5):[];
+  $("#actu").innerHTML=acts.length?acts.map(a=>`<li><time datetime="${a.date}">${dateLong(a.date)}</time><span><a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.titre)}</a><span class="by">${esc(a.source)} ${lvl(a.niveau||"V")}</span></span></li>`).join(""):`<li>Aucune actualité vérifiée pour le moment.</li>`;
+  $("#roles").innerHTML=ROLES.map(r=>`<a class="role" href="${r[2]}"><b>${pick(r[0])}</b><span>${pick(r[1])} <span aria-hidden="true">→</span></span></a>`).join("");
+  $("#methode").innerHTML=METHODE.map(m=>`<li>${lvl(m[0])} <span>${pick(m[1])}</span></li>`).join("");
+}
+$("#switch").addEventListener("click",e=>{ const b=e.target.closest("button"); if(!b) return; L=b.dataset.level; try{ localStorage.setItem("politik-level-accueil",L);}catch(err){} render(); });
+render();
+</script>
+<script src="structure.js"></script>
+<script src="niveau.js"></script>
+<script src="legende.js"></script>
+</body>
+</html>

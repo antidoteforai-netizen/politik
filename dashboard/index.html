@@ -323,6 +323,20 @@ body.falc .term{text-decoration:none;cursor:default}
 .falc-badge{display:none;align-items:center;gap:10px;background:var(--accent-soft);color:var(--accent-ink);border-radius:8px;padding:10px 14px;margin-top:16px;font-size:1rem}
 body.falc .falc-badge{display:flex}
 .falc-badge svg{flex:none}
+
+/* Finition éditoriale commune : titres légers et serrés, rubriques numérotées, boutons en pilule */
+h1{font-weight:500;letter-spacing:-.03em;line-height:1.05}
+h2{font-weight:500;letter-spacing:-.022em;line-height:1.1}
+header.hero h1{font-size:clamp(2.3rem,5vw,3.8rem)}
+.tile .val,.count{font-weight:500}
+main{counter-reset:rub}
+main>section>.sec-head,main>.sec-head{counter-increment:rub;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px 56px;align-items:end;margin-bottom:24px}
+main>section>.sec-head:before,main>.sec-head:before{content:counter(rub,decimal-leading-zero) " /";grid-column:1/-1;font-size:.74rem;font-weight:700;letter-spacing:.12em;color:var(--ink-3);font-variant-numeric:tabular-nums}
+main>section>.sec-head h2,main>.sec-head h2{font-size:clamp(1.55rem,3vw,2.3rem)}
+main>section>.sec-head p,main>.sec-head p{line-height:1.5}
+main>section{scroll-margin-top:96px}
+@media (max-width:860px){main>section>.sec-head,main>.sec-head{grid-template-columns:minmax(0,1fr);gap:6px}}
+body.falc h1,body.falc h2{font-weight:700;letter-spacing:0}
 </style>
 <!--SEO-->
 <meta name="description" content="Combien coûte la fraude sociale, combien est détecté, combien est récupéré ? Les chiffres officiels, leurs limites et ce qu'on ne mesure pas.">

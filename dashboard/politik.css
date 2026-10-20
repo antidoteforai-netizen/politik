@@ -143,7 +143,9 @@ header.hero h1{font-size:clamp(2.3rem,5vw,3.8rem)}
 strong,b{font-weight:600}
 main{counter-reset:rub}
 main>section>.sec-head,main>.sec-head{counter-increment:rub;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px 56px;align-items:end;margin-bottom:28px}
-main>section>.sec-head:before,main>.sec-head:before{content:counter(rub,decimal-leading-zero) " /";grid-column:1/-1;font-family:var(--font-mono);font-size:.74rem;font-weight:500;letter-spacing:.08em;color:var(--ink-3);font-variant-numeric:tabular-nums}
+main>section>.sec-head:before,main>.sec-head:before{content:counter(rub,decimal-leading-zero);justify-self:start;grid-column:1/-1;display:inline-flex;align-items:center;gap:8px;padding:4px 11px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-family:var(--font-mono);font-size:.75rem;font-weight:500;letter-spacing:.06em;color:var(--ink-2);font-variant-numeric:tabular-nums}
+main>section>.sec-head,main>.sec-head{border-top:1px solid var(--line);padding-top:22px}
+main>section:first-child>.sec-head,main>.sec-head:first-child{border-top:0;padding-top:0}
 main>section>.sec-head h2,main>.sec-head h2{font-size:clamp(1.6rem,3.2vw,2.5rem)}
 main>section>.sec-head p,main>.sec-head p{line-height:1.55;color:var(--ink-2)}
 main>section{scroll-margin-top:96px}

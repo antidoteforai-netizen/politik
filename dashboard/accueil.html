@@ -88,7 +88,6 @@ body.falc .porte-q,body.falc .porte-stats .lab,body.falc .actu li{font-size:1rem
 .od-dot{flex:none;width:9px;height:9px;border-radius:50%;background:#7fe0a8;box-shadow:0 0 0 3px rgba(127,224,168,.25)}
 .mosaique .lib{min-height:2.4em;display:flex;align-items:flex-start;justify-content:center;font-size:.66rem;font-weight:700;line-height:1.18;color:color-mix(in srgb,var(--f) 80%,#000);overflow-wrap:anywhere}
 #dossiers{margin-block:36px;padding:34px 30px 30px;border-radius:28px;background:linear-gradient(135deg,color-mix(in srgb,var(--c3) 22%,var(--surface)) 0%,color-mix(in srgb,var(--accent) 18%,var(--surface)) 100%);border:1px solid color-mix(in srgb,var(--c3) 38%,var(--line))}
-#dossiers .sec-head h2:before{content:"Dossiers";display:inline-block;margin-right:12px;padding:3px 10px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;vertical-align:5px;font-family:var(--font-body,inherit)}
 #dossiers .porte.dossier{background:var(--surface);border:1px solid color-mix(in srgb,var(--c3) 45%,var(--line));box-shadow:0 10px 24px -16px color-mix(in srgb,var(--c3) 60%,transparent)}
 #dossiers .note-dossier{background:var(--surface);border-left-color:var(--c3)}
 @media (max-width:640px){#dossiers{padding:24px 16px 20px;border-radius:22px}}
@@ -150,7 +149,9 @@ body.falc .porte-q,body.falc .porte-stats .lab,body.falc .actu li{font-size:1rem
 .ticker span{font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;font-weight:500;color:var(--ink-3);line-height:1.25}
 main{counter-reset:rub}
 main>section>.sec-head{counter-increment:rub;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px 56px;align-items:end;margin-bottom:26px}
-main>section>.sec-head:before{content:counter(rub,decimal-leading-zero) " /";grid-column:1/-1;font-family:var(--font-mono);font-size:.74rem;font-weight:500;letter-spacing:.08em;color:var(--ink-3);font-variant-numeric:tabular-nums}
+main>section>.sec-head:before,main>.sec-head:before{content:counter(rub,decimal-leading-zero);justify-self:start;grid-column:1/-1;display:inline-flex;align-items:center;gap:8px;padding:4px 11px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-family:var(--font-mono);font-size:.75rem;font-weight:500;letter-spacing:.06em;color:var(--ink-2);font-variant-numeric:tabular-nums}
+main>section>.sec-head,main>.sec-head{border-top:1px solid var(--line);padding-top:22px}
+main>section:first-child>.sec-head,main>.sec-head:first-child{border-top:0;padding-top:0}
 main>section>.sec-head h2{font-size:clamp(1.8rem,3.6vw,2.8rem);font-weight:400;letter-spacing:-.035em;line-height:1.06}
 main>section>.sec-head p{font-size:1.02rem;line-height:1.5;max-width:46ch}
 main>section{padding-block:44px}
@@ -167,6 +168,7 @@ main>section{scroll-margin-top:96px}
 body.falc .hero-accueil h1{font-weight:700;letter-spacing:0;font-size:clamp(2rem,5vw,3.2rem)}
 body.falc main>section>.sec-head h2{font-weight:700;letter-spacing:0}
 @media (prefers-reduced-motion:reduce){.hero-accueil *{transition:none!important}}
+#dossiers>.sec-head{border-top:0;padding-top:0}
 </style>
 <!--SEO-->
 <meta name="description" content="Une page par ministère, des états des lieux sourcés et des dossiers décryptés : fraude, police, cybersécurité, médias. Chaque chiffre dit d'où il vient.">

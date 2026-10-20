@@ -47,6 +47,7 @@
 .news ul{margin:0;padding:0}
 body.falc .min .who,body.falc .min .savoir,body.falc .news li{font-size:1rem}
 @media (max-width:640px){.news li{grid-template-columns:1fr;gap:2px}}
+@media (max-width:820px){.pages a{display:inline-flex;align-items:center;min-height:44px}}
 </style>
 <!--SEO-->
 <meta name="description" content="Les 20 ministères du Gouvernement, leurs ministres, l'essentiel à savoir pour chacun et l'actualité lue sur les sites officiels.">
@@ -121,7 +122,7 @@ const $=s=>document.querySelector(s); const esc=s=>String(s).replace(/[&<>"]/g,c
 const lvl=k=>`<span class="lvl lvl-${k}">${k}</span>`;
 const G=window.GOUV; const FAM={regalien:"c1",economie:"c2",territoires:"c3",societe:"c4",autres:"c5"};
 const FAMILLES=[["tous",{etat:"Tous",falc:"Tous"}],["regalien",{etat:"Régalien et international",falc:"Sécurité, justice, international"}],["economie",{etat:"Économie et emploi",falc:"Argent et travail"}],["territoires",{etat:"Territoires et environnement",falc:"Territoires, nature, transports"}],["societe",{etat:"Société et savoirs",falc:"Santé, école, culture, sport"}],["autres",{etat:"Autres",falc:"Autres"}]];
-const PAGES_NOMS={"index.html":"Fraude sociale","simple.html":"Fraude sociale","medias.html":"Médias","forces.html":"Forces de l'ordre","17-octobre-2026.html":"Le 17 octobre 2026","presidentielle-2027.html":"Présidentielle 2027","secteurs.html":"La France","donnees.html":"Sources et données","benchmark-usa.html":"États-Unis"};
+const PAGES_NOMS={"cybersecurite.html":"Cybersécurité de l'État","benchmark-usa.html":"Benchmark États-Unis","gouvernement.html":"Les 21 ministères","index.html":"Fraude sociale","simple.html":"Fraude sociale","medias.html":"Médias","forces.html":"Forces de l'ordre","17-octobre-2026.html":"Le 17 octobre 2026","presidentielle-2027.html":"Présidentielle 2027","secteurs.html":"La France","donnees.html":"Sources et données","benchmark-usa.html":"États-Unis"};
 let fam="tous";
 const TXT={
   eyebrow:{etat:"Gouvernement · composition annoncée le 26 février 2026", falc:"Le Gouvernement"},

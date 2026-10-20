@@ -2391,6 +2391,42 @@
     },
     {
       "page": "gouvernement",
+      "type": "document",
+      "titre": "Campagne annuelle de prévention des pluies intenses et des inondations dans les Antilles françaises",
+      "producteur": "outre-mer.gouv.fr",
+      "url": "https://www.outre-mer.gouv.fr/campagne-annuelle-de-prevention-des-pluies-intenses-et-des-inondations-dans-les-antilles-francaises",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Parcoursup 2026 : des résultats stables dans un contexte de progression historique des candidatures",
+      "producteur": "enseignementsup-recherche.gouv.fr",
+      "url": "https://www.enseignementsup-recherche.gouv.fr/fr/parcoursup-2026-des-resultats-stables-dans-un-contexte-de-progression-historique-des-candidatures-104400",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Étudiants internationaux : nouvelles mesures pour simplifier les démarches en préfecture",
+      "producteur": "enseignementsup-recherche.gouv.fr",
+      "url": "https://www.enseignementsup-recherche.gouv.fr/fr/laurent-nunez-et-philippe-baptiste-annoncent-de-nouvelles-mesures-pour-prevenir-les-ruptures-de-104317",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Tout savoir sur le certificat médical pour le sport",
+      "producteur": "sports.gouv.fr",
+      "url": "https://www.sports.gouv.fr/tout-savoir-sur-le-certificat-medical-pour-le-sport-10299",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
       "type": "reference",
       "titre": "Site officiel : Premier ministre",
       "producteur": "www.info.gouv.fr",
@@ -2643,6 +2679,24 @@
     },
     {
       "page": "gouvernement",
+      "type": "reference",
+      "titre": "Site officiel : Ministère des Outre-mer",
+      "producteur": "www.outre-mer.gouv.fr",
+      "url": "https://www.outre-mer.gouv.fr/",
+      "niveau": "V",
+      "statut": "relu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Le site présente un programme d'investissement « Choose Outre-mer » (près de 6 milliards d'euros de projets pour sa prem",
+      "producteur": "outre-mer.gouv.fr",
+      "url": "https://www.outre-mer.gouv.fr/actions-publiques/subventions",
+      "niveau": "D",
+      "statut": "à savoir, lu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
       "type": "document",
       "titre": "Le site propose le Fonds vert, pour accélérer la transition écologique dans les territoires, et des ressources pour acco",
       "producteur": "ecologie.gouv.fr",
@@ -2656,6 +2710,24 @@
       "titre": "Site officiel : Ministère de l'Action et des Comptes publics",
       "producteur": "www.budget.gouv.fr",
       "url": "https://www.budget.gouv.fr/",
+      "niveau": "V",
+      "statut": "relu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "reference",
+      "titre": "Site officiel : Ministère de l'Enseignement supérieur, de la Recherche et de l'Espace",
+      "producteur": "www.enseignementsup-recherche.gouv.fr",
+      "url": "https://www.enseignementsup-recherche.gouv.fr/fr",
+      "niveau": "V",
+      "statut": "relu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "reference",
+      "titre": "Site officiel : Ministère des Sports, de la Jeunesse et de la Vie associative",
+      "producteur": "www.sports.gouv.fr",
+      "url": "https://www.sports.gouv.fr/",
       "niveau": "V",
       "statut": "relu le 2026-10-20"
     },
@@ -3073,7 +3145,7 @@
   "totaux": {
     "api": 19,
     "jeu": 44,
-    "document": 145,
-    "reference": 125
+    "document": 150,
+    "reference": 128
   }
 }

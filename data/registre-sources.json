@@ -1536,6 +1536,42 @@
     },
     {
       "page": "gouvernement",
+      "type": "document",
+      "titre": "Faire de l'apprentissage un levier de réussite pour tous les jeunes et les entreprises",
+      "producteur": "travail-emploi.gouv.fr",
+      "url": "https://travail-emploi.gouv.fr/mobiliser-les-employeurs-en-faveur-de-lapprentissage",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Impulsion IA : 12 mesures face à la transformation du monde du travail par l'IA",
+      "producteur": "travail-emploi.gouv.fr",
+      "url": "https://travail-emploi.gouv.fr/impulsion-ia-2027",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "De nouveaux vaccins obligatoires pour les nourrissons",
+      "producteur": "sante.gouv.fr",
+      "url": "https://sante.gouv.fr/prevention-en-sante/preserver-sa-sante/vaccination/vaccins-obligatoires/article/de-nouveaux-vaccins-obligatoires-pour-les-nourrissons",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Projet de loi de finances pour 2027 publié",
+      "producteur": "budget.gouv.fr",
+      "url": "https://www.budget.gouv.fr/documentation/documents-budgetaires/exercice-2027/PLF2027",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
       "type": "reference",
       "titre": "Site officiel : Premier ministre",
       "producteur": "www.info.gouv.fr",
@@ -1549,6 +1585,15 @@
       "titre": "Site officiel : Ministère de l'Intérieur",
       "producteur": "www.interieur.gouv.fr",
       "url": "https://www.interieur.gouv.fr/",
+      "niveau": "V",
+      "statut": "relu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "reference",
+      "titre": "Site officiel : Ministère du Travail et des Solidarités",
+      "producteur": "travail-emploi.gouv.fr",
+      "url": "https://travail-emploi.gouv.fr/",
       "niveau": "V",
       "statut": "relu le 2026-10-20"
     },
@@ -1578,6 +1623,33 @@
       "url": "https://www.economie.gouv.fr/particuliers/impots-et-fiscalite/gerer-mon-impot-sur-le-revenu/impot-sur-le-revenu-corrigez-votre-declaration-en-ligne-jusquau-30-novembre-2026",
       "niveau": "V",
       "statut": "à savoir, lu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "reference",
+      "titre": "Site officiel : Ministère de la Santé, des Familles, de l'Autonomie et des Personnes handicapées",
+      "producteur": "sante.gouv.fr",
+      "url": "https://sante.gouv.fr/",
+      "niveau": "V",
+      "statut": "relu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Mon soutien psy : toute personne dès 3 ans peut se faire rembourser par l'Assurance maladie jusqu'à 12 séances de psycho",
+      "producteur": "sante.gouv.fr (mise à jour du 20 septembre 2024)",
+      "url": "https://sante.gouv.fr/prevention-en-sante/sante-mentale/prendre-soin-de-sa-sante-mentale-accompagnement-et-parcours-de-prise-en-charge/article/le-remboursement-des-seances-de-psychologues-mon-soutien-psy",
+      "niveau": "V",
+      "statut": "à savoir, lu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "reference",
+      "titre": "Site officiel : Ministère de l'Action et des Comptes publics",
+      "producteur": "www.budget.gouv.fr",
+      "url": "https://www.budget.gouv.fr/",
+      "niveau": "V",
+      "statut": "relu le 2026-10-20"
     },
     {
       "page": "gouvernement",
@@ -1793,7 +1865,7 @@
   "totaux": {
     "api": 19,
     "jeu": 40,
-    "document": 87,
-    "reference": 42
+    "document": 92,
+    "reference": 45
   }
 }

@@ -60,6 +60,7 @@
     return ribbon + titre + '<div class="eg-min"><p class="eg-label">' + (falc ? "Les ministères" : "Ministères concernés") + '</p><ul class="eg-list">' + tiles + '</ul></div><div class="eg-actu"><p class="eg-label">' + (falc ? "Les nouvelles" : "Actualité en bref") + "</p>" + items + '<a class="eg-all" href="gouvernement.html#actualites">' + (falc ? "Toutes les nouvelles" : "Toute l'actualité") + "</a></div>";
   }
   function init() {
+    if (document.querySelector('meta[name="eg-masquer"]')) return;
     var host = document.querySelector("header.hero") || document.querySelector("main"); if (!host || !ids.length) return;
     var st = document.createElement("style"); st.textContent = CSS; document.head.appendChild(st);
     var box = document.createElement("section"); box.className = "eg"; box.setAttribute("aria-label", "Ministères concernés et actualité en bref");

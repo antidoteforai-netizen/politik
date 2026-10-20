@@ -86,7 +86,7 @@ for (const [id, f] of [["presidentielle", "presidentielle-2027.html"], ["secteur
 
 // 6. Benchmark : liens du document.
 const bench = read("dashboard/benchmark-usa.html");
-for (const m of bench.matchAll(/<a href="(https?:\/\/[^"]+)"[^>]*>([^<]+)<\/a>/g)) add({ page: "benchmark", type: "reference", titre: m[2].trim(), url: m[1], niveau: /\.gov\b|usafacts|census|bls\.gov|gao\.gov/.test(m[1]) ? "V" : "S", statut: "cité" });
+for (const m of bench.matchAll(/<a (?:class="docu-a" )?href="(https?:\/\/[^"]+)"[^>]*>([\s\S]*?)<\/a>/g)) add({ page: "benchmark", type: "reference", titre: m[2].replace(/<[^>]+>/g, "").trim(), url: m[1], niveau: /\.gov\b|usafacts|census|bls\.gov|gao\.gov/.test(m[1]) ? "V" : "S", statut: "cité" });
 // Le document cite aussi des URL nues (hors balises <a>) : une entrée par hôte + chemin, dédoublonnée.
 for (const m of bench.matchAll(/(?<!href=")https?:\/\/[^\s"'<>)]+/g)) { const u = m[0].replace(/[.,;:]$/, ""); if (/fonts\.|w3\.org/.test(u)) continue; add({ page: "benchmark", type: /\.gov\b|usafacts|gallup|census|gao\.gov/.test(u) ? "document" : "reference", titre: u.replace(/^https?:\/\/(www\.)?/, ""), url: u, niveau: /\.gov\b|usafacts|census|gao\.gov/.test(u) ? "V" : "S", statut: "cité" }); }
 
@@ -104,9 +104,24 @@ window.REGISTRE = ${JSON.stringify(registre)};
     var falc = document.body.classList.contains("falc");
     var n = function (t) { return E.filter(function (e) { return e.type === t; }).length; };
     var T = falc ? { api: "appels de données", jeu: "fichiers de données", document: "documents officiels", reference: "autres sources" } : { api: "API appelées", jeu: "jeux de données", document: "documents officiels", reference: "références" };
-    var parts = ["api", "jeu", "document", "reference"].filter(n).map(function (t) { return "<b>" + n(t) + "</b> " + T[t]; });
+    var COUL = { api: "var(--c1)", jeu: "var(--c2)", document: "var(--c3)", reference: "var(--c4)" };
+    var types = ["api", "jeu", "document", "reference"].filter(n);
+    var tuiles = types.map(function (t) { return '<li style="--k:' + COUL[t] + '"><b>' + n(t) + "</b><span>" + T[t] + "</span></li>"; }).join("");
+    if (!document.getElementById("dp-style")) {
+      var st = document.createElement("style"); st.id = "dp-style";
+      st.textContent = ".dp{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px 24px;align-items:center;padding:20px 22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(135deg,var(--surface),color-mix(in srgb,var(--accent-soft) 35%,var(--surface)))}"
+        + ".dp-tot{display:flex;align-items:baseline;gap:10px;margin:0 0 10px;color:var(--ink-2);font-size:.95rem}.dp-tot b{font-family:var(--font-display);font-size:2.2rem;line-height:1;color:var(--ink)}"
+        + ".dp-st{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}"
+        + ".dp-st li{display:flex;flex-direction:column;gap:2px;min-width:118px;padding:10px 14px;border:1px solid var(--line);border-top:3px solid color-mix(in srgb,var(--k) 55%,var(--line));border-radius:12px;background:var(--surface)}"
+        + ".dp-st b{font-family:var(--font-display);font-size:1.4rem;line-height:1.1}.dp-st span{font-size:.8rem;color:var(--ink-2)}"
+        + ".dp-note{margin:10px 0 0;font-size:.84rem;color:var(--ink-3);max-width:60ch}"
+        + ".dp-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:999px;background:var(--accent-ink);color:#fff;font-weight:700;text-decoration:none;border:2px solid var(--accent-ink);white-space:nowrap}"
+        + ".dp-btn:hover,.dp-btn:focus-visible{background:var(--surface);color:var(--accent-ink);outline:none}.dp-btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}"
+        + "@media (max-width:720px){.dp{grid-template-columns:1fr;padding:16px}.dp-btn{justify-self:start}}";
+      document.head.appendChild(st);
+    }
     el.innerHTML = '<div class="sec-head"><h2>' + (falc ? "Les données de cette page" : "Données de cette page") + '</h2><p>' + (falc ? "D'où viennent les chiffres de cette page." : "Ce que cette page utilise, recensé automatiquement dans le registre commun du site.") + "</p></div>" +
-      '<div class="card" style="display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center"><span>' + parts.join(" · ") + '</span><a href="donnees.html#' + page + '" style="margin-left:auto;font-weight:600">' + (falc ? "Voir la liste" : "Voir le registre complet") + " \\u2192</a></div>";
+      '<div class="dp"><div><p class="dp-tot"><b>' + E.length + "</b><span>" + (falc ? "sources pour cette page" : "sources recensées pour cette page") + '</span></p><ul class="dp-st">' + tuiles + '</ul><p class="dp-note">' + (falc ? "Chaque ligne du registre dit d'où vient le chiffre." : "Chaque ligne du registre donne la source, sa nature et son niveau de fiabilité.") + '</p></div><a class="dp-btn" href="donnees.html#' + page + '">' + (falc ? "Voir la liste" : "Voir le registre complet") + ' <span aria-hidden="true">\u2192</span></a></div>';
   }
   rendu();
   new MutationObserver(rendu).observe(document.body, { attributes: true, attributeFilter: ["class"] });

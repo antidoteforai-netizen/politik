@@ -2848,7 +2848,7 @@
     {
       "page": "benchmark",
       "type": "reference",
-      "titre": "« The future of government data »",
+      "titre": "USAFacts, « The future of government data »",
       "url": "https://usafacts.org/the-future-of-government-data/",
       "niveau": "V",
       "statut": "cité"
@@ -2856,7 +2856,7 @@
     {
       "page": "benchmark",
       "type": "reference",
-      "titre": "« Our Progress »",
+      "titre": "Solution Based USA, « Our Progress »",
       "url": "https://www.solutionbasedusa.com/progress",
       "niveau": "S",
       "statut": "cité"
@@ -2864,8 +2864,208 @@
     {
       "page": "benchmark",
       "type": "reference",
-      "titre": "« Americans Oppose AI Data Centers in Their Area »",
+      "titre": "Gallup, « Americans Oppose AI Data Centers in Their Area »",
       "url": "https://news.gallup.com/poll/709772/americans-oppose-data-centers-area.aspx",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "Vote.org",
+      "url": "https://www.vote.org/",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "USAFacts",
+      "url": "https://usafacts.org/",
+      "niveau": "V",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "Ballotpedia",
+      "url": "https://ballotpedia.org/",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "GovTrack.us",
+      "url": "https://www.govtrack.us/",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "ProPublica",
+      "url": "https://www.propublica.org/",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "Opportunity Insights, Economic Tracker",
+      "url": "https://opportunityinsights.org/",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "USAspending.gov",
+      "url": "https://www.usaspending.gov/",
+      "niveau": "V",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "Results for America",
+      "url": "https://results4america.org/",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "Quorum",
+      "url": "https://www.quorum.us/",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "FiscalNote",
+      "url": "https://fiscalnote.com/",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "LegiScan",
+      "url": "https://legiscan.com/",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "CBO",
+      "url": "https://www.cbo.gov/",
+      "niveau": "V",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "Pew, « Fiscal 50 »",
+      "url": "https://www.pewtrusts.org/",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "FRED",
+      "url": "https://fred.stlouisfed.org/",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "Census Business Builder",
+      "url": "https://www.census.gov/data/data-tools/cbb.html",
+      "niveau": "V",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "Texas TexStats",
+      "url": "https://texstats.com/",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "Welcome.US",
+      "url": "https://welcome.us/",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "site officiel",
+      "url": "https://www.uscis.gov/",
+      "niveau": "V",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "Boundless",
+      "url": "https://www.boundless.com/",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "TRAC",
+      "url": "https://tracreports.org/",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "ImmigrationHelp.org",
+      "url": "https://www.immigrationhelp.org/",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "United We Dream",
+      "url": "https://unitedwedream.org/",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "« Tracking Federal Awards: USAspending.gov » ; analyses et auditions",
+      "url": "https://oversight.house.gov/",
+      "niveau": "V",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "« CBP One: An Overview » ; tableau de bord des arriérés de l&#x27;USCIS",
+      "url": "https://www.americanimmigrationcouncil.org/",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "Analyse des délais de naturalisation",
+      "url": "https://www.niskanencenter.org/",
       "niveau": "S",
       "statut": "cité"
     }
@@ -2874,6 +3074,6 @@
     "api": 19,
     "jeu": 44,
     "document": 145,
-    "reference": 100
+    "reference": 125
   }
 }

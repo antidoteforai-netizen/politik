@@ -2256,6 +2256,33 @@
     },
     {
       "page": "gouvernement",
+      "type": "document",
+      "titre": "Anti-gaspillage : réparer plutôt que remplacer",
+      "producteur": "ecologie.gouv.fr",
+      "url": "https://www.ecologie.gouv.fr/actualites/anti-gaspillage-reparer-plutot-que-remplacer",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Sécurité des agents des routes : le ministère renouvelle sa campagne nationale",
+      "producteur": "ecologie.gouv.fr",
+      "url": "https://www.ecologie.gouv.fr/securite-des-agents-des-routes",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Acheter, investir, rénover : c'est le moment",
+      "producteur": "ecologie.gouv.fr",
+      "url": "https://www.ecologie.gouv.fr/acheter-investir-renover",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
       "type": "reference",
       "titre": "Site officiel : Premier ministre",
       "producteur": "www.info.gouv.fr",
@@ -2280,6 +2307,24 @@
       "url": "https://travail-emploi.gouv.fr/",
       "niveau": "V",
       "statut": "relu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "reference",
+      "titre": "Site officiel : Ministère de la Transition écologique, de la Biodiversité et des Négociations internationales sur le climat et la nature",
+      "producteur": "www.ecologie.gouv.fr",
+      "url": "https://www.ecologie.gouv.fr/",
+      "niveau": "V",
+      "statut": "relu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "La France a remis à la Commission européenne son projet de Plan national pour la restauration de la nature.",
+      "producteur": "ecologie.gouv.fr",
+      "url": "https://www.ecologie.gouv.fr/presse/preservation-biodiversite-france-remis-commission-europeenne-son-projet-plan-national",
+      "niveau": "V",
+      "statut": "à savoir, lu le 2026-10-20"
     },
     {
       "page": "gouvernement",
@@ -2413,6 +2458,15 @@
       "titre": "Le service statistique ministériel (DEPS) publie les études et chiffres de la culture.",
       "producteur": "culture.gouv.fr",
       "url": "https://www.culture.gouv.fr/espace-documentation/service-statistique-ministeriel-deps",
+      "niveau": "V",
+      "statut": "à savoir, lu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Le site propose le Fonds vert, pour accélérer la transition écologique dans les territoires, et des ressources pour acco",
+      "producteur": "ecologie.gouv.fr",
+      "url": "https://www.ecologie.gouv.fr/fonds-vert",
       "niveau": "V",
       "statut": "à savoir, lu le 2026-10-20"
     },
@@ -2639,7 +2693,7 @@
   "totaux": {
     "api": 19,
     "jeu": 40,
-    "document": 127,
-    "reference": 96
+    "document": 132,
+    "reference": 97
   }
 }

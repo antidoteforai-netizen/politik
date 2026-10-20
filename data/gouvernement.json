@@ -193,10 +193,25 @@
       "pages": [
         "secteurs.html"
       ],
-      "site": null,
-      "site_verifie_le": null,
-      "a_savoir": [],
-      "verifie_le": null
+      "site": "https://www.ecologie.gouv.fr/",
+      "site_verifie_le": "2026-10-20",
+      "a_savoir": [
+        {
+          "texte": "Journées nationales de la réparation du 15 au 18 octobre 2026 : le bonus réparation, lancé fin 2022, donne une réduction immédiate sur le coût de réparation de nombreux produits auprès de réparateurs ; l'indice de réparabilité et l'indice de durabilité informent les consommateurs.",
+          "url": "https://www.ecologie.gouv.fr/actualites/anti-gaspillage-reparer-plutot-que-remplacer",
+          "source": "ecologie.gouv.fr (16 octobre 2026)",
+          "niveau": "V",
+          "lu_le": "2026-10-20"
+        },
+        {
+          "texte": "La France a remis à la Commission européenne son projet de Plan national pour la restauration de la nature.",
+          "url": "https://www.ecologie.gouv.fr/presse/preservation-biodiversite-france-remis-commission-europeenne-son-projet-plan-national",
+          "source": "ecologie.gouv.fr",
+          "niveau": "V",
+          "lu_le": "2026-10-20"
+        }
+      ],
+      "verifie_le": "2026-10-20"
     },
     {
       "id": "justice",
@@ -536,10 +551,18 @@
       "pages": [
         "secteurs.html"
       ],
-      "site": null,
-      "site_verifie_le": null,
-      "a_savoir": [],
-      "verifie_le": null
+      "site": "https://www.ecologie.gouv.fr/",
+      "site_verifie_le": "2026-10-20",
+      "a_savoir": [
+        {
+          "texte": "Le site propose le Fonds vert, pour accélérer la transition écologique dans les territoires, et des ressources pour accompagner les élus locaux.",
+          "url": "https://www.ecologie.gouv.fr/fonds-vert",
+          "source": "ecologie.gouv.fr",
+          "niveau": "V",
+          "lu_le": "2026-10-20"
+        }
+      ],
+      "verifie_le": "2026-10-20"
     },
     {
       "id": "action-comptes-publics",
@@ -613,10 +636,25 @@
       "pages": [
         "secteurs.html"
       ],
-      "site": null,
-      "site_verifie_le": null,
-      "a_savoir": [],
-      "verifie_le": null
+      "site": "https://www.ecologie.gouv.fr/",
+      "site_verifie_le": "2026-10-20",
+      "a_savoir": [
+        {
+          "texte": "Sécurité des agents des routes : depuis 2014, 300 agents ont été blessés (30 en moyenne par an) et 16 tués dans l'exercice de leurs fonctions, dont 11 au cours des quatre dernières années, selon le ministère.",
+          "url": "https://www.ecologie.gouv.fr/securite-des-agents-des-routes",
+          "source": "ecologie.gouv.fr (mise à jour du 13 octobre 2026)",
+          "niveau": "V",
+          "lu_le": "2026-10-20"
+        },
+        {
+          "texte": "Corridor de sécurité, inscrit dans le Code de la route depuis 2018 : à l'approche d'une intervention sur la chaussée, ralentir, s'écarter au maximum et, si possible, changer de voie.",
+          "url": "https://www.ecologie.gouv.fr/securite-des-agents-des-routes",
+          "source": "ecologie.gouv.fr",
+          "niveau": "V",
+          "lu_le": "2026-10-20"
+        }
+      ],
+      "verifie_le": "2026-10-20"
     },
     {
       "id": "ville-logement",
@@ -629,10 +667,18 @@
       "pages": [
         "secteurs.html"
       ],
-      "site": null,
-      "site_verifie_le": null,
-      "a_savoir": [],
-      "verifie_le": null
+      "site": "https://www.ecologie.gouv.fr/",
+      "site_verifie_le": "2026-10-20",
+      "a_savoir": [
+        {
+          "texte": "Acheter, investir, rénover : le prêt à taux zéro peut compléter le financement d'un premier logement ; le dispositif Jeanbrun accompagne l'investissement locatif ; le service public France Rénov' oriente vers les aides à la rénovation, dont l'éco-PTZ.",
+          "url": "https://www.ecologie.gouv.fr/acheter-investir-renover",
+          "source": "ecologie.gouv.fr (mise à jour du 16 octobre 2026)",
+          "niveau": "V",
+          "lu_le": "2026-10-20"
+        }
+      ],
+      "verifie_le": "2026-10-20"
     }
   ],
   "autres_acteurs": [
@@ -1021,6 +1067,45 @@
       "url": "https://www.budget.gouv.fr/documentation/documents-budgetaires/exercice-2027/PLF2027",
       "ministeres": [
         "action-comptes-publics"
+      ],
+      "pages": [],
+      "niveau": "V",
+      "lu_le": "2026-10-20"
+    },
+    {
+      "date": "2026-10-16",
+      "titre": "Anti-gaspillage : réparer plutôt que remplacer",
+      "resume": "Bonus réparation, indice de réparabilité et de durabilité, à l'occasion des Journées nationales de la réparation (15 au 18 octobre).",
+      "source": "ecologie.gouv.fr",
+      "url": "https://www.ecologie.gouv.fr/actualites/anti-gaspillage-reparer-plutot-que-remplacer",
+      "ministeres": [
+        "transition-ecologique"
+      ],
+      "pages": [],
+      "niveau": "V",
+      "lu_le": "2026-10-20"
+    },
+    {
+      "date": "2026-10-07",
+      "titre": "Sécurité des agents des routes : le ministère renouvelle sa campagne nationale",
+      "resume": "Rappel des bons comportements au volant et de la règle du corridor de sécurité.",
+      "source": "ecologie.gouv.fr",
+      "url": "https://www.ecologie.gouv.fr/securite-des-agents-des-routes",
+      "ministeres": [
+        "transports"
+      ],
+      "pages": [],
+      "niveau": "V",
+      "lu_le": "2026-10-20"
+    },
+    {
+      "date": "2026-10-16",
+      "titre": "Acheter, investir, rénover : c'est le moment",
+      "resume": "Page des aides au logement : prêt à taux zéro, dispositif Jeanbrun, France Rénov' et éco-PTZ.",
+      "source": "ecologie.gouv.fr",
+      "url": "https://www.ecologie.gouv.fr/acheter-investir-renover",
+      "ministeres": [
+        "ville-logement"
       ],
       "pages": [],
       "niveau": "V",

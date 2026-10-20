@@ -75,7 +75,7 @@ Le site est écrit pour neuf lecteurs : citoyen·ne, journaliste, décideur, min
 | Entrées du registre des sources | 282 |
 | Images avec crédit et licence | 140 |
 | Ministères structurés | 20 |
-| Ministères et acteurs relus sur leur site officiel | 11 sur 21 |
+| Ministères et acteurs relus sur leur site officiel | 15 sur 21 |
 | Actualités officielles vérifiées | 15 |
 | Personas documentés | 9 |
 

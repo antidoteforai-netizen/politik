@@ -24,7 +24,11 @@ def get(url, timeout=120):
     last = None
     for attempt in range(3):  # l'INSEE renvoie parfois un 500 passager
         try:
-            return urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout).read()
+            body = urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout).read()
+            if body[:2] == b"\x1f\x8b" and not url.lower().endswith((".gz", ".zip", ".xlsx")):  # certains serveurs compressent sans demande
+                import gzip
+                body = gzip.decompress(body)
+            return body
         except urllib.error.HTTPError as e:
             last = e
             if e.code < 500:

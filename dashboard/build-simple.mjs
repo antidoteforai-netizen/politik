@@ -9,7 +9,7 @@ const src = readFileSync(join(dir, "index.html"), "utf8");
 
 const replacements = [
   ['const PAGE_LEVELS = ["etat","falc"];', 'const PAGE_LEVELS = ["simple","falc"];'],
-  ["<title>Politik</title>", "<title>Politik simple</title>"],
+  ["<title>Fraude sociale en France · Politik</title>", "<title>Fraude sociale en France, version simple · Politik</title>"],
   ['<a class="other-version" id="other-version" href="simple.html">Version simple</a>',
    '<a class="other-version" id="other-version" href="index.html">Version termes de l\'État</a>'],
 ];

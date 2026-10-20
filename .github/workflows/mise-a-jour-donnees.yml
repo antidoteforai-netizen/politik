@@ -33,6 +33,9 @@ jobs:
         run: |
           node dashboard/build-simple.mjs
           node scripts/build-gouvernement.mjs
+          node scripts/build-ministeres.mjs
+          node scripts/inject-illustrations.mjs
+          node scripts/build-seo.mjs
           node scripts/registre-sources.mjs
       - name: Vérification croisée (bloque la publication si elle échoue)
         run: node scripts/verifier-croisements.mjs

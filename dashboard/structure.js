@@ -21,35 +21,43 @@
     { k: "plus", label: "Aussi", items: ["presidentielle-2027.html", "benchmark-usa.html", "donnees.html"] }
   ];
   var CSS = [
-    ".nav.has-tree>.wrap>ul{display:none}",
-    ".nav.has-tree>.wrap{padding-block:8px}",
-    ".nav.has-tree .switch{margin-left:auto}",
-    ".nav-tree{border-top:1px solid var(--line);background:color-mix(in srgb,var(--surface) 55%,transparent)}",
-    ".nav-tree .wrap{padding-block:7px;max-width:1400px}",
-    ".nav-tree ul{list-style:none;margin:0;padding:0}",
-    ".nav-tree .tree{display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;padding-block:2px}",
-    ".nav-tree .tree>li{flex:none;display:flex;align-items:center}",
-    ".nav-tree a{text-decoration:none;white-space:nowrap}",
-    ".nav-tree .t-solo a{display:inline-flex;align-items:center;gap:7px;min-height:38px;padding:6px 14px;border-radius:999px;font-size:.92rem;font-weight:700;color:var(--ink);border:1.5px solid var(--line);background:var(--surface)}",
-    ".nav-tree .t-solo.cur a,.nav-tree .t-solo a.here{background:var(--ink);color:var(--paper);border-color:var(--ink)}",
-    ".nav-tree .cnt{font-size:.74rem;font-weight:800;padding:1px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent-ink)}",
-    ".nav-tree .cnt:empty{display:none}",
-    ".nav-tree .t-solo.cur .cnt{background:rgba(255,255,255,.22);color:inherit}",
-    ".nav-tree .t-grp{display:flex;align-items:center;gap:2px;padding:3px 4px 3px 12px;border:1.5px solid var(--line);border-radius:999px;background:var(--surface)}",
-    ".nav-tree .t-grp.cur{border-color:var(--accent)}",
-    ".nav-tree .t-lab{font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap;margin-right:4px;display:inline-flex;align-items:center;gap:6px}",
-    ".nav-tree .t-lab:before{content:\"\";width:7px;height:7px;border-radius:50%;background:var(--ink-3)}",
-    ".nav-tree .t-grp.cur .t-lab{color:var(--accent-ink)}",
-    ".nav-tree .t-grp.cur .t-lab:before{background:var(--accent)}",
-    ".nav-tree .t-grp ul{display:flex;gap:2px}",
-    ".nav-tree .t-grp a{display:inline-flex;align-items:center;min-height:32px;padding:4px 11px;border-radius:999px;font-size:.88rem;font-weight:600;color:var(--ink)}",
-    ".nav-tree .t-grp a:hover,.nav-tree .t-solo a:hover{background:var(--accent-soft);color:var(--accent-ink)}",
-    ".nav-tree .t-solo a:hover{border-color:var(--accent)}",
-    ".nav-tree a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}",
-    ".nav-tree .t-grp a.here{background:var(--accent);color:#fff;font-weight:800}",
-    "@media (pointer:coarse){.nav-tree .t-solo a{min-height:44px}.nav-tree .t-grp a{min-height:40px}}",
-    "@media (max-width:760px){.nav-tree .tree{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;padding-bottom:6px}.nav-tree .tree.ov{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 36px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 36px),transparent)}}",
-    "@media (max-width:640px){.nav-tree .t-solo a{padding:6px 11px;font-size:.86rem}.nav-tree .t-grp a{padding:4px 9px;font-size:.84rem}}",
+    ".nav.has-mega{background:linear-gradient(var(--paper) 72%,transparent);border-bottom:0;backdrop-filter:none;padding:10px 0 12px}",
+    ".nav.has-mega>.wrap{max-width:1200px;padding:8px 10px 8px 16px;border-radius:22px;background:var(--surface);border:1px solid var(--line);box-shadow:0 6px 24px -14px rgba(20,26,43,.28)}",
+    ".nav.has-mega>.wrap>ul:not(.mega-list){display:none}",
+    ".mega-list{display:flex;align-items:center;gap:2px;list-style:none;margin:0 0 0 auto;padding:0}",
+    ".mega-list>li{display:flex}",
+    ".nav.has-mega .mega-btn,.nav.has-mega .mega-link{font:inherit;font-size:.95rem;font-weight:600;display:inline-flex;align-items:center;gap:6px;min-height:42px;padding:8px 14px;border:0;border-radius:999px;background:transparent;color:var(--ink);text-decoration:none;cursor:pointer;white-space:nowrap}",
+    ".mega-btn svg{width:11px;height:11px;transition:none}",
+    ".nav.has-mega .mega-btn:hover,.nav.has-mega .mega-link:hover,.nav.has-mega .mega-btn[aria-expanded=true]{background:var(--surface-2)}",
+    ".mega-btn[aria-expanded=true] svg{transform:rotate(180deg)}",
+    ".nav.has-mega .mega-btn.here,.nav.has-mega .mega-link.here{background:var(--accent-soft);color:var(--accent-ink)}",
+    ".mega-btn:focus-visible,.mega-link:focus-visible{outline:3px solid var(--accent);outline-offset:1px}",
+    ".nav.has-mega .switch{margin-left:12px}",
+    ".mega-panel{position:fixed;z-index:30;left:50%;transform:translateX(-50%);width:min(1200px,calc(100vw - 32px));max-height:calc(100vh - 110px);overflow:auto;padding:14px;border-radius:22px;background:var(--surface);border:1px solid var(--line);box-shadow:0 24px 60px -20px rgba(20,26,43,.35)}",
+    ".mega-panel[hidden]{display:none}",
+    ".mega-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px}",
+    ".mega-card{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:300px;border-radius:18px;overflow:hidden;color:#fff;text-decoration:none;background:var(--bg,#1f2a44);isolation:isolate}",
+    ".mega-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}",
+    ".mega-card:after{content:\"\";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 35%,rgba(10,16,38,.78) 100%)}",
+    ".mega-card .tx{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;padding:16px 16px 16px 18px}",
+    ".mega-card b{display:block;font-family:var(--font-display);font-size:1.15rem;line-height:1.2}",
+    ".mega-card small{display:block;margin-top:3px;font-size:.84rem;line-height:1.3;opacity:.92}",
+    ".mega-card .go{flex:none;display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#fff;color:var(--ink);font-weight:800}",
+    ".mega-card:hover,.mega-card:focus-visible{box-shadow:0 0 0 3px var(--accent)}",
+    ".mega-card:focus-visible{outline:3px solid var(--accent);outline-offset:2px}",
+    ".mega-card[aria-current]{box-shadow:0 0 0 3px var(--accent)}",
+    ".mega-card.clair:after{background:linear-gradient(180deg,transparent 40%,rgba(10,16,38,.7) 100%)}",
+    ".mega-card .contain{object-fit:contain;padding:22px 22px 90px;background:var(--bgc,#eef1fb)}",
+    ".mega-min{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:16px}",
+    ".mega-fam{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:6px 18px;align-content:start}",
+    ".mega-fam h3{margin:6px 10px 2px;font-size:.7rem;text-transform:uppercase;letter-spacing:.09em;color:var(--ink-2);font-weight:800;display:flex;align-items:center;gap:6px}",
+    ".mega-fam h3 i{width:8px;height:8px;border-radius:50%;background:var(--f)}",
+    ".mega-fam ul{list-style:none;margin:0;padding:0}",
+    ".mega-fam a{display:block;padding:7px 10px;border-radius:10px;font-size:.92rem;color:var(--ink);text-decoration:none}",
+    ".mega-fam a:hover,.mega-fam a:focus-visible{background:var(--accent-soft);color:var(--accent-ink);outline:none}",
+    ".mega-fam a[aria-current]{font-weight:800;background:var(--accent-soft)}",
+    "@media (max-width:980px){.nav.has-mega>.wrap{flex-wrap:wrap;gap:6px}.mega-list{order:3;width:100%;margin:0;overflow-x:auto;scrollbar-width:thin;padding-bottom:4px}.nav.has-mega .switch{margin-left:auto}.mega-min{grid-template-columns:1fr}.mega-card{min-height:200px}}",
+    "@media (max-width:640px){.mega-btn,.mega-link{padding:8px 11px;font-size:.88rem}.mega-panel{width:calc(100vw - 20px)}}",
     ".fil{margin:0;padding:10px 0 0}",
     ".fil ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:2px 0;font-size:.82rem;color:var(--ink-3)}",
     ".fil li:not(:last-child):after{content:\"›\";margin:0 8px;color:var(--ink-3)}",
@@ -78,26 +86,62 @@
   }
   var SHORT = { "index.html": "Fraude", "forces.html": "Police", "cybersecurite.html": "Cyber", "secteurs.html": "France", "medias.html": "Médias", "17-octobre-2026.html": "17 octobre", "presidentielle-2027.html": "Élection", "benchmark-usa.html": "États-Unis", "donnees.html": "Sources" };
   function link(f, label, title) { return '<a href="' + f + '"' + (title ? ' title="' + esc(title) + '"' : "") + (f === here || (f === "gouvernement.html" && isMin) ? ' class="here" aria-current="page"' : "") + ">" + label + "</a>"; }
+  var ILLU = { index: "fraude.jpg", forces: "police.jpg", cybersecurite: "cyber.jpg", secteurs: "france.png", medias: "medias.jpg", "17-octobre-2026": "oct17.jpg", "presidentielle-2027": "election.jpg", "benchmark-usa": "usa.png", donnees: "donnees.jpg", gouvernement: "ministeres.png" };
+  var DESC = { "index.html": "Ce que l'État estime, détecte et récupère", "forces.html": "Violences, soutien, diplôme et salaire", "cybersecurite.html": "Plan d'action, incidents et constats", "secteurs.html": "Quinze familles de sujets, chiffre par chiffre", "medias.html": "Qui possède quoi, et quelles aides publiques", "17-octobre-2026.html": "Ce que disent les sources officielles", "presidentielle-2027.html": "Candidats et repères avant le scrutin", "benchmark-usa.html": "Ce que font les Américains de leurs données", "donnees.html": "D'où vient chaque chiffre du site" };
+  var CHEV = '<svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4.5 6 8.5 10 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var openPanel = null, openBtn = null, hoverT = null;
+  function closeAll() { clearTimeout(hoverT); if (openPanel) { openPanel.hidden = true; openBtn.setAttribute("aria-expanded", "false"); openPanel = openBtn = null; } }
+  function img(f) { return '<img src="img/pixabay/' + f + '" alt="" loading="lazy" width="640" height="480"' + (/\.png$/.test(f) ? ' class="contain"' : "") + ">"; }
+  function card(f) {
+    var key = f.replace(/\.html$/, "");
+    return '<a class="mega-card' + (/\.png$/.test(ILLU[key] || "") ? " clair" : "") + '" href="' + f + '"' + (f === here ? ' aria-current="page"' : "") + '>' + img(ILLU[key]) + '<span class="tx"><span><b>' + esc(PAGES[f][0]) + "</b><small>" + esc(DESC[f] || "") + '</small></span><span class="go" aria-hidden="true">→</span></span></a>';
+  }
+  function fillCards(node) { return function (panel, done) { panel.innerHTML = '<div class="mega-cards">' + node.items.map(card).join("") + "</div>"; done(); }; }
+  function fillMinisteres(panel, done) {
+    loadGouv(function (G) {
+      var all = G ? G.ministeres.concat(G.autres_acteurs) : [];
+      var COL = { regalien: "var(--c1)", economie: "var(--c2)", territoires: "var(--c3)", societe: "var(--c4)", autres: "var(--c5)" };
+      var fam = FAMILLES.map(function (f) {
+        var L = all.filter(function (m) { return m.famille === f[0]; }); if (!L.length) return "";
+        return '<div><h3 style="--f:' + COL[f[0]] + '"><i></i>' + esc(f[1]) + "</h3><ul>" + L.map(function (m) { var h = "ministere-" + m.id + ".html"; return '<li><a href="' + h + '"' + (h === here ? ' aria-current="page"' : "") + ">" + esc(m.court) + "</a></li>"; }).join("") + "</ul></div>";
+      }).join("");
+      panel.innerHTML = '<div class="mega-min"><a class="mega-card clair" href="gouvernement.html"' + (here === "gouvernement.html" ? ' aria-current="page"' : "") + ' style="--bgc:#e8edfb">' + img("ministeres.png") + '<span class="tx"><span><b>Tous les ministères</b><small>La composition du Gouvernement et une page par ministère</small></span><span class="go" aria-hidden="true">→</span></span></a><div class="mega-fam">' + fam + "</div></div>";
+      done();
+    });
+  }
+  function addMenu(ul, node, fill) {
+    var li = document.createElement("li"), id = "mega-" + node.k;
+    li.innerHTML = '<button type="button" class="mega-btn' + (curGroup === node.k ? " here" : "") + '" aria-expanded="false" aria-controls="' + id + '" aria-haspopup="true">' + esc(node.label) + CHEV + "</button>";
+    var panel = document.createElement("div"); panel.id = id; panel.className = "mega-panel"; panel.hidden = true; panel.setAttribute("role", "region"); panel.setAttribute("aria-label", node.label); document.body.appendChild(panel);
+    var btn = li.firstChild, filled = false;
+    function show(focus) {
+      if (openPanel === panel) return; closeAll();
+      function go() { panel.hidden = false; btn.setAttribute("aria-expanded", "true"); openPanel = panel; openBtn = btn; panel.style.top = (document.querySelector("nav.nav").getBoundingClientRect().bottom - 4) + "px"; if (focus) { var a = panel.querySelector("a"); if (a) a.focus(); } }
+      if (!filled) fill(panel, function () { filled = true; go(); }); else go();
+    }
+    btn.addEventListener("click", function () { if (openPanel === panel) closeAll(); else show(true); });
+    li.addEventListener("mouseenter", function () { if (window.matchMedia("(hover:hover) and (pointer:fine)").matches) { clearTimeout(hoverT); hoverT = setTimeout(function () { show(false); }, 90); } });
+    li.addEventListener("mouseleave", function () { clearTimeout(hoverT); hoverT = setTimeout(function () { if (!panel.matches(":hover")) closeAll(); }, 220); });
+    panel.addEventListener("mouseenter", function () { clearTimeout(hoverT); });
+    panel.addEventListener("mouseleave", function () { clearTimeout(hoverT); hoverT = setTimeout(closeAll, 220); });
+    btn.addEventListener("keydown", function (e) { if (e.key === "ArrowDown") { e.preventDefault(); show(true); } });
+    panel.addEventListener("keydown", function (e) { if (e.key !== "ArrowDown" && e.key !== "ArrowUp" && e.key !== "ArrowLeft" && e.key !== "ArrowRight") return; var l = [].slice.call(panel.querySelectorAll("a")), i = l.indexOf(document.activeElement); if (i < 0) return; e.preventDefault(); var d = (e.key === "ArrowDown" || e.key === "ArrowRight") ? 1 : l.length - 1; l[(i + d) % l.length].focus(); });
+    ul.appendChild(li); node.btn = btn;
+  }
   function buildNav() {
     var nav = document.querySelector("nav.nav"); if (!nav) return;
-    var row = document.createElement("div"); row.className = "nav-tree";
-    var groups = TREE.filter(function (n) { return n.items; }).map(function (n) {
-      return '<li class="t-grp' + (curGroup === n.k ? " cur" : "") + '" role="group" aria-labelledby="tl-' + n.k + '"><span class="t-lab" id="tl-' + n.k + '">' + esc(n.label) + '</span><ul>' + n.items.map(function (f) { return "<li>" + link(f, esc(SHORT[f] || PAGES[f][0]), PAGES[f][0]) + "</li>"; }).join("") + "</ul></li>";
+    var wrap = nav.querySelector(".wrap"), sw = nav.querySelector(".switch"); if (!wrap) return;
+    var ul = document.createElement("ul"); ul.className = "mega-list"; ul.setAttribute("aria-label", "Rubriques du site");
+    var li0 = document.createElement("li"); li0.innerHTML = '<a class="mega-link' + (curGroup === "accueil" ? " here" : "") + '" href="accueil.html"' + (curGroup === "accueil" ? ' aria-current="page"' : "") + ">Accueil</a>"; ul.appendChild(li0);
+    TREE.forEach(function (n) {
+      if (n.k === "accueil") return;
+      if (n.menu) addMenu(ul, n, fillMinisteres); else addMenu(ul, n, fillCards(n));
     });
-    row.innerHTML = '<div class="wrap"><ul class="tree">'
-      + '<li class="t-solo' + (curGroup === "accueil" ? " cur" : "") + '">' + link("accueil.html", "Accueil") + "</li>"
-      + '<li class="t-solo' + (curGroup === "ministeres" ? " cur" : "") + '">' + link("gouvernement.html", 'Ministères <span class="cnt" id="nav-cnt"></span>', "Les ministères et la composition du Gouvernement") + "</li>"
-      + groups.join("") + "</ul></div>";
-    nav.appendChild(row); nav.classList.add("has-tree");
-    var tree = row.querySelector(".tree");
-    function ov() { var o = tree.scrollWidth > tree.clientWidth + 2; tree.classList.toggle("ov", o); if (o) tree.setAttribute("tabindex", "0"); else tree.removeAttribute("tabindex"); }
-    ov(); window.addEventListener("resize", ov); if (document.fonts && document.fonts.ready) document.fonts.ready.then(ov);
-    row.addEventListener("keydown", function (e) {
-      if (["ArrowRight", "ArrowLeft", "Home", "End"].indexOf(e.key) < 0) return;
-      var items = [].slice.call(row.querySelectorAll("a")), i = items.indexOf(document.activeElement); if (i < 0) return; e.preventDefault();
-      var n = e.key === "Home" ? 0 : e.key === "End" ? items.length - 1 : Math.max(0, Math.min(items.length - 1, i + (e.key === "ArrowRight" ? 1 : -1))); items[n].focus();
-    });
-    loadGouv(function (G) { var c = document.getElementById("nav-cnt"); if (G && c) c.textContent = G.ministeres.length + G.autres_acteurs.length; });
+    wrap.insertBefore(ul, sw || null); nav.classList.add("has-mega");
+    document.addEventListener("click", function (e) { if (openPanel && !openPanel.contains(e.target) && !openBtn.parentNode.contains(e.target)) closeAll(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && openPanel) { var b = openBtn; closeAll(); b.focus(); } });
+    window.addEventListener("scroll", function () { if (openPanel) closeAll(); }, { passive: true });
+    window.addEventListener("resize", closeAll);
   }
   function buildCrumbs() {
     if (here === "accueil.html") return;
@@ -129,8 +173,10 @@
   }
   function fixTables() { [].forEach.call(document.querySelectorAll("thead th:not([scope])"), function (th) { th.setAttribute("scope", "col"); }); }
   function fixAll() { fixTables(); fixSwitch(); }
+  function logo() { [].forEach.call(document.querySelectorAll("nav.nav .brand"), function (b) { b.setAttribute("href", "accueil.html"); b.setAttribute("aria-label", "Politik, retour à l'accueil"); b.setAttribute("title", "Retour à l'accueil"); }); }
   function init() {
-    var st = document.createElement("style"); st.textContent = CSS; document.head.appendChild(st);
+    var st = document.createElement("style");
+    logo(); st.textContent = CSS; document.head.appendChild(st);
     buildNav(); buildCrumbs(); buildPlan();
     fixAll(); var tm; new MutationObserver(function () { clearTimeout(tm); tm = setTimeout(fixAll, 40); }).observe(document.body, { childList: true, subtree: true });
   }

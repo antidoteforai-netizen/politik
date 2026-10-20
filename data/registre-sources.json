@@ -2455,7 +2455,7 @@
     {
       "page": "gouvernement",
       "type": "document",
-      "titre": "Service national : la France fait évoluer son modèle d'armée en mêlant militaires d'active, réservistes et appelés du se",
+      "titre": "Service national : la France fait évoluer son modèle d'armée, en mêlant militaires d'active, réservistes et appelés du s",
       "producteur": "defense.gouv.fr",
       "url": "https://www.defense.gouv.fr/ministere/dossiers-evenementiels-thematiques/service-national-nouveau-modele-darmee",
       "niveau": "D",
@@ -2536,7 +2536,7 @@
     {
       "page": "gouvernement",
       "type": "document",
-      "titre": "Le commerce, l'artisanat et la restauration sont le premier pourvoyeur d'emplois en France, selon la Direction générale ",
+      "titre": "Selon la Direction générale des Entreprises, le commerce, l'artisanat et la restauration sont le premier pourvoyeur d'em",
       "producteur": "entreprises.gouv.fr (DGE)",
       "url": "https://www.entreprises.gouv.fr/secteurs-dactivite/les-secteurs-du-commerce-de-lartisanat-et-de-la-restauration-en-france",
       "niveau": "V",
@@ -2653,7 +2653,7 @@
     {
       "page": "gouvernement",
       "type": "document",
-      "titre": "La page budget du ministère affiche le budget 2025 : 4,45 Md€ de crédits budgétaires et 4,03 Md€ pour l'audiovisuel publ",
+      "titre": "La page budget du ministère affiche le budget 2025, présenté le 11 octobre 2024 : 4,45 Md€ de crédits budgétaires et 4,0",
       "producteur": "culture.gouv.fr",
       "url": "https://www.culture.gouv.fr/dossiers/le-budget-du-ministere-de-la-culture",
       "niveau": "V",
@@ -2689,7 +2689,7 @@
     {
       "page": "gouvernement",
       "type": "document",
-      "titre": "Le site présente un programme d'investissement « Choose Outre-mer » (près de 6 milliards d'euros de projets pour sa prem",
+      "titre": "Le site présente « Choose Outre-mer », un programme d'investissement : près de 6 milliards d'euros de projets pour sa pr",
       "producteur": "outre-mer.gouv.fr",
       "url": "https://www.outre-mer.gouv.fr/actions-publiques/subventions",
       "niveau": "D",
@@ -2743,7 +2743,7 @@
     {
       "page": "gouvernement",
       "type": "document",
-      "titre": "En 2025, le CERT-FR a suivi près de 200 violations de données issues d'applications web ; dans de nombreux cas, des acti",
+      "titre": "En 2025, le CERT-FR a suivi près de 200 violations de données issues d'applications web. Dans de nombreux cas, des attaq",
       "producteur": "cyber.gouv.fr (CERT-FR)",
       "url": "https://cert.cyber.gouv.fr/cti/CERTFR-2026-CTI-008/",
       "niveau": "V",
@@ -2804,6 +2804,54 @@
       "url": "",
       "niveau": "S",
       "statut": "cité"
+    },
+    {
+      "page": "presidentielle",
+      "type": "reference",
+      "titre": "politik-eta.vercel.app/presidentielle-2027.html",
+      "url": "https://politik-eta.vercel.app/presidentielle-2027.html",
+      "niveau": "S",
+      "statut": "lien"
+    },
+    {
+      "page": "presidentielle",
+      "type": "reference",
+      "titre": "politik-eta.vercel.app/og-politik.png",
+      "url": "https://politik-eta.vercel.app/og-politik.png",
+      "niveau": "S",
+      "statut": "lien"
+    },
+    {
+      "page": "presidentielle",
+      "type": "reference",
+      "titre": "schema.org",
+      "url": "https://schema.org",
+      "niveau": "S",
+      "statut": "lien"
+    },
+    {
+      "page": "presidentielle",
+      "type": "reference",
+      "titre": "politik-eta.vercel.app/#site",
+      "url": "https://politik-eta.vercel.app/#site",
+      "niveau": "S",
+      "statut": "lien"
+    },
+    {
+      "page": "presidentielle",
+      "type": "reference",
+      "titre": "politik-eta.vercel.app/",
+      "url": "https://politik-eta.vercel.app/",
+      "niveau": "S",
+      "statut": "lien"
+    },
+    {
+      "page": "presidentielle",
+      "type": "reference",
+      "titre": "politik-eta.vercel.app/presidentielle-2027.html#page",
+      "url": "https://politik-eta.vercel.app/presidentielle-2027.html#page",
+      "niveau": "S",
+      "statut": "lien"
     },
     {
       "page": "secteurs",
@@ -2916,6 +2964,62 @@
       "url": "",
       "niveau": "S",
       "statut": "cité"
+    },
+    {
+      "page": "secteurs",
+      "type": "reference",
+      "titre": "politik-eta.vercel.app/secteurs.html",
+      "url": "https://politik-eta.vercel.app/secteurs.html",
+      "niveau": "S",
+      "statut": "lien"
+    },
+    {
+      "page": "secteurs",
+      "type": "reference",
+      "titre": "politik-eta.vercel.app/og-politik.png",
+      "url": "https://politik-eta.vercel.app/og-politik.png",
+      "niveau": "S",
+      "statut": "lien"
+    },
+    {
+      "page": "secteurs",
+      "type": "reference",
+      "titre": "schema.org",
+      "url": "https://schema.org",
+      "niveau": "S",
+      "statut": "lien"
+    },
+    {
+      "page": "secteurs",
+      "type": "reference",
+      "titre": "politik-eta.vercel.app/#site",
+      "url": "https://politik-eta.vercel.app/#site",
+      "niveau": "S",
+      "statut": "lien"
+    },
+    {
+      "page": "secteurs",
+      "type": "reference",
+      "titre": "politik-eta.vercel.app/",
+      "url": "https://politik-eta.vercel.app/",
+      "niveau": "S",
+      "statut": "lien"
+    },
+    {
+      "page": "secteurs",
+      "type": "reference",
+      "titre": "politik-eta.vercel.app/secteurs.html#page",
+      "url": "https://politik-eta.vercel.app/secteurs.html#page",
+      "niveau": "S",
+      "statut": "lien"
+    },
+    {
+      "page": "secteurs",
+      "type": "reference",
+      "titre": "politik-eta.vercel.app/accueil.html#etats",
+      "url": "https://politik-eta.vercel.app/accueil.html#etats",
+      "niveau": "S",
+      "statut": "lien"
     },
     {
       "page": "benchmark",
@@ -3140,12 +3244,60 @@
       "url": "https://www.niskanencenter.org/",
       "niveau": "S",
       "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "politik-eta.vercel.app/benchmark-usa.html",
+      "url": "https://politik-eta.vercel.app/benchmark-usa.html",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "politik-eta.vercel.app/og-politik.png",
+      "url": "https://politik-eta.vercel.app/og-politik.png",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "schema.org",
+      "url": "https://schema.org",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "politik-eta.vercel.app/#site",
+      "url": "https://politik-eta.vercel.app/#site",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "politik-eta.vercel.app/",
+      "url": "https://politik-eta.vercel.app/",
+      "niveau": "S",
+      "statut": "cité"
+    },
+    {
+      "page": "benchmark",
+      "type": "reference",
+      "titre": "politik-eta.vercel.app/benchmark-usa.html#page",
+      "url": "https://politik-eta.vercel.app/benchmark-usa.html#page",
+      "niveau": "S",
+      "statut": "cité"
     }
   ],
   "totaux": {
     "api": 19,
     "jeu": 44,
     "document": 150,
-    "reference": 128
+    "reference": 147
   }
 }

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /infographie-police.html
+
+Sitemap: https://politik-eta.vercel.app/sitemap.xml

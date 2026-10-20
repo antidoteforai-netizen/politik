@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Politik : comprendre les données publiques de la France</title>
-<meta name="description" content="Une page par ministère, des états des lieux (fraude sociale, police, cybersécurité, état de la France) et des dossiers décryptés (médias, 17 octobre) : chaque chiffre avec sa source.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -104,7 +103,57 @@ body.falc .porte-q,body.falc .porte-stats .lab,body.falc .actu li{font-size:1rem
 .min-tile mark{background:color-mix(in srgb,var(--f,var(--accent)) 22%,transparent);color:inherit;border-radius:3px;padding:0 1px}
 .min-tile .why{grid-column:2;font-size:.72rem;color:var(--ink-3)}
 .min-vide{padding:14px 16px;border:1px dashed var(--line);border-radius:12px;color:var(--ink-2)}
+
+/* Hero : Bleu France (système de design de l'État), pleine largeur */
+.hero-accueil{background:#000091;color:#fff;box-shadow:0 0 0 100vmax #000091;clip-path:inset(0 -100vmax);margin-top:10px;padding-block:46px 52px;align-items:center}
+.hero-accueil:before{content:none}
+.hero-accueil .hero-txt{padding:0}
+.hero-accueil .eyebrow{color:#cacafb}
+.hero-accueil h1{color:#fff;max-width:15ch}
+.hero-accueil .lede,.hero-accueil .lede p{color:#e3e3fd}
+.hero-accueil .ast{color:#fff}
+.hero-accueil .ast:hover,.hero-accueil .ast:focus-visible{background:rgba(255,255,255,.16)}
+.hero-accueil .ast:focus-visible{outline-color:#fff}
+.hero-accueil .od-badge{background:#000074;border:1px solid rgba(255,255,255,.22);color:#fff}
+.hero-accueil .od-badge b{color:#cacafb}
+.hero-accueil .hero-chips li{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28)}
+.hero-accueil .hero-chips b{color:#fff}
+.hero-accueil .hero-chips span{color:#cacafb}
+.hero-accueil .cta{background:#fff;color:#000091;font-weight:800}
+.hero-accueil .cta:hover,.hero-accueil .cta:focus-visible{background:#e3e3fd;outline:3px solid #fff;outline-offset:3px}
+.hero-illu{align-self:center;border-radius:28px;overflow:hidden;border:6px solid rgba(255,255,255,.2);background:#fff;max-width:520px;justify-self:center;width:100%}
+.hero-illu img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+@media (max-width:860px){.hero-accueil{padding-block:30px 34px}.hero-illu{max-width:420px}}
+.faq{display:grid;gap:8px;max-width:820px}
+.faq-q{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:0}
+.faq-q summary{cursor:pointer;list-style:none;padding:14px 18px;font-weight:700;display:flex;justify-content:space-between;gap:12px;align-items:center;min-height:44px}
+.faq-q summary::-webkit-details-marker{display:none}
+.faq-q summary:after{content:"+";font-size:1.3rem;color:var(--accent-ink);font-weight:800}
+.faq-q[open] summary:after{content:"–"}
+.faq-q summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:12px}
+.faq-q p{margin:0;padding:0 18px 16px;color:var(--ink-2);max-width:68ch}
 </style>
+<!--SEO-->
+<meta name="description" content="Une page par ministère, des états des lieux sourcés et des dossiers décryptés : fraude, police, cybersécurité, médias. Chaque chiffre dit d'où il vient.">
+<link rel="canonical" href="https://politik-eta.vercel.app/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:site_name" content="Politik">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Politik : comprendre les données publiques de la France">
+<meta property="og:description" content="Une page par ministère, des états des lieux sourcés et des dossiers décryptés : fraude, police, cybersécurité, médias. Chaque chiffre dit d'où il vient.">
+<meta property="og:url" content="https://politik-eta.vercel.app/">
+<meta property="og:image" content="https://politik-eta.vercel.app/og-politik.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Politik : comprendre les données publiques de la France">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Politik : comprendre les données publiques de la France">
+<meta name="twitter:description" content="Une page par ministère, des états des lieux sourcés et des dossiers décryptés : fraude, police, cybersécurité, médias. Chaque chiffre dit d'où il vient.">
+<meta name="twitter:image" content="https://politik-eta.vercel.app/og-politik.png">
+<meta name="twitter:image:alt" content="Politik : comprendre les données publiques de la France">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://politik-eta.vercel.app/#site","name":"Politik","url":"https://politik-eta.vercel.app/","inLanguage":"fr","description":"Une page par ministère, des états des lieux sourcés et des dossiers décryptés : fraude, police, cybersécurité, médias. Chaque chiffre dit d'où il vient."},{"@type":"WebPage","@id":"https://politik-eta.vercel.app/#page","url":"https://politik-eta.vercel.app/","name":"Politik : comprendre les données publiques de la France","description":"Une page par ministère, des états des lieux sourcés et des dossiers décryptés : fraude, police, cybersécurité, médias. Chaque chiffre dit d'où il vient.","inLanguage":"fr","isPartOf":{"@id":"https://politik-eta.vercel.app/#site"},"dateModified":"2026-10-20","primaryImageOfPage":{"@type":"ImageObject","url":"https://politik-eta.vercel.app/og-politik.png"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://politik-eta.vercel.app/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Qu'est-ce que Politik ?","acceptedAnswer":{"@type":"Answer","text":"Un site qui rassemble des données publiques sur le Gouvernement, l'argent public, les médias, la police et la cybersécurité. Chaque chiffre est donné avec sa source."}},{"@type":"Question","name":"D'où viennent les données ?","acceptedAnswer":{"@type":"Answer","text":"De data.gouv.fr, de l'Insee, de la Cour des comptes, des ministères et d'autres sites officiels. Le registre des sources liste chaque jeu de données utilisé."}},{"@type":"Question","name":"Comment savoir si un chiffre est fiable ?","acceptedAnswer":{"@type":"Answer","text":"Chaque chiffre porte une pastille : V pour publié par l'institution, S pour relayé par une source secondaire, D pour une déclaration ou une annonce, A pour à vérifier."}},{"@type":"Question","name":"Les textes prennent-ils parti ?","acceptedAnswer":{"@type":"Answer","text":"Ils attribuent chaque déclaration à son auteur, donnent la date et la source, et signalent ce que les sources ne disent pas."}},{"@type":"Question","name":"À quelle fréquence le site est-il mis à jour ?","acceptedAnswer":{"@type":"Answer","text":"Les données chiffrées automatiques sont relancées tous les deux jours. Les actualités des ministères sont relues sur leurs sites officiels."}}]}]}</script>
+<!--/SEO-->
 </head>
 <body>
 <nav class="nav" aria-label="Pages Politik">
@@ -124,7 +173,7 @@ body.falc .porte-q,body.falc .porte-stats .lab,body.falc .actu li{font-size:1rem
     <ul class="hero-chips" id="chips"></ul>
     <a class="cta" href="#ministeres" data-t="cta"></a>
   </div>
-  <div class="mosaique" id="mosaique" aria-label="Ministères"></div>
+  <div class="hero-illu"><img src="img/pixabay/hero.jpg" alt="" width="1280" height="960" fetchpriority="high"></div>
 </header>
 
 <main class="wrap">
@@ -136,6 +185,14 @@ body.falc .porte-q,body.falc .porte-stats .lab,body.falc .actu li{font-size:1rem
 <section id="dossiers"><div class="sec-head"><h2 data-t="s.dos.h"></h2><p data-t="s.dos.p"></p></div><p class="note-dossier" data-t="dos.note"></p><div class="portes" id="dossiers-grid"></div></section>
 <section id="actualite"><div class="sec-head"><h2 data-t="s.actu.h"></h2><p data-t="s.actu.p"></p></div><div class="card"><ul class="actu" id="actu"></ul></div></section>
 <section id="raccourcis"><div class="sec-head"><h2 data-t="s.roles.h"></h2><p data-t="s.roles.p"></p></div><div class="roles" id="roles"></div></section>
+<section id="faq"><div class="sec-head"><h2>Questions fréquentes</h2><p>Les réponses courtes aux questions qu'on nous pose le plus.</p></div>
+<div class="faq">
+<details class="faq-q"><summary>Qu'est-ce que Politik ?</summary><p>Un site qui rassemble des données publiques sur le Gouvernement, l'argent public, les médias, la police et la cybersécurité. Chaque chiffre est donné avec sa source.</p></details>
+<details class="faq-q"><summary>D'où viennent les données ?</summary><p>De data.gouv.fr, de l'Insee, de la Cour des comptes, des ministères et d'autres sites officiels. Le registre des sources liste chaque jeu de données utilisé.</p></details>
+<details class="faq-q"><summary>Comment savoir si un chiffre est fiable ?</summary><p>Chaque chiffre porte une pastille : V pour publié par l'institution, S pour relayé par une source secondaire, D pour une déclaration ou une annonce, A pour à vérifier.</p></details>
+<details class="faq-q"><summary>Les textes prennent-ils parti ?</summary><p>Ils attribuent chaque déclaration à son auteur, donnent la date et la source, et signalent ce que les sources ne disent pas.</p></details>
+<details class="faq-q"><summary>À quelle fréquence le site est-il mis à jour ?</summary><p>Les données chiffrées automatiques sont relancées tous les deux jours. Les actualités des ministères sont relues sur leurs sites officiels.</p></details>
+</div></section>
 <section id="methode-section"><div class="sec-head"><h2 data-t="s.methode.h"></h2><p data-t="s.methode.p"></p></div><ul class="methode" id="methode"></ul></section>
 </main>
 <footer class="wrap"><p data-t="footer"></p></footer>
@@ -249,7 +306,6 @@ function render(){
   const FAM={regalien:["Pouvoirs régaliens","var(--c1)"],economie:["Économie et travail","var(--c2)"],territoires:["Territoires et transitions","var(--c3)"],societe:["Société","var(--c4)"],autres:["Autres acteurs","var(--c5)"]};
   const tous=G.ministeres.concat(G.autres_acteurs); const releves=tous.filter(m=>m.verifie_le).length;
   $("#chips").innerHTML=[[G.ministeres.length,L==="falc"?"ministères":"ministères"],[releves+" / "+tous.length,L==="falc"?"relus sur leur site":"relus sur leur site officiel"],[G.actualites.length,L==="falc"?"nouvelles vérifiées":"actualités vérifiées"]].map(c=>`<li><b>${c[0]}</b><span>${c[1]}</span></li>`).join("");
-  $("#mosaique").innerHTML=G.ministeres.slice(0,20).map(m=>`<a href="ministere-${esc(m.id)}.html" style="--f:${FAM[m.famille][1]}" title="${esc(m.court)}" aria-label="${esc(m.court)}"><svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">${m.icone}</svg><span class="lib" aria-hidden="true">${esc(m.court)}</span></a>`).join("");
   $("#min-groupes").innerHTML=["regalien","economie","territoires","societe","autres"].map(f=>{const L2=tous.filter(m=>m.famille===f); if(!L2.length) return ""; return `<h3 class="groupe" style="--f:${FAM[f][1]}"><i></i>${FAM[f][0]}</h3><div class="min-grid">${L2.map(m=>`<a class="min-tile" href="ministere-${esc(m.id)}.html" style="--f:${FAM[f][1]}" data-mots="${esc((m.nom||"").toLowerCase())}"><span class="pic"><svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">${m.icone}</svg></span><b>${esc(m.court)}</b><span class="who">${esc(m.ministre||"")}</span><span class="st ${m.verifie_le?"ok":""}">${m.verifie_le?(L==="falc"?"Relu":"Relu le "+esc(dateCourte(m.verifie_le))):(L==="falc"?"À relire":"À relire")}</span></a>`).join("")}</div>`;}).join("");
   const R=(window.REGISTRE&&window.REGISTRE.entrees)||[]; const od=new Set(R.filter(e=>(e.type==="jeu"||e.type==="api")&&/data\.gouv\.fr/.test((e.url||"")+" "+(e.producteur||""))).map(e=>e.titre)).size;
   $("#od-txt").innerHTML=L==="falc"?`<b>Open data</b> : ${od?od+" jeux de données":"des jeux de données"} de data.gouv.fr`:`<b>Open data</b> : ${od?od+" jeux de données et API":"des jeux de données"} de data.gouv.fr utilisés sur ce site`;

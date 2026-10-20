@@ -1,0 +1,27 @@
+# Politik
+
+> Politik rassemble des données publiques françaises (Gouvernement, argent public, médias, police, cybersécurité) et indique pour chaque chiffre sa source, sa date et son niveau de fiabilité. Site en français, sans parti pris, sans cookie de suivi.
+
+Les chiffres portent une pastille : V (publié par l'institution), S (source secondaire), D (déclaration ou annonce), A (à vérifier). Les textes existent en deux niveaux de lecture : termes de l'État et Facile À Lire et à Comprendre (FALC). Les données chiffrées sont relancées tous les deux jours ; 21 acteurs sur 21 ont été relus sur leur site officiel le 2026-10-20.
+
+## Pages principales
+- [Accueil](https://politik-eta.vercel.app/): Une page par ministère, des états des lieux sourcés et des dossiers décryptés : fraude, police, cybersécurité, médias. Chaque chiffre dit d'où il vient.
+- [Le Gouvernement](https://politik-eta.vercel.app/gouvernement.html): Les 20 ministères du Gouvernement, leurs ministres, l'essentiel à savoir pour chacun et l'actualité lue sur les sites officiels.
+- [Fraude sociale](https://politik-eta.vercel.app/index.html): Combien coûte la fraude sociale, combien est détecté, combien est récupéré ? Les chiffres officiels, leurs limites et ce qu'on ne mesure pas.
+- [Police et gendarmerie](https://politik-eta.vercel.app/forces.html): Suicides, soutien psychologique, diplôme, salaire, violences et blessés en manifestation : les chiffres de la police et de la gendarmerie, avec leurs sources.
+- [Cybersécurité de l'État](https://politik-eta.vercel.app/cybersecurite.html): Le plan d'action de l'État contre les vols de données, les incidents de 2026 et le rapport de l'ANSSI sur la DGFiP, expliqués simplement.
+- [Comment va la France](https://politik-eta.vercel.app/secteurs.html): Quinze familles de sujets, du pouvoir d'achat à la sécurité : où en est la France, chiffre par chiffre, avec la source de chacun.
+- [Qui possède les médias](https://politik-eta.vercel.app/medias.html): À qui appartiennent les grands médias français, quels liens avec l'État, quelles aides publiques : un dossier sourcé, groupe par groupe.
+- [Le 17 octobre 2026](https://politik-eta.vercel.app/17-octobre-2026.html): Violences, dégradations, agents mobilisés et aides aux commerçants après le 17 octobre 2026 : qui dit quoi, et ce qui n'est pas encore chiffré.
+- [Présidentielle 2027](https://politik-eta.vercel.app/presidentielle-2027.html): Compte à rebours, candidats déclarés et historique des présidentielles de 1958 à 2022, sans sondage ni prévision.
+- [Benchmark États-Unis](https://politik-eta.vercel.app/benchmark-usa.html): Ce que font les États-Unis avec leurs données publiques : outils pour voter, suivre les dépenses ou demander l'asile, et ce qu'on peut en apprendre.
+- [Sources et données](https://politik-eta.vercel.app/donnees.html): D'où vient chaque chiffre : le registre des API, jeux de données et documents utilisés par Politik, avec leur niveau de fiabilité.
+
+## Une page par ministère
+Chaque ministère a sa page à l'adresse https://politik-eta.vercel.app/ministere-<identifiant>.html (par exemple https://politik-eta.vercel.app/ministere-interieur.html), avec l'essentiel à savoir, l'actualité et les sources lues sur son site officiel.
+
+## Sources et licences
+Données issues de data.gouv.fr (Insee, Cour des comptes, SSMSI, Assemblée nationale, Sénat, DREES), des sites officiels des ministères et de documents publics. Chaque page cite ses sources ; le registre complet est sur https://politik-eta.vercel.app/donnees.html. Les illustrations viennent de Pixabay (licence Pixabay Content License).
+
+## Code source
+https://github.com/antidoteforai-netizen/politik

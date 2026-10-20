@@ -115,6 +115,8 @@ python3 scripts/fetch-policiers.py        # salaires et effectifs des policiers 
 node dashboard/build-simple.mjs           # version « simple » générée
 node scripts/build-gouvernement.mjs       # après édition de data/gouvernement.json
 node scripts/build-ministeres.mjs         # régénère les 21 pages ministère
+node scripts/build-seo.mjs                # référencement : à lancer en dernier
+sh scripts/build-og.sh                    # image de partage (Chrome headless)
 sh scripts/build-infographie.sh           # PDF de la page Police (Chrome headless)
 node scripts/registre-sources.mjs         # registre des sources
 node scripts/verifier-croisements.mjs     # contrôle final
@@ -132,6 +134,10 @@ docs/        personas, découverte UX, sources, veille
 .github/     mise à jour programmée des données
 ```
 
+## Référencement
+
+Chaque page porte un titre et une description propres, une adresse canonique, les balises Open Graph et Twitter, et des données structurées (WebSite, WebPage, BreadcrumbList, FAQPage sur l'accueil, GovernmentOrganization sur les pages ministère). `sitemap.xml`, `robots.txt` et `llms.txt` (pour les moteurs de réponse génératifs) sont générés par `scripts/build-seo.mjs`.
+
 ## Limites connues
 
 - Le niveau FALC n'a pas été relu par des personnes concernées.
@@ -142,4 +148,4 @@ docs/        personas, découverte UX, sources, veille
 
 ## Licence et crédits
 
-Aucune licence n'est encore choisie pour le code et les textes : tous droits réservés tant que ce choix n'est pas fait. Les données publiques gardent leur licence d'origine, et les crédits des images figurent sur `donnees.html`.
+Les illustrations viennent de Pixabay (Pixabay Content License), créditées sur `donnees.html`. Aucune licence n'est encore choisie pour le code et les textes : tous droits réservés tant que ce choix n'est pas fait. Les données publiques gardent leur licence d'origine, et les crédits des images figurent sur `donnees.html`.

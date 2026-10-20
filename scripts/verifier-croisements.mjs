@@ -2,7 +2,7 @@
 // Contrôle que chaque source collectée est présente, non vide, injectée dans la page, rendue dans un
 // conteneur existant, et que chaque ligne du catalogue porte un statut d'usage explicite.
 // Sort en 0 si tout passe, 1 sinon.   node Politik/scripts/verifier-croisements.mjs
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -133,6 +133,20 @@ try {
   if (!existsSync(join(root, "dashboard/telechargements/politik-police-gendarmerie-infographie.pdf"))) problems.push("PDF absent : lancer sh scripts/build-infographie.sh"); else ok.push("infographie PDF présente");
   if (!frc.includes("telechargements/politik-police-gendarmerie-infographie.pdf")) problems.push("forces.html : lien de téléchargement du PDF absent");
   for (const need of ["27", "3,1", "7\u202f399", "2\u202f787"]) void need;
+  { // référencement : chaque page indexable a titre, description, canonique, Open Graph, Twitter, JSON-LD valide, image de partage
+    const seoPb = [];
+    for (const f of readdirSync(join(root, "dashboard")).filter(n => n.endsWith(".html") && !["infographie-police.html", "og-politik.html"].includes(n))) {
+      const h = readFileSync(join(root, "dashboard", f), "utf8");
+      const title = (h.match(/<title>(.*?)<\/title>/s) || [0, ""])[1], desc = (h.match(/<meta name="description" content="([^"]*)"/) || [0, ""])[1];
+      if (title.length < 10 || title.length > 70) seoPb.push(`${f} : titre de ${title.length} caractères`);
+      if (desc.length < 70 || desc.length > 175) seoPb.push(`${f} : description de ${desc.length} caractères`);
+      for (const need of ['rel="canonical"', 'property="og:title"', 'property="og:image"', 'name="twitter:card"', 'application/ld+json']) if (!h.includes(need)) seoPb.push(`${f} : ${need} absent`);
+      const ld = h.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/); try { JSON.parse(ld[1]); } catch { seoPb.push(`${f} : JSON-LD invalide`); }
+      if ((h.match(/<h1[ >]/g) || []).length > 1) seoPb.push(`${f} : plusieurs h1`);
+    }
+    for (const f of ["og-politik.png", "sitemap.xml", "robots.txt", "llms.txt"]) if (!existsSync(join(root, "dashboard", f))) seoPb.push(`fichier absent : ${f}`);
+    if (seoPb.length) problems.push(...seoPb); else ok.push("référencement : titre, description, canonique, Open Graph, Twitter et JSON-LD valides sur toutes les pages");
+  }
   const acc = readFileSync(join(root, "dashboard/accueil.html"), "utf8");
   try { new Function(acc.match(/<script>([\s\S]*?)<\/script>/)[1]); ok.push("accueil.html : syntaxe du script valide"); } catch (e) { problems.push("accueil.html : " + e.message); }
   for (const id of ["portes", "actu", "roles", "methode"]) if (!acc.includes(`id="${id}"`)) problems.push(`conteneur manquant dans accueil.html : #${id}`);

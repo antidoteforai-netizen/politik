@@ -3,8 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Sources et données : registre complet · Politik</title>
-<meta name="description" content="D'où vient chaque donnée : API, jeux de données, documents, et crédits des images.">
+<title>Sources et données : le registre complet · Politik</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -35,6 +34,27 @@
 body.falc .reg,body.falc .hbar{font-size:1rem}
 @media (max-width:640px){.hbar{grid-template-columns:1fr auto}.hbar .bar{grid-column:1/-1}}
 </style>
+<!--SEO-->
+<meta name="description" content="D'où vient chaque chiffre : le registre des API, jeux de données et documents utilisés par Politik, avec leur niveau de fiabilité.">
+<link rel="canonical" href="https://politik-eta.vercel.app/donnees.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:site_name" content="Politik">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sources et données : le registre complet · Politik">
+<meta property="og:description" content="D'où vient chaque chiffre : le registre des API, jeux de données et documents utilisés par Politik, avec leur niveau de fiabilité.">
+<meta property="og:url" content="https://politik-eta.vercel.app/donnees.html">
+<meta property="og:image" content="https://politik-eta.vercel.app/og-politik.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Politik : comprendre les données publiques de la France">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sources et données : le registre complet · Politik">
+<meta name="twitter:description" content="D'où vient chaque chiffre : le registre des API, jeux de données et documents utilisés par Politik, avec leur niveau de fiabilité.">
+<meta name="twitter:image" content="https://politik-eta.vercel.app/og-politik.png">
+<meta name="twitter:image:alt" content="Politik : comprendre les données publiques de la France">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://politik-eta.vercel.app/#site","name":"Politik","url":"https://politik-eta.vercel.app/","inLanguage":"fr","description":"Une page par ministère, des états des lieux sourcés et des dossiers décryptés : fraude, police, cybersécurité, médias. Chaque chiffre dit d'où il vient."},{"@type":"WebPage","@id":"https://politik-eta.vercel.app/donnees.html#page","url":"https://politik-eta.vercel.app/donnees.html","name":"Sources et données : le registre complet · Politik","description":"D'où vient chaque chiffre : le registre des API, jeux de données et documents utilisés par Politik, avec leur niveau de fiabilité.","inLanguage":"fr","isPartOf":{"@id":"https://politik-eta.vercel.app/#site"},"dateModified":"2026-10-20","primaryImageOfPage":{"@type":"ImageObject","url":"https://politik-eta.vercel.app/og-politik.png"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://politik-eta.vercel.app/"},{"@type":"ListItem","position":2,"name":"Sources et données : le registre complet","item":"https://politik-eta.vercel.app/donnees.html"}]}]}</script>
+<!--/SEO-->
 </head>
 <body>
 <nav class="nav" aria-label="Pages Politik">
@@ -74,6 +94,7 @@ body.falc .reg,body.falc .hbar{font-size:1rem}
 <section id="credits" data-noent>
   <div class="sec-head"><h2 data-t="s.cr.h"></h2><p data-t="s.cr.p"></p></div>
   <div class="card"><div class="tbl" id="tbl-credits"></div></div>
+  <div class="card" style="margin-top:16px"><h3 data-t="s.ill.h"></h3><p class="small muted" data-t="s.ill.p"></p><div class="tbl" id="tbl-illu" style="margin-top:10px"></div></div>
 </section>
 
 <section id="methode">
@@ -95,6 +116,9 @@ const TYPES={api:{etat:"API appelée",falc:"Appel de données"},jeu:{etat:"Jeu d
 const NIV={V:{etat:"V vérifié",falc:"V sûr"},S:{etat:"S secondaire",falc:"S à recouper"},D:{etat:"D déclaratif",falc:"D une opinion"},A:{etat:"A à vérifier",falc:"A pas vérifié"}};
 let fPage=(location.hash||"").slice(1); if(!R.pages.some(p=>p.id===fPage)) fPage="";
 let fType="", fNiv="", q="";
+/* ILLU-START */
+const ILLU = [["hero","Hero de l'accueil et image de partage","img/pixabay/hero.jpg","8027909","https://pixabay.com/illustrations/people-social-game-team-teamwork-8027909/"],["ministeres","Menu : Ministères","img/pixabay/ministeres.png","1469583","https://pixabay.com/illustrations/houses-of-parliament-parliament-1469583/"],["fraude","Menu : Fraude sociale","img/pixabay/fraude.jpg","4319002","https://pixabay.com/illustrations/fake-money-fraud-bank-bankrupt-4319002/"],["police","Menu : Police et gendarmerie","img/pixabay/police.jpg","8847071","https://pixabay.com/illustrations/police-station-police-buildings-8847071/"],["cyber","Menu : Cybersécurité","img/pixabay/cyber.jpg","8819383","https://pixabay.com/illustrations/cyber-security-cyber-security-8819383/"],["france","Menu : Comment va la France","img/pixabay/france.png","1290790","https://pixabay.com/illustrations/france-map-french-flag-png-tricolor-1290790/"],["medias","Menu : Qui possède les médias","img/pixabay/medias.jpg","1074604","https://pixabay.com/illustrations/news-newspaper-globe-read-paper-1074604/"],["oct17","Menu : Le 17 octobre 2026","img/pixabay/oct17.jpg","10224288","https://pixabay.com/illustrations/people-group-protest-crowd-10224288/"],["election","Menu : Présidentielle 2027","img/pixabay/election.jpg","3569999","https://pixabay.com/illustrations/vote-voting-voting-ballot-box-3569999/"],["usa","Menu : Benchmark États-Unis","img/pixabay/usa.png","5660507","https://pixabay.com/illustrations/capitol-congress-icon-us-congress-5660507/"],["donnees","Menu : Sources et données","img/pixabay/donnees.jpg","3050965","https://pixabay.com/illustrations/report-expenses-management-3050965/"]];
+/* ILLU-END */
 const TXT={
   eyebrow:{etat:"Registre commun · généré depuis les six pages du site", falc:"D'où viennent tous les chiffres du site"},
   h1:{etat:"Sources, API et jeux de données utilisés", falc:"Les sources de Politik"},
@@ -106,6 +130,8 @@ const TXT={
   "s.reg.p":{etat:"Filtrez par page, par type ou par niveau, ou cherchez un producteur (INSEE, OFPRA, Arcom…). Le lien vers la page d'origine mène à la section où la source est utilisée.", falc:"Choisissez une page, un type ou un niveau. Ou tapez un mot."},
   "s.meth.h":{etat:"Méthode", falc:"Comment la liste est faite"},
   "s.meth.p":{etat:"Ce que le script fait et ne fait pas.", falc:"Les règles."},
+  "s.ill.h":{etat:"Illustrations", falc:"Les dessins"},
+  "s.ill.p":{etat:"Les illustrations des menus et de l'accueil viennent de Pixabay, sous licence Pixabay Content License : usage libre, sans attribution obligatoire. Elles sont créditées ici par souci de transparence.", falc:"Les dessins viennent du site Pixabay. Leur usage est libre."},
   "s.cr.h":{etat:"Crédits des images", falc:"D'où viennent les images"},
   "s.cr.p":{etat:"Photos des personnes citées et logos des institutions, médias et entreprises, servis depuis le site. Les photos viennent de Wikimedia Commons et portent une licence libre ; les logos sont des marques de leur détenteur, utilisés uniquement pour identifier l'organisation. Une personne sans photo libre n'a pas d'image.", falc:"Les photos viennent de Wikimedia Commons. Elles sont libres de droits.<br>Les logos servent seulement à reconnaître l'organisation."},
   footer:{etat:"Politik · registre des sources et des jeux de données, mis à jour le {d}.", falc:"Politik · liste mise à jour le {d}."}
@@ -132,6 +158,7 @@ function render(){
   $("#f-niveau").insertAdjacentHTML("beforeend",`<span class="count">${rs.length} / ${R.entrees.length}</span>`);
   $("#tbl").innerHTML=`<table class="reg"><thead><tr><th>${L==="falc"?"Source":"Source"}</th><th>Type</th><th>${L==="falc"?"Qui la produit":"Producteur"}</th><th>${L==="falc"?"Sûr ?":"Niveau"}</th><th>${L==="falc"?"Utilisation":"Statut d'usage"}</th><th>Page</th></tr></thead><tbody>${rs.map(e=>`<tr><td class="t">${e.url?`<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.titre)}</a>`:esc(e.titre)}${e.description?`<br><span class="small muted">${esc(e.description)}</span>`:""}</td><td><span class="type ${e.type}">${pick(TYPES[e.type])}</span></td><td class="small">${esc(e.producteur||"")}</td><td>${lvl(e.niveau||"A")}</td><td class="small">${esc(e.statut||"")}</td><td class="pg"><a href="${esc(pg(e.page).fichier||"index.html")}">${esc(pg(e.page).titre||e.page)}</a></td></tr>`).join("")||`<tr><td colspan="6" class="muted">${L==="falc"?"Rien trouvé.":"Aucune entrée pour ces filtres."}</td></tr>`}</tbody></table>`;
   const EN=window.ENTITES||{}; const imgs=Object.entries(EN).filter(([k,v])=>v.img).sort((a,b)=>(a[1].credit.type_image+a[1].nom).localeCompare(b[1].credit.type_image+b[1].nom,"fr"));
+  $("#tbl-illu").innerHTML=`<table><thead><tr><th scope="col">Image</th><th scope="col">Où elle sert</th><th scope="col">Source</th><th scope="col">Licence</th></tr></thead><tbody>${ILLU.map(r=>`<tr><td><img src="${esc(r[2])}" alt="" width="56" height="42" loading="lazy" style="vertical-align:middle;border-radius:8px;object-fit:cover;background:#fff;border:1px solid var(--line)"></td><td>${esc(r[1])}</td><td class="small"><a href="${esc(r[4])}" target="_blank" rel="noopener">Pixabay, image n° ${esc(r[3])}</a></td><td class="small">Pixabay Content License</td></tr>`).join("")}</tbody></table>`;
   $("#tbl-credits").innerHTML=`<table><thead><tr><th>${L==="falc"?"Qui":"Nom"}</th><th>Type</th><th>${L==="falc"?"Auteur":"Auteur"}</th><th>${L==="falc"?"Droits":"Licence"}</th><th>Fichier</th></tr></thead><tbody>${imgs.map(([k,v])=>`<tr><td><img src="${esc(v.img)}" alt="" width="28" height="28" loading="lazy" style="vertical-align:middle;margin-right:8px;border-radius:${v.type==="personne"?"50%":"6px"};object-fit:${v.type==="personne"?"cover":"contain"};background:#fff;border:1px solid var(--line)">${esc(v.nom)}</td><td>${v.credit.type_image==="photo"?"Photo":"Logo"}</td><td class="small">${esc(v.credit.auteur||"—")}</td><td class="small">${esc(v.credit.licence||"")}</td><td class="small"><a href="${esc(v.credit.source||v.wiki)}" target="_blank" rel="noopener">source</a></td></tr>`).join("")}</tbody></table>`;
   $("#regles").innerHTML=(REGLES[L]||REGLES.etat).map(r=>`<li>${esc(r)}</li>`).join("");
 }

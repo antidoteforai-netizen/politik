@@ -1627,6 +1627,60 @@
     {
       "page": "gouvernement",
       "type": "reference",
+      "titre": "Site officiel : Ministère des Petites et moyennes entreprises, du Commerce, de l'Artisanat et du Tourisme et du Pouvoir d'achat",
+      "producteur": "www.entreprises.gouv.fr",
+      "url": "https://www.entreprises.gouv.fr/",
+      "niveau": "V",
+      "statut": "relu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Le commerce, l'artisanat et la restauration sont le premier pourvoyeur d'emplois en France, selon la Direction générale ",
+      "producteur": "entreprises.gouv.fr (DGE)",
+      "url": "https://www.entreprises.gouv.fr/secteurs-dactivite/les-secteurs-du-commerce-de-lartisanat-et-de-la-restauration-en-france",
+      "niveau": "V",
+      "statut": "à savoir, lu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Les ouvertures de grandes surfaces relèvent de la Commission nationale d'aménagement commercial (CNAC).",
+      "producteur": "entreprises.gouv.fr",
+      "url": "https://www.entreprises.gouv.fr/cnac",
+      "niveau": "V",
+      "statut": "à savoir, lu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "reference",
+      "titre": "Site officiel : Ministère de l'Éducation nationale",
+      "producteur": "www.education.gouv.fr",
+      "url": "https://www.education.gouv.fr/",
+      "niveau": "V",
+      "statut": "relu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Un portail « Parents et École » organise l'information par niveau : maternelle, élémentaire, collège, lycée.",
+      "producteur": "education.gouv.fr",
+      "url": "https://www.education.gouv.fr/parents",
+      "niveau": "V",
+      "statut": "à savoir, lu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Les inscriptions aux concours de recrutement d'enseignants sont signalées sur la page d'accueil du ministère, avec renvo",
+      "producteur": "education.gouv.fr",
+      "url": "https://www.devenirenseignant.gouv.fr/node/1061",
+      "niveau": "V",
+      "statut": "à savoir, lu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "reference",
       "titre": "Site officiel : Ministère de la Santé, des Familles, de l'Autonomie et des Personnes handicapées",
       "producteur": "sante.gouv.fr",
       "url": "https://sante.gouv.fr/",
@@ -1639,6 +1693,42 @@
       "titre": "Mon soutien psy : toute personne dès 3 ans peut se faire rembourser par l'Assurance maladie jusqu'à 12 séances de psycho",
       "producteur": "sante.gouv.fr (mise à jour du 20 septembre 2024)",
       "url": "https://sante.gouv.fr/prevention-en-sante/sante-mentale/prendre-soin-de-sa-sante-mentale-accompagnement-et-parcours-de-prise-en-charge/article/le-remboursement-des-seances-de-psychologues-mon-soutien-psy",
+      "niveau": "V",
+      "statut": "à savoir, lu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "reference",
+      "titre": "Site officiel : Ministère de la Culture",
+      "producteur": "www.culture.gouv.fr",
+      "url": "https://www.culture.gouv.fr/",
+      "niveau": "V",
+      "statut": "relu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "La page budget du ministère affiche le budget 2025 : 4,45 Md€ de crédits budgétaires et 4,03 Md€ pour l'audiovisuel publ",
+      "producteur": "culture.gouv.fr",
+      "url": "https://www.culture.gouv.fr/dossiers/le-budget-du-ministere-de-la-culture",
+      "niveau": "V",
+      "statut": "à savoir, lu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Le ministère publie un dossier sur l'éducation aux médias et à l'information.",
+      "producteur": "culture.gouv.fr",
+      "url": "https://www.culture.gouv.fr/thematiques/education-aux-medias-et-a-l-information",
+      "niveau": "V",
+      "statut": "à savoir, lu le 2026-10-20"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Le service statistique ministériel (DEPS) publie les études et chiffres de la culture.",
+      "producteur": "culture.gouv.fr",
+      "url": "https://www.culture.gouv.fr/espace-documentation/service-statistique-ministeriel-deps",
       "niveau": "V",
       "statut": "à savoir, lu le 2026-10-20"
     },
@@ -1865,7 +1955,7 @@
   "totaux": {
     "api": 19,
     "jeu": 40,
-    "document": 92,
-    "reference": 45
+    "document": 99,
+    "reference": 48
   }
 }

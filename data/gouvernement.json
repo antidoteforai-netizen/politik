@@ -311,10 +311,32 @@
       "pages": [
         "17-octobre-2026.html"
       ],
-      "site": null,
-      "site_verifie_le": null,
-      "a_savoir": [],
-      "verifie_le": null
+      "site": "https://www.entreprises.gouv.fr/",
+      "site_verifie_le": "2026-10-20",
+      "a_savoir": [
+        {
+          "texte": "Le commerce, l'artisanat et la restauration sont le premier pourvoyeur d'emplois en France, selon la Direction générale des Entreprises : 714 643 entreprises de commerce (2021) et 3 408 700 salariés du commerce (2022).",
+          "url": "https://www.entreprises.gouv.fr/secteurs-dactivite/les-secteurs-du-commerce-de-lartisanat-et-de-la-restauration-en-france",
+          "source": "entreprises.gouv.fr (DGE)",
+          "niveau": "V",
+          "lu_le": "2026-10-20"
+        },
+        {
+          "texte": "Le secteur des cafés, hôtels, restaurants et discothèques représente 78,4 milliards d'euros de chiffre d'affaires, soit 7 % du PIB, et environ 1 million d'actifs.",
+          "url": "https://www.entreprises.gouv.fr/secteurs-dactivite/les-secteurs-du-commerce-de-lartisanat-et-de-la-restauration-en-france",
+          "source": "entreprises.gouv.fr (DGE)",
+          "niveau": "V",
+          "lu_le": "2026-10-20"
+        },
+        {
+          "texte": "Les ouvertures de grandes surfaces relèvent de la Commission nationale d'aménagement commercial (CNAC).",
+          "url": "https://www.entreprises.gouv.fr/cnac",
+          "source": "entreprises.gouv.fr",
+          "niveau": "V",
+          "lu_le": "2026-10-20"
+        }
+      ],
+      "verifie_le": "2026-10-20"
     },
     {
       "id": "agriculture",
@@ -349,10 +371,32 @@
         "cybersecurite.html",
         "secteurs.html"
       ],
-      "site": null,
-      "site_verifie_le": null,
-      "a_savoir": [],
-      "verifie_le": null
+      "site": "https://www.education.gouv.fr/",
+      "site_verifie_le": "2026-10-20",
+      "a_savoir": [
+        {
+          "texte": "Un portail « Parents et École » organise l'information par niveau : maternelle, élémentaire, collège, lycée.",
+          "url": "https://www.education.gouv.fr/parents",
+          "source": "education.gouv.fr",
+          "niveau": "V",
+          "lu_le": "2026-10-20"
+        },
+        {
+          "texte": "Les inscriptions aux concours de recrutement d'enseignants sont signalées sur la page d'accueil du ministère, avec renvoi vers devenirenseignant.gouv.fr.",
+          "url": "https://www.devenirenseignant.gouv.fr/node/1061",
+          "source": "education.gouv.fr",
+          "niveau": "V",
+          "lu_le": "2026-10-20"
+        },
+        {
+          "texte": "Le ministère a publié un communiqué sur un incident de sécurité touchant des données de personnels (31 juillet 2026) : voir la page Cybersécurité.",
+          "url": "https://www.education.gouv.fr/incident-de-securite-affectant-les-donnees-de-personnels-de-l-education-nationale-505407",
+          "source": "education.gouv.fr",
+          "niveau": "V",
+          "lu_le": "2026-10-20"
+        }
+      ],
+      "verifie_le": "2026-10-20"
     },
     {
       "id": "europe-affaires-etrangeres",
@@ -438,10 +482,32 @@
       "pages": [
         "medias.html"
       ],
-      "site": null,
-      "site_verifie_le": null,
-      "a_savoir": [],
-      "verifie_le": null
+      "site": "https://www.culture.gouv.fr/",
+      "site_verifie_le": "2026-10-20",
+      "a_savoir": [
+        {
+          "texte": "La page budget du ministère affiche le budget 2025 : 4,45 Md€ de crédits budgétaires et 4,03 Md€ pour l'audiovisuel public, présenté le 11 octobre 2024. Elle n'affiche pas encore le budget 2027.",
+          "url": "https://www.culture.gouv.fr/dossiers/le-budget-du-ministere-de-la-culture",
+          "source": "culture.gouv.fr",
+          "niveau": "V",
+          "lu_le": "2026-10-20"
+        },
+        {
+          "texte": "Le ministère publie un dossier sur l'éducation aux médias et à l'information.",
+          "url": "https://www.culture.gouv.fr/thematiques/education-aux-medias-et-a-l-information",
+          "source": "culture.gouv.fr",
+          "niveau": "V",
+          "lu_le": "2026-10-20"
+        },
+        {
+          "texte": "Le service statistique ministériel (DEPS) publie les études et chiffres de la culture.",
+          "url": "https://www.culture.gouv.fr/espace-documentation/service-statistique-ministeriel-deps",
+          "source": "culture.gouv.fr",
+          "niveau": "V",
+          "lu_le": "2026-10-20"
+        }
+      ],
+      "verifie_le": "2026-10-20"
     },
     {
       "id": "outre-mer",

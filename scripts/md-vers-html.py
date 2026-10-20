@@ -94,6 +94,7 @@ page = f"""<!doctype html>
 <script src="structure.js"></script>
 <script src="niveau.js"></script>
 <script src="legende.js"></script>
+<script src="mesure.js"></script>
 </body>
 </html>
 """

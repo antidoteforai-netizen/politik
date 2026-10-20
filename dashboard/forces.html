@@ -245,27 +245,27 @@ const A1=OBS.filter(o=>o.kpi==="A1"), A2=OBS.filter(o=>o.kpi==="A2");
 let GRADES=new Set(["A","B","C","D"]);
 
 const TXT={
-  eyebrow:{etat:"Santé mentale, violences subies et maintien de l'ordre · police et gendarmerie", falc:"Les policiers et les gendarmes : leur santé, les violences, les manifestations"},
-  h1:{etat:"Forces de l'ordre : ce que les chiffres disent, et sous quelle définition", falc:"Les policiers et les gendarmes, en chiffres"},
-  lede:{etat:"Suicides, détresse déclarée, psychologues disponibles, agressions subies, blessés en manifestation des deux côtés. Chaque chiffre porte son périmètre (police seule, police et gendarmerie, avec ou sans pénitentiaire), son qualificatif (exact, au moins, partiel) et son grade de qualité. Les écarts entre sources sont montrés côte à côte, jamais lissés. Le lien vers chaque publication d'origine n'est pas encore affiché : le grade indique la solidité de la source.", falc:"Combien de policiers se suicident. Combien vont mal. Combien de psychologues pour les aider. Combien sont agressés. Combien de blessés dans les manifestations, des deux côtés.<br>Chaque chiffre dit qui est compté et d'où il vient.<br>Quand deux chiffres ne sont pas d'accord, on montre les deux."},
+  eyebrow:{etat:"Santé mentale, violences et maintien de l'ordre · police et gendarmerie", falc:"Les policiers et les gendarmes : leur santé, les violences, les manifestations"},
+  h1:{etat:"Police et gendarmerie : ce que disent les chiffres, et comment ils sont comptés", falc:"Les policiers et les gendarmes, en chiffres"},
+  lede:{etat:"Suicides, détresse déclarée, psychologues disponibles, agressions subies, blessés en manifestation des deux côtés. Chaque chiffre précise qui est compté (police seule, police et gendarmerie, avec ou sans administration pénitentiaire), s'il est exact, partiel ou « au moins », et si sa source est officielle. Quand deux sources se contredisent, les deux chiffres restent affichés côte à côte. Chaque donnée renvoie à sa publication d'origine par un numéro de source.", falc:"Combien de policiers se suicident. Combien vont mal. Combien de psychologues pour les aider. Combien sont agressés. Combien de blessés dans les manifestations, des deux côtés.<br>Chaque chiffre dit qui est compté et d'où il vient.<br>Quand deux chiffres ne sont pas d'accord, on montre les deux."},
   aide:{etat:"numéro national de prévention du suicide, gratuit, 24 h/24. Si vous êtes concerné·e ou inquiet·e pour quelqu'un, appelez.", falc:"C'est le numéro pour parler si on pense au suicide. C'est gratuit, jour et nuit."},
   "falc.badge":{etat:"Niveau « termes de l'État » : les intitulés officiels sont gardés. Passez en FALC pour une lecture simplifiée.", falc:"Lecture facile.<br>Ce texte suit la méthode FALC.<br>Il n'a pas encore été relu par des personnes concernées."},
   "s.est.h":{etat:"Testez votre intuition avant de lire", falc:"Testez-vous avant de lire"},
-  "s.est.p":{etat:"Trois ordres de grandeur, hors sujet suicide. Répondre d'abord, lire ensuite : l'écart entre votre intuition et la valeur sourcée montre ce que cette page change.", falc:"Trois questions.<br>Répondez d'abord. Lisez ensuite."},
-  "s.sui.h":{etat:"KPI-A1 : suicides dans la police nationale, 2008-2026", falc:"Suicides de policiers, de 2008 à 2026"},
-  "s.sui.p":{etat:"Douze observations, cinq périmètres, quatre grades. Le filtre par grade montre ce qui reste quand on ne garde que les chiffres officiels rapportés (A et B). Les barres hachurées sont de grade C ou D, les barres en pointillé des valeurs partielles ou « au moins ».", falc:"Douze chiffres. Ils ne comptent pas tous les mêmes personnes.<br>Les boutons A, B, C, D cachent les chiffres les moins sûrs.<br>Barre rayée : chiffre moins sûr. Barre en pointillé : année pas finie."},
-  "a1.desc":{etat:"Une barre par observation, hauteur = nombre de suicides. Les deux valeurs 2019 (59 et 70) sont en conflit et affichées côte à côte (FR-08). Aucune donnée nominative, aucune maille locale.", falc:"Une barre par chiffre. En 2019, deux chiffres différents sont montrés côte à côte."},
+  "s.est.p":{etat:"Trois ordres de grandeur, hors suicide. Répondez d'abord, lisez ensuite : l'écart entre votre intuition et la valeur sourcée montre ce que cette page apporte.", falc:"Trois questions.<br>Répondez d'abord. Lisez ensuite."},
+  "s.sui.h":{etat:"Suicides dans la police nationale, de 2008 à 2026", falc:"Suicides de policiers, de 2008 à 2026"},
+  "s.sui.p":{etat:"Douze observations, cinq périmètres, quatre grades de qualité. Le filtre garde seulement les chiffres officiels rapportés (grades A et B). Les barres hachurées viennent de sources de grade C ou D, les barres en pointillé de valeurs partielles ou « au moins ».", falc:"Douze chiffres. Ils ne comptent pas tous les mêmes personnes.<br>Les boutons A, B, C, D cachent les chiffres les moins sûrs.<br>Barre rayée : chiffre moins sûr. Barre en pointillé : année pas finie."},
+  "a1.desc":{etat:"Une barre par observation, dont la hauteur est le nombre de suicides. Les deux valeurs de 2019 (59 et 70) se contredisent et sont affichées côte à côte. La page ne contient aucune donnée nominative ni aucun chiffre local.", falc:"Une barre par chiffre. En 2019, deux chiffres différents sont montrés côte à côte."},
   "voir.obs":{etat:"Voir les observations (périmètre, qualificatif, grade, source)", falc:"Voir le tableau"},
   "conf.h":{etat:"Un conflit qu'on ne tranche pas : 2019", falc:"En 2019, deux chiffres"},
   "conf.p":{etat:"Deux sources, deux nombres, aucun périmètre commun établi. Les deux valeurs sont conservées et affichées côte à côte tant que leur écart n'est pas expliqué.", falc:"Deux sources disent deux nombres. On garde les deux jusqu'à ce qu'on sache."},
-  "gn.h":{etat:"KPI-A2 : gendarmerie nationale", falc:"Les gendarmes"},
-  "gn.p":{etat:"Même indicateur, autre institution. Avertissement FR-09 : les périmètres ne sont pas strictement identiques à ceux de la police.", falc:"Le même chiffre pour les gendarmes. Attention, on ne compte pas tout à fait pareil."},
+  "gn.h":{etat:"Gendarmerie nationale", falc:"Les gendarmes"},
+  "gn.p":{etat:"Même indicateur, autre institution. Les périmètres ne sont pas strictement identiques à ceux de la police : la comparaison reste indicative.", falc:"Le même chiffre pour les gendarmes. Attention, on ne compte pas tout à fait pareil."},
   "s.taux.h":{etat:"Le piège du taux : brut ou standardisé ?", falc:"Attention aux taux"},
-  "s.taux.p":{etat:"Métaphore : comparer un taux brut entre policiers et population générale, c'est comparer la vitesse de deux voitures sans dire si l'une descend une côte. Les policiers sont surtout des hommes de 25 à 55 ans, groupe où le suicide est déjà plus fréquent ; le taux standardisé corrige cette pente. Règle 5 : jamais les deux sur le même graphique.", falc:"Les policiers sont surtout des hommes jeunes. Chez eux, le suicide est déjà plus fréquent.<br>Le « taux corrigé » tient compte de ça.<br>On ne mélange jamais les deux sortes de taux."},
+  "s.taux.p":{etat:"Comparer un taux brut entre policiers et population générale revient à comparer la vitesse de deux voitures sans dire si l'une descend une côte. Les policiers sont surtout des hommes de 25 à 55 ans, un groupe où le suicide est déjà plus fréquent. Le taux standardisé corrige cet effet. Les deux taux ne figurent jamais sur le même graphique.", falc:"Les policiers sont surtout des hommes jeunes. Chez eux, le suicide est déjà plus fréquent.<br>Le « taux corrigé » tient compte de ça.<br>On ne mélange jamais les deux sortes de taux."},
   "s.sante.h":{etat:"Santé mentale déclarée : des mesures qui ne se comparent pas entre elles", falc:"Comment vont les policiers"},
-  "s.sante.p":{etat:"Détresse psychologique (échelle K6, mutuelle), dépression (thèse), stress post-traumatique (thèse), épuisement (enquête CNRS 2011-2012). Règle 6 : chaque mesure a sa propre échelle et sa propre population, elles ne se mettent pas sur un même axe.", falc:"Plusieurs enquêtes posent des questions différentes à des personnes différentes.<br>On ne les additionne pas."},
-  "tspt.h":{etat:"KPI-B4 : stress post-traumatique selon l'exposition", falc:"Le stress après un événement grave"},
-  "tspt.p":{etat:"Thèse Lyon 1, 2026, 475 répondants. Petits effectifs : l'intervalle de confiance est à demander à l'auteur (règle de la fiche).", falc:"475 personnes interrogées. C'est peu, le chiffre est fragile."},
+  "s.sante.p":{etat:"Détresse psychologique (échelle K6, mutuelle), dépression (thèse), stress post-traumatique (thèse), épuisement (enquête CNRS 2011-2012). Chaque mesure a sa propre échelle et sa propre population : elles ne se placent pas sur un même axe.", falc:"Plusieurs enquêtes posent des questions différentes à des personnes différentes.<br>On ne les additionne pas."},
+  "tspt.h":{etat:"Stress post-traumatique selon l'exposition", falc:"Le stress après un événement grave"},
+  "tspt.p":{etat:"Thèse de l'université Lyon 1, 2026, 475 répondants. Les effectifs sont petits : l'intervalle de confiance reste à demander à l'auteur.", falc:"475 personnes interrogées. C'est peu, le chiffre est fragile."},
   "s.rech.h":{etat:"Études, enquêtes et recherches", falc:"Les études et les livres"},
   "s.rech.p":{etat:"Ce que disent les études publiées, les enquêtes de journalistes et les travaux de sciences sociales sur la santé mentale des policiers. Chaque ligne donne ses limites : un échantillon de volontaires, un seul commissariat ou une étude étrangère ne disent pas la même chose qu'un recensement officiel.", falc:"Ce que disent les études, les livres et les chercheurs. Chaque ligne dit ce qu'elle ne montre pas."},
   "rech.a.h":{etat:"Études et rapports", falc:"Les études"},
@@ -281,41 +281,41 @@ const TXT={
   "s.sp.p":{etat:"Les 77 sources citées sous la forme S1 à S79, avec leur niveau : V institution, S source secondaire, A source faible, non datée ou à recouper.", falc:"Les sources, avec leur lien."},
   "s.res.h":{etat:"Les ressources de soutien de l'État", falc:"L'aide donnée par l'État"},
   "s.res.p":{etat:"Psychologues du service de soutien psychologique opérationnel (SSPO, créé en 1996), ratio d'agents par psychologue, crédits de prévention, sentinelles formées, dispositifs existants.", falc:"Combien de psychologues, combien d'argent, quelles aides existent."},
-  "ratio.h":{etat:"KPI-C2 : agents par psychologue", falc:"Combien de policiers pour un psychologue"},
-  "ratio.p":{etat:"Le même ratio change du simple au double selon que le dénominateur compte les 122 psychologues du SSPO ou les 310 psychologues de l'ensemble du ministère (valeur dérivée). Le périmètre du dénominateur est donc toujours indiqué.", falc:"Selon qui on compte, le résultat change beaucoup."},
-  "psy.h":{etat:"KPI-C1 : psychologues du SSPO", falc:"Les psychologues du SSPO"},
-  "disp.h":{etat:"KPI-C6 : dispositifs documentés", falc:"Les aides qui existent"},
+  "ratio.h":{etat:"Agents par psychologue", falc:"Combien de policiers pour un psychologue"},
+  "ratio.p":{etat:"Le même ratio change du simple au double selon que le dénominateur compte les 122 psychologues du SSPO ou les 310 psychologues de l'ensemble du ministère (valeur calculée). Le périmètre du dénominateur est donc toujours indiqué.", falc:"Selon qui on compte, le résultat change beaucoup."},
+  "psy.h":{etat:"Psychologues du SSPO", falc:"Les psychologues du SSPO"},
+  "disp.h":{etat:"Dispositifs documentés", falc:"Les aides qui existent"},
   "s.viol.h":{etat:"Violences et blessures subies en service", falc:"Les policiers agressés et blessés"},
   "s.viol.p":{etat:"Les fourchettes sont celles rapportées par un député (grade C) ; les blessés en service viennent d'une réponse ministérielle (B ou C selon lecture). Les seuils d'ITT diffèrent entre sources.", falc:"Des fourchettes dites par un député, et des chiffres du ministère."},
-  "agr.h":{etat:"KPI-D1 et D2 : agressions et ITT", falc:"Agressions et arrêts de travail"},
+  "agr.h":{etat:"Agressions et ITT", falc:"Agressions et arrêts de travail"},
   "agr.p":{etat:"Fourchettes basse et haute, 2020 et estimation 2025.", falc:"De combien à combien, en 2020 et en 2025."},
-  "bless.h":{etat:"KPI-D3 : blessés en service, police et gendarmerie", falc:"Blessés au travail"},
+  "bless.h":{etat:"Blessés en service, police et gendarmerie", falc:"Blessés au travail"},
   "bless.p":{etat:"2004 et 2019, réponse ministérielle.", falc:"En 2004 et en 2019."},
   "voir.donnees":{etat:"Voir les données", falc:"Voir le tableau"},
   "s.vc.h":{etat:"Violences sur les citoyens : ce qui est enregistré, et ce qu'on peut mesurer des violences d'agents", falc:"Les violences sur les habitants"},
-  "s.vc.p":{etat:"Deux mesures distinctes, qu'il ne faut pas additionner. D'un côté, les violences que la police et la gendarmerie enregistrent sur les personnes, tous auteurs confondus. De l'autre, les violences exercées par des agents sur des citoyens, mesurées par d'autres outils (fichier RBD et enquêtes de l'IGPN) dont la définition et l'exhaustivité diffèrent. Cette page n'emploie pas d'étiquette : elle compte des faits, des blessés et des enquêtes, avec la définition de chaque source.", falc:"Il y a deux sortes de chiffres.<br>Les violences notées par la police sur les habitants, quel que soit l'auteur.<br>Les violences faites par des policiers ou des gendarmes sur des habitants, comptées autrement.<br>On ne les additionne pas."},
+  "s.vc.p":{etat:"Deux mesures distinctes, qu'il ne faut pas additionner. D'un côté, les violences que la police et la gendarmerie enregistrent sur les personnes, quel que soit l'auteur. De l'autre, les violences exercées par des agents sur des citoyens, mesurées par d'autres outils (le fichier RBD et les enquêtes de l'IGPN), dont la définition et la couverture diffèrent. Cette page ne colle pas d'étiquette : elle compte des faits, des blessés et des enquêtes, avec la définition de chaque source.", falc:"Il y a deux sortes de chiffres.<br>Les violences notées par la police sur les habitants, quel que soit l'auteur.<br>Les violences faites par des policiers ou des gendarmes sur des habitants, comptées autrement.<br>On ne les additionne pas."},
   "vc.a.h":{etat:"Violences enregistrées en 2025, police et gendarmerie, tous auteurs", falc:"Les violences notées par la police en 2025"},
   "vc.a.p":{etat:"Variation des faits enregistrés entre 2024 et 2025. Ces chiffres comptent des faits enregistrés, pas des faits réels : de très nombreuses victimes ne portent pas plainte.", falc:"Plus ou moins de violences notées qu'en 2024.<br>Beaucoup de victimes ne vont pas voir la police."},
   "l.vc":{etat:"Ce qu'on voit : les violences physiques enregistrées augmentent de 5 % en 2025 et les violences sexuelles de 8 % ; les homicides sont stables, à 975 victimes.", falc:"À retenir : plus de violences notées en 2025.<br>Coups : 5 de plus sur 100. Violences sexuelles : 8 de plus sur 100.<br>Les morts : à peu près les mêmes, 975."},
   "vc.b.h":{etat:"Violences exercées par des agents sur des citoyens : ce qui est compté", falc:"Les violences faites par des agents : ce qu'on compte"},
   "vc.b.p":{etat:"Aucune de ces mesures ne couvre l'ensemble des violences alléguées. Le fichier RBD, par exemple, ne compte que les faits avec enquête judiciaire et incapacité totale de travail d'au moins neuf jours.", falc:"Aucun de ces chiffres ne compte tout.<br>Le fichier RBD compte seulement les cas graves avec enquête."},
-  "vc.b.src":{etat:"Réponses ministérielles, questions parlementaires, rapports de l'IGPN ; le lien vers chaque publication n'est pas encore affiché.", falc:"Chiffres du ministère, de députés et de l'inspection de la police."},
+  "vc.b.src":{etat:"Réponses ministérielles, questions parlementaires, rapports de l'IGPN. Les numéros de source renvoient à l'index en bas de page.", falc:"Chiffres du ministère, de députés et de l'inspection de la police."},
   "vc.n.h":{etat:"Violences numériques : un démantèlement récent", falc:"Violences sur internet : une affaire récente"},
   "vc.n.p":{etat:"Un exemple de violence sexuelle en ligne traitée par la justice et la gendarmerie, le 7 octobre 2026. Les faits sont décrits tels que publiés par la Gendarmerie nationale.", falc:"Une affaire récente de photos intimes volées et vendues sur internet."},
   "vc.c.h":{etat:"Ce que ces chiffres ne permettent pas", falc:"Ce que ces chiffres ne disent pas"},
   "s.manif.h":{etat:"Manifestations : blessés des deux côtés, définitions différentes", falc:"Les manifestations : des blessés des deux côtés"},
   "s.manif.p":{etat:"Policiers blessés et manifestants blessés sont présentés côte à côte, chacun avec la définition de celui qui compte, sans qualification de responsabilité. Le fichier RBD de l'IGPN ne compte que les faits avec enquête judiciaire et ITT d'au moins 9 jours, toutes opérations confondues. Pour les événements du 17 octobre 2026, voir <a href='17-octobre-2026.html'>la page dédiée</a>.", falc:"On montre les blessés des deux côtés, sans dire qui a tort.<br>Chaque chiffre est compté différemment."},
-  "manif.src":{etat:"Réponses ministérielles, questions parlementaires, rapports de l'IGPN et sources secondaires ; le lien vers chaque publication n'est pas encore affiché.", falc:"Chiffres du ministère, de députés, de l'inspection de la police et de journaux."},
+  "manif.src":{etat:"Réponses ministérielles, questions parlementaires, rapports de l'IGPN et sources secondaires. Les numéros de source renvoient à l'index en bas de page.", falc:"Chiffres du ministère, de députés, de l'inspection de la police et de journaux."},
   "s.data.h":{etat:"Registre des jeux de données : ce qui existe, ce qui manque", falc:"Les données qui existent, et celles qui manquent"},
-  "s.data.p":{etat:"Constat : aucun jeu dédié aux suicides de policiers ni aux blessés en manifestation sur data.gouv. Même logique que les « trous de mesure » de la page Fraude sociale.", falc:"Sur data.gouv, il n'y a pas de fichier sur les suicides de policiers ni sur les blessés en manifestation."},
+  "s.data.p":{etat:"Constat : aucun jeu de données sur data.gouv ne porte sur les suicides de policiers ni sur les blessés en manifestation. Même logique que les « trous de mesure » de la page Fraude sociale.", falc:"Sur data.gouv, il n'y a pas de fichier sur les suicides de policiers ni sur les blessés en manifestation."},
   "s.verif.h":{etat:"Douze points à vérifier", falc:"Douze choses à vérifier"},
-  "s.verif.p":{etat:"La liste des douze points ouverts, cochable. L'état des cases reste dans votre navigateur seulement : c'est un pense-bête, pas une base partagée.", falc:"Une liste à cocher. Les cases restent dans votre navigateur."},
+  "s.verif.p":{etat:"La liste des douze points encore ouverts, que vous pouvez cocher. L'état des cases reste dans votre navigateur : c'est un pense-bête, pas une base partagée.", falc:"Une liste à cocher. Les cases restent dans votre navigateur."},
   "verif.reset":{etat:"Tout décocher", falc:"Tout effacer"},
   "s.liens.h":{etat:"Ailleurs dans Politik", falc:"Les autres pages"},
   "s.liens.p":{etat:"Les mêmes outils de lecture servent sur toutes les pages : trous de mesure, contrepoids, périmètres, niveau de confiance.", falc:"Les autres pages du site parlent des mêmes choses."},
   "s.regles.h":{etat:"Règles éthiques et de restitution", falc:"Nos règles"},
   "s.regles.p":{etat:"Ces règles s'appliquent à toute la page.", falc:"Les règles qu'on suit sur cette page."},
-  "l.a1":{etat:"Ce qu'on voit : 59 en 2019, 27 en 2024 dans la police nationale, soit moitié moins ; les autres années changent de périmètre ou de source, donc de hauteur.", falc:"À retenir : 59 suicides en 2019, 27 en 2024. C'est deux fois moins.<br>Les autres années ne comptent pas les mêmes personnes."},
+  "l.a1":{etat:"Ce qu'on voit : 59 en 2019, 27 en 2024 dans la police nationale, soit un peu moins de la moitié ; les autres années changent de périmètre ou de source, donc de hauteur.", falc:"À retenir : 59 suicides en 2019, 27 en 2024. C'est deux fois moins.<br>Les autres années ne comptent pas les mêmes personnes."},
   "l.gn":{etat:"Ce qu'on voit : 21 suicides de gendarmes en 2019, 26 en 2024, sans baisse visible ; les périmètres de la police et de la gendarmerie ne sont pas strictement identiques.", falc:"À retenir : chez les gendarmes, 21 en 2019 et 26 en 2024. Pas de baisse.<br>On ne compte pas tout à fait comme pour la police."},
   "l.taux":{etat:"Ce qu'on voit : le taux brut dépasse le double de celui de la population ; après correction d'âge et de sexe, selon d'autres sources, le surrisque est d'un tiers.", falc:"À retenir : les policiers se suicident plus que les autres. Une fois corrigé, c'est un tiers de plus."},
   "l.tspt":{etat:"Ce qu'on voit : le stress post-traumatique est sept fois plus fréquent après une exposition directe que chez les non exposés, sur un petit échantillon.", falc:"À retenir : après un événement grave, le stress est sept fois plus fréquent. Peu de personnes interrogées."},
@@ -323,7 +323,7 @@ const TXT={
   "l.agr":{etat:"Ce qu'on voit : les agressions augmentent d'environ un cinquième et les arrêts de travail de plus des deux tiers entre 2020 et 2025, selon des fourchettes non officielles.", falc:"À retenir : plus d'agressions et plus d'arrêts de travail en 2025 qu'en 2020. Chiffres à vérifier."},
   "l.bless":{etat:"Ce qu'on voit : les blessés en service ont presque doublé entre 2004 et 2019.", falc:"À retenir : presque deux fois plus de blessés en 2019 qu'en 2004."},
   "l.manif":{etat:"Ce qu'on voit : chaque ligne compte autrement ; un total unique n'existe pas, d'un côté comme de l'autre.", falc:"À retenir : chaque chiffre est compté à sa façon. On ne peut pas les additionner."},
-  footer:{etat:"Politik · page « Forces de l'ordre » · valeurs reprises de réponses ministérielles, rapports parlementaires, études de recherche, syndicats et presse ; liens vers les publications d'origine à venir.", falc:"Politik · page « Forces de l'ordre ».<br>Les chiffres viennent du ministère, de rapports, d'études et de journaux."}
+  footer:{etat:"Politik · page Police et gendarmerie · valeurs reprises de réponses ministérielles, de rapports parlementaires, d'études, de syndicats et de la presse. Chaque source figure dans l'index en bas de page.", falc:"Politik · page « Forces de l'ordre ».<br>Les chiffres viennent du ministère, de rapports, d'études et de journaux."}
 };
 
 const QCM={id:"forces",qs:[
@@ -337,17 +337,17 @@ const TAUX={
 };
 let taux="brut", ratioMode="sspo";
 const SANTE=[
-  {k:{etat:"KPI-B1 · Détresse psychologique (K6)",falc:"En détresse"},v:"39 %",u:{etat:"6 246 répondants, baromètre MGP, vers 2021 (40 % dans la presse)",falc:"6 246 personnes interrogées par leur mutuelle"},g:"C",s:"2, 3"},
-  {k:{etat:"KPI-B2 · Pensées suicidaires, personnelles ou entendues chez des collègues",falc:"Ont pensé au suicide, ou un collègue"},v:"24 %",u:{etat:"46 % si ambiance pas du tout conviviale, 32 % si tensions avec le public",falc:"46 % quand l'ambiance est mauvaise"},g:"C",s:"2"},
-  {k:{etat:"KPI-B3 · Dépression",falc:"Dépression"},v:"11,8 %",u:{etat:"thèse Lyon 1, 2026",falc:"étude de 2026"},g:"B",s:"10"},
-  {k:{etat:"KPI-B6 · Manque d'accomplissement personnel",falc:"Ne se sentent pas utiles"},v:"62,2 %",u:{etat:"CNRS et Alliance, 2011-2012, environ 13 000 répondants ; 80 % fiers du métier",falc:"enquête de 2011, 13 000 personnes ; 80 % sont fiers de leur métier"},g:"B",s:"15",old:true},
-  {k:{etat:"KPI-B5 · Recours aux soins",falc:"Vont voir un médecin"},v:{etat:"jugé insuffisant",falc:"pas assez"},u:{etat:"aucune valeur chiffrée relevée : à renseigner dès publication",falc:"pas de chiffre pour l'instant"},g:"B",s:"10"},
+  {k:{etat:"Détresse psychologique (K6)",falc:"En détresse"},v:"39 %",u:{etat:"6 246 répondants, baromètre MGP, vers 2021 (40 % dans la presse)",falc:"6 246 personnes interrogées par leur mutuelle"},g:"C",s:"2, 3"},
+  {k:{etat:"Pensées suicidaires, personnelles ou entendues chez des collègues",falc:"Ont pensé au suicide, ou un collègue"},v:"24 %",u:{etat:"46 % si ambiance pas du tout conviviale, 32 % si tensions avec le public",falc:"46 % quand l'ambiance est mauvaise"},g:"C",s:"2"},
+  {k:{etat:"Dépression",falc:"Dépression"},v:"11,8 %",u:{etat:"thèse Lyon 1, 2026",falc:"étude de 2026"},g:"B",s:"10"},
+  {k:{etat:"Manque d'accomplissement personnel",falc:"Ne se sentent pas utiles"},v:"62,2 %",u:{etat:"CNRS et Alliance, 2011-2012, environ 13 000 répondants ; 80 % fiers du métier",falc:"enquête de 2011, 13 000 personnes ; 80 % sont fiers de leur métier"},g:"B",s:"15",old:true},
+  {k:{etat:"Recours aux soins",falc:"Vont voir un médecin"},v:{etat:"jugé insuffisant",falc:"pas assez"},u:{etat:"aucune valeur chiffrée relevée : à renseigner dès publication",falc:"pas de chiffre pour l'instant"},g:"B",s:"10"},
   {k:{etat:"Repère · population générale",falc:"Pour comparer"},v:{etat:"SNDS, DREES",falc:"Chiffres de tout le monde"},u:{etat:"gestes auto-infligés, publié mais non spécifique aux policiers (DS-11)",falc:"existe, mais pas pour les policiers"},g:"B",s:"73"}
 ];
 const RES=[
-  {k:{etat:"KPI-C3 · Postes planifiés",falc:"Postes prévus"},v:"11",u:{etat:"postes (8 ETP) jusqu'en 2028, soit 2 ETP par an ; cible parlementaire 400",falc:"postes d'ici 2028 ; des députés en demandent 400"},g:"B",s:"49, 51"},
-  {k:{etat:"KPI-C4 · Crédits de prévention du suicide",falc:"Argent pour la prévention"},v:{etat:"2,89 → 1,6 M€",falc:"2,9 puis 1,6 millions"},u:{etat:"2024 vers 2025, allégation d'amendement : grade C tant qu'aucun document budgétaire n'est lu",falc:"dit par des députés, pas encore vérifié dans le budget"},g:"C",s:"51"},
-  {k:{etat:"KPI-C5 · Sentinelles formées",falc:"Collègues formés à repérer"},v:"2 537",u:{etat:"agents formés au repérage",falc:"policiers formés"},g:"C",s:"51"}
+  {k:{etat:"Postes planifiés",falc:"Postes prévus"},v:"11",u:{etat:"postes (8 ETP) jusqu'en 2028, soit 2 ETP par an ; cible parlementaire 400",falc:"postes d'ici 2028 ; des députés en demandent 400"},g:"B",s:"49, 51"},
+  {k:{etat:"Crédits de prévention du suicide",falc:"Argent pour la prévention"},v:{etat:"2,89 → 1,6 M€",falc:"2,9 puis 1,6 millions"},u:{etat:"2024 vers 2025, allégation d'amendement : grade C tant qu'aucun document budgétaire n'est lu",falc:"dit par des députés, pas encore vérifié dans le budget"},g:"C",s:"51"},
+  {k:{etat:"Sentinelles formées",falc:"Collègues formés à repérer"},v:"2 537",u:{etat:"agents formés au repérage",falc:"policiers formés"},g:"C",s:"51"}
 ];
 const DISP=[
   [{etat:"SSPO (service de soutien psychologique opérationnel)",falc:"Service de psychologues de la police"},{etat:"existe depuis 1996",falc:"existe"},"B","13"],
@@ -508,10 +508,10 @@ function renderBase(){
   document.querySelectorAll("[data-t]").forEach(el=>{ el.innerHTML=pick(TXT[el.dataset.t]); });
   $("#switch").innerHTML=PAGE_LEVELS.map(k=>`<button type="button" aria-pressed="${k===L}" data-level="${k}">${LEVEL_NAMES[k]}</button>`).join("");
   const KPIS=[
-    {kind:{etat:"KPI-A1 · Suicides, police nationale, 2024",falc:"Suicides de policiers en 2024"},v:"27",u:{etat:"agents ; 59 en 2019",falc:"personnes. En 2019 : 59"},g:"B",s:"S4, S5"},
-    {kind:{etat:"KPI-C1 · Psychologues du SSPO",falc:"Psychologues de la police"},v:"122",u:{etat:"soit 1 pour 1 200 agents",falc:"pour 1 200 policiers chacun"},g:"B",s:"S49"},
-    {kind:{etat:"KPI-D3 · Blessés en service, 2019",falc:"Blessés au travail en 2019"},v:"7 399",u:{etat:"police et gendarmerie ; 3 842 en 2004",falc:"policiers et gendarmes"},g:"B",s:"S59"},
-    {kind:{etat:"KPI-E3 · RBD, particuliers blessés / décédés, 2021",falc:"Personnes blessées ou mortes par la police, 2021"},v:"79 / 37",u:{etat:"enquête judiciaire et ITT ≥ 9 jours",falc:"cas graves avec enquête seulement"},g:"B",s:"S66"}
+    {kind:{etat:"Suicides, police nationale, 2024",falc:"Suicides de policiers en 2024"},v:"27",u:{etat:"agents ; 59 en 2019",falc:"personnes. En 2019 : 59"},g:"B",s:"S4, S5"},
+    {kind:{etat:"Psychologues du SSPO",falc:"Psychologues de la police"},v:"122",u:{etat:"soit 1 pour 1 200 agents",falc:"pour 1 200 policiers chacun"},g:"B",s:"S49"},
+    {kind:{etat:"Blessés en service, 2019",falc:"Blessés au travail en 2019"},v:"7 399",u:{etat:"police et gendarmerie ; 3 842 en 2004",falc:"policiers et gendarmes"},g:"B",s:"S59"},
+    {kind:{etat:"RBD, particuliers blessés / décédés, 2021",falc:"Personnes blessées ou mortes par la police, 2021"},v:"79 / 37",u:{etat:"enquête judiciaire et ITT ≥ 9 jours",falc:"cas graves avec enquête seulement"},g:"B",s:"S66"}
   ];
   $("#kpis").innerHTML=KPIS.map(k=>`<div class="tile"><span class="kind">${pick(k.kind)}</span><span class="val num">${k.v}<small>${pick(k.u)}</small></span><span class="src">${lvl(k.g)} ${typ(k.g)}</span></div>`).join("");
   Qcm.draw("#qcm-forces",QCM,L);

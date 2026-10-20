@@ -2,13 +2,13 @@
    Sans JavaScript, le menu complet reste affiché (dégradation propre). */
 (function () {
   var PAGES = {
-    "accueil.html": ["Accueil", "Se repérer"],
-    "gouvernement.html": ["Le Gouvernement", "L'État"], "cybersecurite.html": ["Cybersécurité de l'État", "L'État"],
-    "presidentielle-2027.html": ["Présidentielle 2027", "L'État"],
-    "index.html": ["Fraude sociale", "Argent et médias"], "medias.html": ["Qui possède les médias", "Argent et médias"],
-    "forces.html": ["Forces de l'ordre", "Sécurité"], "17-octobre-2026.html": ["Le 17 octobre 2026", "Sécurité"],
-    "secteurs.html": ["Comment va la France", "Comprendre"], "benchmark-usa.html": ["Benchmark États-Unis", "Comprendre"], "donnees.html": ["Sources et données", "Se repérer"]
+    "accueil.html": ["Accueil", "Se repérer"], "donnees.html": ["Sources et données", "Se repérer"], "benchmark-usa.html": ["Benchmark États-Unis", "Se repérer"],
+    "gouvernement.html": ["Les 21 ministères", "Le Gouvernement"], "presidentielle-2027.html": ["Présidentielle 2027", "Le Gouvernement"],
+    "index.html": ["Fraude sociale", "États des lieux"], "forces.html": ["Police et gendarmerie", "États des lieux"],
+    "cybersecurite.html": ["Cybersécurité de l'État", "États des lieux"], "secteurs.html": ["Comment va la France", "États des lieux"],
+    "medias.html": ["Qui possède les médias", "Dossiers"], "17-octobre-2026.html": ["Le 17 octobre 2026", "Dossiers"]
   };
+
   var CSS = [
     ".nav-plus{position:relative}",
     ".nav-plus>button{font:inherit;font-size:.84rem;padding:6px 10px;border-radius:6px;border:0;background:transparent;color:var(--ink-2);cursor:pointer;white-space:nowrap}",
@@ -57,5 +57,8 @@
     nav.innerHTML = "<h2>Plan du site</h2><div class=\"plan-grid\">" + Object.keys(groups).map(function (g) { return "<div><h3>" + esc(g) + "</h3><ul>" + groups[g].map(function (k) { return '<li><a href="' + k + '"' + (k === here ? ' aria-current="page"' : "") + ">" + esc(PAGES[k][0]) + "</a></li>"; }).join("") + "</ul></div>"; }).join("") + "</div><p class=\"mesure-note\">Mesure d'audience : Cloudflare Web Analytics, sans cookie et sans suivi d'une personne d'une page à l'autre. Désactivée si votre navigateur envoie « Ne pas suivre ».</p>";
     f.parentNode.insertBefore(nav, f);
   }
+  function fixTables() { [].forEach.call(document.querySelectorAll("thead th:not([scope])"), function (th) { th.setAttribute("scope", "col"); }); }
+  function watchTables() { fixTables(); var tm; new MutationObserver(function () { clearTimeout(tm); tm = setTimeout(fixTables, 60); }).observe(document.body, { childList: true, subtree: true }); }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", watchTables); else watchTables();
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
 })();

@@ -121,6 +121,13 @@ try {
   for (const [page, list] of Object.entries(gj.pages)) if (page !== "simple.html" && !list.length) problems.push(`page ${page} sans ministère rattaché`);
   const pagesIdx = ["index.html", "simple.html", "medias.html", "forces.html", "17-octobre-2026.html", "cybersecurite.html", "presidentielle-2027.html", "secteurs.html", "donnees.html", "benchmark-usa.html"];
   for (const pg of pagesIdx) { const h = readFileSync(join(root, "dashboard", pg), "utf8"); for (const need of ["entete.js", "gouvernement.js", "visuels.js", 'href="gouvernement.html"']) if (!h.includes(need)) problems.push(`${pg} : ${need} absent`); if (!gj.pages[pg]) problems.push(`${pg} : aucun ministère défini dans gouvernement.json`); }
+  const frc = readFileSync(join(root, "dashboard/forces.html"), "utf8");
+  for (const id of ["tbl-etudes", "tbl-enquetes", "tbl-sciences", "entree-cards", "tbl-crit", "tbl-sp", "sp-filter"]) if (!frc.includes(`id="${id}"`)) problems.push(`conteneur manquant dans forces.html : #${id}`);
+  const spj = JSON.parse(readFileSync(join(root, "data/sources-police.json"), "utf8")).sources;
+  const spIds = new Set(spj.map(s => s.id.slice(1)));
+  const refs = new Set(); for (const m of frc.matchAll(/(?:,|\{)\s*(?:s|src):"([0-9, ]+)"|"([0-9]{1,2}(?:, [0-9]{1,2})*)"\]/g)) for (const n of (m[1] || m[2]).split(",")) refs.add(n.trim());
+  const orphelines = [...refs].filter(n => n && !spIds.has(n)); if (orphelines.length) problems.push("forces.html : références S# absentes de l'index : " + orphelines.join(", ")); else ok.push(`forces.html : ${refs.size} références S# toutes présentes dans l'index (${spj.length} sources)`);
+  if (!frc.includes(`const SRCP = [["1",`)) problems.push("forces.html : index SRCP vide, relancer scripts/inject-sources-police.py");
   const acc = readFileSync(join(root, "dashboard/accueil.html"), "utf8");
   try { new Function(acc.match(/<script>([\s\S]*?)<\/script>/)[1]); ok.push("accueil.html : syntaxe du script valide"); } catch (e) { problems.push("accueil.html : " + e.message); }
   for (const id of ["portes", "actu", "roles", "methode"]) if (!acc.includes(`id="${id}"`)) problems.push(`conteneur manquant dans accueil.html : #${id}`);

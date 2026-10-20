@@ -1,0 +1,622 @@
+{
+ "lu_le": "2026-10-20",
+ "origine": "index des sources de la synthèse du 20 octobre 2026",
+ "sources": [
+  {
+   "id": "S1",
+   "titre": "Perception de la psychiatrie par 191 policiers parisiens (EM-consulte)",
+   "url": "https://www.em-consulte.com/article/1599303/perception-de-differentes-dimensions-de-la-psychia",
+   "categorie": "R",
+   "niveau": "S",
+   "nature": "recherche publiée"
+  },
+  {
+   "id": "S2",
+   "titre": "Baromètre santé MGP de la police nationale",
+   "url": "https://www.mgp.fr/home/Nos-actualites-MGP/contenu/bloc-liste-des-actualites/actualite-mgp-barom%C3%A8tresant%C3%A9-MGP.html",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S3",
+   "titre": "Mayotte Hebdo, « Un quart des policiers confrontés à des idées suicidaires »",
+   "url": "https://www.mayottehebdo.com/actualite/societe/quart-policiers-confrontes-idees-suicidaires-mayotte-pas-exception",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S4",
+   "titre": "MFP, « La gendarmerie face au tabou du suicide »",
+   "url": "https://www.mfp.fr/presse/la-gendarmerie-face-au-tabou-du-suicide/",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S5",
+   "titre": "L'Essor, « Suicides : nouvelle série noire de décès dans les rangs de la Gendarmerie »",
+   "url": "https://lessor.org/vie-des-personnels/suicides-nouvelle-serie-noire-de-deces-dans-les-rangs-de-la-gendarmerie/",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S6",
+   "titre": "Europe 1, Sébastien Roché sur les suicides de policiers",
+   "url": "https://www.europe1.fr/societe/suicide-de-policiers-derriere-le-malaise-des-causes-structurelles-3492488",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S7",
+   "titre": "Infos Média Nantes, suicide au commissariat Waldeck-Rousseau",
+   "url": "https://infos-media-nantes.fr/suicide-policier-nantes-commissariat-waldeck-rousseau/",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S8",
+   "titre": "Profession Gendarme, « Nouveau drame dans la police » (décompte 2026 non officiel)",
+   "url": "https://www.profession-gendarme.com/nouveau-drame-dans-la-police/",
+   "categorie": "X",
+   "niveau": "A",
+   "nature": "source faible : non datée, privée ou à recouper"
+  },
+  {
+   "id": "S9",
+   "titre": "Slate, traumas des enquêteurs (Université de Birmingham)",
+   "url": "https://www.slate.fr/story/247880/viols-assassinats-attentats-vaste-etude-revele-ampleur-traumas-enqueteurs",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S10",
+   "titre": "Thèse « La santé mentale des policiers en France » (Lyon 1, 2026)",
+   "url": "https://theses.fr/2026LYO10009",
+   "categorie": "R",
+   "niveau": "S",
+   "nature": "recherche publiée"
+  },
+  {
+   "id": "S11",
+   "titre": "Suicide dans la Police nationale française : trajectoires de vie et facteurs associés (ScienceDirect)",
+   "url": "https://www.sciencedirect.com/science/article/abs/pii/S0013700615001347",
+   "categorie": "R",
+   "niveau": "S",
+   "nature": "recherche publiée"
+  },
+  {
+   "id": "S12",
+   "titre": "Sénat, rapport « Vaincre le malaise des forces de sécurité intérieure », chapitre sur les chiffres",
+   "url": "https://www.senat.fr/rap/r17-612-1/r17-612-13.html",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S13",
+   "titre": "Sénat, même rapport, version monographique (SSPO, propositions)",
+   "url": "https://www.senat.fr/rap/r17-612-1/r17-612-1_mono.html",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S14",
+   "titre": "Sénat, même rapport, tome 2 (auditions)",
+   "url": "https://www.senat.fr/rap/r17-612-2/r17-612-2.html",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S15",
+   "titre": "franceinfo, « Les policiers français à deux doigts du burn-out » (CNRS et Alliance)",
+   "url": "https://www.franceinfo.fr/societe/justice/les-policiers-francais-a-deux-doigts-du-burn-out_1644425.html",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S16",
+   "titre": "EPJT, « La police va mal »",
+   "url": "https://magazin.epjt.fr/la-police-va-mal",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S17",
+   "titre": "Nadège Guidou, « Malaise dans la police » (notice)",
+   "url": "https://bibliotheques-numeriques.defense.gouv.fr/impression/document/721782fd-1689-49ae-b0c5-306c9ec69b2b",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S18",
+   "titre": "Marc La Mola et Laure Garcia, livre (présentation)",
+   "url": "https://soclifemag.wixsite.com/francemedia/single-post/sortie-litteraire-je-suis-flic-et-ce-soir-je-vais-me-suicider",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S19",
+   "titre": "Europe 1, interview de Valentin Gendrot",
+   "url": "https://www.europe1.fr/societe/infiltre-dans-un-commissariat-un-journaliste-raconte-dans-la-police-on-ne-balance-pas-3989574",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S20",
+   "titre": "Europe 1, saisine du procureur et de l'IGPN",
+   "url": "https://www.europe1.fr/node/167934",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S21",
+   "titre": "Tendance Ouest (dépêche AFP), deux ans d'infiltration dans la police",
+   "url": "https://www.tendanceouest.com/actualite-369808-tabassages-et-manque-de-moyens-un-journaliste-raconte-deux-ans-d-infiltration-dans-la-police",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S22",
+   "titre": "Defense-zone, présentation de « Flic »",
+   "url": "https://defense-zone.com/a/p/products/flic-un-journaliste-a-infiltre-la-police-valentin-gendrot",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S23",
+   "titre": "Slate, bonnes feuilles de la BD « Flic »",
+   "url": "https://www.slate.fr/grand-format/bonnes-feuilles-histoire-vraie-flic-infiltre-police-gouttes-or-bd-valentin-gendrot-violences-policieres-bavures-217344",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S24",
+   "titre": "Critiques libres, « Flic »",
+   "url": "https://www.critiqueslibres.com/livre/58984-flic-un-journaliste-a-infiltre-la-police-gendrot-valentin",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S25",
+   "titre": "RIMHE 2014, émotions des policiers d'élite (Cairn)",
+   "url": "https://www.cairn.info/revue-rimhe-2014-4-page-105.htm",
+   "categorie": "R",
+   "niveau": "S",
+   "nature": "recherche publiée"
+  },
+  {
+   "id": "S26",
+   "titre": "Le Travail Humain 2011, santé psychique dans la police nationale (Cairn)",
+   "url": "https://shs.cairn.info/revue-le-travail-humain-2011-4-page-365?lang=fr",
+   "categorie": "R",
+   "niveau": "S",
+   "nature": "recherche publiée"
+  },
+  {
+   "id": "S27",
+   "titre": "Gestion et Management Public 2024, Police Judiciaire (Cairn)",
+   "url": "https://shs.cairn.info/revue-gestion-et-management-public-2024-1-page-29?lang=fr",
+   "categorie": "R",
+   "niveau": "S",
+   "nature": "recherche publiée"
+  },
+  {
+   "id": "S28",
+   "titre": "Management & Sciences Sociales, « ménagement des Ressources Humaines » (Cairn)",
+   "url": "https://shs.cairn.info/article/MSS_022_0111?lang=fr",
+   "categorie": "R",
+   "niveau": "S",
+   "nature": "recherche publiée"
+  },
+  {
+   "id": "S29",
+   "titre": "Sociétés contemporaines 2021, « Sous la peau des policiers » (Cairn)",
+   "url": "https://shs.cairn.info/revue-societes-contemporaines-2021-2-page-101",
+   "categorie": "R",
+   "niveau": "S",
+   "nature": "recherche publiée"
+  },
+  {
+   "id": "S30",
+   "titre": "Sociétés contemporaines 2008, Élodie Lemaire (Cairn)",
+   "url": "https://www.cairn.info/revue-societes-contemporaines-2008-4-page-59.htm",
+   "categorie": "R",
+   "niveau": "S",
+   "nature": "recherche publiée"
+  },
+  {
+   "id": "S31",
+   "titre": "Politix 2018, Darley et Gauthier (Cairn)",
+   "url": "https://shs.cairn.info/revue-politix-2018-4-page-59?lang=fr",
+   "categorie": "R",
+   "niveau": "S",
+   "nature": "recherche publiée"
+  },
+  {
+   "id": "S32",
+   "titre": "Déviance et Société 2011, intégration du gardien de la paix (Cairn)",
+   "url": "https://www.cairn.info/revue-deviance-et-societe-2011-3-page-361.htm",
+   "categorie": "R",
+   "niveau": "S",
+   "nature": "recherche publiée"
+  },
+  {
+   "id": "S33",
+   "titre": "Déviance et Société 2010, « Du juste usage des émotions » (Cairn)",
+   "url": "https://shs.cairn.info/revue-deviance-et-societe-2010-2-page-253?lang=fr",
+   "categorie": "R",
+   "niveau": "S",
+   "nature": "recherche publiée"
+  },
+  {
+   "id": "S34",
+   "titre": "Coordination du SSPO à la préfecture de police de Paris (Cairn)",
+   "url": "https://shs.cairn.info/article/PEP_274_0014?lang=fr",
+   "categorie": "R",
+   "niveau": "S",
+   "nature": "recherche publiée"
+  },
+  {
+   "id": "S35",
+   "titre": "François Dieu, « Pour une sociologie de la police » (Lavoisier)",
+   "url": "https://e.lavoisier.fr/produit/885576/9782336591018/pour-une-sociologie-de-la-police",
+   "categorie": "R",
+   "niveau": "S",
+   "nature": "recherche publiée"
+  },
+  {
+   "id": "S36",
+   "titre": "PUQ, « La santé psychologique du personnel de la sécurité publique »",
+   "url": "https://extranet.puq.ca/media/produits/documents/4413_D6467-FP.pdf",
+   "categorie": "R",
+   "niveau": "S",
+   "nature": "recherche publiée"
+  },
+  {
+   "id": "S37",
+   "titre": "Police nationale, fiche métier BAC",
+   "url": "https://www.police-nationale.interieur.gouv.fr/nous-rejoindre/nos-metiers/policier-en-brigade-anti-criminalite-bac",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S38",
+   "titre": "Police nationale, liste des métiers",
+   "url": "https://www.police-nationale.interieur.gouv.fr/nous-rejoindre/nos-metiers",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S39",
+   "titre": "Police nationale, gardien de la paix, concours externe",
+   "url": "https://www.police-nationale.interieur.gouv.fr/nous-rejoindre/nos-voies-dacces/devenir-policier/gpx/ext",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S40",
+   "titre": "Police nationale, gardien de la paix, second concours interne",
+   "url": "https://www.police-nationale.interieur.gouv.fr/nous-rejoindre/nos-voies-dacces/devenir-policier/gpx/2int",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S41",
+   "titre": "Légifrance, arrêté du 8 mars 2022 (concours de gardien de la paix)",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000045381885",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S42",
+   "titre": "Légifrance, arrêté du 18 mars 2024",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000049295072",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S43",
+   "titre": "Légifrance, arrêté du 25 octobre 2005 (officiers)",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFSCTA000000898519",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S44",
+   "titre": "Légifrance, arrêté du 4 septembre 2026 (nombre de postes)",
+   "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054803708",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S45",
+   "titre": "Travail-Industrie, préparation au concours (source privée)",
+   "url": "https://travail-industrie.com/nos-formations/formation-preparer-concours-gardien-de-la-paix/module/3/chapitre/1",
+   "categorie": "X",
+   "niveau": "A",
+   "nature": "source faible : non datée, privée ou à recouper"
+  },
+  {
+   "id": "S46",
+   "titre": "Travail-Industrie, planning de la session 2026 (source privée)",
+   "url": "https://travail-industrie.com/nos-formations/formation-preparer-concours-gardien-de-la-paix/module/4/chapitre/2",
+   "categorie": "X",
+   "niveau": "A",
+   "nature": "source faible : non datée, privée ou à recouper"
+  },
+  {
+   "id": "S47",
+   "titre": "Université de Strasbourg, concours externe de commissaire (non daté)",
+   "url": "https://droit.unistra.fr/websites/droit/iej/prepa-concours/ConcoursExterneCommissaire.pdf",
+   "categorie": "X",
+   "niveau": "A",
+   "nature": "source faible : non datée, privée ou à recouper"
+  },
+  {
+   "id": "S48",
+   "titre": "Assemblée nationale, recrutement des adjoints de sécurité (11e législature)",
+   "url": "https://questions.assemblee-nationale.fr/dyn/11/questions/QANR5L11QE34599.pdf",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S49",
+   "titre": "AEF, 30 ans du SSPO",
+   "url": "https://www.aefinfo.fr/depeche/734634-en-30-ans-le-service-de-soutien-psychologique-de-la-police-sest-etoffe-et-structure-12",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S50",
+   "titre": "Assemblée nationale, rapport budgétaire (psychologues)",
+   "url": "https://www.assemblee-nationale.fr/dyn/docs/RAPPANR5L17B0468-tIII-a41.raw",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S51",
+   "titre": "Sénat, amendement PLF 2026 n° II-1614",
+   "url": "https://www.senat.fr/enseance/2025-2026/138/Amdt_II-1614.html",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S52",
+   "titre": "Assemblée nationale, question 975 (17e législature)",
+   "url": "https://www.assemblee-nationale.fr/dyn/17/questions/QANR5L17QE975.pdf",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S53",
+   "titre": "Assemblée nationale, question 31156 (15e législature, suicides 2019)",
+   "url": "https://questions.assemblee-nationale.fr/dyn/15/questions/QANR5L15QE31156.pdf",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S54",
+   "titre": "Assemblée nationale, amendement 1175 de 2022",
+   "url": "https://www.assemblee-nationale.fr/dyn/16/amendements/0436/AN/1175.pdf",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S55",
+   "titre": "ICI (France Bleu), numéro d'écoute (2019)",
+   "url": "https://www.ici.fr/infos/faits-divers-justice/suicides-dans-la-police-le-ministere-de-l-interieur-lance-un-nouveau-numero-d-ecoute-1568034552",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S56",
+   "titre": "France Police (syndicat), juillet 2025",
+   "url": "https://france-police.org/2025/07/09/juillet-2025-douzieme-suicide-dans-les-rangs-de-la-police/",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S57",
+   "titre": "LCP, commission d'enquête sur la santé mentale",
+   "url": "https://lcp.fr/actualites/sante-mentale-une-commission-d-enquete-alerte-sur-l-etat-alarmant-de-la-situation-423614",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S58",
+   "titre": "Assemblée nationale, question 15455 (agressions contre les forces de l'ordre)",
+   "url": "https://questions.assemblee-nationale.fr/dyn/17/questions/QANR5L17QE15455",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S59",
+   "titre": "Assemblée nationale, question 5809 (blessés en service)",
+   "url": "https://www.assemblee-nationale.fr/dyn/17/questions/QANR5L17QE5809.pdf",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S60",
+   "titre": "Sénat, question sur la police municipale (2018)",
+   "url": "https://www.senat.fr/questions/base/2018/qSEQ180303487.html",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S61",
+   "titre": "Présentation du rapport social unique du ministère de l'Intérieur (PDF hébergé par Blast)",
+   "url": "https://static.blast-info.fr/attachments/stories/2022/x-1rpXimT_SkjnhddADZMw/attachment-GAy9R19SR2iwIsecG9EEqA.pdf",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S62",
+   "titre": "Assemblée nationale, question 19743 (méthode de recensement des blessés)",
+   "url": "https://www.assemblee-nationale.fr/dyn/15/questions/QANR5L15QE19743.pdf",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S63",
+   "titre": "Assemblée nationale, question 16069 (blessés, gilets jaunes)",
+   "url": "https://www.assemblee-nationale.fr/dyn/15/questions/QANR5L15QE16069.pdf",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S64",
+   "titre": "Assemblée nationale, question au gouvernement 701 (2023)",
+   "url": "https://www.assemblee-nationale.fr/dyn/16/questions/QANR5L16QG701.pdf",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S65",
+   "titre": "Assemblée nationale, question 10933 (Sainte-Soline)",
+   "url": "https://questions.assemblee-nationale.fr/dyn/17/questions/QANR5L17QE10933.pdf",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S66",
+   "titre": "ACAT, rapport d'activité de l'IGPN",
+   "url": "https://www.acatfrance.fr/rapport-dactivite-de-ligpn-entre-hausse-de-lusage-des-armes-et-des-condamnations-de-policiers/",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S67",
+   "titre": "Tunisie Numérique, relais d'une enquête Reuters (manifestations lycéennes, octobre 2026)",
+   "url": "https://www.tunisienumerique.com/france-manifestations-lyceens-24-enquetes-igpn-blesses-police/",
+   "categorie": "X",
+   "niveau": "A",
+   "nature": "source faible : non datée, privée ou à recouper"
+  },
+  {
+   "id": "S68",
+   "titre": "Assemblée nationale, question orale 923",
+   "url": "https://www.assemblee-nationale.fr/dyn/15/questions/QANR5L15QOSD923.pdf",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S69",
+   "titre": "Assemblée nationale, question 11781 (IGPN, dossiers 2024)",
+   "url": "https://www.assemblee-nationale.fr/dyn/17/questions/QANR5L17QE11781.pdf",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S70",
+   "titre": "Assemblée nationale, amendement sur le suivi de l'usage des armes",
+   "url": "https://www.assemblee-nationale.fr/dyn/16/amendements/0436/AN/708.pdf",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S71",
+   "titre": "Wikipédia, « Violence policière en France » (source secondaire, à recouper)",
+   "url": "https://fr.wikipedia.org/wiki/Violence_polici%C3%A8re_en_France",
+   "categorie": "X",
+   "niveau": "A",
+   "nature": "source faible : non datée, privée ou à recouper"
+  },
+  {
+   "id": "S72",
+   "titre": "data.gouv.fr, arrêts maladie en France 2010-2025 (producteur privé)",
+   "url": "https://www.data.gouv.fr/datasets/arrets-maladie-en-france-2010-2025-analyse-statistique-economique-et-juridique",
+   "categorie": "X",
+   "niveau": "A",
+   "nature": "source faible : non datée, privée ou à recouper"
+  },
+  {
+   "id": "S73",
+   "titre": "DREES, gestes auto-infligés (population générale)",
+   "url": "https://drees.solidarites-sante.gouv.fr/communique-de-presse-jeux-de-donnees/DATA_250618_Gestes-auto-inflig%C3%A9s",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  },
+  {
+   "id": "S74",
+   "titre": "AEF, bilan social 2017 de la police nationale",
+   "url": "https://www.aefinfo.fr/depeche/592058-le-bilan-social-2017-de-la-police-nationale-marque-par-une-baisse-de-labsenteisme-et-une-hausse-des-suicides",
+   "categorie": "P",
+   "niveau": "S",
+   "nature": "presse, association, syndicat ou mutuelle"
+  },
+  {
+   "id": "S75",
+   "titre": "medRxiv 2026, bien-être et détresse à la sortie de la police britannique",
+   "url": "https://www.medrxiv.org/content/10.64898/2026.03.14.26348403.full.pdf",
+   "categorie": "R",
+   "niveau": "S",
+   "nature": "recherche publiée"
+  },
+  {
+   "id": "S76",
+   "titre": "UMONS (ORBi), recommandations de policiers belges francophones",
+   "url": "https://orbi.umons.ac.be/handle/20.500.12907/54687",
+   "categorie": "R",
+   "niveau": "S",
+   "nature": "recherche publiée"
+  },
+  {
+   "id": "S79",
+   "titre": "Assemblée nationale, audition de la directrice de l'IGPN, commission d'enquête sur le maintien de l'ordre (15e législature)",
+   "url": "https://www.assemblee-nationale.fr/dyn/15/comptes-rendus/ceordre/l15ceordre2021011_compte-rendu.pdf",
+   "categorie": "O",
+   "niveau": "V",
+   "nature": "institution (texte officiel, rapport ou réponse parlementaire)"
+  }
+ ]
+}

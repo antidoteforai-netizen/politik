@@ -72,7 +72,7 @@ Le site est écrit pour neuf lecteurs : citoyen·ne, journaliste, décideur, min
 | Élément | Valeur |
 |---|---|
 | Pages | 12 |
-| Entrées du registre des sources | 188 |
+| Entrées du registre des sources | 282 |
 | Images avec crédit et licence | 140 |
 | Ministères structurés | 20 |
 | Ministères et acteurs relus sur leur site officiel | 11 sur 21 |

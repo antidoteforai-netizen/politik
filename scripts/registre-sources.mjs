@@ -58,6 +58,8 @@ const oct17 = read("dashboard/17-octobre-2026.html");
 const oSrc = [...oct17.matchAll(/const SRC_(\w+)=\{t:"([^"]+)",u:"([^"]+)"\}/g)];
 for (const m of oSrc) add({ page: "oct17", type: "document", titre: m[2], producteur: new URL(m[3]).host, url: m[3], niveau: "V", statut: "cité (texte lu le 20 oct. 2026)" });
 
+const sp = JSON.parse(read("data/sources-police.json"));
+for (const s of sp.sources) add({ page: "forces", type: s.categorie === "O" ? "document" : "reference", titre: `${s.id} · ${s.titre}`, producteur: new URL(s.url).host, url: s.url, niveau: s.niveau, statut: "cité (index de la synthèse du 20 oct. 2026, " + s.nature + ")" });
 const cyb = read("dashboard/cybersecurite.html");
 const SRC_NIV = { PLAN: "V", COM: "V", ANSSI: "V", EDU: "V", CERT: "V", ANSSIH: "V", KIT: "V", ITC: "S", POD: "S", VT: "D" };
 for (const m of cyb.matchAll(/const SRC_(\w+)=\{t:"([^"]+)",u:"([^"]+)"\}/g)) add({ page: "cyber", type: "document", titre: m[2], producteur: new URL(m[3]).host, url: m[3], niveau: SRC_NIV[m[1]] || "S", statut: "cité (texte lu le 20 oct. 2026)" });

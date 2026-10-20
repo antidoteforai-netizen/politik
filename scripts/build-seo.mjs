@@ -9,8 +9,8 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const BASE = "https://politik-eta.vercel.app";
-const IMG = BASE + "/og-politik.png";
-const IMG_ALT = "Politik : comprendre les données publiques de la France";
+const IMG = BASE + "/og-politik.png?v=20261021"; /* le suffixe force les réseaux sociaux à relire l'image après un changement */
+const IMG_ALT = "Politik : comprendre les données publiques de la France. Buste de la République en caractères ASCII sur fond Bleu France.";
 const today = new Date().toISOString().slice(0, 10);
 const esc = s => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const gj = JSON.parse(readFileSync(join(root, "data/gouvernement.json"), "utf8"));

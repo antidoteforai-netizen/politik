@@ -224,11 +224,33 @@ body.falc .hubcard .t,body.falc .hubcard .k{font-family:var(--font-falc)}
 .parcours li a{display:block;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:var(--surface);text-decoration:none;color:var(--ink);font-size:.9rem}
 .parcours li a b{display:block;font-family:var(--font-display);color:var(--accent-ink);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
 .parcours li a:hover{border-color:var(--accent)}
-.poletabs{display:flex;gap:6px;margin-top:4px;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
-.poletabs button{font:inherit;font-family:var(--font-display);font-size:.95rem;font-weight:600;padding:12px 18px;border:0;border-bottom:2px solid transparent;background:transparent;color:var(--ink-2);cursor:pointer;white-space:nowrap;margin-bottom:-1px}
-.poletabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
-.poletabs button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:6px}
-.poletabs button small{display:block;font-family:var(--font-text);font-weight:400;font-size:.76rem;color:var(--ink-3)}
+.poletabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:6px}
+.poletabs button{font:inherit;display:flex;flex-direction:column;align-items:flex-start;gap:5px;text-align:left;padding:14px 16px 14px;border:1.5px solid var(--line);border-radius:16px;background:var(--surface);color:var(--ink);cursor:pointer;min-width:0;position:relative}
+.poletabs button:hover{border-color:var(--accent)}
+.poletabs button[aria-selected="true"]{border-color:var(--accent);background:var(--accent-soft);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
+.poletabs button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.poletabs .pn{font-family:var(--font-display);font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3)}
+.poletabs button[aria-selected="true"] .pn{color:var(--accent-ink)}
+.poletabs button[aria-selected="true"] .pn:after{content:" · affiché"}
+.poletabs .pt{font-family:var(--font-display);font-size:1.1rem;font-weight:700;line-height:1.2}
+.poletabs .pk{font-family:var(--font-display);font-size:1.55rem;font-weight:700;line-height:1;letter-spacing:-.02em}
+.poletabs .pk small{display:inline;font-size:.8rem;font-weight:500;color:var(--ink-2);margin-left:4px;letter-spacing:0}
+.poletabs .pd{font-family:var(--font-text);font-size:.84rem;color:var(--ink-2);line-height:1.35}
+.poletabs .ps{font-family:var(--font-text);font-size:.76rem;color:var(--ink-3);line-height:1.35;margin-top:auto}
+#hub-cards[hidden]{display:none}
+.pole-hint{margin:10px 0 0;font-size:.84rem;color:var(--ink-3)}
+.pole-status{margin:6px 0 0;font-size:.9rem;color:var(--ink-2);min-height:1.5em}
+.pole-pn{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line)}
+.pole-pn button{font:inherit;display:flex;flex-direction:column;gap:2px;padding:14px 18px;border:1.5px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);cursor:pointer;text-align:left;min-width:0}
+.pole-pn button:only-child{grid-column:2}
+.pole-pn .next{text-align:right;align-items:flex-end;grid-column:2}
+.pole-pn small{font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);font-weight:700}
+.pole-pn b{font-family:var(--font-display);font-size:1.05rem}
+.pole-pn button:hover,.pole-pn button:focus-visible{border-color:var(--accent);outline:none}
+.pole-pn button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media (max-width:900px){.poletabs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.poletabs{grid-template-columns:1fr}.pole-pn{grid-template-columns:1fr}.pole-pn .next,.pole-pn button:only-child{grid-column:1}.pole-pn .next{text-align:left;align-items:flex-start}}
+body.falc .poletabs .pd,body.falc .poletabs .ps{font-size:1rem}
 .pole{display:none}
 .pole.on{display:block}
 .pole > section:first-child{border-top:0}
@@ -260,7 +282,7 @@ body.falc .entree-p,body.falc .rg dd,body.falc .rg-answer p{font-size:1.06rem}
 .nav .pages a{display:block;padding:6px 10px;border-radius:6px;font-size:.84rem;color:var(--ink-2);text-decoration:none;white-space:nowrap}
 .nav .pages a.here{font-weight:600;color:var(--ink);background:var(--accent-soft)}
 @media print{.pole{display:block!important}.poletabs,.questions,.roles,.parcours{display:none!important}}
-body.falc .poletabs button{font-family:var(--font-falc)} body.falc .questions a,body.falc .parcours li a{font-size:1rem}
+body.falc .poletabs button,body.falc .pole-pn button{font-family:var(--font-falc)} body.falc .questions a,body.falc .parcours li a{font-size:1rem}
 /* Progression de lecture (inspirée des parcours en cartes) */
 .progress{height:3px;background:transparent;position:relative}
 .progress i{display:block;height:100%;width:0;background:var(--accent);transition:width .1s linear}
@@ -348,7 +370,9 @@ body.falc .falc-badge{display:flex}
   <div class="entree-bloc">
     <h2 class="entree-h" data-t="entree.poles.h"></h2>
     <p class="entree-p" data-t="entree.poles.p"></p>
-    <div class="poletabs" id="poletabs" role="tablist" aria-label="Pôles"></div>
+    <div class="poletabs" id="poletabs" role="tablist" aria-label="Thèmes de la page"></div>
+    <p class="pole-status" id="pole-status" aria-live="polite"></p>
+    <p class="pole-hint" data-t="poles.hint"></p>
     <div class="grid g4" id="hub-cards" hidden></div>
   </div>
 </section>
@@ -793,8 +817,11 @@ const TXT = {
   "entree.p":{etat:"Choisissez celle qui ressemble à ce que vous avez entendu : la page vous emmène directement à la réponse.", falc:"Choisissez une question.<br>La page vous montre la réponse."},
   "entree.roles.h":{etat:"Ou dites-nous qui vous êtes", falc:"Ou dites qui vous êtes"},
   "entree.roles.p":{etat:"Touchez votre rôle : nous répondons d'abord en une phrase, puis nous proposons quatre étapes.", falc:"Touchez votre rôle.<br>Nous répondons à votre question.<br>Puis nous proposons 4 étapes."},
+  "poles.hint":{etat:"Au clavier, les flèches gauche et droite passent d'un thème à l'autre.", falc:"Avec le clavier : flèches gauche et droite."},
+  "poles.prev":{etat:"Thème précédent", falc:"Thème d'avant"},
+  "poles.next":{etat:"Thème suivant", falc:"Thème suivant"},
   "entree.poles.h":{etat:"Ou explorez par thème", falc:"Ou choisissez un thème"},
-  "entree.poles.p":{etat:"Quatre thèmes : touchez un onglet pour changer de sujet. La barre qui suit le défilement permet d'y revenir à tout moment.", falc:"Il y a 4 thèmes.<br>Touchez un onglet pour changer de thème."},
+  "entree.poles.p":{etat:"La page se lit en quatre thèmes. Choisissez-en un : seules ses sections s'affichent en dessous. La barre qui reste en haut de l'écran permet de changer de thème ou de section à tout moment.", simple:"La page a 4 thèmes. Choisissez-en un : seules ses sections s'affichent. La barre en haut de l'écran permet de changer à tout moment.", falc:"Il y a 4 thèmes.<br>Choisissez un thème.<br>La page montre seulement ce thème."},
   "entree.roles":{etat:"Ou dites-nous qui vous êtes, nous proposons un parcours en quatre étapes", simple:"Ou dites qui vous êtes : on vous propose quatre étapes", falc:"Ou dites qui vous êtes"},
   "nav.cles":{etat:"Chiffres clés", falc:"Les 4 chiffres"},
   "nav.ent":{etat:"Entonnoir", simple:"Estimé, détecté, récupéré", falc:"L'argent récupéré"},
@@ -1839,7 +1866,7 @@ const HUBS = [
 ];
 function renderHubs(){
   const hubsEl = $("#hubs"); if(hubsEl) hubsEl.innerHTML = HUBS.map(h=>`<li><a class="hub" href="#${h.secs[0][0]}" data-hub="${h.id}">${pick(h.n)}</a><ul class="sub">${h.secs.map(([id,k])=>`<li><a href="#${id}">${t(k)}</a></li>`).join("")}</ul></li>`).join("");
-  $("#hub-cards").innerHTML = HUBS.map((h,i)=>`<a class="hubcard" href="#${h.secs[0][0]}"><span class="n">${L==="falc"?"Partie":"Pôle"} ${i+1} / ${HUBS.length}</span><span class="t">${pick(h.n)}</span><span class="k num">${h.k}<small>${pick(h.ku)}</small></span><span class="d">${pick(h.d)}</span><span class="go">${h.secs.map(([id,k])=>t(k)).join(" · ")}</span></a>`).join("");
+  $("#hub-cards").innerHTML = HUBS.map((h,i)=>`<a class="hubcard" href="#${h.secs[0][0]}"><span class="n">${L==="falc"?"Partie":"Thème"} ${i+1} / ${HUBS.length}</span><span class="t">${pick(h.n)}</span><span class="k num">${h.k}<small>${pick(h.ku)}</small></span><span class="d">${pick(h.d)}</span><span class="go">${h.secs.map(([id,k])=>t(k)).join(" · ")}</span></a>`).join("");
 }
 /* Pôle courant surligné au défilement */
 {
@@ -1947,15 +1974,32 @@ let poleId = HUBS[0].id;
 function showPole(id, focusTab){
   poleId = id;
   document.querySelectorAll(".pole").forEach(p=>p.classList.toggle("on", p.dataset.pole===id));
-  document.querySelectorAll("#poletabs button").forEach(b=>b.setAttribute("aria-selected", String(b.dataset.pole===id)));
+  document.querySelectorAll("#poletabs button").forEach(b=>{ const on=b.dataset.pole===id; b.setAttribute("aria-selected", String(on)); b.tabIndex = on?0:-1; });
+  majStatut();
   document.querySelectorAll("#hubs a.hub").forEach(a=>a.classList.toggle("active", a.dataset.hub===id));
   if(focusTab){ const b = document.querySelector(`#poletabs button[data-pole="${id}"]`); b && b.focus(); }
 }
+function poleLabel(h,i){ return `${L==="falc"?"Thème":"Thème"} ${i+1} sur ${HUBS.length}`; }
 function renderPoletabs(){
-  $("#poletabs").innerHTML = HUBS.map(h=>`<button type="button" role="tab" data-pole="${h.id}" aria-selected="${h.id===poleId}">${pick(h.n)}<small>${h.secs.map(([id,k])=>t(k)).join(" · ")}</small></button>`).join("");
+  $("#poletabs").innerHTML = HUBS.map((h,i)=>`<button type="button" role="tab" id="tab-${h.id}" data-pole="${h.id}" aria-selected="${h.id===poleId}" aria-controls="pole-${h.id}" tabindex="${h.id===poleId?0:-1}"><span class="pn">${poleLabel(h,i)}</span><span class="pt">${pick(h.n)}</span><span class="pk num">${h.k}<small>${pick(h.ku)}</small></span><span class="pd">${pick(h.d)}</span><span class="ps">${h.secs.map(([id,k])=>t(k)).join(" · ")}</span></button>`).join("");
+  HUBS.forEach((h,i)=>{
+    const panel = document.getElementById("pole-"+h.id); if(!panel) return;
+    panel.setAttribute("aria-labelledby","tab-"+h.id);
+    panel.querySelectorAll(":scope > .pole-pn").forEach(n=>n.remove());
+    const prev = HUBS[i-1], next = HUBS[i+1];
+    const nav = document.createElement("nav"); nav.className = "pole-pn"; nav.setAttribute("aria-label", L==="falc"?"Changer de thème":"Passer à un autre thème");
+    nav.innerHTML = (prev?`<button type="button" class="prev" data-goto="${prev.id}"><small>← ${t("poles.prev")}</small><b>${pick(prev.n)}</b></button>`:"") + (next?`<button type="button" class="next" data-goto="${next.id}"><small>${t("poles.next")} →</small><b>${pick(next.n)}</b></button>`:"");
+    panel.appendChild(nav);
+  });
+  majStatut();
+}
+function majStatut(){
+  const i = HUBS.findIndex(h=>h.id===poleId), h = HUBS[i]; if(!h) return;
+  $("#pole-status").textContent = L==="falc" ? `Vous lisez le thème ${i+1} sur ${HUBS.length} : ${pick(h.n)}.` : `Thème ${i+1} sur ${HUBS.length} affiché : ${pick(h.n)}. Sections : ${h.secs.map(([id,k])=>t(k)).join(", ")}.`;
 }
 $("#poletabs").addEventListener("click", e=>{ const b = e.target.closest("button"); if(!b) return; showPole(b.dataset.pole); const first = HUBS.find(h=>h.id===b.dataset.pole).secs[0][0]; history.replaceState(null, "", "#"+first); document.getElementById(first).scrollIntoView({block:"start"}); });
-$("#poletabs").addEventListener("keydown", e=>{ if(e.key!=="ArrowRight"&&e.key!=="ArrowLeft") return; const i = HUBS.findIndex(h=>h.id===poleId); const n = (i+(e.key==="ArrowRight"?1:-1)+HUBS.length)%HUBS.length; showPole(HUBS[n].id, true); });
+$("#poletabs").addEventListener("keydown", e=>{ if(!["ArrowRight","ArrowLeft","Home","End"].includes(e.key)) return; e.preventDefault(); const i = HUBS.findIndex(h=>h.id===poleId); const n = e.key==="Home"?0:e.key==="End"?HUBS.length-1:(i+(e.key==="ArrowRight"?1:-1)+HUBS.length)%HUBS.length; showPole(HUBS[n].id, true); });
+document.addEventListener("click", e=>{ const b = e.target.closest(".pole-pn button"); if(!b) return; const h = HUBS.find(x=>x.id===b.dataset.goto); if(!h) return; showPole(h.id); const first = h.secs[0][0]; history.replaceState(null, "", "#"+first); document.getElementById(first).scrollIntoView({block:"start"}); });
 function openHash(){
   const id = location.hash.replace("#","");
   if(!id) return;
@@ -1979,7 +2023,7 @@ $("#switch").addEventListener("click", e=>{
   L = b.dataset.level; try{ localStorage.setItem("politik-level-" + PAGE_LEVELS.join("-"), L);}catch(err){}
   renderSwitch(); render(); renderPoletabs(); renderEntree(); showPole(poleId); openHash();
 });
-renderSwitch(); render();
+renderSwitch(); render(); openHash();
 
 /* Barre de progression de lecture */
 {

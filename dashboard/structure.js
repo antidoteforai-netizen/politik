@@ -22,6 +22,7 @@
     ".plan{margin:28px 0 8px;padding:20px 0 0;border-top:1px solid var(--line)}",
     ".plan h2{font-size:.74rem;text-transform:uppercase;letter-spacing:.09em;color:var(--ink-3);margin:0 0 12px;font-weight:600}",
     ".plan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px 24px}",
+    ".mesure-note{margin:16px 0 0;font-size:.8rem;color:var(--ink-3);max-width:70ch}",
     ".plan-grid h3{font-size:.86rem;margin:0 0 6px;color:var(--ink)}",
     ".plan-grid ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}",
     ".plan-grid a{display:inline-block;padding:5px 0;font-size:.9rem;color:var(--ink-2)}",
@@ -53,7 +54,7 @@
     var f = document.querySelector("footer"); if (!f) return;
     var groups = {}; Object.keys(PAGES).forEach(function (k) { (groups[PAGES[k][1]] = groups[PAGES[k][1]] || []).push(k); });
     var nav = document.createElement("nav"); nav.className = "plan wrap"; nav.setAttribute("aria-label", "Plan du site");
-    nav.innerHTML = "<h2>Plan du site</h2><div class=\"plan-grid\">" + Object.keys(groups).map(function (g) { return "<div><h3>" + esc(g) + "</h3><ul>" + groups[g].map(function (k) { return '<li><a href="' + k + '"' + (k === here ? ' aria-current="page"' : "") + ">" + esc(PAGES[k][0]) + "</a></li>"; }).join("") + "</ul></div>"; }).join("") + "</div>";
+    nav.innerHTML = "<h2>Plan du site</h2><div class=\"plan-grid\">" + Object.keys(groups).map(function (g) { return "<div><h3>" + esc(g) + "</h3><ul>" + groups[g].map(function (k) { return '<li><a href="' + k + '"' + (k === here ? ' aria-current="page"' : "") + ">" + esc(PAGES[k][0]) + "</a></li>"; }).join("") + "</ul></div>"; }).join("") + "</div><p class=\"mesure-note\">Mesure d'audience : Cloudflare Web Analytics, sans cookie et sans suivi d'une personne d'une page à l'autre. Désactivée si votre navigateur envoie « Ne pas suivre ».</p>";
     f.parentNode.insertBefore(nav, f);
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();

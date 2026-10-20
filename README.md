@@ -5,7 +5,7 @@
 <h3 align="center">Lire les données publiques sur le pouvoir, l'argent et la sécurité, sans qu'on vous dise quoi en penser.</h3>
 
 <p align="center">
-  Tableau de bord citoyen · français · aucun traceur · chaque chiffre porte sa source
+  Tableau de bord citoyen · français · mesure d'audience sans cookie · chaque chiffre porte sa source
 </p>
 
 ---
@@ -61,7 +61,7 @@ Le site est écrit pour neuf lecteurs : citoyen·ne, journaliste, décideur, min
 
 - **Texte pour le lecteur.** Chaque phrase dit qui parle, quand, et d'où vient le chiffre.
 - **Aucun axe tronqué, aucun rouge d'alarme.** Un contrepoids accompagne chaque chiffre (non-recours, faux positifs).
-- **Aucun traceur, aucune dépendance.** HTML, CSS et JavaScript simples, lisibles dans n'importe quel navigateur.
+- **Aucune dépendance, aucun cookie.** HTML, CSS et JavaScript simples, lisibles dans n'importe quel navigateur. Seule la mesure d'audience passe par un script tiers, Cloudflare Web Analytics, sans cookie, désactivé si le navigateur envoie « Ne pas suivre » (`dashboard/mesure.js`).
 - **Photos et logos sous licence libre seulement**, avec crédit (voir `donnees.html`). Pour une personne, pas de licence libre, pas de photo.
 - **Accessibilité.** Navigation au clavier, repères de section visibles, contrastes soignés.
 

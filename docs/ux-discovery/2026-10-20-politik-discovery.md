@@ -136,12 +136,12 @@ rencontre des deux « 14 milliards » (point d'abandon).
 ### Indicateurs avancés
 | Indicateur | Prédit | Mesure |
 |---|---|---|
-| Temps passé sur le comparateur « qui dit quoi » | la compréhension des périmètres | observation, pas de traceur |
+| Temps passé sur le comparateur « qui dit quoi » | la compréhension des périmètres | observation, mesure d'audience sans cookie |
 | Nombre de sources copiées | la réutilisation | compteur local optionnel, jamais envoyé |
 | Questions posées après lecture | les trous à combler | entretien |
 
 ### Télémétrie
-Aucun traceur tiers. La page ne collecte rien par défaut (ligne non manipulatrice du projet).
+Mesure d'audience Cloudflare Web Analytics depuis le 20 octobre 2026 : sans cookie, désactivée si le navigateur envoie « Ne pas suivre », annoncée dans le pied de chaque page. Aucun autre traceur tiers.
 Si une mesure est un jour nécessaire, un compteur local (localStorage) sur deux événements suffit :
 `source_copiee` (id de la source, sans donnée personnelle) et `test_3_questions_reussi` (score).
 Consentement : explicite, bouton visible, aucune donnée ne quitte le navigateur.

@@ -52,7 +52,7 @@ responsabilité de Politik et son catalogue de données jouent ce rôle à petit
 | **Opportunity Insights (données privées agrégées)** | Dépenses, revenus et emploi par code postal, taille d'entreprise | Voir §1 | S |
 
 **Ce que Politik retient** : FRED est le modèle d'un outil qui compte son audience et la publie.
-Politik devrait publier ses propres chiffres d'usage dès qu'il en aura (sans traceur tiers : compteur
+Politik devrait publier ses propres chiffres d'usage dès qu'il en aura (sans traceur publicitaire ni cookie : compteur
 local ou journal de serveur, conformément à sa doctrine).
 
 ## 4. Pour les immigrés
@@ -73,7 +73,7 @@ Politik doit suivre les délais et les refus, pas seulement les montants de frau
 
 ## 5. Synthèse : cinq leçons pour Politik
 
-1. **Mesurer et publier son propre usage**, à la manière de FRED et de Vote.org, sans traceur tiers.
+1. **Mesurer et publier son propre usage**, à la manière de FRED et de Vote.org, sans traceur publicitaire ni cookie.
 2. **Donner une action par écran** : vérifier, copier, demander (CADA), signaler un chiffre faux.
 3. **Dater et archiver** : les jeux s'arrêtent (crimes et délits 2022, collectes fédérales 2025) ; un
    tableau de bord honnête montre ses trous.

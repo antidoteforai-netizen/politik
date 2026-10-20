@@ -121,9 +121,11 @@ body.falc .porte-q,body.falc .porte-stats .lab,body.falc .actu li{font-size:1rem
 .hero-accueil .hero-chips span{color:#cacafb}
 .hero-accueil .cta{background:#fff;color:#000091;font-weight:800}
 .hero-accueil .cta:hover,.hero-accueil .cta:focus-visible{background:#e3e3fd;outline:3px solid #fff;outline-offset:3px}
-.hero-illu{align-self:center;border-radius:28px;overflow:hidden;border:6px solid rgba(255,255,255,.2);background:#fff;max-width:520px;justify-self:center;width:100%}
-.hero-illu img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
-@media (max-width:860px){.hero-accueil{padding-block:30px 34px}.hero-illu{max-width:420px}}
+.hero-accueil>.hero-illu{position:static;z-index:auto}
+.hero-accueil [hidden]{display:none!important}
+.hero-illu{align-self:stretch;justify-self:center;width:100%;max-width:460px;display:flex;align-items:flex-end;justify-content:center;margin-block:-46px -52px;overflow:hidden}
+.hero-illu video{display:block;width:100%;height:auto;max-height:520px;object-fit:contain;mix-blend-mode:screen;filter:brightness(2.2) contrast(1.25)}
+@media (max-width:860px){.hero-accueil{padding-block:30px 0}.hero-illu{max-width:360px;margin-block:0}.hero-illu video{max-height:360px}}
 .faq{display:grid;gap:8px;max-width:820px}
 .faq-q{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:0}
 .faq-q summary{cursor:pointer;list-style:none;padding:14px 18px;font-weight:700;display:flex;justify-content:space-between;gap:12px;align-items:center;min-height:44px}
@@ -132,6 +134,36 @@ body.falc .porte-q,body.falc .porte-stats .lab,body.falc .actu li{font-size:1rem
 .faq-q[open] summary:after{content:"–"}
 .faq-q summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:12px}
 .faq-q p{margin:0;padding:0 18px 16px;color:var(--ink-2);max-width:68ch}
+
+/* Finition éditoriale : titres légers et serrés, bandeau de chiffres, rubriques numérotées */
+.hero-accueil h1{font-weight:500;font-size:clamp(2.5rem,5.6vw,4.4rem);letter-spacing:-.035em;line-height:1.02;max-width:13ch}
+.hero-accueil .lede{font-size:clamp(1.05rem,1.6vw,1.2rem);line-height:1.5;max-width:46ch;margin-top:18px}
+.hero-accueil .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.hero-accueil .cta-row .cta{margin-top:0;border-radius:999px;padding:13px 24px;min-height:48px;display:inline-flex;align-items:center}
+.hero-accueil .cta.cta-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55);font-weight:700}
+.hero-accueil .cta.cta-ghost:hover,.hero-accueil .cta.cta-ghost:focus-visible{background:rgba(255,255,255,.12);outline:3px solid #fff;outline-offset:3px}
+.ticker{background:var(--surface);border-bottom:1px solid var(--line)}
+.ticker ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.ticker li{display:flex;align-items:baseline;gap:10px;padding:16px 18px;border-left:1px solid var(--line-2);min-width:0}
+.ticker li:first-child{border-left:0;padding-left:0}
+.ticker b{font-family:var(--font-display);font-size:1.5rem;font-weight:500;letter-spacing:-.02em;color:var(--ink)}
+.ticker span{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600;color:var(--ink-3);line-height:1.25}
+main{counter-reset:rub}
+main>section>.sec-head{counter-increment:rub;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px 56px;align-items:end;margin-bottom:26px}
+main>section>.sec-head:before{content:counter(rub,decimal-leading-zero) " /";grid-column:1/-1;font-size:.74rem;font-weight:700;letter-spacing:.12em;color:var(--ink-3);font-variant-numeric:tabular-nums}
+main>section>.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.6rem);font-weight:500;letter-spacing:-.025em;line-height:1.08}
+main>section>.sec-head p{font-size:1.02rem;line-height:1.5;max-width:46ch}
+main>section{padding-block:30px}
+main>section{scroll-margin-top:96px}
+.portes{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:760px){.portes{grid-template-columns:minmax(0,1fr)}}
+.porte{border-radius:20px;padding:24px}
+.porte-btn{border-radius:999px;padding:11px 18px}
+.min-tile,.role,.faq-q{border-radius:16px}
+@media (max-width:860px){.ticker ul{grid-template-columns:repeat(2,minmax(0,1fr))}.ticker li:nth-child(3){border-left:0;padding-left:0}.ticker li{padding:12px 14px}main>section>.sec-head{grid-template-columns:minmax(0,1fr);gap:8px}}
+body.falc .hero-accueil h1{font-weight:700;letter-spacing:-.01em;font-size:clamp(2rem,5vw,3.2rem)}
+body.falc main>section>.sec-head h2{font-weight:700;letter-spacing:0}
+@media (prefers-reduced-motion:reduce){.hero-accueil *{transition:none!important}}
 </style>
 <!--SEO-->
 <meta name="description" content="Une page par ministère, des états des lieux sourcés et des dossiers décryptés : fraude, police, cybersécurité, médias. Chaque chiffre dit d'où il vient.">
@@ -169,12 +201,13 @@ body.falc .porte-q,body.falc .porte-stats .lab,body.falc .actu li{font-size:1rem
     <p class="eyebrow"><span data-t="eyebrow"></span> <a class="ast" href="#methode-section" aria-label="Voir la neutralité et la méthode" title="Neutralité et méthode">*</a></p>
     <h1 data-t="h1"></h1>
     <p class="lede" data-t="lede"></p>
-    <a class="od-badge" href="https://www.data.gouv.fr/" target="_blank" rel="noopener" id="od-badge"><span class="od-dot" aria-hidden="true"></span><span id="od-txt"></span></a>
-    <ul class="hero-chips" id="chips"></ul>
-    <a class="cta" href="#ministeres" data-t="cta"></a>
+    <a class="od-badge" href="https://www.data.gouv.fr/" target="_blank" rel="noopener" id="od-badge" hidden><span class="od-dot" aria-hidden="true"></span><span id="od-txt"></span></a>
+    <ul class="hero-chips" id="chips" hidden></ul>
+    <div class="cta-row"><a class="cta" href="#ministeres" data-t="cta"></a><a class="cta cta-ghost" href="donnees.html" data-t="cta2"></a></div>
   </div>
-  <div class="hero-illu"><img src="img/pixabay/hero.jpg" alt="" width="1280" height="960" fetchpriority="high"></div>
+  <div class="hero-illu" aria-hidden="true"><video id="hero-video" autoplay muted loop playsinline preload="auto" poster="video/mariane-ascii-poster.jpg" width="720" height="962"><source src="video/mariane-ascii.mp4" type="video/mp4"></video></div>
 </header>
+<section class="ticker" aria-label="Le site en chiffres"><div class="wrap"><ul id="ticker"></ul></div></section>
 
 <main class="wrap">
 <section id="ministeres"><div class="sec-head"><h2 data-t="s.min.h"></h2><p data-t="s.min.p"></p></div>
@@ -185,7 +218,7 @@ body.falc .porte-q,body.falc .porte-stats .lab,body.falc .actu li{font-size:1rem
 <section id="dossiers"><div class="sec-head"><h2 data-t="s.dos.h"></h2><p data-t="s.dos.p"></p></div><p class="note-dossier" data-t="dos.note"></p><div class="portes" id="dossiers-grid"></div></section>
 <section id="actualite"><div class="sec-head"><h2 data-t="s.actu.h"></h2><p data-t="s.actu.p"></p></div><div class="card"><ul class="actu" id="actu"></ul></div></section>
 <section id="raccourcis"><div class="sec-head"><h2 data-t="s.roles.h"></h2><p data-t="s.roles.p"></p></div><div class="roles" id="roles"></div></section>
-<section id="faq"><div class="sec-head"><h2>Questions fréquentes</h2><p>Les réponses courtes aux questions qu'on nous pose le plus.</p></div>
+<section id="faq"><div class="sec-head"><h2>Questions fréquentes</h2><p>Les réponses courtes, sans jargon.</p></div>
 <div class="faq">
 <details class="faq-q"><summary>Qu'est-ce que Politik ?</summary><p>Un site qui rassemble des données publiques sur le Gouvernement, l'argent public, les médias, la police et la cybersécurité. Chaque chiffre est donné avec sa source.</p></details>
 <details class="faq-q"><summary>D'où viennent les données ?</summary><p>De data.gouv.fr, de l'Insee, de la Cour des comptes, des ministères et d'autres sites officiels. Le registre des sources liste chaque jeu de données utilisé.</p></details>
@@ -208,28 +241,29 @@ const lvl=k=>`<span class="lvl lvl-${k}">${k}</span>`;
 /* Les chiffres de cette page sont ceux affichés, avec leur source, sur chaque page ouverte par le bouton de la porte. */
 const TXT={
   eyebrow:{etat:"Données publiques · sources officielles · aucun parti pris", falc:"Les infos publiques, avec leur source"},
-  h1:{etat:"Comprendre les données publiques de la France.", falc:"Comprendre les infos publiques de la France."},
-  lede:{etat:"Politik réunit les données ouvertes de data.gouv.fr et les publications des sites officiels. Chaque chiffre dit d'où il vient. Choisissez un ministère ou un sujet.", falc:"Politik utilise les données ouvertes de l'État (data.gouv.fr).<br>Chaque chiffre dit d'où il vient.<br>Choisissez un ministère ou un sujet."},
+  h1:{etat:"Comprendre les données publiques de la France", falc:"Comprendre les infos publiques de la France"},
+  lede:{etat:"Politik réunit les données ouvertes de data.gouv.fr et les publications des sites officiels.", falc:"Politik utilise les données ouvertes de l'État (data.gouv.fr).<br>Chaque chiffre dit d'où il vient.<br>Choisissez un ministère ou un sujet."},
   cta:{etat:"Voir les ministères", falc:"Voir les ministères"},
+  cta2:{etat:"Voir les sources", falc:"Voir les sources"},
   "s.portes.h":{etat:"États des lieux", falc:"États des lieux"},
-  "s.portes.p":{etat:"Chaque carte donne les trois chiffres à retenir, leur niveau de confiance et un bouton vers la page complète.", falc:"Chaque carte montre 3 chiffres.<br>Le bouton ouvre la page complète."},
-  "s.min.h":{etat:"Un ministère, une page", falc:"Un ministère, une page"},
-  "s.min.p":{etat:"Chaque ministère a sa propre page : l'essentiel à savoir, l'actualité lue sur son site officiel et les pages de Politik qui le concernent.", falc:"Chaque ministère a sa page."},
+  "s.portes.p":{etat:"Trois chiffres à retenir par sujet, chacun avec son niveau de confiance.", falc:"Chaque carte montre 3 chiffres.<br>Le bouton ouvre la page complète."},
+  "s.min.h":{etat:"Choisissez un ministère", falc:"Choisissez un ministère"},
+  "s.min.p":{etat:"Sa page réunit l'essentiel à savoir, les actualités lues sur son site officiel et les pages Politik qui le concernent.", falc:"Chaque ministère a sa page."},
   "min.tous":{etat:"Voir la composition complète du Gouvernement →", falc:"Voir tout le Gouvernement →"},
   "min.clear":{etat:"Effacer", falc:"Effacer"},
   "min.label":{etat:"Trouver un ministère", falc:"Trouver un ministère"},
   "min.ph":{etat:"Un ministère ou un nom de ministre…", falc:"Un ministère ou un nom…"},
-  "s.etats.h":{etat:"Les états des lieux", falc:"Les états des lieux"},
-  "s.etats.p":{etat:"Un grand sujet, les chiffres à retenir et, pour chacun, sa source et son niveau de confiance.", falc:"Un grand sujet. Les chiffres à retenir."},
-  "s.dos.h":{etat:"Les dossiers décryptés", falc:"Les dossiers"},
-  "s.dos.p":{etat:"Des pages consacrées à un cas précis, distinctes des états des lieux.", falc:"Des pages sur un cas précis."},
-  "dos.note":{etat:"Un dossier porte sur un cas précis : qui possède quel média, ce qui s'est passé un jour donné. Il change plus vite qu'un état des lieux et ne remplace pas les pages des ministères.", falc:"Un dossier suit un cas précis. Il change plus vite."},
-  "s.actu.h":{etat:"Actualité vérifiée sur les sites officiels", falc:"Les nouvelles officielles"},
-  "s.actu.p":{etat:"Chaque actualité donne sa date, sa source et un lien vers la page lue sur le site de l'institution.", falc:"Chaque nouvelle a une date et un lien."},
-  "s.roles.h":{etat:"Vous cherchez quelque chose de précis&nbsp;?", falc:"Je cherche quelque chose"},
-  "s.roles.p":{etat:"Des raccourcis selon ce que vous cherchez.", falc:"Choisissez ce qui vous ressemble."},
+  "s.etats.h":{etat:"Les grands sujets en trois chiffres", falc:"Les grands sujets"},
+  "s.etats.p":{etat:"Chaque chiffre dit qui l'a publié et jusqu'où on peut s'y fier.", falc:"Un grand sujet. Les chiffres à retenir."},
+  "s.dos.h":{etat:"Un cas précis, étudié de près", falc:"Les dossiers"},
+  "s.dos.p":{etat:"Qui possède les médias ? Que s'est-il passé le 17 octobre ? Ces dossiers évoluent plus vite que les grands sujets.", falc:"Des pages sur un cas précis."},
+  "dos.note":{etat:"Un dossier ne remplace pas la page d'un ministère : il suit un seul cas, de près.", falc:"Un dossier suit un cas précis. Il change plus vite."},
+  "s.actu.h":{etat:"Ce que les sites officiels viennent de publier", falc:"Les nouvelles officielles"},
+  "s.actu.p":{etat:"Chaque ligne porte sa date, sa source et le lien vers la page d'origine.", falc:"Chaque nouvelle a une date et un lien."},
+  "s.roles.h":{etat:"Que cherchez-vous&nbsp;?", falc:"Je cherche quelque chose"},
+  "s.roles.p":{etat:"Un raccourci selon votre besoin.", falc:"Choisissez ce qui vous ressemble."},
   "s.methode.h":{etat:"Neutralité et méthode", falc:"Comment on travaille"},
-  "s.methode.p":{etat:"Chaque chiffre du site porte l'une de ces quatre pastilles.", falc:"Chaque chiffre a une pastille."},
+  "s.methode.p":{etat:"Une pastille sur chaque chiffre dit d'où il vient.", falc:"Chaque chiffre a une pastille."},
   footer:{etat:"Politik · données publiques, textes attribués, niveaux de confiance V, S, D, A.", falc:"Politik · infos publiques, avec la source."}
 };
 const ETATS=[
@@ -309,6 +343,7 @@ function render(){
   $("#min-groupes").innerHTML=["regalien","economie","territoires","societe","autres"].map(f=>{const L2=tous.filter(m=>m.famille===f); if(!L2.length) return ""; return `<h3 class="groupe" style="--f:${FAM[f][1]}"><i></i>${FAM[f][0]}</h3><div class="min-grid">${L2.map(m=>`<a class="min-tile" href="ministere-${esc(m.id)}.html" style="--f:${FAM[f][1]}" data-mots="${esc((m.nom||"").toLowerCase())}"><span class="pic"><svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">${m.icone}</svg></span><b>${esc(m.court)}</b><span class="who">${esc(m.ministre||"")}</span><span class="st ${m.verifie_le?"ok":""}">${m.verifie_le?(L==="falc"?"Relu":"Relu le "+esc(dateCourte(m.verifie_le))):(L==="falc"?"À relire":"À relire")}</span></a>`).join("")}</div>`;}).join("");
   const R=(window.REGISTRE&&window.REGISTRE.entrees)||[]; const od=new Set(R.filter(e=>(e.type==="jeu"||e.type==="api")&&/data\.gouv\.fr/.test((e.url||"")+" "+(e.producteur||""))).map(e=>e.titre)).size;
   $("#od-txt").innerHTML=L==="falc"?`<b>Open data</b> : ${od?od+" jeux de données":"des jeux de données"} de data.gouv.fr`:`<b>Open data</b> : ${od?od+" jeux de données et API":"des jeux de données"} de data.gouv.fr utilisés sur ce site`;
+  $("#ticker").innerHTML=[[G.ministeres.length,L==="falc"?"ministères":"ministères"],[releves+"/"+tous.length,L==="falc"?"relus sur leur site":"relus sur leur site officiel"],[G.actualites.length,L==="falc"?"nouvelles vérifiées":"actualités vérifiées"],[od||"—",L==="falc"?"jeux de données ouverts":"jeux de données ouverts"]].map(c=>`<li><b class="num">${c[0]}</b><span>${c[1]}</span></li>`).join("");
   indexMin(); const q=$("#min-q"); q.placeholder=pick(TXT["min.ph"]); filtrerMin();
   const porte=(p,i,tot,dossier)=>`<article class="porte${dossier?" dossier":""}" id="${p.id}"><p class="porte-n">${dossier?(L==="falc"?"Dossier":"Dossier"):(i+1)+" / "+tot}</p><h3>${pick(p.t)}</h3><p class="porte-q">${pick(p.q)}</p><ul class="porte-stats">${p.stats.map(s=>`<li><span class="num">${s[0]}</span><span class="lab">${pick(s[1])} ${lvl(s[2])}</span></li>`).join("")}</ul><a class="porte-btn" href="${p.href}">${pick(p.btn)} <span aria-hidden="true">→</span></a><p class="src">${esc(p.src)}</p></article>`;
   $("#portes").innerHTML=ETATS.map((p,i)=>porte(p,i,ETATS.length,false)).join("");
@@ -329,5 +364,6 @@ render();
 <script src="niveau.js"></script>
 <script src="legende.js"></script>
 <script src="mesure.js"></script>
+<script>(function(){var v=document.getElementById("hero-video");if(v&&window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches){v.removeAttribute("autoplay");v.pause();}})();</script>
 </body>
 </html>

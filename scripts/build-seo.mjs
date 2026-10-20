@@ -58,6 +58,16 @@ for (const f of files) {
   }
   const trail = [["Accueil", "accueil.html"], ...crumbs];
   if (f !== "accueil.html") trail.push([title.replace(/ · Politik$/, ""), f]);
+  /* Aperçus sociaux : ~125 caractères affichés. On garde les phrases entières qui tiennent en 120, sinon on coupe au mot. */
+  const ogDesc = (() => {
+    if (f === "accueil.html") return "Une page par ministère, des sujets décryptés, des chiffres sourcés. Chaque chiffre dit d'où il vient.";
+    if (desc.length <= 120) return desc;
+    const ph = desc.match(/[^.!?]+[.!?]+(\s|$)/g) || [desc]; let o = "";
+    for (const x of ph) { if ((o + x).trim().length <= 120) o += x; else break; }
+    o = o.trim();
+    if (o.length >= 60) return o;
+    const cut = desc.slice(0, 117); return cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:]$/, "") + "…";
+  })();
   const graph = [
     { "@type": "WebSite", "@id": BASE + "/#site", name: "Politik", url: BASE + "/", inLanguage: "fr", description: P["accueil.html"][1] },
     { "@type": "WebPage", "@id": url + "#page", url, name: title, description: desc, inLanguage: "fr", isPartOf: { "@id": BASE + "/#site" }, dateModified: today, primaryImageOfPage: { "@type": "ImageObject", url: IMG }, ...(about ? { about } : {}) },
@@ -75,7 +85,7 @@ for (const f of files) {
 <meta property="og:locale" content="fr_FR">
 <meta property="og:type" content="website">
 <meta property="og:title" content="${esc(title)}">
-<meta property="og:description" content="${esc(desc)}">
+<meta property="og:description" content="${esc(ogDesc)}">
 <meta property="og:url" content="${url}">
 <meta property="og:image" content="${IMG}">
 <meta property="og:image:width" content="1200">
@@ -83,7 +93,7 @@ for (const f of files) {
 <meta property="og:image:alt" content="${esc(IMG_ALT)}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${esc(title)}">
-<meta name="twitter:description" content="${esc(desc)}">
+<meta name="twitter:description" content="${esc(ogDesc)}">
 <meta name="twitter:image" content="${IMG}">
 <meta name="twitter:image:alt" content="${esc(IMG_ALT)}">
 <script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@graph": graph })}</script>

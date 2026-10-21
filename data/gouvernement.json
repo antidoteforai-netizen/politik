@@ -1522,6 +1522,19 @@
       "pages": [],
       "niveau": "D",
       "lu_le": "2026-10-21"
+    },
+    {
+      "date": "2026-10-21",
+      "titre": "French Tech : 18 000 entreprises et 450 000 emplois directs",
+      "resume": "Selon le panorama présenté par la French Tech, l'écosystème compte 18 000 entreprises et 450 000 emplois directs. L'Île-de-France en concentre près de 8 000 start-up et 262 000 emplois, et la région Auvergne-Rhône-Alpes plus de 2 500 entreprises et 47 000 emplois.",
+      "source": "economie.gouv.fr",
+      "url": "https://www.economie.gouv.fr/actualites/la-french-tech-un-ecosysteme-avec-une-ambition-mondiale",
+      "ministeres": [
+        "economie"
+      ],
+      "pages": [],
+      "niveau": "V",
+      "lu_le": "2026-10-21"
     }
   ]
 }

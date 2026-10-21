@@ -2576,6 +2576,15 @@
     },
     {
       "page": "gouvernement",
+      "type": "document",
+      "titre": "French Tech : 18 000 entreprises et 450 000 emplois directs",
+      "producteur": "economie.gouv.fr",
+      "url": "https://www.economie.gouv.fr/actualites/la-french-tech-un-ecosysteme-avec-une-ambition-mondiale",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-21"
+    },
+    {
+      "page": "gouvernement",
       "type": "reference",
       "titre": "Site officiel : Premier ministre",
       "producteur": "www.info.gouv.fr",
@@ -3698,7 +3707,7 @@
   "totaux": {
     "api": 19,
     "jeu": 44,
-    "document": 182,
+    "document": 183,
     "reference": 159
   }
 }

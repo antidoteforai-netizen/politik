@@ -2544,6 +2544,24 @@
     },
     {
       "page": "gouvernement",
+      "type": "document",
+      "titre": "Professionnels de santé : une hausse des effectifs formés et deux objectifs annoncés",
+      "producteur": "sante.gouv.fr",
+      "url": "https://sante.gouv.fr/actualites-presse/presse/communiques-de-presse/article/demographie-des-professionnels-de-sante-une-hausse-historique-des-effectifs",
+      "niveau": "D",
+      "statut": "actualité lue le 2026-10-21"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Projet de budget pour 2027 : cible de déficit à 5 % du PIB",
+      "producteur": "solidarites.gouv.fr",
+      "url": "https://solidarites.gouv.fr/projet-de-budget-pour-2027",
+      "niveau": "D",
+      "statut": "actualité lue le 2026-10-21"
+    },
+    {
+      "page": "gouvernement",
       "type": "reference",
       "titre": "Site officiel : Premier ministre",
       "producteur": "www.info.gouv.fr",
@@ -3414,7 +3432,7 @@
   "totaux": {
     "api": 19,
     "jeu": 44,
-    "document": 163,
+    "document": 165,
     "reference": 147
   }
 }

@@ -1477,6 +1477,34 @@
       "niveau": "V",
       "pages": [],
       "lu_le": "2026-10-21"
+    },
+    {
+      "date": "2026-10-14",
+      "titre": "Professionnels de santé : une hausse des effectifs formés et deux objectifs annoncés",
+      "resume": "Le Gouvernement annonce vouloir doubler le nombre d'infirmiers en pratique avancée en formation dès 2027, et plus de 3 000 docteurs juniors de médecine générale se formeront sur le terrain dès novembre pour renforcer l'offre de soins dans les territoires.",
+      "source": "sante.gouv.fr",
+      "url": "https://sante.gouv.fr/actualites-presse/presse/communiques-de-presse/article/demographie-des-professionnels-de-sante-une-hausse-historique-des-effectifs",
+      "ministeres": [
+        "sante"
+      ],
+      "niveau": "D",
+      "pages": [],
+      "lu_le": "2026-10-21"
+    },
+    {
+      "date": "2026-10-01",
+      "titre": "Projet de budget pour 2027 : cible de déficit à 5 % du PIB",
+      "resume": "Le Gouvernement vise un déficit de 5 % du PIB, ce qui demande un effort de 54 milliards d'euros dont 43 milliards portés par les textes financiers. Le projet de loi de financement de la sécurité sociale propose de ramener le déficit des régimes de base de 21,8 milliards en 2026 à 12,7 milliards en 2027.",
+      "source": "solidarites.gouv.fr",
+      "url": "https://solidarites.gouv.fr/projet-de-budget-pour-2027",
+      "ministeres": [
+        "travail-solidarites",
+        "sante",
+        "action-comptes-publics"
+      ],
+      "niveau": "D",
+      "pages": [],
+      "lu_le": "2026-10-21"
     }
   ]
 }

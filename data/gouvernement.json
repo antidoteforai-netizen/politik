@@ -1505,6 +1505,19 @@
       "niveau": "D",
       "pages": [],
       "lu_le": "2026-10-21"
+    },
+    {
+      "date": "2026-10-21",
+      "titre": "Désinformation en santé : un observatoire et un dispositif d'infovigilance",
+      "resume": "À l'occasion d'Octobre Rose, le ministère de la Santé annonce la création d'un Observatoire de la désinformation en santé, un dispositif d'infovigilance et de nouveaux outils de sensibilisation, face aux fausses informations sur les vaccins, les traitements ou les mammographies de dépistage.",
+      "source": "sante.gouv.fr",
+      "url": "https://sante.gouv.fr/actualites-presse/presse/communiques-de-presse/article/le-ministere-de-la-sante-deploie-de-nouveaux-outils-pour-lutter-contre-la",
+      "ministeres": [
+        "sante"
+      ],
+      "pages": [],
+      "niveau": "D",
+      "lu_le": "2026-10-21"
     }
   ]
 }

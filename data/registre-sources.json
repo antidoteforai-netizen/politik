@@ -2562,6 +2562,15 @@
     },
     {
       "page": "gouvernement",
+      "type": "document",
+      "titre": "Désinformation en santé : un observatoire et un dispositif d'infovigilance",
+      "producteur": "sante.gouv.fr",
+      "url": "https://sante.gouv.fr/actualites-presse/presse/communiques-de-presse/article/le-ministere-de-la-sante-deploie-de-nouveaux-outils-pour-lutter-contre-la",
+      "niveau": "D",
+      "statut": "actualité lue le 2026-10-21"
+    },
+    {
+      "page": "gouvernement",
       "type": "reference",
       "titre": "Site officiel : Premier ministre",
       "producteur": "www.info.gouv.fr",
@@ -3432,7 +3441,7 @@
   "totaux": {
     "api": 19,
     "jeu": 44,
-    "document": 165,
+    "document": 166,
     "reference": 147
   }
 }

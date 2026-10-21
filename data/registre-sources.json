@@ -1,5 +1,5 @@
 {
-  "genere_le": "2026-10-20",
+  "genere_le": "2026-10-21",
   "pages": [
     {
       "id": "index",
@@ -2508,6 +2508,42 @@
     },
     {
       "page": "gouvernement",
+      "type": "document",
+      "titre": "Assises de la ménopause : 13 mesures annoncées",
+      "producteur": "sante.gouv.fr",
+      "url": "https://sante.gouv.fr/actualites-presse/presse/communiques-de-presse/article/assises-de-la-menopause-stephanie-rist-annonce-de-nouvelles-mesures-pour-mieux",
+      "niveau": "D",
+      "statut": "actualité lue le 2026-10-21"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Grippe, Covid-19, bronchiolite : se protéger cet hiver",
+      "producteur": "sante.gouv.fr",
+      "url": "https://sante.gouv.fr/actualites-presse/presse/communiques-de-presse/article/grippe-covid-19-bronchiolite-se-proteger-contre-les-infections-respiratoires-de",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-21"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Interdiction des puffs : 86 % des établissements contrôlés sont en règle",
+      "producteur": "sante.gouv.fr",
+      "url": "https://sante.gouv.fr/actualites-presse/presse/communiques-de-presse/article/interdiction-des-puffs",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-21"
+    },
+    {
+      "page": "gouvernement",
+      "type": "document",
+      "titre": "Protections périodiques réutilisables : prise en charge dès le 1er octobre 2026",
+      "producteur": "sante.gouv.fr",
+      "url": "https://sante.gouv.fr/actualites-presse/presse/communiques-de-presse/article/lutte-contre-la-precarite-menstruelle-entree-en-vigueur-de-la-prise-en-charge",
+      "niveau": "V",
+      "statut": "actualité lue le 2026-10-21"
+    },
+    {
+      "page": "gouvernement",
       "type": "reference",
       "titre": "Site officiel : Premier ministre",
       "producteur": "www.info.gouv.fr",
@@ -2897,8 +2933,8 @@
     {
       "page": "presidentielle",
       "type": "reference",
-      "titre": "politik-eta.vercel.app/og-politik.png",
-      "url": "https://politik-eta.vercel.app/og-politik.png",
+      "titre": "politik-eta.vercel.app/og-politik.png?v=20261021",
+      "url": "https://politik-eta.vercel.app/og-politik.png?v=20261021",
       "niveau": "S",
       "statut": "lien"
     },
@@ -3057,8 +3093,8 @@
     {
       "page": "secteurs",
       "type": "reference",
-      "titre": "politik-eta.vercel.app/og-politik.png",
-      "url": "https://politik-eta.vercel.app/og-politik.png",
+      "titre": "politik-eta.vercel.app/og-politik.png?v=20261021",
+      "url": "https://politik-eta.vercel.app/og-politik.png?v=20261021",
       "niveau": "S",
       "statut": "lien"
     },
@@ -3337,8 +3373,8 @@
     {
       "page": "benchmark",
       "type": "reference",
-      "titre": "politik-eta.vercel.app/og-politik.png",
-      "url": "https://politik-eta.vercel.app/og-politik.png",
+      "titre": "politik-eta.vercel.app/og-politik.png?v=20261021",
+      "url": "https://politik-eta.vercel.app/og-politik.png?v=20261021",
       "niveau": "S",
       "statut": "cité"
     },
@@ -3378,7 +3414,7 @@
   "totaux": {
     "api": 19,
     "jeu": 44,
-    "document": 159,
+    "document": 163,
     "reference": 147
   }
 }

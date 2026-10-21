@@ -1424,6 +1424,59 @@
       ],
       "niveau": "V",
       "lu_le": "2026-10-21"
+    },
+    {
+      "date": "2026-10-15",
+      "titre": "Assises de la ménopause : 13 mesures annoncées",
+      "resume": "La ministre de la Santé annonce 13 mesures pour mieux informer, prévenir et prendre en charge. En France, 17,2 millions de femmes sont concernées ; seules 51 % se disent bien informées et 61 % n'ont jamais reçu d'information d'un professionnel de santé.",
+      "source": "sante.gouv.fr",
+      "url": "https://sante.gouv.fr/actualites-presse/presse/communiques-de-presse/article/assises-de-la-menopause-stephanie-rist-annonce-de-nouvelles-mesures-pour-mieux",
+      "ministeres": [
+        "sante"
+      ],
+      "niveau": "D",
+      "pages": [],
+      "lu_le": "2026-10-21"
+    },
+    {
+      "date": "2026-10-08",
+      "titre": "Grippe, Covid-19, bronchiolite : se protéger cet hiver",
+      "resume": "Les autorités rappellent la vaccination contre la grippe et le Covid-19, la prévention de la bronchiolite chez les nourrissons et les gestes barrières. L'hiver 2025-2026 a compté près de 115 000 passages aux urgences pour syndrome grippal et 12 140 décès en excès.",
+      "source": "sante.gouv.fr",
+      "url": "https://sante.gouv.fr/actualites-presse/presse/communiques-de-presse/article/grippe-covid-19-bronchiolite-se-proteger-contre-les-infections-respiratoires-de",
+      "ministeres": [
+        "sante"
+      ],
+      "niveau": "V",
+      "pages": [],
+      "lu_le": "2026-10-21"
+    },
+    {
+      "date": "2026-10-05",
+      "titre": "Interdiction des puffs : 86 % des établissements contrôlés sont en règle",
+      "resume": "Les cigarettes électroniques jetables sont interdites à la vente depuis février 2025. La répression des fraudes a contrôlé 491 établissements ; près de 10 000 puffs ont été retirées de la vente.",
+      "source": "sante.gouv.fr",
+      "url": "https://sante.gouv.fr/actualites-presse/presse/communiques-de-presse/article/interdiction-des-puffs",
+      "ministeres": [
+        "sante",
+        "economie"
+      ],
+      "niveau": "V",
+      "pages": [],
+      "lu_le": "2026-10-21"
+    },
+    {
+      "date": "2026-10-01",
+      "titre": "Protections périodiques réutilisables : prise en charge dès le 1er octobre 2026",
+      "resume": "Les personnes menstruées de moins de 26 ans et les bénéficiaires de la complémentaire santé solidaire peuvent obtenir ces protections prises en charge par l'Assurance maladie, délivrées en pharmacie.",
+      "source": "sante.gouv.fr",
+      "url": "https://sante.gouv.fr/actualites-presse/presse/communiques-de-presse/article/lutte-contre-la-precarite-menstruelle-entree-en-vigueur-de-la-prise-en-charge",
+      "ministeres": [
+        "sante"
+      ],
+      "niveau": "V",
+      "pages": [],
+      "lu_le": "2026-10-21"
     }
   ]
 }

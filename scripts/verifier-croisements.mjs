@@ -167,6 +167,11 @@ try {
     ok.push(`positions-2027 : ${list.filter(e => !e.absent).length} positions sourcées, chacune avec lien, source, date et niveau`);
   }
   {
+    const mauvais = [];
+    for (const f of readdirSync(join(root, "dashboard")).filter(n => n.endsWith(".js"))) { try { new Function(readFileSync(join(root, "dashboard", f), "utf8")); } catch (e) { mauvais.push(f + " : " + e.message); } }
+    if (mauvais.length) problems.push("scripts invalides : " + mauvais.join(" ; ")); else ok.push("dashboard/*.js : syntaxe valide");
+  }
+  {
     const dem = readFileSync(join(root, "dashboard/demarches.html"), "utf8");
     try { [...dem.matchAll(/<script>([\s\S]*?)<\/script>/g)].forEach(m => new Function(m[1])); ok.push("demarches.html : syntaxe du script valide"); } catch (e) { problems.push("demarches.html : " + e.message); }
     for (const id of ["sujets", "vue", "regles"]) if (!dem.includes(`id="${id}"`)) problems.push(`conteneur manquant dans demarches.html : #${id}`);

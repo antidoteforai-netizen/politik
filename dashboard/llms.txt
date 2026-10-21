@@ -15,6 +15,7 @@ Les chiffres portent une pastille : V (publié par l'institution), S (source sec
 - [Le 17 octobre 2026](https://politik-eta.vercel.app/17-octobre-2026.html): Violences, dégradations, agents mobilisés et aides aux commerçants après le 17 octobre 2026 : qui dit quoi, et ce qui n'est pas encore chiffré.
 - [Présidentielle 2027](https://politik-eta.vercel.app/presidentielle-2027.html): Compte à rebours, candidats déclarés et historique des présidentielles de 1958 à 2022, sans sondage ni prévision.
 - [Comparer deux candidats](https://politik-eta.vercel.app/comparer-2027.html): Comparez deux candidats sujet par sujet : fraude sociale, prestations, immigration, fiscalité des patrimoines. Phrases copiées de leurs documents, avec lien et date.
+- [Que faire ? Démarches et droits](https://politik-eta.vercel.app/demarches.html): Logement, travail, consommation, famille : vos droits, la démarche à suivre et le bon numéro, avec des phrases copiées des sites officiels.
 - [Benchmark États-Unis](https://politik-eta.vercel.app/benchmark-usa.html): Ce que font les États-Unis avec leurs données publiques : outils pour voter, suivre les dépenses ou demander l'asile, et ce qu'on peut en apprendre.
 - [Sources et données](https://politik-eta.vercel.app/donnees.html): D'où vient chaque chiffre : le registre des API, jeux de données et documents utilisés par Politik, avec leur niveau de fiabilité.
 

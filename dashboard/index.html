@@ -169,6 +169,41 @@ body.falc .hero-accueil h1{font-weight:700;letter-spacing:0;font-size:clamp(2rem
 body.falc main>section>.sec-head h2{font-weight:700;letter-spacing:0}
 @media (prefers-reduced-motion:reduce){.hero-accueil *{transition:none!important}}
 #dossiers>.sec-head{border-top:0;padding-top:0}
+
+/* Refonte : « Que voulez-vous faire ? », situations pratiques, listes les plus consultées */
+.intentions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.intent{display:flex;flex-direction:column;gap:8px;padding:22px;border:1px solid var(--line-2);border-radius:22px;background:var(--surface);min-width:0}
+.intent-n{margin:0;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.06em;color:var(--ink-3)}
+.intent h3{margin:0;font-family:var(--font-display);font-size:1.5rem;font-weight:500;letter-spacing:-.025em;line-height:1.1}
+.intent-d{margin:0;color:var(--ink-2);line-height:1.45}
+.intent-l{list-style:none;margin:auto 0 0;padding:6px 0 0;display:grid;gap:8px}
+.pill-l{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:44px;padding:8px 14px;border:1px solid var(--line);border-radius:14px;color:var(--ink);font-weight:600;font-size:.92rem;line-height:1.25;text-decoration:none}
+.pill-l:hover,.pill-l:focus-visible{border-color:var(--accent);background:var(--accent-soft);outline:none}
+.pill-l:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.situations{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.sit{display:flex;flex-direction:column;gap:8px;padding:22px;border:1px solid var(--line-2);border-radius:22px;background:var(--surface);min-width:0}
+.sit h3{margin:0;font-family:var(--font-display);font-size:1.5rem;font-weight:500;letter-spacing:-.025em}
+.sit-a{margin:0;color:var(--ink-2);line-height:1.45}
+.sit ul{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:6px}
+.sit li a{display:block;padding:10px 0;border-top:1px solid var(--line-2);color:var(--ink);font-weight:600;line-height:1.3;text-decoration:none}
+.sit li a:hover{color:var(--accent-ink)}
+.sit-n{margin:0;font-size:.95rem}
+.sit-n a{font-family:var(--font-display);font-size:1.25rem;font-weight:500;color:var(--ink)}
+.sit-t{margin-top:auto;display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:700;color:var(--accent-ink);text-decoration:none}
+.sit-t:hover{text-decoration:underline}
+.pop-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.pop{padding:22px;border:1px solid var(--line-2);border-radius:22px;background:var(--surface);min-width:0}
+.pop h3{margin:0 0 2px;font-family:var(--font-display);font-size:1.4rem;font-weight:500;letter-spacing:-.02em}
+.pop ol,.pop ul{margin:12px 0 0;padding-left:22px;display:grid;gap:2px}
+.pop li{padding:6px 0}
+.pop li a{color:var(--ink);font-weight:600;text-underline-offset:3px}
+.pop .dl{display:block;font-size:.84rem;color:var(--ink-2);font-weight:400}
+.pop .src{margin:14px 0 0;font-size:.82rem;color:var(--ink-3);line-height:1.45}
+.pop-more{margin-top:10px}
+.pop-more summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:600;color:var(--accent-ink)}
+@media (max-width:1100px){.intentions,.situations{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){.intentions,.situations,.pop-grid{grid-template-columns:minmax(0,1fr)}}
+body.falc .intent-d,body.falc .sit-a,body.falc .pop .dl{font-size:1.05rem}
 </style>
 <!--SEO-->
 <meta name="description" content="Une page par ministère, des états des lieux sourcés et des dossiers décryptés : fraude, police, cybersécurité, médias. Chaque chiffre dit d'où il vient.">
@@ -189,7 +224,7 @@ body.falc main>section>.sec-head h2{font-weight:700;letter-spacing:0}
 <meta name="twitter:description" content="Une page par ministère, des sujets décryptés, des chiffres sourcés. Chaque chiffre dit d'où il vient.">
 <meta name="twitter:image" content="https://politik-eta.vercel.app/og-politik.png?v=20261021">
 <meta name="twitter:image:alt" content="Politik : comprendre les données publiques de la France. Buste de la République en caractères ASCII sur fond Bleu France.">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://politik-eta.vercel.app/#site","name":"Politik","url":"https://politik-eta.vercel.app/","inLanguage":"fr","description":"Une page par ministère, des états des lieux sourcés et des dossiers décryptés : fraude, police, cybersécurité, médias. Chaque chiffre dit d'où il vient."},{"@type":"WebPage","@id":"https://politik-eta.vercel.app/#page","url":"https://politik-eta.vercel.app/","name":"Politik : comprendre les données publiques de la France","description":"Une page par ministère, des états des lieux sourcés et des dossiers décryptés : fraude, police, cybersécurité, médias. Chaque chiffre dit d'où il vient.","inLanguage":"fr","isPartOf":{"@id":"https://politik-eta.vercel.app/#site"},"dateModified":"2026-10-21","primaryImageOfPage":{"@type":"ImageObject","url":"https://politik-eta.vercel.app/og-politik.png?v=20261021"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://politik-eta.vercel.app/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Qu'est-ce que Politik ?","acceptedAnswer":{"@type":"Answer","text":"Un site qui rassemble des données publiques sur le Gouvernement, l'argent public, les médias, la police et la cybersécurité. Chaque chiffre est donné avec sa source."}},{"@type":"Question","name":"D'où viennent les données ?","acceptedAnswer":{"@type":"Answer","text":"De data.gouv.fr, de l'Insee, de la Cour des comptes, des ministères et d'autres sites officiels. Le registre des sources liste chaque jeu de données utilisé."}},{"@type":"Question","name":"Comment savoir si un chiffre est fiable ?","acceptedAnswer":{"@type":"Answer","text":"Chaque chiffre porte une pastille : V pour publié par l'institution, S pour relayé par une source secondaire, D pour une déclaration ou une annonce, A pour à vérifier."}},{"@type":"Question","name":"Les textes prennent-ils parti ?","acceptedAnswer":{"@type":"Answer","text":"Ils attribuent chaque déclaration à son auteur, donnent la date et la source, et signalent ce que les sources ne disent pas."}},{"@type":"Question","name":"À quelle fréquence le site est-il mis à jour ?","acceptedAnswer":{"@type":"Answer","text":"Les données chiffrées automatiques sont relancées tous les deux jours. Les actualités des ministères sont relues sur leurs sites officiels."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://politik-eta.vercel.app/#site","name":"Politik","url":"https://politik-eta.vercel.app/","inLanguage":"fr","description":"Une page par ministère, des états des lieux sourcés et des dossiers décryptés : fraude, police, cybersécurité, médias. Chaque chiffre dit d'où il vient."},{"@type":"WebPage","@id":"https://politik-eta.vercel.app/#page","url":"https://politik-eta.vercel.app/","name":"Politik : comprendre les données publiques de la France","description":"Une page par ministère, des états des lieux sourcés et des dossiers décryptés : fraude, police, cybersécurité, médias. Chaque chiffre dit d'où il vient.","inLanguage":"fr","isPartOf":{"@id":"https://politik-eta.vercel.app/#site"},"dateModified":"2026-10-21","primaryImageOfPage":{"@type":"ImageObject","url":"https://politik-eta.vercel.app/og-politik.png?v=20261021"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://politik-eta.vercel.app/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Qu'est-ce que Politik ?","acceptedAnswer":{"@type":"Answer","text":"Un site qui rassemble des données publiques sur le Gouvernement, l'argent public, les médias, la police et la cybersécurité. Chaque chiffre est donné avec sa source."}},{"@type":"Question","name":"D'où viennent les données ?","acceptedAnswer":{"@type":"Answer","text":"De data.gouv.fr, de l'Insee, de la Cour des comptes, des ministères et d'autres sites officiels. Le registre des sources liste chaque jeu de données utilisé."}},{"@type":"Question","name":"Comment savoir si un chiffre est fiable ?","acceptedAnswer":{"@type":"Answer","text":"Chaque chiffre porte une pastille : V pour publié par l'institution, S pour relayé par une source secondaire, D pour une déclaration ou une annonce, A pour à vérifier."}},{"@type":"Question","name":"Politik peut-il m'aider dans une démarche ?","acceptedAnswer":{"@type":"Answer","text":"Il vous oriente vers la bonne page officielle et copie ce qu'elle dit, avec sa date. Ce n'est ni un service de l'État ni un avis juridique : ouvrez toujours le lien avant d'agir."}},{"@type":"Question","name":"Les textes prennent-ils parti ?","acceptedAnswer":{"@type":"Answer","text":"Ils attribuent chaque déclaration à son auteur, donnent la date et la source, et signalent ce que les sources ne disent pas."}},{"@type":"Question","name":"À quelle fréquence le site est-il mis à jour ?","acceptedAnswer":{"@type":"Answer","text":"Les données chiffrées automatiques sont relancées tous les deux jours. Les actualités des ministères sont relues sur leurs sites officiels."}}]}]}</script>
 <!--/SEO-->
 </head>
 <body>
@@ -208,13 +243,16 @@ body.falc main>section>.sec-head h2{font-weight:700;letter-spacing:0}
     <p class="lede" data-t="lede"></p>
     <a class="od-badge" href="https://www.data.gouv.fr/" target="_blank" rel="noopener" id="od-badge" hidden><span class="od-dot" aria-hidden="true"></span><span id="od-txt"></span></a>
     <ul class="hero-chips" id="chips" hidden></ul>
-    <div class="cta-row"><a class="cta" href="#ministeres" data-t="cta"></a><a class="cta cta-ghost" href="donnees.html" data-t="cta2"></a></div>
+    <div class="cta-row"><a class="cta" href="#que-faire" data-t="cta"></a><a class="cta cta-ghost" href="#ministeres" data-t="cta2"></a></div>
   </div>
   <div class="hero-illu" aria-hidden="true"><video id="hero-video" autoplay muted loop playsinline preload="auto" poster="video/mariane-ascii-poster.jpg" width="720" height="962"><source src="video/mariane-ascii.mp4" type="video/mp4"></video></div>
 </header>
 <section class="ticker" aria-label="Le site en chiffres"><div class="wrap"><ul id="ticker"></ul></div></section>
 
 <main class="wrap">
+<section id="que-faire"><div class="sec-head"><h2 data-t="s.qf.h"></h2><p data-t="s.qf.p"></p></div><div class="intentions" id="intentions"></div></section>
+<section id="situations"><div class="sec-head"><h2 data-t="s.sit.h"></h2><p data-t="s.sit.p"></p></div><div class="situations" id="situations-grid"></div><p class="plus-lien"><a href="demarches.html" data-evt="intention/toutes-les-situations" data-t="sit.tous"></a></p></section>
+<section id="populaires"><div class="sec-head"><h2 data-t="s.pop.h"></h2><p data-t="s.pop.p"></p></div><div class="pop-grid" id="pop-grid"></div></section>
 <section id="ministeres"><div class="sec-head"><h2 data-t="s.min.h"></h2><p data-t="s.min.p"></p></div>
 <div class="min-filtre" role="search"><label for="min-q" class="sr-only" data-t="min.label"></label><input id="min-q" type="search" autocomplete="off" spellcheck="false" aria-controls="min-res min-groupes" data-ph="min.ph"><button type="button" class="min-clear" id="min-clear" hidden></button><span class="n" id="min-n" role="status" aria-live="polite"></span></div>
 <div id="min-res" hidden></div>
@@ -222,12 +260,12 @@ body.falc main>section>.sec-head h2{font-weight:700;letter-spacing:0}
 <section id="etats"><div class="sec-head"><h2 data-t="s.etats.h"></h2><p data-t="s.etats.p"></p></div><div class="portes" id="portes"></div></section>
 <section id="dossiers"><div class="sec-head"><h2 data-t="s.dos.h"></h2><p data-t="s.dos.p"></p></div><p class="note-dossier" data-t="dos.note"></p><div class="portes" id="dossiers-grid"></div></section>
 <section id="actualite"><div class="sec-head"><h2 data-t="s.actu.h"></h2><p data-t="s.actu.p"></p></div><div class="card"><ul class="actu" id="actu"></ul></div></section>
-<section id="raccourcis"><div class="sec-head"><h2 data-t="s.roles.h"></h2><p data-t="s.roles.p"></p></div><div class="roles" id="roles"></div></section>
 <section id="faq"><div class="sec-head"><h2>Questions fréquentes</h2><p>Les réponses courtes, sans jargon.</p></div>
 <div class="faq">
 <details class="faq-q"><summary>Qu'est-ce que Politik ?</summary><p>Un site qui rassemble des données publiques sur le Gouvernement, l'argent public, les médias, la police et la cybersécurité. Chaque chiffre est donné avec sa source.</p></details>
 <details class="faq-q"><summary>D'où viennent les données ?</summary><p>De data.gouv.fr, de l'Insee, de la Cour des comptes, des ministères et d'autres sites officiels. Le registre des sources liste chaque jeu de données utilisé.</p></details>
 <details class="faq-q"><summary>Comment savoir si un chiffre est fiable ?</summary><p>Chaque chiffre porte une pastille : V pour publié par l'institution, S pour relayé par une source secondaire, D pour une déclaration ou une annonce, A pour à vérifier.</p></details>
+<details class="faq-q"><summary>Politik peut-il m'aider dans une démarche ?</summary><p>Il vous oriente vers la bonne page officielle et copie ce qu'elle dit, avec sa date. Ce n'est ni un service de l'État ni un avis juridique : ouvrez toujours le lien avant d'agir.</p></details>
 <details class="faq-q"><summary>Les textes prennent-ils parti ?</summary><p>Ils attribuent chaque déclaration à son auteur, donnent la date et la source, et signalent ce que les sources ne disent pas.</p></details>
 <details class="faq-q"><summary>À quelle fréquence le site est-il mis à jour ?</summary><p>Les données chiffrées automatiques sont relancées tous les deux jours. Les actualités des ministères sont relues sur leurs sites officiels.</p></details>
 </div></section>
@@ -237,6 +275,8 @@ body.falc main>section>.sec-head h2{font-weight:700;letter-spacing:0}
 
 <script src="gouvernement.js"></script>
 <script src="donnees.js"></script>
+<script src="pratique.js"></script>
+<script src="populaires.js"></script>
 <script>
 const PAGE_LEVELS=["etat","falc"], LEVEL_NAMES={etat:"Termes de l'État", falc:"Facile À Lire et à Comprendre (FALC)"};
 let L=PAGE_LEVELS[0]; try{ const s=localStorage.getItem("politik-level-accueil"); if(PAGE_LEVELS.includes(s)) L=s; }catch(e){}
@@ -248,8 +288,15 @@ const TXT={
   eyebrow:{etat:"Données publiques · sources officielles · aucun parti pris", falc:"Les infos publiques, avec leur source"},
   h1:{etat:"Comprendre les données publiques de la France", falc:"Comprendre les infos publiques de la France"},
   lede:{etat:"Politik réunit les données ouvertes de data.gouv.fr et les publications des sites officiels.", falc:"Politik utilise les données ouvertes de l'État (data.gouv.fr).<br>Chaque chiffre dit d'où il vient.<br>Choisissez un ministère ou un sujet."},
-  cta:{etat:"Voir les ministères", falc:"Voir les ministères"},
-  cta2:{etat:"Voir les sources", falc:"Voir les sources"},
+  cta:{etat:"Que puis-je faire ?", falc:"Que puis-je faire ?"},
+  cta2:{etat:"Voir les ministères", falc:"Voir les ministères"},
+  "s.qf.h":{etat:"Que voulez-vous faire ?", falc:"Que voulez-vous faire ?"},
+  "s.qf.p":{etat:"Quatre façons d'utiliser Politik. Choisissez celle qui vous ressemble : chaque porte mène à des sources officielles, jamais à un avis.", falc:"Choisissez une porte."},
+  "s.sit.h":{etat:"Votre situation de tous les jours", falc:"Votre situation"},
+  "s.sit.p":{etat:"Logement, travail, consommation, famille : ce que dit la source officielle et la démarche pour agir.", falc:"Logement, travail, achats, famille."},
+  "sit.tous":{etat:"Voir tous les droits, démarches et numéros →", falc:"Tout voir →"},
+  "s.pop.h":{etat:"Ce que les Français consultent le plus", falc:"Ce que les gens regardent le plus"},
+  "s.pop.p":{etat:"Les fiches les plus lues sur service-public.gouv.fr et les jeux de données les plus téléchargés sur data.gouv.fr, relevés sur les sites eux-mêmes.", falc:"Les pages les plus lues. Les fichiers les plus téléchargés."},
   "s.portes.h":{etat:"États des lieux", falc:"États des lieux"},
   "s.portes.p":{etat:"Trois chiffres à retenir par sujet, chacun avec son niveau de confiance.", falc:"Chaque carte montre 3 chiffres.<br>Le bouton ouvre la page complète."},
   "s.min.h":{etat:"Choisissez un ministère", falc:"Choisissez un ministère"},
@@ -265,8 +312,6 @@ const TXT={
   "dos.note":{etat:"Un dossier ne remplace pas la page d'un ministère : il suit un seul cas, de près.", falc:"Un dossier suit un cas précis. Il change plus vite."},
   "s.actu.h":{etat:"Ce que les sites officiels viennent de publier", falc:"Les nouvelles officielles"},
   "s.actu.p":{etat:"Chaque ligne porte sa date, sa source et le lien vers la page d'origine.", falc:"Chaque nouvelle a une date et un lien."},
-  "s.roles.h":{etat:"Que cherchez-vous&nbsp;?", falc:"Je cherche quelque chose"},
-  "s.roles.p":{etat:"Un raccourci selon votre besoin.", falc:"Choisissez ce qui vous ressemble."},
   "s.methode.h":{etat:"Neutralité et méthode", falc:"Comment on travaille"},
   "s.methode.p":{etat:"Une pastille sur chaque chiffre dit d'où il vient.", falc:"Chaque chiffre a une pastille."},
   footer:{etat:"Politik · données publiques, textes attribués, niveaux de confiance V, S, D, A.", falc:"Politik · infos publiques, avec la source."}
@@ -287,14 +332,24 @@ const DOSSIERS=[
  {id:"oct17",href:"17-octobre-2026.html",t:{etat:"Le 17 octobre 2026",falc:"Le 17 octobre 2026"},q:{etat:"Que savons-nous des violences, des dégâts et des aides&nbsp;?",falc:"Que s'est-il passé&nbsp;?"},
   stats:[["≥ 3 000",{etat:"commerces touchés les 17 et 18 octobre (ministère de l'Économie)",falc:"commerces touchés"},"V"],["2 000",{etat:"agents de la propreté mobilisés à Paris, environ",falc:"agents ont nettoyé Paris"},"V"],["≈ 80 %",{etat:"taux de poursuite annoncé par le Premier ministre",falc:"poursuites annoncées"},"D"]],src:"economie.gouv.fr ; Ville de Paris ; info.gouv.fr",btn:{etat:"Ouvrir le 17 octobre",falc:"Voir le 17 octobre"}}
 ];
-const ROLES=[
- [{etat:"Citoyen·ne",falc:"Citoyen·ne"},{etat:"Savoir qui gouverne",falc:"Savoir qui gouverne"},"gouvernement.html"],
- [{etat:"Journaliste",falc:"Journaliste"},{etat:"Retrouver une source",falc:"Trouver une source"},"donnees.html"],
- [{etat:"Décideur",falc:"Décideur"},{etat:"Comparer les indicateurs",falc:"Voir les chiffres du pays"},"secteurs.html"],
- [{etat:"Commerçant·e",falc:"Commerçant·e"},{etat:"Aides après le 17 octobre",falc:"Les aides"},"17-octobre-2026.html#commercants"],
- [{etat:"Salarié·e, freelance, agent de caisse",falc:"Salarié·e, freelance"},{etat:"Comprendre la fraude sociale",falc:"La fraude sociale"},"fraude-sociale.html"],
- [{etat:"Immigrant·e, élu·e, ministre",falc:"Ministre, élu·e"},{etat:"Ministères et ministres",falc:"Les ministères"},"gouvernement.html"]
+const INTENTIONS=[
+ {k:"comprendre",n:"01",t:{etat:"Comprendre",falc:"Comprendre"},d:{etat:"Un sujet public, expliqué avec ses sources.",falc:"Un sujet, avec ses sources."},liens:[[{etat:"Les grands sujets en trois chiffres",falc:"Les grands sujets"},"#etats"],[{etat:"Le Gouvernement, ministère par ministère",falc:"Le Gouvernement"},"#ministeres"]]},
+ {k:"droits",n:"02",t:{etat:"Connaître mes droits",falc:"Mes droits"},d:{etat:"La règle officielle, en une phrase copiée d'un site de l'État.",falc:"La règle, copiée d'un site de l'État."},liens:[[{etat:"Mes droits : logement, travail, consommation, famille",falc:"Mes droits"},"demarches.html#droits"]]},
+ {k:"demarche",n:"03",t:{etat:"Faire une démarche",falc:"Une démarche"},d:{etat:"Le bon site officiel et ce qu'il faut savoir avant d'y aller.",falc:"Le bon site officiel."},liens:[[{etat:"Les démarches par situation",falc:"Les démarches"},"demarches.html#demarches"],[{etat:"Les plus lues du moment",falc:"Les plus lues"},"#populaires"]]},
+ {k:"chiffre",n:"04",t:{etat:"Vérifier un chiffre",falc:"Vérifier un chiffre"},d:{etat:"D'où il vient, sa date, son niveau de confiance (V, S, D ou A).",falc:"D'où vient le chiffre ? Est-il sûr ?"},liens:[[{etat:"La liste de toutes les sources",falc:"Les sources"},"donnees.html"],[{etat:"Comprendre les pastilles V, S, D, A",falc:"Les pastilles"},"#methode-section"]]}
 ];
+const MOIS=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+const dateFr=iso=>{const p=String(iso||"").split("-");return p.length===3?(+p[2])+" "+MOIS[+p[1]-1]+" "+p[0]:""};
+const fmtDl=n=>n>=1e6?(n/1e6).toFixed(n>=1e7?0:1).replace(".",",")+" millions":new Intl.NumberFormat("fr-FR").format(n);
+function renderPratique(){
+  $("#intentions").innerHTML=INTENTIONS.map(i=>`<article class="intent"><p class="intent-n">${i.n} /</p><h3>${pick(i.t)}</h3><p class="intent-d">${pick(i.d)}</p><ul class="intent-l">${i.liens.map(l=>`<li><a class="pill-l" href="${l[1]}" data-evt="intention/${i.k}">${pick(l[0])} <span aria-hidden="true">→</span></a></li>`).join("")}</ul></article>`).join("");
+  const PR=(window.PRATIQUE||{}).sujets||[];
+  $("#situations-grid").innerHTML=PR.map(x=>`<article class="sit"><h3>${esc(x.titre)}</h3><p class="sit-a">${esc(x.accroche)}</p><ul>${x.demarches.slice(0,2).map(d=>`<li><a href="${esc(d.u)}" target="_blank" rel="noopener">${esc(d.titre)} <span aria-hidden="true">↗</span></a></li>`).join("")}</ul>${(x.numeros||[]).slice(0,1).map(n=>`<p class="sit-n"><a href="tel:${esc(n.tel)}">${esc(n.numero)}</a> <span class="small muted">${L==="falc"?"numéro officiel":"numéro officiel, lu sur "+esc(new URL(n.u).host)}</span></p>`).join("")}<a class="sit-t" href="demarches.html#${esc(x.id)}" data-evt="situation/${esc(x.id)}">${L==="falc"?"Tout voir":"Droits, démarches, numéros"} <span aria-hidden="true">→</span></a></article>`).join("");
+  const PO=window.POPULAIRES;
+  if(PO){ const sp=PO.service_public, dg=PO.datagouv, d=dateFr(PO.lu_le);
+    $("#pop-grid").innerHTML=`<article class="pop"><h3>${L==="falc"?"Les pages les plus lues":"Les fiches les plus lues"}</h3><p class="small muted">service-public.gouv.fr</p><ol>${sp.plus_lues.map(f=>`<li><a href="${esc(f.url)}" target="_blank" rel="noopener" data-evt="populaire/demarche">${esc(f.titre)} <span aria-hidden="true">↗</span></a></li>`).join("")}</ol><details class="pop-more"><summary>${L==="falc"?"Autres démarches en ligne":"Démarches en ligne mises en avant"}</summary><ul>${sp.outils_mis_en_avant.map(f=>`<li><a href="${esc(f.url)}" target="_blank" rel="noopener" data-evt="populaire/demarche">${esc(f.titre)} <span aria-hidden="true">↗</span></a></li>`).join("")}</ul></details><p class="src">${L==="falc"?"Source : page d'accueil de service-public.gouv.fr, lue le ":"Source : page d'accueil de service-public.gouv.fr, lue le "}${d}. ${L==="falc"?"":"Le classement est celui du site ; la liste « mises en avant » est une sélection de l'éditeur."}</p></article>
+<article class="pop"><h3>${L==="falc"?"Les fichiers les plus téléchargés":"Les jeux de données les plus téléchargés"}</h3><p class="small muted">data.gouv.fr</p><ol>${dg.jeux.map(j=>`<li><a href="${esc(j.url)}" target="_blank" rel="noopener" data-evt="populaire/donnees">${esc(j.titre)} <span aria-hidden="true">↗</span></a><span class="dl">${fmtDl(j.telechargements)} ${L==="falc"?"de téléchargements":"de téléchargements cumulés"}${j.producteur?" · "+esc(j.producteur):""}</span></li>`).join("")}</ol><p class="src">${L==="falc"?"Les chiffres comptent aussi les téléchargements faits par des programmes.":esc(dg.note)} ${L==="falc"?"":"Échantillon : "+dg.echantillon+" jeux. "}Lu le ${d}.</p></article>`; }
+}
 const METHODE=[
  ["V",{etat:"Publié par l'institution elle-même.",falc:"Publié par l'institution."}],
  ["S",{etat:"Source secondaire : presse, étude, association.",falc:"Presse, étude ou association."}],
@@ -349,13 +404,12 @@ function render(){
   const R=(window.REGISTRE&&window.REGISTRE.entrees)||[]; const od=new Set(R.filter(e=>(e.type==="jeu"||e.type==="api")&&/data\.gouv\.fr/.test((e.url||"")+" "+(e.producteur||""))).map(e=>e.titre)).size;
   $("#od-txt").innerHTML=L==="falc"?`<b>Open data</b> : ${od?od+" jeux de données":"des jeux de données"} de data.gouv.fr`:`<b>Open data</b> : ${od?od+" jeux de données et API":"des jeux de données"} de data.gouv.fr utilisés sur ce site`;
   $("#ticker").innerHTML=[[G.ministeres.length,L==="falc"?"ministères":"ministères"],[releves+"/"+tous.length,L==="falc"?"relus sur leur site":"relus sur leur site officiel"],[G.actualites.length,L==="falc"?"nouvelles vérifiées":"actualités vérifiées"],[od||"—",L==="falc"?"jeux de données ouverts":"jeux de données ouverts"]].map(c=>`<li><b class="num">${c[0]}</b><span>${c[1]}</span></li>`).join("");
-  indexMin(); const q=$("#min-q"); q.placeholder=pick(TXT["min.ph"]); filtrerMin();
+  renderPratique(); indexMin(); const q=$("#min-q"); q.placeholder=pick(TXT["min.ph"]); filtrerMin();
   const porte=(p,i,tot,dossier)=>`<article class="porte${dossier?" dossier":""}" id="${p.id}"><p class="porte-n">${dossier?(L==="falc"?"Dossier":"Dossier"):(i+1)+" / "+tot}</p><h3>${pick(p.t)}</h3><p class="porte-q">${pick(p.q)}</p><ul class="porte-stats">${p.stats.map(s=>`<li><span class="num">${s[0]}</span><span class="lab">${pick(s[1])} ${lvl(s[2])}</span></li>`).join("")}</ul><a class="porte-btn" href="${p.href}">${pick(p.btn)} <span aria-hidden="true">→</span></a><p class="src">${esc(p.src)}</p></article>`;
   $("#portes").innerHTML=ETATS.map((p,i)=>porte(p,i,ETATS.length,false)).join("");
   $("#dossiers-grid").innerHTML=DOSSIERS.map((p,i)=>porte(p,i,DOSSIERS.length,true)).join("");
   const acts=G.actualites.slice().sort((a,b)=>a.date<b.date?1:-1).slice(0,5);
   $("#actu").innerHTML=acts.length?acts.map(a=>`<li><time datetime="${a.date}">${dateLong(a.date)}</time><span><a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.titre)}</a><span class="by">${esc(a.source)} ${lvl(a.niveau||"V")}</span></span></li>`).join(""):`<li>Aucune actualité vérifiée pour le moment.</li>`;
-  $("#roles").innerHTML=ROLES.map(r=>`<a class="role" href="${r[2]}"><b>${pick(r[0])}</b><span>${pick(r[1])} <span aria-hidden="true">→</span></span></a>`).join("");
   $("#methode").innerHTML=METHODE.map(m=>`<li>${lvl(m[0])} <span>${pick(m[1])}</span></li>`).join("");
 }
 ["input","search","change","keyup"].forEach(ev=>$("#min-q").addEventListener(ev,filtrerMin));

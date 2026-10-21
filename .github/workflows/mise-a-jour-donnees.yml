@@ -29,12 +29,15 @@ jobs:
           python3 scripts/fetch-donnees.py
           python3 scripts/fetch-aides-presse.py
           python3 scripts/fetch-violences.py
+          python3 scripts/fetch-populaires.py || echo "Listes les plus consultées : fichier précédent conservé"
       - name: Régénération des pages dérivées
         run: |
           node dashboard/build-simple.mjs
           node scripts/build-gouvernement.mjs
           node scripts/build-ministeres.mjs
           node scripts/inject-illustrations.mjs
+          node scripts/build-positions.mjs
+          node scripts/build-pratique.mjs
           node scripts/build-seo.mjs
           node scripts/registre-sources.mjs
       - name: Vérification croisée (bloque la publication si elle échoue)

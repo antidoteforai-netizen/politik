@@ -20,6 +20,7 @@ const PAGES = [
   { id: "secteurs", titre: "Comment va la France", fichier: "secteurs.html" },
   { id: "presidentielle", titre: "Présidentielle 2027", fichier: "presidentielle-2027.html" },
   { id: "comparer", titre: "Comparer deux candidats", fichier: "comparer-2027.html" },
+  { id: "demarches", titre: "Que faire ? Démarches et droits", fichier: "demarches.html" },
   { id: "benchmark", titre: "Benchmark États-Unis", fichier: "benchmark-usa.html" },
 ];
 const entrees = [];
@@ -92,6 +93,15 @@ for (const [id, f] of [["presidentielle", "presidentielle-2027.html"], ["secteur
     const u = e.u.split("#page=")[0];
     for (const page of ["comparer", "presidentielle"]) add({ page, type: e.n === "V" ? "document" : "reference", titre: e.s.replace(/, p\. \d+$/, ""), producteur: new URL(u).host, url: u, niveau: e.absent ? "S" : e.n, statut: "positions de " + cand + ", lu le 21 octobre 2026" });
   }
+}
+
+// 5 ter. Que faire ? : une entrée par page officielle citée (data/pratique.json) ; accueil : listes populaires (data/populaires.json).
+{
+  const pr = JSON.parse(read("data/pratique.json"));
+  for (const s of pr.sujets) for (const k of ["droits", "demarches", "numeros"]) for (const e of (s[k] || [])) add({ page: "demarches", type: "document", titre: e.s, producteur: new URL(e.u).host, url: e.u, niveau: "V", statut: e.d });
+  const pop = JSON.parse(read("data/populaires.json"));
+  add({ page: "index", type: "reference", titre: "service-public.gouv.fr : fiches pratiques les plus lues", producteur: "service-public.gouv.fr", url: pop.service_public.source, niveau: "V", statut: "lu le " + pop.lu_le });
+  add({ page: "index", type: "api", titre: "API data.gouv.fr : jeux de données, téléchargements cumulés", producteur: "data.gouv.fr", url: "https://www.data.gouv.fr/api/2/datasets/", niveau: "V", statut: "lu le " + pop.lu_le });
 }
 
 // 6. Benchmark : liens du document.

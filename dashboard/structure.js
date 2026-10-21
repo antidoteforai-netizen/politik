@@ -6,7 +6,7 @@
    Sans JavaScript, le menu statique de chaque page reste affiché. */
 (function () {
   var PAGES = {
-    "index.html": ["Accueil", "Se repérer"], "donnees.html": ["Sources et données", "Se repérer"], "benchmark-usa.html": ["Benchmark États-Unis", "Se repérer"],
+    "index.html": ["Accueil", "Se repérer"], "demarches.html": ["Que faire ? Démarches et droits", "Se repérer"], "donnees.html": ["Sources et données", "Se repérer"], "benchmark-usa.html": ["Benchmark États-Unis", "Se repérer"],
     "gouvernement.html": ["Les 21 ministères", "Le Gouvernement"], "presidentielle-2027.html": ["Présidentielle 2027", "Le Gouvernement"], "comparer-2027.html": ["Comparer deux candidats", "Le Gouvernement"],
     "fraude-sociale.html": ["Fraude sociale", "États des lieux"], "forces.html": ["Police et gendarmerie", "États des lieux"],
     "cybersecurite.html": ["Cybersécurité de l'État", "États des lieux"], "secteurs.html": ["Comment va la France", "États des lieux"],
@@ -15,6 +15,7 @@
   var FAMILLES = [["regalien", "Pouvoirs régaliens"], ["economie", "Économie et travail"], ["territoires", "Territoires et transitions"], ["societe", "Société"], ["autres", "Autres acteurs"]];
   var TREE = [
     { k: "accueil", label: "Accueil", href: "index.html" },
+    { k: "faire", label: "Que faire ?", href: "demarches.html" },
     { k: "ministeres", label: "Ministères", menu: "ministeres", href: "gouvernement.html" },
     { k: "etats", label: "États des lieux", items: ["fraude-sociale.html", "forces.html", "cybersecurite.html", "secteurs.html"] },
     { k: "dossiers", label: "Dossiers", items: ["medias.html", "17-octobre-2026.html"] },
@@ -106,7 +107,7 @@
   var here = location.pathname.split("/").pop() || "index.html"; if (here === "simple.html") here = "fraude-sociale.html";
   var isMin = /^ministere-.+\.html$/.test(here);
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  function groupOf(f) { if (isMin || f === "gouvernement.html") return "ministeres"; if (f === "index.html") return "accueil"; var g = PAGES[f] && PAGES[f][1]; return g === "États des lieux" ? "etats" : g === "Dossiers" ? "dossiers" : "plus"; }
+  function groupOf(f) { if (isMin || f === "gouvernement.html") return "ministeres"; if (f === "index.html") return "accueil"; if (f === "demarches.html") return "faire"; var g = PAGES[f] && PAGES[f][1]; return g === "États des lieux" ? "etats" : g === "Dossiers" ? "dossiers" : "plus"; }
   var curGroup = groupOf(here);
   function loadGouv(cb) {
     if (window.GOUV) return cb(window.GOUV);
@@ -164,6 +165,7 @@
     var li0 = document.createElement("li"); li0.innerHTML = '<a class="mega-link' + (curGroup === "accueil" ? " here" : "") + '" href="index.html"' + (curGroup === "accueil" ? ' aria-current="page"' : "") + ">Accueil</a>"; ul.appendChild(li0);
     TREE.forEach(function (n) {
       if (n.k === "accueil") return;
+      if (n.href && !n.menu && !n.items) { var lk = document.createElement("li"); lk.innerHTML = '<a class="mega-link' + (curGroup === n.k ? " here" : "") + '" href="' + n.href + '"' + (curGroup === n.k ? ' aria-current="page"' : "") + ">" + esc(n.label) + "</a>"; ul.appendChild(lk); return; }
       if (n.menu) addMenu(ul, n, fillMinisteres); else addMenu(ul, n, fillCards(n));
     });
     wrap.insertBefore(ul, sw || null); nav.classList.add("has-mega");
@@ -189,6 +191,7 @@
         var html = '<a class="m-top" href="index.html"' + (here === "index.html" ? ' aria-current="page"' : "") + ">Accueil</a>";
         TREE.forEach(function (n) {
           if (n.k === "accueil") return;
+          if (n.href && !n.menu && !n.items) { html += '<a class="m-top" href="' + n.href + '"' + (here === n.href ? ' aria-current="page"' : "") + ">" + esc(n.label) + "</a>"; return; }
           var body;
           if (n.menu) {
             body = '<a class="m-row" href="gouvernement.html"' + (here === "gouvernement.html" ? ' aria-current="page"' : "") + '><img src="img/' + ILLU.gouvernement + '" alt="" loading="lazy" width="56" height="56"><span><b>Tous les ministères</b><small>La composition du Gouvernement</small></span></a>' +
@@ -242,7 +245,7 @@
     var f = document.querySelector("body > footer, footer.wrap"); if (!f) return;
     var groups = {}; Object.keys(PAGES).forEach(function (k) { (groups[PAGES[k][1]] = groups[PAGES[k][1]] || []).push(k); });
     var nav = document.createElement("nav"); nav.className = "plan wrap"; nav.setAttribute("aria-label", "Plan du site");
-    var html = "<h2>Plan du site</h2><div class=\"plan-grid\">" + Object.keys(groups).map(function (g) { return "<div><h3>" + esc(g) + "</h3><ul>" + groups[g].map(function (k) { return '<li><a href="' + k + '"' + (k === here ? ' aria-current="page"' : "") + ">" + esc(PAGES[k][0]) + "</a></li>"; }).join("") + "</ul></div>"; }).join("") + '<div id="plan-min"></div></div><p class="mesure-note">Mesure d\'audience : Cloudflare Web Analytics, sans cookie et sans suivi d\'une personne d\'une page à l\'autre. Désactivée si votre navigateur envoie « Ne pas suivre ».</p>';
+    var html = "<h2>Plan du site</h2><div class=\"plan-grid\">" + Object.keys(groups).map(function (g) { return "<div><h3>" + esc(g) + "</h3><ul>" + groups[g].map(function (k) { return '<li><a href="' + k + '"' + (k === here ? ' aria-current="page"' : "") + ">" + esc(PAGES[k][0]) + "</a></li>"; }).join("") + "</ul></div>"; }).join("") + '<div id="plan-min"></div></div><p class="mesure-note">Mesure d\'audience : Cloudflare Web Analytics, sans cookie et sans suivi d\'une personne d\'une page à l\'autre. Les réponses au bouton « Cette page vous a-t-elle aidé ? », les clics sur les portes de l'accueil et sur les liens vers les sites officiels sont comptés de la même façon, sans identifiant. Désactivée si votre navigateur envoie « Ne pas suivre » ; pour vous exclure, ouvrez /?no-analytics=1.</p>';
     nav.innerHTML = html; f.parentNode.insertBefore(nav, f);
     loadGouv(function (G) { if (!G) return; var all = G.ministeres.concat(G.autres_acteurs); var host = document.getElementById("plan-min"); if (host) host.innerHTML = "<h3>Un ministère, une page</h3><ul>" + all.map(function (m) { var h = "ministere-" + m.id + ".html"; return '<li><a href="' + h + '"' + (h === here ? ' aria-current="page"' : "") + ">" + esc(m.court) + "</a></li>"; }).join("") + "</ul>"; });
   }
@@ -259,6 +262,7 @@
     var st = document.createElement("style");
     logo(); st.textContent = CSS; document.head.appendChild(st);
     buildNav(); buildCrumbs(); buildPlan();
+    var ai = document.createElement("script"); ai.src = "aide.js"; ai.defer = true; document.head.appendChild(ai); /* bouton « Cette page vous a-t-elle aidé ? » et événements d'usage */
     fixAll(); var tm; new MutationObserver(function () { clearTimeout(tm); tm = setTimeout(fixAll, 40); }).observe(document.body, { childList: true, subtree: true });
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();

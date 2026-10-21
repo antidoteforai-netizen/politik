@@ -149,7 +149,7 @@ try {
   }
   const acc = readFileSync(join(root, "dashboard/index.html"), "utf8");
   try { new Function(acc.match(/<script>([\s\S]*?)<\/script>/)[1]); ok.push("index.html : syntaxe du script valide"); } catch (e) { problems.push("index.html : " + e.message); }
-  for (const id of ["portes", "actu", "roles", "methode"]) if (!acc.includes(`id="${id}"`)) problems.push(`conteneur manquant dans index.html : #${id}`);
+  for (const id of ["portes", "actu", "intentions", "situations-grid", "pop-grid", "methode"]) if (!acc.includes(`id="${id}"`)) problems.push(`conteneur manquant dans index.html : #${id}`);
   for (const m of acc.matchAll(/href:"([^"#]+)"/g)) if (!existsSync(join(root, "dashboard", m[1]))) problems.push(`index.html : lien vers une page absente : ${m[1]}`);
   {
     const cmp = readFileSync(join(root, "dashboard/comparer-2027.html"), "utf8");
@@ -165,6 +165,17 @@ try {
     if (nonV) problems.push(`positions-2027 : ${nonV} entrée(s) sans niveau V ou S`);
     const dup = new Set(); for (const e of list) if (!e.absent) { const k = e.t; if (dup.has(k)) problems.push("positions-2027 : citation en double : " + k.slice(0, 50)); dup.add(k); }
     ok.push(`positions-2027 : ${list.filter(e => !e.absent).length} positions sourcées, chacune avec lien, source, date et niveau`);
+  }
+  {
+    const dem = readFileSync(join(root, "dashboard/demarches.html"), "utf8");
+    try { [...dem.matchAll(/<script>([\s\S]*?)<\/script>/g)].forEach(m => new Function(m[1])); ok.push("demarches.html : syntaxe du script valide"); } catch (e) { problems.push("demarches.html : " + e.message); }
+    for (const id of ["sujets", "vue", "regles"]) if (!dem.includes(`id="${id}"`)) problems.push(`conteneur manquant dans demarches.html : #${id}`);
+    const sync = (data, js, nom) => { const m = readFileSync(join(root, "dashboard", js), "utf8").match(/= (\{[\s\S]*\});\s*$/); if (!m || JSON.stringify(JSON.parse(m[1])) !== JSON.stringify(JSON.parse(readFileSync(join(root, data), "utf8")))) problems.push(`dashboard/${js} n'est pas à jour : relancer scripts/build-pratique.mjs (${nom})`); };
+    sync("data/pratique.json", "pratique.js", "contenu pratique"); sync("data/populaires.json", "populaires.js", "listes les plus consultées");
+    const pr = JSON.parse(readFileSync(join(root, "data/pratique.json"), "utf8")).sujets;
+    const sansLien = pr.flatMap(s => ["droits", "demarches", "numeros"].flatMap(k => s[k] || [])).filter(e => !/^https:\/\//.test(e.u)).length;
+    if (sansLien) problems.push(`pratique : ${sansLien} élément(s) sans lien officiel https`);
+    ok.push(`pratique : ${pr.length} sujets, chaque phrase avec lien officiel, source et date`);
   }
   const ent = JSON.parse(readFileSync(join(root, "data/entites.json"), "utf8")).entites;
   let manque = 0, sansCredit = 0, nImg = 0;

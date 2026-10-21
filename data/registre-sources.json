@@ -47,6 +47,11 @@
       "fichier": "comparer-2027.html"
     },
     {
+      "id": "demarches",
+      "titre": "Que faire ? Démarches et droits",
+      "fichier": "demarches.html"
+    },
+    {
       "id": "benchmark",
       "titre": "Benchmark États-Unis",
       "fichier": "benchmark-usa.html"
@@ -3432,6 +3437,168 @@
       "statut": "positions de tondelier, lu le 21 octobre 2026"
     },
     {
+      "page": "demarches",
+      "type": "document",
+      "titre": "service-public.gouv.fr, fiche « Quand s'applique la trêve hivernale ? »",
+      "producteur": "www.service-public.gouv.fr",
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F34736",
+      "niveau": "V",
+      "statut": "fiche vérifiée le 1 déc. 2025"
+    },
+    {
+      "page": "demarches",
+      "type": "document",
+      "titre": "service-public.gouv.fr, fiche « Dépôt de garantie dans un bail d'habitation »",
+      "producteur": "www.service-public.gouv.fr",
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31269",
+      "niveau": "V",
+      "statut": "fiche vérifiée le 9 juin 2026"
+    },
+    {
+      "page": "demarches",
+      "type": "document",
+      "titre": "service-public.gouv.fr, fiche « Dans quel cas saisir la commission départementale de conciliation (CDC) ? »",
+      "producteur": "www.service-public.gouv.fr",
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1216",
+      "niveau": "V",
+      "statut": "fiche vérifiée le 3 mai 2024"
+    },
+    {
+      "page": "demarches",
+      "type": "document",
+      "titre": "service-public.gouv.fr, fiche « Aide personnalisée au logement (APL) »",
+      "producteur": "www.service-public.gouv.fr",
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F12006",
+      "niveau": "V",
+      "statut": "fiche vérifiée le 1 juil. 2026"
+    },
+    {
+      "page": "demarches",
+      "type": "document",
+      "titre": "service-public.gouv.fr, fiche « Loyers impayés et expulsion du locataire »",
+      "producteur": "www.service-public.gouv.fr",
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31272",
+      "niveau": "V",
+      "statut": "fiche vérifiée le 6 août 2026"
+    },
+    {
+      "page": "demarches",
+      "type": "document",
+      "titre": "service-public.gouv.fr, fiche « Chômage : inscription à France Travail (anciennement Pôle emploi) »",
+      "producteur": "www.service-public.gouv.fr",
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1636",
+      "niveau": "V",
+      "statut": "fiche vérifiée le 10 oct. 2025"
+    },
+    {
+      "page": "demarches",
+      "type": "document",
+      "titre": "service-public.gouv.fr, fiche « Prime d'activité : salarié ou fonctionnaire »",
+      "producteur": "www.service-public.gouv.fr",
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2882",
+      "niveau": "V",
+      "statut": "fiche vérifiée le 1 juin 2026"
+    },
+    {
+      "page": "demarches",
+      "type": "document",
+      "titre": "travail-emploi.gouv.fr, « Contacter l’inspection du travail ou répondre à vos questions sur le droit du travail »",
+      "producteur": "travail-emploi.gouv.fr",
+      "url": "https://travail-emploi.gouv.fr/contacter-linspection-du-travail-ou-repondre-vos-questions-sur-le-droit-du-travail",
+      "niveau": "V",
+      "statut": "page mise à jour le 30 juin 2023, lue le 21 oct. 2026"
+    },
+    {
+      "page": "demarches",
+      "type": "document",
+      "titre": "service-public.gouv.fr, fiche « Achat à distance : droit de rétractation du consommateur »",
+      "producteur": "www.service-public.gouv.fr",
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F10485",
+      "niveau": "V",
+      "statut": "fiche vérifiée le 1 janv. 2026"
+    },
+    {
+      "page": "demarches",
+      "type": "document",
+      "titre": "service-public.gouv.fr, fiche « Achat d'un produit : garantie légale de conformité »",
+      "producteur": "www.service-public.gouv.fr",
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F11094",
+      "niveau": "V",
+      "statut": "fiche vérifiée le 17 août 2026"
+    },
+    {
+      "page": "demarches",
+      "type": "document",
+      "titre": "signal.conso.gouv.fr, « SignalConso, un service public pour les consommateurs »",
+      "producteur": "signal.conso.gouv.fr",
+      "url": "https://signal.conso.gouv.fr/",
+      "niveau": "V",
+      "statut": "lu le 21 oct. 2026"
+    },
+    {
+      "page": "demarches",
+      "type": "document",
+      "titre": "service-public.gouv.fr, fiche « Achat à distance, e-commerce : démarches et recours en cas de litige »",
+      "producteur": "www.service-public.gouv.fr",
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F10868",
+      "niveau": "V",
+      "statut": "fiche vérifiée le 26 août 2025"
+    },
+    {
+      "page": "demarches",
+      "type": "document",
+      "titre": "service-public.gouv.fr, fiche « Congé supplémentaire de naissance d’un salarié du secteur privé »",
+      "producteur": "www.service-public.gouv.fr",
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F39685",
+      "niveau": "V",
+      "statut": "fiche vérifiée le 3 juin 2026"
+    },
+    {
+      "page": "demarches",
+      "type": "document",
+      "titre": "service-public.gouv.fr, fiche « Que faire si la pension alimentaire n'est pas payée ? »",
+      "producteur": "www.service-public.gouv.fr",
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1249",
+      "niveau": "V",
+      "statut": "fiche vérifiée le 30 janv. 2026"
+    },
+    {
+      "page": "demarches",
+      "type": "document",
+      "titre": "service-public.gouv.fr, page d'accueil (démarches et outils)",
+      "producteur": "www.service-public.gouv.fr",
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/R77233",
+      "niveau": "V",
+      "statut": "lu le 21 oct. 2026"
+    },
+    {
+      "page": "demarches",
+      "type": "document",
+      "titre": "allo119.gouv.fr, Service national d'accueil téléphonique de l'enfance en danger",
+      "producteur": "allo119.gouv.fr",
+      "url": "https://allo119.gouv.fr/",
+      "niveau": "V",
+      "statut": "lu le 21 oct. 2026"
+    },
+    {
+      "page": "index",
+      "type": "reference",
+      "titre": "service-public.gouv.fr : fiches pratiques les plus lues",
+      "producteur": "service-public.gouv.fr",
+      "url": "https://www.service-public.gouv.fr/",
+      "niveau": "V",
+      "statut": "lu le 2026-10-21"
+    },
+    {
+      "page": "index",
+      "type": "api",
+      "titre": "API data.gouv.fr : jeux de données, téléchargements cumulés",
+      "producteur": "data.gouv.fr",
+      "url": "https://www.data.gouv.fr/api/2/datasets/",
+      "niveau": "V",
+      "statut": "lu le 2026-10-21"
+    },
+    {
       "page": "benchmark",
       "type": "reference",
       "titre": "USAFacts, « The future of government data »",
@@ -3705,9 +3872,9 @@
     }
   ],
   "totaux": {
-    "api": 19,
+    "api": 20,
     "jeu": 44,
-    "document": 183,
-    "reference": 159
+    "document": 199,
+    "reference": 160
   }
 }

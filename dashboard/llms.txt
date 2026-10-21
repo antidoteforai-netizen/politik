@@ -7,7 +7,7 @@ Les chiffres portent une pastille : V (publié par l'institution), S (source sec
 ## Pages principales
 - [Accueil](https://politik-eta.vercel.app/): Une page par ministère, des états des lieux sourcés et des dossiers décryptés : fraude, police, cybersécurité, médias. Chaque chiffre dit d'où il vient.
 - [Le Gouvernement](https://politik-eta.vercel.app/gouvernement.html): Les 20 ministères du Gouvernement, leurs ministres, l'essentiel à savoir pour chacun et l'actualité lue sur les sites officiels.
-- [Fraude sociale](https://politik-eta.vercel.app/index.html): Combien coûte la fraude sociale, combien est détecté, combien est récupéré ? Les chiffres officiels, leurs limites et ce qu'on ne mesure pas.
+- [Fraude sociale](https://politik-eta.vercel.app/fraude-sociale.html): Combien coûte la fraude sociale, combien est détecté, combien est récupéré ? Les chiffres officiels, leurs limites et ce qu'on ne mesure pas.
 - [Police et gendarmerie](https://politik-eta.vercel.app/forces.html): Suicides, soutien psychologique, diplôme, salaire, violences et blessés en manifestation : les chiffres de la police et de la gendarmerie, avec leurs sources.
 - [Cybersécurité de l'État](https://politik-eta.vercel.app/cybersecurite.html): Le plan d'action de l'État contre les vols de données, les incidents de 2026 et le rapport de l'ANSSI sur la DGFiP, expliqués simplement.
 - [Comment va la France](https://politik-eta.vercel.app/secteurs.html): Quinze familles de sujets, du pouvoir d'achat à la sécurité : où en est la France, chiffre par chiffre, avec la source de chacun.

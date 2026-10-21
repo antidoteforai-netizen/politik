@@ -39,9 +39,9 @@ Chaque donnée porte une pastille.
 
 | Page | Question à laquelle elle répond |
 |---|---|
-| `accueil.html` | Par où commencer ? Les 21 ministères, les états des lieux, les dossiers, l'actualité vérifiée et des raccourcis par rôle. |
+| `index.html` | Par où commencer ? Les 21 ministères, les états des lieux, les dossiers, l'actualité vérifiée et des raccourcis par rôle. |
 | `gouvernement.html` | Qui compose le Gouvernement, quels sont les 20 ministères, que faut-il savoir de chacun ? |
-| `index.html` | Combien coûte la fraude sociale, qui la mesure, et où les mesures divergent-elles ? |
+| `fraude-sociale.html` | Combien coûte la fraude sociale, qui la mesure, et où les mesures divergent-elles ? |
 | `medias.html` | À qui appartiennent les médias, et quelles aides publiques reçoivent-ils ? |
 | `forces.html` | Que disent les sources sur la police, la gendarmerie et les violences enregistrées ? |
 | `17-octobre-2026.html` | Que savons-nous des événements du 17 octobre 2026, et qui dit quoi ? |
@@ -98,7 +98,7 @@ Les données chiffrées viennent d'API publiques (data.gouv.fr, OFPRA, DGFiP, ge
 
 ```bash
 python3 -m http.server -d dashboard 8765
-# puis ouvrir http://127.0.0.1:8765/accueil.html
+# puis ouvrir http://127.0.0.1:8765/index.html
 ```
 
 ## Mise à jour des données

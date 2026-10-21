@@ -4,7 +4,7 @@
     {
       "id": "index",
       "titre": "Fraude sociale",
-      "fichier": "index.html"
+      "fichier": "fraude-sociale.html"
     },
     {
       "id": "gouvernement",
@@ -3133,8 +3133,8 @@
     {
       "page": "secteurs",
       "type": "reference",
-      "titre": "politik-eta.vercel.app/accueil.html#etats",
-      "url": "https://politik-eta.vercel.app/accueil.html#etats",
+      "titre": "politik-eta.vercel.app/index.html#etats",
+      "url": "https://politik-eta.vercel.app/index.html#etats",
       "niveau": "S",
       "statut": "lien"
     },

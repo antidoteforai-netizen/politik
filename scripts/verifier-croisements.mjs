@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const api = JSON.parse(readFileSync(join(root, "data/donnees-api.json"), "utf8"));
-const html = readFileSync(join(root, "dashboard/index.html"), "utf8");
+const html = readFileSync(join(root, "dashboard/fraude-sociale.html"), "utf8");
 const problems = [];
 const ok = [];
 
@@ -45,7 +45,7 @@ if (api.erreurs?.length) problems.push(`erreurs de collecte : ${api.erreurs.map(
 
 // 2. Le bloc API injecté dans la page est bien celui du JSON (même date de calcul).
 const m = html.match(/\/\* API-DATA-START \*\/\s*const API = (\{.*?\});\s*\/\* API-DATA-END \*\//s);
-if (!m) problems.push("bloc API-DATA introuvable dans index.html");
+if (!m) problems.push("bloc API-DATA introuvable dans fraude-sociale.html");
 else {
   const injected = JSON.parse(m[1]);
   if (injected.calcule_le !== api.calcule_le) problems.push(`page injectée le ${injected.calcule_le}, JSON du ${api.calcule_le}`);
@@ -92,7 +92,7 @@ try {
   const mk = [...med.matchAll(/data-t="([^"]+)"/g)].map(x => x[1]).filter(k => !med.includes(`"${k}":{`) && !med.includes(`  ${k}:{`));
   if (mk.length) problems.push(`medias.html, clés de texte sans entrée : ${mk.join(", ")}`); else ok.push("medias.html : clés de texte toutes définies");
   try { new Function(med.match(/<script>([\s\S]*?)<\/script>/)[1]); ok.push("medias.html : syntaxe du script valide"); } catch (e) { problems.push("medias.html : " + e.message); }
-  for (const page of ["index.html", "simple.html", "presidentielle-2027.html", "secteurs.html", "benchmark-usa.html"]) if (!readFileSync(join(root, "dashboard", page), "utf8").includes('href="medias.html"')) problems.push(`${page} : lien de navigation vers medias.html absent`);
+  for (const page of ["fraude-sociale.html", "simple.html", "presidentielle-2027.html", "secteurs.html", "benchmark-usa.html"]) if (!readFileSync(join(root, "dashboard", page), "utf8").includes('href="medias.html"')) problems.push(`${page} : lien de navigation vers medias.html absent`);
 } catch (e) { problems.push("page médias : " + e.message); }
 
 // 6. Page « Forces de l'ordre » : observations du cahier des charges rendues, textes, script, 3114, navigation.
@@ -104,7 +104,7 @@ try {
   if (!fo.includes("3114")) problems.push("forces.html : le 3114 n'apparaît pas (règle éthique 5)");
   const nObs = (fo.match(/\{kpi:"A1"/g) || []).length; if (nObs !== 12) problems.push(`forces.html : ${nObs} observations KPI-A1, 12 attendues`); else ok.push("forces.html : 12 observations KPI-A1, dont le conflit 2019");
   try { new Function(fo.match(/<script>([\s\S]*?)<\/script>/)[1]); ok.push("forces.html : syntaxe du script valide"); } catch (e) { problems.push("forces.html : " + e.message); }
-  for (const page of ["index.html", "simple.html", "medias.html", "presidentielle-2027.html", "secteurs.html", "benchmark-usa.html"]) if (!readFileSync(join(root, "dashboard", page), "utf8").includes('href="forces.html"')) problems.push(`${page} : lien de navigation vers forces.html absent`);
+  for (const page of ["fraude-sociale.html", "simple.html", "medias.html", "presidentielle-2027.html", "secteurs.html", "benchmark-usa.html"]) if (!readFileSync(join(root, "dashboard", page), "utf8").includes('href="forces.html"')) problems.push(`${page} : lien de navigation vers forces.html absent`);
   if (!readFileSync(join(root, "dashboard/secteurs.html"), "utf8").includes("forces.html#suicide")) problems.push("secteurs.html : la famille Sécurité ne pointe pas vers forces.html");
 } catch (e) { problems.push("page forces : " + e.message); }
 
@@ -119,7 +119,7 @@ try {
   for (const m of gj.ministeres) if (!gjs.includes(`"id":"${m.id}"`)) problems.push(`gouvernement.js périmé : ${m.id} absent (relancer scripts/build-gouvernement.mjs)`);
   if (!gjs.includes(`"${gj.actualites.length ? gj.actualites[0].titre.slice(0, 20).replace(/"/g, '\\"') : "x"}`)) problems.push("gouvernement.js périmé : actualités différentes du JSON");
   for (const [page, list] of Object.entries(gj.pages)) if (page !== "simple.html" && !list.length) problems.push(`page ${page} sans ministère rattaché`);
-  const pagesIdx = ["index.html", "simple.html", "medias.html", "forces.html", "17-octobre-2026.html", "cybersecurite.html", "presidentielle-2027.html", "secteurs.html", "donnees.html", "benchmark-usa.html"];
+  const pagesIdx = ["fraude-sociale.html", "simple.html", "medias.html", "forces.html", "17-octobre-2026.html", "cybersecurite.html", "presidentielle-2027.html", "secteurs.html", "donnees.html", "benchmark-usa.html"];
   for (const pg of pagesIdx) { const h = readFileSync(join(root, "dashboard", pg), "utf8"); for (const need of ["entete.js", "gouvernement.js", "visuels.js", 'href="gouvernement.html"']) if (!h.includes(need)) problems.push(`${pg} : ${need} absent`); if (!gj.pages[pg]) problems.push(`${pg} : aucun ministère défini dans gouvernement.json`); }
   const frc = readFileSync(join(root, "dashboard/forces.html"), "utf8");
   for (const id of ["tbl-etudes", "tbl-enquetes", "tbl-sciences", "entree-cards", "tbl-crit", "tbl-sp", "sp-filter"]) if (!frc.includes(`id="${id}"`)) problems.push(`conteneur manquant dans forces.html : #${id}`);
@@ -147,10 +147,10 @@ try {
     for (const f of ["og-politik.png", "sitemap.xml", "robots.txt", "llms.txt"]) if (!existsSync(join(root, "dashboard", f))) seoPb.push(`fichier absent : ${f}`);
     if (seoPb.length) problems.push(...seoPb); else ok.push("référencement : titre, description, canonique, Open Graph, Twitter et JSON-LD valides sur toutes les pages");
   }
-  const acc = readFileSync(join(root, "dashboard/accueil.html"), "utf8");
-  try { new Function(acc.match(/<script>([\s\S]*?)<\/script>/)[1]); ok.push("accueil.html : syntaxe du script valide"); } catch (e) { problems.push("accueil.html : " + e.message); }
-  for (const id of ["portes", "actu", "roles", "methode"]) if (!acc.includes(`id="${id}"`)) problems.push(`conteneur manquant dans accueil.html : #${id}`);
-  for (const m of acc.matchAll(/href:"([^"#]+)"/g)) if (!existsSync(join(root, "dashboard", m[1]))) problems.push(`accueil.html : lien vers une page absente : ${m[1]}`);
+  const acc = readFileSync(join(root, "dashboard/index.html"), "utf8");
+  try { new Function(acc.match(/<script>([\s\S]*?)<\/script>/)[1]); ok.push("index.html : syntaxe du script valide"); } catch (e) { problems.push("index.html : " + e.message); }
+  for (const id of ["portes", "actu", "roles", "methode"]) if (!acc.includes(`id="${id}"`)) problems.push(`conteneur manquant dans index.html : #${id}`);
+  for (const m of acc.matchAll(/href:"([^"#]+)"/g)) if (!existsSync(join(root, "dashboard", m[1]))) problems.push(`index.html : lien vers une page absente : ${m[1]}`);
   const ent = JSON.parse(readFileSync(join(root, "data/entites.json"), "utf8")).entites;
   let manque = 0, sansCredit = 0, nImg = 0;
   for (const [k, e] of Object.entries(ent)) if (e.img) { nImg++; try { readFileSync(join(root, "dashboard", e.img)); } catch { manque++; } if (!e.credit || !e.credit.licence) sansCredit++; }

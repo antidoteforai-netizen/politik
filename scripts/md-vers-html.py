@@ -4,7 +4,7 @@ Gère titres, citations, paragraphes, listes, tableaux, gras, liens, code inline
 Tableaux reconnus par leur première colonne :
   « Outil » ou « Lecture »  -> fiches cliquables avec pastilles de fiabilité (V, S, D, A) ;
   « Organisme »             -> liste de sources (organisme, document, date, lien).
-La barre de navigation est reprise de dashboard/accueil.html.
+La barre de navigation est reprise de dashboard/index.html.
 
     python3 Politik/scripts/md-vers-html.py docs/benchmark-usa-2026-10-20.md dashboard/benchmark-usa.html "Benchmark États-Unis"
 """
@@ -128,7 +128,7 @@ legende = ('<aside class="legende-niv" aria-label="Comment lire la fiabilité"><
            "".join(f'<li><span class="lvl lvl-{k}">{k}</span>{v[:1].upper() + v[1:]}</li>' for k, v in LV.items()) + "</ul></aside>")
 body = "\n".join(hero + [legende] + rest)
 
-acc = (ROOT / "dashboard/accueil.html").read_text(encoding="utf-8")
+acc = (ROOT / "dashboard/index.html").read_text(encoding="utf-8")
 NAV = re.search(r'<nav class="nav".*?</nav>', acc, re.S).group(0).replace(' class="here" aria-current="page"', "")
 NAV = re.sub(r'<div class="switch"[^>]*></div>', "", NAV)
 page = f"""<!doctype html>

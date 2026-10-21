@@ -79,7 +79,7 @@
         "17-octobre-2026.html",
         "cybersecurite.html",
         "forces.html",
-        "index.html",
+        "fraude-sociale.html",
         "presidentielle-2027.html"
       ],
       "site": "https://www.interieur.gouv.fr/",
@@ -157,7 +157,7 @@
       "famille": "economie",
       "icone": "<g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"8\" y=\"16\" width=\"32\" height=\"22\" rx=\"3\"/><path d=\"M18 16v-4h12v4M8 26h32\"/></g>",
       "pages": [
-        "index.html",
+        "fraude-sociale.html",
         "17-octobre-2026.html",
         "secteurs.html"
       ],
@@ -293,7 +293,7 @@
         "benchmark-usa.html",
         "cybersecurite.html",
         "donnees.html",
-        "index.html",
+        "fraude-sociale.html",
         "secteurs.html"
       ],
       "site": "https://www.economie.gouv.fr/",
@@ -508,7 +508,7 @@
       "famille": "societe",
       "icone": "<g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"24\" cy=\"24\" r=\"17\"/><path d=\"M24 15v18M15 24h18\"/></g>",
       "pages": [
-        "index.html",
+        "fraude-sociale.html",
         "secteurs.html"
       ],
       "site": "https://sante.gouv.fr/",
@@ -641,7 +641,7 @@
       "icone": "<g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 40h32\"/><rect x=\"10\" y=\"28\" width=\"8\" height=\"12\" rx=\"1\"/><rect x=\"20\" y=\"16\" width=\"8\" height=\"24\" rx=\"1\"/><rect x=\"30\" y=\"22\" width=\"8\" height=\"18\" rx=\"1\"/></g>",
       "pages": [
         "cybersecurite.html",
-        "index.html",
+        "fraude-sociale.html",
         "secteurs.html"
       ],
       "site": "https://www.budget.gouv.fr/",
@@ -820,7 +820,7 @@
     }
   ],
   "pages": {
-    "index.html": [
+    "fraude-sociale.html": [
       "action-comptes-publics",
       "economie",
       "travail-solidarites",
@@ -1048,7 +1048,7 @@
         "action-comptes-publics"
       ],
       "pages": [
-        "index.html"
+        "fraude-sociale.html"
       ],
       "niveau": "V",
       "lu_le": "2026-10-20"

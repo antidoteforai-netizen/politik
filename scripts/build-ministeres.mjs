@@ -10,8 +10,8 @@ const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "
 const MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
 const dateLong = s => { const [y, m, j] = s.split("-").map(Number); return (j === 1 ? "1er" : j) + " " + MOIS[m - 1] + " " + y; };
 const FAM = { regalien: ["Pouvoirs régaliens", "var(--c1)"], economie: ["Économie et travail", "var(--c2)"], territoires: ["Territoires et transitions", "var(--c3)"], societe: ["Société", "var(--c4)"], autres: ["Autres acteurs", "var(--c5)"] };
-const PAGES = { "gouvernement.html": "Le Gouvernement", "index.html": "Fraude sociale", "medias.html": "Qui possède les médias", "forces.html": "Police et gendarmerie", "17-octobre-2026.html": "Le 17 octobre 2026", "cybersecurite.html": "Cybersécurité de l'État", "presidentielle-2027.html": "Présidentielle 2027", "secteurs.html": "Comment va la France", "benchmark-usa.html": "Benchmark États-Unis", "donnees.html": "Sources et données" };
-const acc = readFileSync(join(root, "dashboard/accueil.html"), "utf8");
+const PAGES = { "gouvernement.html": "Le Gouvernement", "fraude-sociale.html": "Fraude sociale", "medias.html": "Qui possède les médias", "forces.html": "Police et gendarmerie", "17-octobre-2026.html": "Le 17 octobre 2026", "cybersecurite.html": "Cybersécurité de l'État", "presidentielle-2027.html": "Présidentielle 2027", "secteurs.html": "Comment va la France", "benchmark-usa.html": "Benchmark États-Unis", "donnees.html": "Sources et données" };
+const acc = readFileSync(join(root, "dashboard/index.html"), "utf8");
 const nav = acc.match(/<nav class="nav".*?<\/nav>/s)[0].replace(/ class="here" aria-current="page"/g, "").replace(/<div class="switch"[^>]*><\/div>/, "");
 const fonts = acc.slice(acc.indexOf('<link rel="preconnect"'), acc.indexOf("<style>"));
 const css = `<style>

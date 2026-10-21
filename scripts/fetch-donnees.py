@@ -3,7 +3,7 @@
 
 Appelle les API et fichiers ouverts (data.gouv.fr, OFPRA, geo.api.gouv.fr, DGFiP, INSEE Filosofi,
 Open Urssaf, data.caf.fr, data.gov), calcule les croisements, écrit data/donnees-api.json puis
-injecte le résultat dans dashboard/index.html entre /* API-DATA-START */ et /* API-DATA-END */.
+injecte le résultat dans dashboard/fraude-sociale.html entre /* API-DATA-START */ et /* API-DATA-END */.
 Relancer ensuite dashboard/build-simple.mjs.
 
 Stdlib seulement : le xlsx de l'IFI et le zip Filosofi sont lus avec zipfile + XML/CSV.
@@ -16,7 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "donnees-api.json"
-HTML = ROOT / "dashboard" / "index.html"
+HTML = ROOT / "dashboard" / "fraude-sociale.html"
 UA = {"User-Agent": "Mozilla/5.0 Politik/0.4 (tableau de bord citoyen)", "Accept": "application/json,*/*"}
 
 def get(url, timeout=120):
@@ -649,7 +649,7 @@ OUT.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding
 html = HTML.read_text(encoding="utf-8")
 start, end = "/* API-DATA-START */", "/* API-DATA-END */"
 if start not in html or end not in html:
-    raise SystemExit("marqueurs API-DATA absents de index.html")
+    raise SystemExit("marqueurs API-DATA absents de fraude-sociale.html")
 html = html[:html.index(start)] + f"{start}\nconst API = {json.dumps(result, ensure_ascii=False)};\n{end}" + html[html.index(end) + len(end):]
 HTML.write_text(html, encoding="utf-8")
-print(f"OK : {OUT.relative_to(ROOT)} écrit, index.html injecté ; erreurs : {len(result['erreurs'])}")
+print(f"OK : {OUT.relative_to(ROOT)} écrit, fraude-sociale.html injecté ; erreurs : {len(result['erreurs'])}")

@@ -15,7 +15,7 @@
    paraissent collées ; un tableau dans <details> fermé est invisible, donc ne compte pas comme « vu ». */
 async () => {
   const KEYS = "CAF CNAF RSA INSEE DREES OFPRA SSMSI DCPAF DGEF OQTF ONDAM CNAV TNT ITT IGPN RBD SSPO CNRS MGP IFI PISA PIB PLF API UE LCP KPI".split(" ");
-  const PAGES = [["index.html", "Fraude sociale"], ["medias.html", "Médias"], ["forces.html", "Forces de l'ordre"], ["presidentielle-2027.html", "Présidentielle 2027"], ["secteurs.html", "Comment va la France"], ["donnees.html", "Sources et données"]];
+  const PAGES = [["fraude-sociale.html", "Fraude sociale"], ["medias.html", "Médias"], ["forces.html", "Forces de l'ordre"], ["presidentielle-2027.html", "Présidentielle 2027"], ["secteurs.html", "Comment va la France"], ["donnees.html", "Sources et données"]];
   const V = "aeiouyàâäéèêëîïôöùûüÿœæ";
   const syll = w => { w = w.toLowerCase().replace(/[^a-zàâäéèêëîïôöùûüÿœæç]/g, ""); if (!w) return 0; const m = w.replace(new RegExp("(?:[^" + V + "]es|ed|[^" + V + "]e)$"), "").match(new RegExp("[" + V + "]+", "g")); return Math.max(1, m ? m.length : 1); };
   const load = (file, level) => new Promise(res => { const f = document.createElement("iframe"); f.style.cssText = "position:fixed;left:-9999px;width:1200px;height:900px"; f.src = file; f.onload = () => setTimeout(() => { const d = f.contentDocument; const b = d.querySelector('#switch button[data-level="' + level + '"]'); if (b && b.getAttribute("aria-pressed") !== "true") b.click(); setTimeout(() => res(f), 700); }, 500); document.body.appendChild(f); });

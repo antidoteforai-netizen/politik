@@ -1,5 +1,5 @@
 // Politik — registre unique des sources, API et jeux de données, construit depuis les pages elles-mêmes.
-// Lit index.html (DATA.sources, DATA.catalogue), fetch-donnees.py et fetch-aides-presse.py (API appelées),
+// Lit fraude-sociale.html (DATA.sources, DATA.catalogue), fetch-donnees.py et fetch-aides-presse.py (API appelées),
 // medias.html (SOURCES), forces.html (DS, SRC), presidentielle-2027.html et secteurs.html (références `src:`),
 // benchmark-usa.html (liens du document). Écrit data/registre-sources.json et dashboard/donnees.js
 // (window.REGISTRE + rendu du bloc « Données de cette page » sur chaque page).
@@ -11,7 +11,7 @@ import { fileURLToPath } from "node:url";
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const read = f => readFileSync(join(root, f), "utf8");
 const PAGES = [
-  { id: "index", titre: "Fraude sociale", fichier: "index.html" },
+  { id: "index", titre: "Fraude sociale", fichier: "fraude-sociale.html" },
   { id: "gouvernement", titre: "Le Gouvernement", fichier: "gouvernement.html" },
   { id: "forces", titre: "Forces de l'ordre", fichier: "forces.html" },
   { id: "oct17", titre: "Le 17 octobre 2026", fichier: "17-octobre-2026.html" },
@@ -27,7 +27,7 @@ const evalArray = (txt) => new Function("return " + txt)();
 const block = (src, start, end) => { const i = src.indexOf(start); if (i < 0) throw new Error("bloc introuvable : " + start); const j = src.indexOf(end, i + start.length); return src.slice(i + start.length - 1, j + end.length).replace(/,\s*$/, ""); };
 
 // 1. Page fraude : registre des sources (titre, type, niveau, url) et catalogue data.gouv (6 colonnes).
-const index = read("dashboard/index.html");
+const index = read("dashboard/fraude-sociale.html");
 for (const [titre, type, niveau, url] of evalArray(block(index, "sources: [", "\n  ]"))) add({ page: "index", type: /officiel/i.test(type) ? "document" : "reference", titre, producteur: type, niveau, url, statut: "cité" });
 for (const [titre, producteur, granularite, description, url, statut] of evalArray(block(index, "catalogue: [", "\n  ],"))) add({ page: "index", type: "jeu", titre, producteur, granularite, description, url, niveau: "V", statut });
 

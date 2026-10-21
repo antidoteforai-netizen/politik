@@ -324,6 +324,30 @@ body.falc .term{text-decoration:none;cursor:default}
 .falc-badge{display:none;align-items:center;gap:10px;background:var(--accent-soft);color:var(--accent-ink);border-radius:8px;padding:10px 14px;margin-top:16px;font-size:1rem}
 body.falc .falc-badge{display:flex}
 .falc-badge svg{flex:none}
+
+/* Finition éditoriale commune : légèreté (Geist 300-500), rubriques numérotées, filets fins */
+:root{--line:#E4E7ED;--line-2:#EFF1F5;--shadow:0 1px 1px rgba(20,26,43,.03),0 10px 30px -22px rgba(20,26,43,.16);--radius:14px}
+body{font-weight:400;font-feature-settings:"ss01","cv11";letter-spacing:-.003em}
+h1,h2,h3{font-family:var(--font-display)}
+h1{font-weight:400;letter-spacing:-.04em;line-height:1.04}
+h2{font-weight:400;letter-spacing:-.03em;line-height:1.1}
+h3{font-weight:500;letter-spacing:-.015em}
+header.hero h1{font-size:clamp(2.3rem,5vw,3.8rem)}
+.tile .val,.count{font-weight:400;letter-spacing:-.035em;font-variant-numeric:tabular-nums}
+.eyebrow,.subbar-label,.tile .lab{font-family:var(--font-mono);font-weight:500;letter-spacing:.06em}
+strong,b{font-weight:600}
+main{counter-reset:rub}
+main>section>.sec-head,main>.sec-head{counter-increment:rub;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px 56px;align-items:end;margin-bottom:28px}
+main>section>.sec-head:before,main>.sec-head:before{content:counter(rub,decimal-leading-zero);justify-self:start;grid-column:1/-1;display:inline-flex;align-items:center;gap:8px;padding:4px 11px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-family:var(--font-mono);font-size:.75rem;font-weight:500;letter-spacing:.06em;color:var(--ink-2);font-variant-numeric:tabular-nums}
+main>section>.sec-head,main>.sec-head{border-top:1px solid var(--line);padding-top:22px}
+main>section:first-child>.sec-head,main>.sec-head:first-child{border-top:0;padding-top:0}
+main>section>.sec-head h2,main>.sec-head h2{font-size:clamp(1.6rem,3.2vw,2.5rem)}
+main>section>.sec-head p,main>.sec-head p{line-height:1.55;color:var(--ink-2)}
+main>section{scroll-margin-top:96px}
+.card,.tile,.porte,.min-tile,.role,.faq-q,.chart{box-shadow:none}
+@media (max-width:860px){main>section>.sec-head,main>.sec-head{grid-template-columns:minmax(0,1fr);gap:6px}}
+body.falc h1,body.falc h2{font-weight:700;letter-spacing:0}
+body.falc .eyebrow,body.falc .subbar-label,body.falc .tile .lab{font-family:var(--font-falc);letter-spacing:.02em}
 </style>
 <!--SEO-->
 <meta name="description" content="La fraude sociale en France expliquée simplement : les chiffres officiels, ce qu'on ne sait pas, et qui en répond.">
@@ -344,17 +368,17 @@ body.falc .falc-badge{display:flex}
 <meta name="twitter:description" content="La fraude sociale en France expliquée simplement : les chiffres officiels, ce qu'on ne sait pas, et qui en répond.">
 <meta name="twitter:image" content="https://politik-eta.vercel.app/og-politik.png?v=20261021">
 <meta name="twitter:image:alt" content="Politik : comprendre les données publiques de la France. Buste de la République en caractères ASCII sur fond Bleu France.">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://politik-eta.vercel.app/#site","name":"Politik","url":"https://politik-eta.vercel.app/","inLanguage":"fr","description":"Une page par ministère, des états des lieux sourcés et des dossiers décryptés : fraude, police, cybersécurité, médias. Chaque chiffre dit d'où il vient."},{"@type":"WebPage","@id":"https://politik-eta.vercel.app/simple.html#page","url":"https://politik-eta.vercel.app/simple.html","name":"Fraude sociale en France, version simple · Politik","description":"La fraude sociale en France expliquée simplement : les chiffres officiels, ce qu'on ne sait pas, et qui en répond.","inLanguage":"fr","isPartOf":{"@id":"https://politik-eta.vercel.app/#site"},"dateModified":"2026-10-21","primaryImageOfPage":{"@type":"ImageObject","url":"https://politik-eta.vercel.app/og-politik.png?v=20261021"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://politik-eta.vercel.app/"},{"@type":"ListItem","position":2,"name":"États des lieux","item":"https://politik-eta.vercel.app/accueil.html#etats"},{"@type":"ListItem","position":3,"name":"Fraude sociale en France, version simple","item":"https://politik-eta.vercel.app/simple.html"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://politik-eta.vercel.app/#site","name":"Politik","url":"https://politik-eta.vercel.app/","inLanguage":"fr","description":"Une page par ministère, des états des lieux sourcés et des dossiers décryptés : fraude, police, cybersécurité, médias. Chaque chiffre dit d'où il vient."},{"@type":"WebPage","@id":"https://politik-eta.vercel.app/simple.html#page","url":"https://politik-eta.vercel.app/simple.html","name":"Fraude sociale en France, version simple · Politik","description":"La fraude sociale en France expliquée simplement : les chiffres officiels, ce qu'on ne sait pas, et qui en répond.","inLanguage":"fr","isPartOf":{"@id":"https://politik-eta.vercel.app/#site"},"dateModified":"2026-10-21","primaryImageOfPage":{"@type":"ImageObject","url":"https://politik-eta.vercel.app/og-politik.png?v=20261021"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://politik-eta.vercel.app/"},{"@type":"ListItem","position":2,"name":"États des lieux","item":"https://politik-eta.vercel.app/index.html#etats"},{"@type":"ListItem","position":3,"name":"Fraude sociale en France, version simple","item":"https://politik-eta.vercel.app/simple.html"}]}]}</script>
 <!--/SEO-->
 </head>
 <body data-palette="#2F5BC9,#C8622A,#3A8F6A,#8A4FB8,#A8921E">
 
 <nav class="nav" aria-label="Sommaire">
   <div class="wrap">
-    <a class="brand" href="accueil.html" style="display:inline-flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="15" fill="#141A2B"/><rect x="19" y="14" width="8" height="36" rx="4" fill="#fff"/><circle cx="35" cy="26" r="10.5" fill="none" stroke="#fff" stroke-width="8"/><circle cx="35" cy="26" r="3.6" fill="#7A9BEC"/></svg><span style="color:inherit">Politik<span>.</span></span></a>
-    <ul class="pages"><li><a href="gouvernement.html" title="Le Gouvernement : ministères, ministres, actualité en bref">Gouvernement</a></li><li><a href="index.html" class="here" aria-current="page" title="Fraude sociale">Fraude</a></li><li><a href="medias.html" title="Qui possède les médias">Médias</a></li><li><a href="forces.html" title="Forces de l'ordre : police et gendarmerie">Police</a></li><li><a href="cybersecurite.html" title="Cybersécurité de l'État">Cyber</a></li><li><a href="17-octobre-2026.html" title="Le 17 octobre 2026">17 octobre</a></li><li><a href="presidentielle-2027.html" title="Présidentielle 2027">Élection</a></li><li><a href="secteurs.html" title="Comment va la France">France</a></li><li><a href="benchmark-usa.html" title="Benchmark États-Unis">États-Unis</a></li><li><a href="donnees.html" title="Sources et données">Sources</a></li></ul>
+    <a class="brand" href="index.html" style="display:inline-flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="15" fill="#141A2B"/><rect x="19" y="14" width="8" height="36" rx="4" fill="#fff"/><circle cx="35" cy="26" r="10.5" fill="none" stroke="#fff" stroke-width="8"/><circle cx="35" cy="26" r="3.6" fill="#7A9BEC"/></svg><span style="color:inherit">Politik<span>.</span></span></a>
+    <ul class="pages"><li><a href="gouvernement.html" title="Le Gouvernement : ministères, ministres, actualité en bref">Gouvernement</a></li><li><a href="fraude-sociale.html" class="here" aria-current="page" title="Fraude sociale">Fraude</a></li><li><a href="medias.html" title="Qui possède les médias">Médias</a></li><li><a href="forces.html" title="Forces de l'ordre : police et gendarmerie">Police</a></li><li><a href="cybersecurite.html" title="Cybersécurité de l'État">Cyber</a></li><li><a href="17-octobre-2026.html" title="Le 17 octobre 2026">17 octobre</a></li><li><a href="presidentielle-2027.html" title="Présidentielle 2027">Élection</a></li><li><a href="secteurs.html" title="Comment va la France">France</a></li><li><a href="benchmark-usa.html" title="Benchmark États-Unis">États-Unis</a></li><li><a href="donnees.html" title="Sources et données">Sources</a></li></ul>
     <div class="switch" role="group" aria-label="Niveau de lecture" id="switch"></div>
-    <a class="other-version" id="other-version" href="index.html">Version termes de l'État</a>
+    <a class="other-version" id="other-version" href="fraude-sociale.html">Version termes de l'État</a>
   </div>
   <div class="progress" aria-hidden="true"><i id="progress-bar"></i></div>
 </nav>

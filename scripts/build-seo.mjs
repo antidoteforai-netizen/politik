@@ -15,16 +15,16 @@ const today = new Date().toISOString().slice(0, 10);
 const esc = s => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const gj = JSON.parse(readFileSync(join(root, "data/gouvernement.json"), "utf8"));
 const P = {
-  "accueil.html": ["Politik : comprendre les données publiques de la France", "Une page par ministère, des états des lieux sourcés et des dossiers décryptés : fraude, police, cybersécurité, médias. Chaque chiffre dit d'où il vient.", []],
-  "index.html": ["Fraude sociale en France, chiffres et sources · Politik", "Combien coûte la fraude sociale, combien est détecté, combien est récupéré ? Les chiffres officiels, leurs limites et ce qu'on ne mesure pas.", [["États des lieux", "accueil.html#etats"]]],
-  "simple.html": ["Fraude sociale en France, version simple · Politik", "La fraude sociale en France expliquée simplement : les chiffres officiels, ce qu'on ne sait pas, et qui en répond.", [["États des lieux", "accueil.html#etats"]]],
+  "index.html": ["Politik : comprendre les données publiques de la France", "Une page par ministère, des états des lieux sourcés et des dossiers décryptés : fraude, police, cybersécurité, médias. Chaque chiffre dit d'où il vient.", []],
+  "fraude-sociale.html": ["Fraude sociale en France, chiffres et sources · Politik", "Combien coûte la fraude sociale, combien est détecté, combien est récupéré ? Les chiffres officiels, leurs limites et ce qu'on ne mesure pas.", [["États des lieux", "index.html#etats"]]],
+  "simple.html": ["Fraude sociale en France, version simple · Politik", "La fraude sociale en France expliquée simplement : les chiffres officiels, ce qu'on ne sait pas, et qui en répond.", [["États des lieux", "index.html#etats"]]],
   "gouvernement.html": ["Le Gouvernement : 20 ministères et leurs actualités · Politik", "Les 20 ministères du Gouvernement, leurs ministres, l'essentiel à savoir pour chacun et l'actualité lue sur les sites officiels.", []],
-  "medias.html": ["Qui possède les médias en France ? · Politik", "À qui appartiennent les grands médias français, quels liens avec l'État, quelles aides publiques : un dossier sourcé, groupe par groupe.", [["Dossiers", "accueil.html#dossiers"]]],
-  "forces.html": ["Police et gendarmerie : chiffres et sources · Politik", "Suicides, soutien psychologique, diplôme, salaire, violences et blessés en manifestation : les chiffres de la police et de la gendarmerie, avec leurs sources.", [["États des lieux", "accueil.html#etats"]]],
-  "17-octobre-2026.html": ["Le 17 octobre 2026 : ce que disent les sources · Politik", "Violences, dégradations, agents mobilisés et aides aux commerçants après le 17 octobre 2026 : qui dit quoi, et ce qui n'est pas encore chiffré.", [["Dossiers", "accueil.html#dossiers"]]],
-  "cybersecurite.html": ["Cybersécurité de l'État : plan et incidents · Politik", "Le plan d'action de l'État contre les vols de données, les incidents de 2026 et le rapport de l'ANSSI sur la DGFiP, expliqués simplement.", [["États des lieux", "accueil.html#etats"]]],
+  "medias.html": ["Qui possède les médias en France ? · Politik", "À qui appartiennent les grands médias français, quels liens avec l'État, quelles aides publiques : un dossier sourcé, groupe par groupe.", [["Dossiers", "index.html#dossiers"]]],
+  "forces.html": ["Police et gendarmerie : chiffres et sources · Politik", "Suicides, soutien psychologique, diplôme, salaire, violences et blessés en manifestation : les chiffres de la police et de la gendarmerie, avec leurs sources.", [["États des lieux", "index.html#etats"]]],
+  "17-octobre-2026.html": ["Le 17 octobre 2026 : ce que disent les sources · Politik", "Violences, dégradations, agents mobilisés et aides aux commerçants après le 17 octobre 2026 : qui dit quoi, et ce qui n'est pas encore chiffré.", [["Dossiers", "index.html#dossiers"]]],
+  "cybersecurite.html": ["Cybersécurité de l'État : plan et incidents · Politik", "Le plan d'action de l'État contre les vols de données, les incidents de 2026 et le rapport de l'ANSSI sur la DGFiP, expliqués simplement.", [["États des lieux", "index.html#etats"]]],
   "presidentielle-2027.html": ["Présidentielle 2027 : candidats et repères · Politik", "Compte à rebours, candidats déclarés et historique des présidentielles de 1958 à 2022, sans sondage ni prévision.", []],
-  "secteurs.html": ["Comment va la France, sujet par sujet · Politik", "Quinze familles de sujets, du pouvoir d'achat à la sécurité : où en est la France, chiffre par chiffre, avec la source de chacun.", [["États des lieux", "accueil.html#etats"]]],
+  "secteurs.html": ["Comment va la France, sujet par sujet · Politik", "Quinze familles de sujets, du pouvoir d'achat à la sécurité : où en est la France, chiffre par chiffre, avec la source de chacun.", [["États des lieux", "index.html#etats"]]],
   "benchmark-usa.html": ["Données publiques : ce que font les États-Unis · Politik", "Ce que font les États-Unis avec leurs données publiques : outils pour voter, suivre les dépenses ou demander l'asile, et ce qu'on peut en apprendre.", []],
   "donnees.html": ["Sources et données : le registre complet · Politik", "D'où vient chaque chiffre : le registre des API, jeux de données et documents utilisés par Politik, avec leur niveau de fiabilité.", []]
 };
@@ -50,17 +50,17 @@ for (const f of files) {
   else if (NOINDEX.has(f)) { title = (h.match(/<title>(.*?)<\/title>/s) || [0, "Politik"])[1]; desc = ""; crumbs = []; }
   else { console.warn("page sans fiche SEO :", f); continue; }
   h = h.replace(/<title>.*?<\/title>/s, `<title>${esc(title)}</title>`);
-  const url = f === "accueil.html" ? BASE + "/" : `${BASE}/${f}`;
+  const url = f === "index.html" ? BASE + "/" : `${BASE}/${f}`;
   if (NOINDEX.has(f)) {
     h = h.replace(/\n?<meta name="robots"[^>]*>/g, "");
     h = h.replace("</head>", `<!--SEO-->\n<meta name="robots" content="noindex,follow">\n<!--/SEO-->\n</head>`);
     writeFileSync(path, h, "utf8"); continue;
   }
-  const trail = [["Accueil", "accueil.html"], ...crumbs];
-  if (f !== "accueil.html") trail.push([title.replace(/ · Politik$/, ""), f]);
+  const trail = [["Accueil", "index.html"], ...crumbs];
+  if (f !== "index.html") trail.push([title.replace(/ · Politik$/, ""), f]);
   /* Aperçus sociaux : ~125 caractères affichés. On garde les phrases entières qui tiennent en 120, sinon on coupe au mot. */
   const ogDesc = (() => {
-    if (f === "accueil.html") return "Une page par ministère, des sujets décryptés, des chiffres sourcés. Chaque chiffre dit d'où il vient.";
+    if (f === "index.html") return "Une page par ministère, des sujets décryptés, des chiffres sourcés. Chaque chiffre dit d'où il vient.";
     if (desc.length <= 120) return desc;
     const ph = desc.match(/[^.!?]+[.!?]+(\s|$)/g) || [desc]; let o = "";
     for (const x of ph) { if ((o + x).trim().length <= 120) o += x; else break; }
@@ -69,11 +69,11 @@ for (const f of files) {
     const cut = desc.slice(0, 117); return cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:]$/, "") + "…";
   })();
   const graph = [
-    { "@type": "WebSite", "@id": BASE + "/#site", name: "Politik", url: BASE + "/", inLanguage: "fr", description: P["accueil.html"][1] },
+    { "@type": "WebSite", "@id": BASE + "/#site", name: "Politik", url: BASE + "/", inLanguage: "fr", description: P["index.html"][1] },
     { "@type": "WebPage", "@id": url + "#page", url, name: title, description: desc, inLanguage: "fr", isPartOf: { "@id": BASE + "/#site" }, dateModified: today, primaryImageOfPage: { "@type": "ImageObject", url: IMG }, ...(about ? { about } : {}) },
-    { "@type": "BreadcrumbList", itemListElement: trail.map((t, i) => ({ "@type": "ListItem", position: i + 1, name: t[0], item: BASE + "/" + (t[1] === "accueil.html" ? "" : t[1]) })) }
+    { "@type": "BreadcrumbList", itemListElement: trail.map((t, i) => ({ "@type": "ListItem", position: i + 1, name: t[0], item: BASE + "/" + (t[1] === "index.html" ? "" : t[1]) })) }
   ];
-  if (f === "accueil.html") {
+  if (f === "index.html") {
     const qa = [...h.matchAll(/<details class="faq-q"><summary>(.*?)<\/summary><p>(.*?)<\/p><\/details>/gs)].map(m => ({ "@type": "Question", name: m[1].replace(/<[^>]+>/g, "").trim(), acceptedAnswer: { "@type": "Answer", text: m[2].replace(/<[^>]+>/g, "").trim() } }));
     if (qa.length) graph.push({ "@type": "FAQPage", mainEntity: qa });
   }
@@ -100,7 +100,7 @@ for (const f of files) {
 <!--/SEO-->`;
   h = h.replace("</head>", block + "\n</head>");
   writeFileSync(path, h, "utf8");
-  urls.push([url, statSync(path).mtime.toISOString().slice(0, 10), f === "accueil.html" ? "1.0" : (mm ? "0.5" : "0.8")]);
+  urls.push([url, statSync(path).mtime.toISOString().slice(0, 10), f === "index.html" ? "1.0" : (mm ? "0.5" : "0.8")]);
   n++;
 }
 writeFileSync(join(root, "dashboard/sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `  <url><loc>${u[0]}</loc><lastmod>${u[1]}</lastmod><priority>${u[2]}</priority></url>`).join("\n")}\n</urlset>\n`, "utf8");
@@ -113,9 +113,9 @@ writeFileSync(join(root, "dashboard/llms.txt"), `# Politik
 Les chiffres portent une pastille : V (publié par l'institution), S (source secondaire), D (déclaration ou annonce), A (à vérifier). Les textes existent en deux niveaux de lecture : termes de l'État et Facile À Lire et à Comprendre (FALC). Les données chiffrées sont relancées tous les deux jours ; ${nv} acteurs sur ${nm + gj.autres_acteurs.length} ont été relus sur leur site officiel le ${today}.
 
 ## Pages principales
-- [Accueil](${BASE}/): ${P["accueil.html"][1]}
+- [Accueil](${BASE}/): ${P["index.html"][1]}
 - [Le Gouvernement](${BASE}/gouvernement.html): ${P["gouvernement.html"][1]}
-- [Fraude sociale](${BASE}/index.html): ${P["index.html"][1]}
+- [Fraude sociale](${BASE}/fraude-sociale.html): ${P["fraude-sociale.html"][1]}
 - [Police et gendarmerie](${BASE}/forces.html): ${P["forces.html"][1]}
 - [Cybersécurité de l'État](${BASE}/cybersecurite.html): ${P["cybersecurite.html"][1]}
 - [Comment va la France](${BASE}/secteurs.html): ${P["secteurs.html"][1]}

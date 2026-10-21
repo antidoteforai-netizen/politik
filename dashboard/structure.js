@@ -6,17 +6,17 @@
    Sans JavaScript, le menu statique de chaque page reste affiché. */
 (function () {
   var PAGES = {
-    "accueil.html": ["Accueil", "Se repérer"], "donnees.html": ["Sources et données", "Se repérer"], "benchmark-usa.html": ["Benchmark États-Unis", "Se repérer"],
+    "index.html": ["Accueil", "Se repérer"], "donnees.html": ["Sources et données", "Se repérer"], "benchmark-usa.html": ["Benchmark États-Unis", "Se repérer"],
     "gouvernement.html": ["Les 21 ministères", "Le Gouvernement"], "presidentielle-2027.html": ["Présidentielle 2027", "Le Gouvernement"],
-    "index.html": ["Fraude sociale", "États des lieux"], "forces.html": ["Police et gendarmerie", "États des lieux"],
+    "fraude-sociale.html": ["Fraude sociale", "États des lieux"], "forces.html": ["Police et gendarmerie", "États des lieux"],
     "cybersecurite.html": ["Cybersécurité de l'État", "États des lieux"], "secteurs.html": ["Comment va la France", "États des lieux"],
     "medias.html": ["Qui possède les médias", "Dossiers"], "17-octobre-2026.html": ["Le 17 octobre 2026", "Dossiers"]
   };
   var FAMILLES = [["regalien", "Pouvoirs régaliens"], ["economie", "Économie et travail"], ["territoires", "Territoires et transitions"], ["societe", "Société"], ["autres", "Autres acteurs"]];
   var TREE = [
-    { k: "accueil", label: "Accueil", href: "accueil.html" },
+    { k: "accueil", label: "Accueil", href: "index.html" },
     { k: "ministeres", label: "Ministères", menu: "ministeres", href: "gouvernement.html" },
-    { k: "etats", label: "États des lieux", items: ["index.html", "forces.html", "cybersecurite.html", "secteurs.html"] },
+    { k: "etats", label: "États des lieux", items: ["fraude-sociale.html", "forces.html", "cybersecurite.html", "secteurs.html"] },
     { k: "dossiers", label: "Dossiers", items: ["medias.html", "17-octobre-2026.html"] },
     { k: "plus", label: "Aussi", items: ["presidentielle-2027.html", "benchmark-usa.html", "donnees.html"] }
   ];
@@ -103,23 +103,23 @@
     "@media (max-width:1240px){.switch .lv-long{display:none}.switch .lv-short{display:inline}}",
     "@media print{.plan,.fil{display:none}}"
   ].join("\n");
-  var here = location.pathname.split("/").pop() || "accueil.html"; if (here === "simple.html") here = "index.html";
+  var here = location.pathname.split("/").pop() || "index.html"; if (here === "simple.html") here = "fraude-sociale.html";
   var isMin = /^ministere-.+\.html$/.test(here);
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  function groupOf(f) { if (isMin || f === "gouvernement.html") return "ministeres"; if (f === "accueil.html") return "accueil"; var g = PAGES[f] && PAGES[f][1]; return g === "États des lieux" ? "etats" : g === "Dossiers" ? "dossiers" : "plus"; }
+  function groupOf(f) { if (isMin || f === "gouvernement.html") return "ministeres"; if (f === "index.html") return "accueil"; var g = PAGES[f] && PAGES[f][1]; return g === "États des lieux" ? "etats" : g === "Dossiers" ? "dossiers" : "plus"; }
   var curGroup = groupOf(here);
   function loadGouv(cb) {
     if (window.GOUV) return cb(window.GOUV);
     var s = document.createElement("script"); s.src = "gouvernement.js"; s.onload = function () { cb(window.GOUV); }; s.onerror = function () { cb(null); }; document.head.appendChild(s);
   }
-  var SHORT = { "index.html": "Fraude", "forces.html": "Police", "cybersecurite.html": "Cyber", "secteurs.html": "France", "medias.html": "Médias", "17-octobre-2026.html": "17 octobre", "presidentielle-2027.html": "Élection", "benchmark-usa.html": "États-Unis", "donnees.html": "Sources" };
+  var SHORT = { "fraude-sociale.html": "Fraude", "forces.html": "Police", "cybersecurite.html": "Cyber", "secteurs.html": "France", "medias.html": "Médias", "17-octobre-2026.html": "17 octobre", "presidentielle-2027.html": "Élection", "benchmark-usa.html": "États-Unis", "donnees.html": "Sources" };
   function link(f, label, title) { return '<a href="' + f + '"' + (title ? ' title="' + esc(title) + '"' : "") + (f === here || (f === "gouvernement.html" && isMin) ? ' class="here" aria-current="page"' : "") + ">" + label + "</a>"; }
-  var ILLU = { index: "photos/fraude.jpg", forces: "photos/police.jpg", cybersecurite: "photos/cyber.jpg", secteurs: "photos/france.jpg", medias: "photos/medias.jpg", "17-octobre-2026": "photos/oct17.jpg", "presidentielle-2027": "photos/election.jpg", "benchmark-usa": "photos/usa.jpg", donnees: "photos/donnees.jpg", gouvernement: "photos/ministeres.jpg" };
-  var DESC = { "index.html": "Ce que l'État estime, détecte et récupère", "forces.html": "Violences, soutien, diplôme et salaire", "cybersecurite.html": "Plan d'action, incidents et constats", "secteurs.html": "Quinze familles de sujets, chiffre par chiffre", "medias.html": "Qui possède quoi, et quelles aides publiques", "17-octobre-2026.html": "Ce que disent les sources officielles", "presidentielle-2027.html": "Candidats et repères avant le scrutin", "benchmark-usa.html": "Ce que font les Américains de leurs données", "donnees.html": "D'où vient chaque chiffre du site" };
+  var ILLU = { "fraude-sociale": "photos/fraude.jpg", forces: "photos/police.jpg", cybersecurite: "photos/cyber.jpg", secteurs: "photos/france.jpg", medias: "photos/medias.jpg", "17-octobre-2026": "photos/oct17.jpg", "presidentielle-2027": "photos/election.jpg", "benchmark-usa": "photos/usa.jpg", donnees: "photos/donnees.jpg", gouvernement: "photos/ministeres.jpg" };
+  var DESC = { "fraude-sociale.html": "Ce que l'État estime, détecte et récupère", "forces.html": "Violences, soutien, diplôme et salaire", "cybersecurite.html": "Plan d'action, incidents et constats", "secteurs.html": "Quinze familles de sujets, chiffre par chiffre", "medias.html": "Qui possède quoi, et quelles aides publiques", "17-octobre-2026.html": "Ce que disent les sources officielles", "presidentielle-2027.html": "Candidats et repères avant le scrutin", "benchmark-usa.html": "Ce que font les Américains de leurs données", "donnees.html": "D'où vient chaque chiffre du site" };
   var CHEV = '<svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4.5 6 8.5 10 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   var openPanel = null, openBtn = null, hoverT = null;
   function closeAll() { clearTimeout(hoverT); if (openPanel) { openPanel.hidden = true; openBtn.setAttribute("aria-expanded", "false"); openPanel = openBtn = null; } }
-  var CRED = {"index": "Fabio Gargano", "forces": "flightlog", "cybersecurite": "ProjectManhattan", "secteurs": "Elliott Brown", "medias": "Benoît Prieur", "17-octobre-2026": "flightlog", "presidentielle-2027": "Jamain", "benchmark-usa": "Alvesgaspar", "donnees": "Simon Hattinga Verschure", "gouvernement": "ScareCriterion12"};
+  var CRED = {"fraude-sociale": "Fabio Gargano", "forces": "flightlog", "cybersecurite": "ProjectManhattan", "secteurs": "Elliott Brown", "medias": "Benoît Prieur", "17-octobre-2026": "flightlog", "presidentielle-2027": "Jamain", "benchmark-usa": "Alvesgaspar", "donnees": "Simon Hattinga Verschure", "gouvernement": "ScareCriterion12"};
   function img(f) { return '<img src="img/' + f + '" alt="" loading="lazy" width="640" height="480">'; }
   function card(f) {
     var key = f.replace(/\.html$/, "");
@@ -161,7 +161,7 @@
     var nav = document.querySelector("nav.nav"); if (!nav) return;
     var wrap = nav.querySelector(".wrap"), sw = nav.querySelector(".switch"); if (!wrap) return;
     var ul = document.createElement("ul"); ul.className = "mega-list"; ul.setAttribute("aria-label", "Rubriques du site");
-    var li0 = document.createElement("li"); li0.innerHTML = '<a class="mega-link' + (curGroup === "accueil" ? " here" : "") + '" href="accueil.html"' + (curGroup === "accueil" ? ' aria-current="page"' : "") + ">Accueil</a>"; ul.appendChild(li0);
+    var li0 = document.createElement("li"); li0.innerHTML = '<a class="mega-link' + (curGroup === "accueil" ? " here" : "") + '" href="index.html"' + (curGroup === "accueil" ? ' aria-current="page"' : "") + ">Accueil</a>"; ul.appendChild(li0);
     TREE.forEach(function (n) {
       if (n.k === "accueil") return;
       if (n.menu) addMenu(ul, n, fillMinisteres); else addMenu(ul, n, fillCards(n));
@@ -186,7 +186,7 @@
       if (built) return cb(); built = true;
       loadGouv(function (G) {
         var all = G ? G.ministeres.concat(G.autres_acteurs) : [], COL = { regalien: "var(--c1)", economie: "var(--c2)", territoires: "var(--c3)", societe: "var(--c4)", autres: "var(--c5)" };
-        var html = '<a class="m-top" href="accueil.html"' + (here === "accueil.html" ? ' aria-current="page"' : "") + ">Accueil</a>";
+        var html = '<a class="m-top" href="index.html"' + (here === "index.html" ? ' aria-current="page"' : "") + ">Accueil</a>";
         TREE.forEach(function (n) {
           if (n.k === "accueil") return;
           var body;
@@ -225,13 +225,13 @@
     if (mq.addEventListener) mq.addEventListener("change", onMq); else mq.addListener(onMq);
   }
   function buildCrumbs() {
-    if (here === "accueil.html") return;
+    if (here === "index.html") return;
     var nav = document.querySelector("nav.nav"); if (!nav) return;
     var name = PAGES[here] ? PAGES[here][0] : ((document.querySelector("h1") || {}).textContent || "").trim();
-    var trail = [["Accueil", "accueil.html"]];
+    var trail = [["Accueil", "index.html"]];
     if (isMin) trail.push(["Ministères", "gouvernement.html"]);
-    else if (curGroup === "etats") trail.push(["États des lieux", "accueil.html#etats"]);
-    else if (curGroup === "dossiers") trail.push(["Dossiers", "accueil.html#dossiers"]);
+    else if (curGroup === "etats") trail.push(["États des lieux", "index.html#etats"]);
+    else if (curGroup === "dossiers") trail.push(["Dossiers", "index.html#dossiers"]);
     if (here !== "gouvernement.html" || true) trail.push([name, null]);
     if (here === "gouvernement.html") { trail.pop(); trail.push(["Ministères", null]); }
     var w = document.createElement("div"); w.className = "wrap";
@@ -254,7 +254,7 @@
   }
   function fixTables() { [].forEach.call(document.querySelectorAll("thead th:not([scope])"), function (th) { th.setAttribute("scope", "col"); }); }
   function fixAll() { fixTables(); fixSwitch(); }
-  function logo() { [].forEach.call(document.querySelectorAll("nav.nav .brand"), function (b) { b.setAttribute("href", "accueil.html"); b.setAttribute("aria-label", "Politik, retour à l'accueil"); b.setAttribute("title", "Retour à l'accueil"); }); }
+  function logo() { [].forEach.call(document.querySelectorAll("nav.nav .brand"), function (b) { b.setAttribute("href", "index.html"); b.setAttribute("aria-label", "Politik, retour à l'accueil"); b.setAttribute("title", "Retour à l'accueil"); }); }
   function init() {
     var st = document.createElement("style");
     logo(); st.textContent = CSS; document.head.appendChild(st);

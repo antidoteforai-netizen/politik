@@ -42,6 +42,11 @@
       "fichier": "presidentielle-2027.html"
     },
     {
+      "id": "comparer",
+      "titre": "Comparer deux candidats",
+      "fichier": "comparer-2027.html"
+    },
+    {
       "id": "benchmark",
       "titre": "Benchmark États-Unis",
       "fichier": "benchmark-usa.html"
@@ -3166,6 +3171,258 @@
       "statut": "lien"
     },
     {
+      "page": "comparer",
+      "type": "document",
+      "titre": "attalpresident.fr, « Travail et salaires »",
+      "producteur": "attalpresident.fr",
+      "url": "https://attalpresident.fr/programme/travail-salaires",
+      "niveau": "V",
+      "statut": "positions de attal, lu le 21 octobre 2026"
+    },
+    {
+      "page": "presidentielle",
+      "type": "document",
+      "titre": "attalpresident.fr, « Travail et salaires »",
+      "producteur": "attalpresident.fr",
+      "url": "https://attalpresident.fr/programme/travail-salaires",
+      "niveau": "V",
+      "statut": "positions de attal, lu le 21 octobre 2026"
+    },
+    {
+      "page": "comparer",
+      "type": "reference",
+      "titre": "Fondation iFRAP, comparateur de programmes (Allocations et prestations)",
+      "producteur": "www.ifrap.org",
+      "url": "https://www.ifrap.org/comparateurs/presidentielles-2027#c624",
+      "niveau": "S",
+      "statut": "positions de attal, lu le 21 octobre 2026"
+    },
+    {
+      "page": "presidentielle",
+      "type": "reference",
+      "titre": "Fondation iFRAP, comparateur de programmes (Allocations et prestations)",
+      "producteur": "www.ifrap.org",
+      "url": "https://www.ifrap.org/comparateurs/presidentielles-2027#c624",
+      "niveau": "S",
+      "statut": "positions de attal, lu le 21 octobre 2026"
+    },
+    {
+      "page": "comparer",
+      "type": "document",
+      "titre": "attalpresident.fr, « Frontières »",
+      "producteur": "attalpresident.fr",
+      "url": "https://attalpresident.fr/programme/frontieres",
+      "niveau": "V",
+      "statut": "positions de attal, lu le 21 octobre 2026"
+    },
+    {
+      "page": "presidentielle",
+      "type": "document",
+      "titre": "attalpresident.fr, « Frontières »",
+      "producteur": "attalpresident.fr",
+      "url": "https://attalpresident.fr/programme/frontieres",
+      "niveau": "V",
+      "statut": "positions de attal, lu le 21 octobre 2026"
+    },
+    {
+      "page": "comparer",
+      "type": "reference",
+      "titre": "Fondation iFRAP, comparateur de programmes (Immigration)",
+      "producteur": "www.ifrap.org",
+      "url": "https://www.ifrap.org/comparateurs/presidentielles-2027#c584",
+      "niveau": "S",
+      "statut": "positions de attal, lu le 21 octobre 2026"
+    },
+    {
+      "page": "presidentielle",
+      "type": "reference",
+      "titre": "Fondation iFRAP, comparateur de programmes (Immigration)",
+      "producteur": "www.ifrap.org",
+      "url": "https://www.ifrap.org/comparateurs/presidentielles-2027#c584",
+      "niveau": "S",
+      "statut": "positions de attal, lu le 21 octobre 2026"
+    },
+    {
+      "page": "comparer",
+      "type": "reference",
+      "titre": "Fondation iFRAP, comparateur de programmes (Fiscalité)",
+      "producteur": "www.ifrap.org",
+      "url": "https://www.ifrap.org/comparateurs/presidentielles-2027#c581",
+      "niveau": "S",
+      "statut": "positions de glucksmann, lu le 21 octobre 2026"
+    },
+    {
+      "page": "presidentielle",
+      "type": "reference",
+      "titre": "Fondation iFRAP, comparateur de programmes (Fiscalité)",
+      "producteur": "www.ifrap.org",
+      "url": "https://www.ifrap.org/comparateurs/presidentielles-2027#c581",
+      "niveau": "S",
+      "statut": "positions de glucksmann, lu le 21 octobre 2026"
+    },
+    {
+      "page": "comparer",
+      "type": "document",
+      "titre": "Nouvelle Énergie, « L’ambition française »",
+      "producteur": "www.unenouvelleenergie.fr",
+      "url": "https://www.unenouvelleenergie.fr/notre-programme/reussir-une-nouvelle-ambition-francaise/",
+      "niveau": "V",
+      "statut": "positions de lisnard, lu le 21 octobre 2026"
+    },
+    {
+      "page": "presidentielle",
+      "type": "document",
+      "titre": "Nouvelle Énergie, « L’ambition française »",
+      "producteur": "www.unenouvelleenergie.fr",
+      "url": "https://www.unenouvelleenergie.fr/notre-programme/reussir-une-nouvelle-ambition-francaise/",
+      "niveau": "V",
+      "statut": "positions de lisnard, lu le 21 octobre 2026"
+    },
+    {
+      "page": "comparer",
+      "type": "reference",
+      "titre": "Fondation iFRAP, comparateur de programmes (Démocratie et pouvoir législatif)",
+      "producteur": "www.ifrap.org",
+      "url": "https://www.ifrap.org/comparateurs/presidentielles-2027#c716",
+      "niveau": "S",
+      "statut": "positions de melenchon, lu le 21 octobre 2026"
+    },
+    {
+      "page": "presidentielle",
+      "type": "reference",
+      "titre": "Fondation iFRAP, comparateur de programmes (Démocratie et pouvoir législatif)",
+      "producteur": "www.ifrap.org",
+      "url": "https://www.ifrap.org/comparateurs/presidentielles-2027#c716",
+      "niveau": "S",
+      "statut": "positions de melenchon, lu le 21 octobre 2026"
+    },
+    {
+      "page": "comparer",
+      "type": "reference",
+      "titre": "Fondation iFRAP, comparateur de programmes",
+      "producteur": "www.ifrap.org",
+      "url": "https://www.ifrap.org/comparateurs/presidentielles-2027",
+      "niveau": "S",
+      "statut": "positions de melenchon, lu le 21 octobre 2026"
+    },
+    {
+      "page": "presidentielle",
+      "type": "reference",
+      "titre": "Fondation iFRAP, comparateur de programmes",
+      "producteur": "www.ifrap.org",
+      "url": "https://www.ifrap.org/comparateurs/presidentielles-2027",
+      "niveau": "S",
+      "statut": "positions de melenchon, lu le 21 octobre 2026"
+    },
+    {
+      "page": "comparer",
+      "type": "document",
+      "titre": "edouardphilippe.fr, « Pour une France plus attentive à ses enfants »",
+      "producteur": "www.edouardphilippe.fr",
+      "url": "https://www.edouardphilippe.fr/priorites/pour-une-france-plus-attentive-a-ses-enfants",
+      "niveau": "V",
+      "statut": "positions de philippe, lu le 21 octobre 2026"
+    },
+    {
+      "page": "presidentielle",
+      "type": "document",
+      "titre": "edouardphilippe.fr, « Pour une France plus attentive à ses enfants »",
+      "producteur": "www.edouardphilippe.fr",
+      "url": "https://www.edouardphilippe.fr/priorites/pour-une-france-plus-attentive-a-ses-enfants",
+      "niveau": "V",
+      "statut": "positions de philippe, lu le 21 octobre 2026"
+    },
+    {
+      "page": "comparer",
+      "type": "document",
+      "titre": "edouardphilippe.fr, « Pour une France plus sûre »",
+      "producteur": "www.edouardphilippe.fr",
+      "url": "https://www.edouardphilippe.fr/priorites/pour-une-france-plus-sure",
+      "niveau": "V",
+      "statut": "positions de philippe, lu le 21 octobre 2026"
+    },
+    {
+      "page": "presidentielle",
+      "type": "document",
+      "titre": "edouardphilippe.fr, « Pour une France plus sûre »",
+      "producteur": "www.edouardphilippe.fr",
+      "url": "https://www.edouardphilippe.fr/priorites/pour-une-france-plus-sure",
+      "niveau": "V",
+      "statut": "positions de philippe, lu le 21 octobre 2026"
+    },
+    {
+      "page": "comparer",
+      "type": "document",
+      "titre": "Les Républicains, brochure « Le travail gagnant »",
+      "producteur": "republicains.fr",
+      "url": "https://republicains.fr/wp-content/uploads/2026/01/51705_LesRepublicains_Brochures_A5-40P_DEF.pdf",
+      "niveau": "V",
+      "statut": "positions de retailleau, lu le 21 octobre 2026"
+    },
+    {
+      "page": "presidentielle",
+      "type": "document",
+      "titre": "Les Républicains, brochure « Le travail gagnant »",
+      "producteur": "republicains.fr",
+      "url": "https://republicains.fr/wp-content/uploads/2026/01/51705_LesRepublicains_Brochures_A5-40P_DEF.pdf",
+      "niveau": "V",
+      "statut": "positions de retailleau, lu le 21 octobre 2026"
+    },
+    {
+      "page": "comparer",
+      "type": "reference",
+      "titre": "Fondation iFRAP, comparateur de programmes (Économies et hausses de dépenses)",
+      "producteur": "www.ifrap.org",
+      "url": "https://www.ifrap.org/comparateurs/presidentielles-2027#c641",
+      "niveau": "S",
+      "statut": "positions de retailleau, lu le 21 octobre 2026"
+    },
+    {
+      "page": "presidentielle",
+      "type": "reference",
+      "titre": "Fondation iFRAP, comparateur de programmes (Économies et hausses de dépenses)",
+      "producteur": "www.ifrap.org",
+      "url": "https://www.ifrap.org/comparateurs/presidentielles-2027#c641",
+      "niveau": "S",
+      "statut": "positions de retailleau, lu le 21 octobre 2026"
+    },
+    {
+      "page": "comparer",
+      "type": "document",
+      "titre": "Les Républicains, livret « Famille »",
+      "producteur": "republicains.fr",
+      "url": "https://republicains.fr/wp-content/uploads/2026/05/LR_Famille_vFinale.pdf",
+      "niveau": "V",
+      "statut": "positions de retailleau, lu le 21 octobre 2026"
+    },
+    {
+      "page": "presidentielle",
+      "type": "document",
+      "titre": "Les Républicains, livret « Famille »",
+      "producteur": "republicains.fr",
+      "url": "https://republicains.fr/wp-content/uploads/2026/05/LR_Famille_vFinale.pdf",
+      "niveau": "V",
+      "statut": "positions de retailleau, lu le 21 octobre 2026"
+    },
+    {
+      "page": "comparer",
+      "type": "document",
+      "titre": "Les Écologistes, programme « Pour une prospérité écologique »",
+      "producteur": "lesecologistes.fr",
+      "url": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf",
+      "niveau": "V",
+      "statut": "positions de tondelier, lu le 21 octobre 2026"
+    },
+    {
+      "page": "presidentielle",
+      "type": "document",
+      "titre": "Les Écologistes, programme « Pour une prospérité écologique »",
+      "producteur": "lesecologistes.fr",
+      "url": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf",
+      "niveau": "V",
+      "statut": "positions de tondelier, lu le 21 octobre 2026"
+    },
+    {
       "page": "benchmark",
       "type": "reference",
       "titre": "USAFacts, « The future of government data »",
@@ -3441,7 +3698,7 @@
   "totaux": {
     "api": 19,
     "jeu": 44,
-    "document": 166,
-    "reference": 147
+    "document": 182,
+    "reference": 159
   }
 }

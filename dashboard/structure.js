@@ -7,7 +7,7 @@
 (function () {
   var PAGES = {
     "index.html": ["Accueil", "Se repérer"], "donnees.html": ["Sources et données", "Se repérer"], "benchmark-usa.html": ["Benchmark États-Unis", "Se repérer"],
-    "gouvernement.html": ["Les 21 ministères", "Le Gouvernement"], "presidentielle-2027.html": ["Présidentielle 2027", "Le Gouvernement"],
+    "gouvernement.html": ["Les 21 ministères", "Le Gouvernement"], "presidentielle-2027.html": ["Présidentielle 2027", "Le Gouvernement"], "comparer-2027.html": ["Comparer deux candidats", "Le Gouvernement"],
     "fraude-sociale.html": ["Fraude sociale", "États des lieux"], "forces.html": ["Police et gendarmerie", "États des lieux"],
     "cybersecurite.html": ["Cybersécurité de l'État", "États des lieux"], "secteurs.html": ["Comment va la France", "États des lieux"],
     "medias.html": ["Qui possède les médias", "Dossiers"], "17-octobre-2026.html": ["Le 17 octobre 2026", "Dossiers"]
@@ -18,7 +18,7 @@
     { k: "ministeres", label: "Ministères", menu: "ministeres", href: "gouvernement.html" },
     { k: "etats", label: "États des lieux", items: ["fraude-sociale.html", "forces.html", "cybersecurite.html", "secteurs.html"] },
     { k: "dossiers", label: "Dossiers", items: ["medias.html", "17-octobre-2026.html"] },
-    { k: "plus", label: "Aussi", items: ["presidentielle-2027.html", "benchmark-usa.html", "donnees.html"] }
+    { k: "plus", label: "Aussi", items: ["presidentielle-2027.html", "comparer-2027.html", "benchmark-usa.html", "donnees.html"] }
   ];
   var CSS = [
     ".nav.has-mega{background:linear-gradient(var(--paper) 72%,transparent);border-bottom:0;backdrop-filter:none;padding:10px 0 12px}",
@@ -112,14 +112,14 @@
     if (window.GOUV) return cb(window.GOUV);
     var s = document.createElement("script"); s.src = "gouvernement.js"; s.onload = function () { cb(window.GOUV); }; s.onerror = function () { cb(null); }; document.head.appendChild(s);
   }
-  var SHORT = { "fraude-sociale.html": "Fraude", "forces.html": "Police", "cybersecurite.html": "Cyber", "secteurs.html": "France", "medias.html": "Médias", "17-octobre-2026.html": "17 octobre", "presidentielle-2027.html": "Élection", "benchmark-usa.html": "États-Unis", "donnees.html": "Sources" };
+  var SHORT = { "fraude-sociale.html": "Fraude", "forces.html": "Police", "cybersecurite.html": "Cyber", "secteurs.html": "France", "medias.html": "Médias", "17-octobre-2026.html": "17 octobre", "presidentielle-2027.html": "Élection", "comparer-2027.html": "Comparer", "benchmark-usa.html": "États-Unis", "donnees.html": "Sources" };
   function link(f, label, title) { return '<a href="' + f + '"' + (title ? ' title="' + esc(title) + '"' : "") + (f === here || (f === "gouvernement.html" && isMin) ? ' class="here" aria-current="page"' : "") + ">" + label + "</a>"; }
-  var ILLU = { "fraude-sociale": "photos/fraude.jpg", forces: "photos/police.jpg", cybersecurite: "photos/cyber.jpg", secteurs: "photos/france.jpg", medias: "photos/medias.jpg", "17-octobre-2026": "photos/oct17.jpg", "presidentielle-2027": "photos/election.jpg", "benchmark-usa": "photos/usa.jpg", donnees: "photos/donnees.jpg", gouvernement: "photos/ministeres.jpg" };
-  var DESC = { "fraude-sociale.html": "Ce que l'État estime, détecte et récupère", "forces.html": "Violences, soutien, diplôme et salaire", "cybersecurite.html": "Plan d'action, incidents et constats", "secteurs.html": "Quinze familles de sujets, chiffre par chiffre", "medias.html": "Qui possède quoi, et quelles aides publiques", "17-octobre-2026.html": "Ce que disent les sources officielles", "presidentielle-2027.html": "Candidats et repères avant le scrutin", "benchmark-usa.html": "Ce que font les Américains de leurs données", "donnees.html": "D'où vient chaque chiffre du site" };
+  var ILLU = { "fraude-sociale": "photos/fraude.jpg", forces: "photos/police.jpg", cybersecurite: "photos/cyber.jpg", secteurs: "photos/france.jpg", medias: "photos/medias.jpg", "17-octobre-2026": "photos/oct17.jpg", "presidentielle-2027": "photos/election.jpg", "benchmark-usa": "photos/usa.jpg", "comparer-2027": "photos/comparer.jpg", donnees: "photos/donnees.jpg", gouvernement: "photos/ministeres.jpg" };
+  var DESC = { "fraude-sociale.html": "Ce que l'État estime, détecte et récupère", "forces.html": "Violences, soutien, diplôme et salaire", "cybersecurite.html": "Plan d'action, incidents et constats", "secteurs.html": "Quinze familles de sujets, chiffre par chiffre", "medias.html": "Qui possède quoi, et quelles aides publiques", "17-octobre-2026.html": "Ce que disent les sources officielles", "presidentielle-2027.html": "Candidats et repères avant le scrutin", "benchmark-usa.html": "Ce que font les Américains de leurs données", "comparer-2027.html": "Deux candidats côte à côte, phrases sourcées", "donnees.html": "D'où vient chaque chiffre du site" };
   var CHEV = '<svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4.5 6 8.5 10 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   var openPanel = null, openBtn = null, hoverT = null;
   function closeAll() { clearTimeout(hoverT); if (openPanel) { openPanel.hidden = true; openBtn.setAttribute("aria-expanded", "false"); openPanel = openBtn = null; } }
-  var CRED = {"fraude-sociale": "Fabio Gargano", "forces": "flightlog", "cybersecurite": "ProjectManhattan", "secteurs": "Elliott Brown", "medias": "Benoît Prieur", "17-octobre-2026": "flightlog", "presidentielle-2027": "Jamain", "benchmark-usa": "Alvesgaspar", "donnees": "Simon Hattinga Verschure", "gouvernement": "ScareCriterion12"};
+  var CRED = {"fraude-sociale": "Fabio Gargano", "forces": "flightlog", "cybersecurite": "ProjectManhattan", "secteurs": "Elliott Brown", "medias": "Benoît Prieur", "17-octobre-2026": "flightlog", "presidentielle-2027": "Jamain", "benchmark-usa": "Alvesgaspar", "comparer-2027": "Xfigpower", "donnees": "Simon Hattinga Verschure", "gouvernement": "ScareCriterion12"};
   function img(f) { return '<img src="img/' + f + '" alt="" loading="lazy" width="640" height="480">'; }
   function card(f) {
     var key = f.replace(/\.html$/, "");

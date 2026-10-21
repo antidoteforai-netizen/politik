@@ -79,6 +79,14 @@
 
 <section id="programmes">
   <div class="sec-head"><h2 data-t="s.prog.h"></h2><p data-t="s.prog.p"></p></div>
+  <div class="card cta-cmp">
+    <div>
+      <p class="eyebrow" data-t="cmp.eyebrow"></p>
+      <h3 data-t="cmp.h"></h3>
+      <ul class="cmp-feat" id="cmp-feat"></ul>
+    </div>
+    <a class="btn cmp-btn" href="comparer-2027.html" data-t="cmp.btn"></a>
+  </div>
   <div class="grid g2">
     <div class="card">
       <h3 data-t="c.grille.h"></h3>
@@ -118,6 +126,7 @@
 <section class="wrap" id="donnees-page" data-page="presidentielle" style="margin-top:8px"></section>
 <footer class="wrap"><p data-t="footer"></p></footer>
 
+<script src="positions-2027.js"></script>
 <script>
 const PAGE_LEVELS = ["etat","falc"];
 const LEVEL_NAMES = {etat:"Termes de l'État", falc:"Facile À Lire et à Comprendre (FALC)"};
@@ -144,10 +153,13 @@ const TXT = {
   "c.statut.n":{etat:"<b>Ce que ce graphique ne dit pas :</b> rien sur les intentions de vote. Il compte des candidatures annoncées, dont beaucoup ne réuniront pas 500 parrainages. En 2022, 12 candidats sur une quarantaine de déclarés figuraient sur la liste officielle.", falc:"<b>Attention :</b><br>Ce dessin compte les candidats, pas les votes.<br>Beaucoup ne seront pas sur la liste officielle."},
   "c.cal.h":{etat:"Calendrier officiel", falc:"Les dates"},
   "s.prog.h":{etat:"Programmes : comparer sur des indicateurs réels", falc:"Les programmes"},
-  "s.prog.p":{etat:"Cette grille compare les positions des candidats sur les sujets que Politik documente (fraude, prestations, immigration, impôts) : une cellule n'est remplie que par une position publique, datée et sourcée. Au 21 octobre 2026, la grille est toujours vide : les positions trouvées dans la presse sont des résumés, pas des textes des candidats, et ne sont donc pas retenues.",
-    falc:"On comparera les programmes sur quelques sujets : la fraude, les aides, l'immigration, les impôts.<br>Pour l'instant, la grille est vide.<br>On la remplira avec les programmes officiels."},
-  "c.grille.h":{etat:"Grille Politik (à remplir, positions sourcées uniquement)", falc:"La grille à remplir"},
-  "c.grille.n":{etat:"<b>Règle :</b> une case = une citation ou un document officiel du candidat, avec date et lien. Pas de synthèse générée, pas de déduction. Les indicateurs de référence sont ceux de la page Fraude sociale (14 Md€ estimés, 3,1 Md€ détectés, 680 M€ recouvrés, 736 534 personnes protégées, 32,8 % de pauvreté chez les immigrés, 2,3 Md€ d'IFI).", falc:"<b>Règle :</b> on écrit seulement ce que le candidat a dit ou écrit, avec la date et le lien."},
+  "s.prog.p":{etat:"Cette grille compare les positions des dix candidats les mieux documentés sur les sujets que Politik suit (fraude, prestations, immigration, impôts). Chaque case reprend une phrase copiée d'un document, avec son lien, sa date et son niveau de confiance. Au 21 octobre 2026, les programmes de plusieurs candidats ne sont pas encore publiés : une case vide veut dire « rien trouvé », pas « rien dit ».",
+    falc:"On compare les programmes sur 4 sujets : la fraude, les aides, l'immigration, les impôts.<br>Chaque case est une phrase copiée, avec un lien.<br>Une case vide veut dire : on n'a rien trouvé."},
+  "c.grille.h":{etat:"Grille Politik (positions sourcées, mise à jour le 21 octobre 2026)", falc:"La grille"},
+  "cmp.eyebrow":{etat:"Nouveau · comparateur", falc:"Nouveau"},
+  "cmp.h":{etat:"Comparer deux candidats côte à côte", falc:"Comparer 2 candidats"},
+  "cmp.btn":{etat:"Ouvrir le comparateur", falc:"Comparer"},
+  "c.grille.n":{etat:"<b>Règle :</b> une case = une phrase copiée d'un document, avec date et lien. <b>V</b> : document du candidat ou de son parti, lu à la source. <b>S</b> : résumé établi par un tiers (Fondation iFRAP), à confirmer sur le document du candidat. Pas de synthèse écrite par Politik, pas de déduction, pas de score. Les indicateurs de référence sont ceux de la page Fraude sociale (14 Md€ estimés, 3,1 Md€ détectés, 680 M€ recouvrés, 736 534 personnes protégées, 32,8 % de pauvreté chez les immigrés, 2,3 Md€ d'IFI).", falc:"<b>Règle :</b> chaque case est une phrase copiée, avec la date et le lien. V : texte du candidat. S : résumé d'un autre site."},
   "s.hist.h":{etat:"Historique 1958-2022 : douze scrutins", falc:"Les douze élections depuis 1958"},
   "s.hist.p":{etat:"Résultats du second tour et abstention, tels que proclamés par le Conseil constitutionnel. 1958 est à part : le président fut élu par un collège de grands électeurs, le suffrage universel direct date de 1962.", falc:"Les résultats du second tour depuis 1958.<br>En 1958, ce ne sont pas tous les Français qui ont voté, mais des grands électeurs."},
   "c.second.h":{etat:"Score de l'élu au second tour", falc:"Score du gagnant au second tour"},
@@ -196,11 +208,11 @@ const CANDIDATS = [
   {nom:"Éric Zemmour", parti:"Reconquête !", fam:"Extrême droite et souverainistes", statut:"déclaré le 17 septembre 2026", src:"Public Sénat, 28 sept. 2026"}
 ];
 
-/* Positions sourcées de la grille. Une entrée = une citation ou un document officiel du candidat.
-   Clé : « NomDeFamille|numéro du sujet » (0 fraude, 1 prestations, 2 immigration, 3 fiscalité).
-   Valeur : { t: "citation ou intitulé du document", d: "AAAA-MM-JJ", u: "lien", s: "source", n: "V|S|D|A" }.
-   Vide tant qu'aucun texte officiel n'a été vérifié : on n'écrit rien d'après un résumé de presse. */
-const POSITIONS = {};
+/* Les positions viennent de positions-2027.js (généré depuis data/positions-2027.json) : voir comparer-2027.html. */
+const POS = (window.POS2027||{}).positions||{};
+const CAND_ID = {Attal:"attal",Glucksmann:"glucksmann","Le Pen":"lepen",Lisnard:"lisnard",Mélenchon:"melenchon",Philippe:"philippe",Retailleau:"retailleau",Roussel:"roussel",Tondelier:"tondelier",Zemmour:"zemmour"};
+const idOf = c => { const k=Object.keys(CAND_ID).find(n=>c.nom.endsWith(n)); return k?CAND_ID[k]:null; };
+const coupe = (t,n) => t.length>n ? t.slice(0,n).replace(/\s+\S*$/,"")+"…" : t;
 
 const CALENDRIER = [
   ["7 février 2027 au plus tard","Décret de convocation des électeurs (dix semaines avant le premier tour)","V"],
@@ -256,10 +268,12 @@ function render(){
   const cols = {"Gauche":"c2","Extrême gauche":"c2","Centre":"c1","Droite":"c4","Extrême droite et souverainistes":"c5","Divers":"c3"};
   hbar("#ch-statut", Object.entries(fam).sort((a,b)=>b[1]-a[1]).map(([k,v])=>({l:k, v, c:cols[k]||"c3", tip:`${v} candidature(s) annoncée(s)`})), {aria:"Candidatures annoncées par famille politique", fmt:v=>v+(L==="falc"?" candidats":"")});
   $("#calendrier").innerHTML = `<table><thead><tr><th>${L==="falc"?"Quand":"Date"}</th><th>${L==="falc"?"Quoi":"Étape"}</th></tr></thead><tbody>${CALENDRIER.map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1])} <span class="lvl lvl-${r[2]}">${r[2]}</span></td></tr>`).join("")}</tbody></table>`;
-  // grille programmes (vide par construction)
+  // grille des positions sourcées : extrait court, niveau, lien ; « à rechercher » quand rien n'est relevé
   const sujets = L==="falc" ? ["La fraude","Les aides","L'immigration","Les impôts des riches"] : ["Fraude sociale (estimé, détecté, recouvré)","Prestations et non-recours","Immigration et asile","Fiscalité des hauts patrimoines"];
-  const tetes = sorted.filter(c=>/Attal|Glucksmann|Le Pen|Mélenchon|Philippe|Retailleau|Roussel|Tondelier|Zemmour|Lisnard/.test(c.nom));
-  $("#grille").innerHTML = `<table><thead><tr><th>${L==="falc"?"Sujet":"Indicateur de référence"}</th>${tetes.map(c=>`<th>${esc(c.nom.split(" ").pop())}</th>`).join("")}</tr></thead><tbody>${sujets.map(s=>`<tr><td>${esc(s)}</td>${tetes.map(c=>{ const k=c.nom.split(" ").pop()+"|"+sujets.indexOf(s); const p=POSITIONS[k]; return p?`<td><a href="${esc(p.u)}" target="_blank" rel="noopener">${esc(p.t)}</a> <span class="small muted">${esc(p.s)}, ${esc(p.d)}</span> <span class="lvl lvl-${esc(p.n||"D")}">${esc(p.n||"D")}</span></td>`:`<td class="n"><span class="pill todo">${L==="falc"?"à remplir":"position sourcée à saisir"}</span></td>`; }).join("")}</tr>`).join("")}</tbody></table><p class="small muted" style="margin-top:6px">${L==="falc"?"Seuls les candidats les plus connus sont dans ce tableau, pour qu'il tienne sur l'écran. Les autres auront la même grille.":"Colonnes limitées aux candidatures les plus médiatisées pour la lisibilité ; la grille complète suit le même format pour chaque candidat (règle d'égalité de traitement)."}</p>`;
+  const tetes = sorted.filter(c=>idOf(c));
+  const cell = (c,i) => { const l=((POS[idOf(c)]||{})[String(i)])||[]; const r=l.filter(e=>!e.absent).sort((x,y)=>(x.n==="V"?0:1)-(y.n==="V"?0:1)); if(r.length){ const e=r[0]; return `<td><span class="small">${esc(coupe(e.t,150))}</span> <span class="lvl lvl-${esc(e.n)}">${esc(e.n)}</span> <a class="small" href="${esc(e.u)}" target="_blank" rel="noopener">${L==="falc"?"lire":"source"}</a></td>`; } if(l.length) return `<td class="n"><span class="pill todo">${L==="falc"?"pas encore connu":"non encore connue"}</span></td>`; return `<td class="n"><span class="pill todo">${L==="falc"?"à rechercher":"à rechercher"}</span></td>`; };
+  $("#grille").innerHTML = `<table><thead><tr><th>${L==="falc"?"Sujet":"Indicateur de référence"}</th>${tetes.map(c=>`<th>${esc(/Le Pen$/.test(c.nom)?"Le Pen":c.nom.split(" ").pop())}</th>`).join("")}</tr></thead><tbody>${sujets.map((s,i)=>`<tr><td>${esc(s)}</td>${tetes.map(c=>cell(c,i)).join("")}</tr>`).join("")}</tbody></table><p class="small muted" style="margin-top:6px">${L==="falc"?"Un extrait par case. Pour tout lire et comparer 2 candidats, ouvrez le comparateur.":"Un extrait par case (le comparateur donne toutes les phrases). Colonnes limitées aux candidatures les mieux documentées ; l'ordre est alphabétique."}</p>`;
+  $("#cmp-feat").innerHTML = (L==="falc" ? ["Choisissez 2 candidats.","Voyez leurs phrases côte à côte.","Chaque phrase a un lien.","Les données sont dans un fichier public."] : ["Deux candidats face à face, sujet par sujet.","Phrases copiées de documents, avec lien, date et niveau V ou S.","Option « documents officiels seulement ».","Données ouvertes (JSON) et vue d'ensemble de la couverture."]).map(x=>`<li>${esc(x)}</li>`).join("");
   // historique
   const pf = v=>L==="falc"?`${v.toLocaleString("fr-FR")} sur 100`:`${v.toLocaleString("fr-FR")} %`;
   hbar("#ch-second", HIST.map(h=>({l:`${h.an} · ${h.elu}`, v:h.pct, c:h.an===1958?"c5":"c1", tip:`${h.an} : ${h.elu} ${h.pct} % face à ${h.adv}${h.note?" ("+h.note+")":""}`})), {max:100, aria:"Score de l'élu au second tour, 1958 à 2022", fmt:pf, padR:110});

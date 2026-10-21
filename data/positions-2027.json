@@ -1,0 +1,436 @@
+{
+ "version": "2026-10-21",
+ "regle": "Une entrée = une phrase copiée telle quelle d'un document. V : document du candidat ou de son parti, lu à la source. S : résumé établi par un tiers (Fondation iFRAP, think tank), à confirmer sur le document du candidat. Aucune synthèse écrite par Politik, aucun score.",
+ "sujets": [
+  "Fraude sociale",
+  "Prestations et non-recours",
+  "Immigration et asile",
+  "Fiscalité des hauts patrimoines"
+ ],
+ "positions": {
+  "attal": {
+   "0": [],
+   "1": [
+    {
+     "t": "Je porte une réforme de l’assurance chômage qui incite au travail et qui créerait 100 000 emplois supplémentaires.",
+     "u": "https://attalpresident.fr/programme/travail-salaires",
+     "s": "attalpresident.fr, « Travail et salaires »",
+     "d": "site du candidat, lu le 21 oct. 2026",
+     "n": "V"
+    },
+    {
+     "t": "Pour le budget 2028, faire une année blanche sur l’ensemble des prestations sociales, en épargnant toutefois les petites retraites.",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c624",
+     "s": "Fondation iFRAP, comparateur de programmes (Allocations et prestations)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    }
+   ],
+   "2": [
+    {
+     "t": "Notre ligne est claire, ce que nous voulons, c’est accueillir moins pour accueillir mieux, privilégier l’immigration de travail au détriment d’autres types d’immigration comme le regroupement familial, qui doit être mieux encadré et qui doit donc diminuer.",
+     "u": "https://attalpresident.fr/programme/frontieres",
+     "s": "attalpresident.fr, « Frontières »",
+     "d": "site du candidat, lu le 21 oct. 2026",
+     "n": "V"
+    },
+    {
+     "t": "Mettre en place un permis à points pour l’immigration sur le modèle canadien.",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c584",
+     "s": "Fondation iFRAP, comparateur de programmes (Immigration)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    }
+   ],
+   "3": []
+  },
+  "glucksmann": {
+   "0": [],
+   "1": [
+    {
+     "t": "Donner un véritable statut aux familles monoparentales, qui leur garantisse un accès prioritaire à la garde d'enfants, à la caution pour le logement, aux transports.",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c624",
+     "s": "Fondation iFRAP, comparateur de programmes (Allocations et prestations)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    }
+   ],
+   "2": [
+    {
+     "t": "Abroger la loi immigration de 2024.",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c584",
+     "s": "Fondation iFRAP, comparateur de programmes (Immigration)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    },
+    {
+     "t": "Généraliser la carte de séjour pluriannuelle en en faisant le titre de séjour de référence.",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c584",
+     "s": "Fondation iFRAP, comparateur de programmes (Immigration)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    }
+   ],
+   "3": [
+    {
+     "t": "Instaurer un impôt plancher annuel de 2% sur les patrimoines supérieurs à 100 millions d'euros (taxe Zucman).",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c581",
+     "s": "Fondation iFRAP, comparateur de programmes (Fiscalité)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    },
+    {
+     "t": "Taxer les méga héritages, au-dessus de 2 millions d'euros.",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c581",
+     "s": "Fondation iFRAP, comparateur de programmes (Fiscalité)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    }
+   ]
+  },
+  "lepen": {
+   "0": [],
+   "1": [
+    {
+     "t": "Réserver les prestations familiales aux foyers ayant au moins un parent français.",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c584",
+     "s": "Fondation iFRAP, comparateur de programmes (Immigration)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    },
+    {
+     "t": "Garantir l'AAH systématiquement au-dessus du seuil de pauvreté.",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c624",
+     "s": "Fondation iFRAP, comparateur de programmes (Allocations et prestations)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    }
+   ],
+   "2": [
+    {
+     "t": "Remplacer l'Aide Médicale d'État (AME) par l'Aide Médicale d'Urgence (AMU).",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c584",
+     "s": "Fondation iFRAP, comparateur de programmes (Immigration)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    },
+    {
+     "t": "Organiser le départ des étrangers sans emploi (selon la durée de résidence) ne pouvant subvenir à leurs besoins.",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c584",
+     "s": "Fondation iFRAP, comparateur de programmes (Immigration)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    }
+   ],
+   "3": [
+    {
+     "t": "Remplacer de l'IFI par l'Impôt sur la Fortune Financière (IFF).",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c581",
+     "s": "Fondation iFRAP, comparateur de programmes (Fiscalité)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    }
+   ]
+  },
+  "lisnard": {
+   "0": [],
+   "1": [
+    {
+     "t": "À l’instar d’autres pays européens, la France doit relancer sa politique familiale dans ses trois dimensions : des allocations financières, notamment par le déplafonnement du quotient familial, des investissements pour les structures d’accueil et une politique du logement familial.",
+     "u": "https://www.unenouvelleenergie.fr/notre-programme/reussir-une-nouvelle-ambition-francaise/",
+     "s": "Nouvelle Énergie, « L’ambition française »",
+     "d": "site du candidat, lu le 21 oct. 2026",
+     "n": "V"
+    },
+    {
+     "t": "Un système de charges patronales négatives pour les embauches de personnes au RSA depuis plus de 2 ans sera créé.",
+     "u": "https://www.unenouvelleenergie.fr/notre-programme/reussir-une-nouvelle-ambition-francaise/",
+     "s": "Nouvelle Énergie, « L’ambition française »",
+     "d": "site du candidat, lu le 21 oct. 2026",
+     "n": "V"
+    }
+   ],
+   "2": [
+    {
+     "t": "Supprimer toute régularisation pour les clandestins.",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c584",
+     "s": "Fondation iFRAP, comparateur de programmes (Immigration)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    },
+    {
+     "t": "Instaurer des quotas d’immigration légale selon les stricts besoins économiques.",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c584",
+     "s": "Fondation iFRAP, comparateur de programmes (Immigration)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    }
+   ],
+   "3": []
+  },
+  "melenchon": {
+   "0": [
+    {
+     "t": "Supprimer le monopole du déclenchement de poursuites judiciaires par la seule administration fiscale pour toutes les affaires en cas de fraude.",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c716",
+     "s": "Fondation iFRAP, comparateur de programmes (Démocratie et pouvoir législatif)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    }
+   ],
+   "1": [
+    {
+     "t": "Lutter contre le non-recours aux droits sociaux et civiques par la simplification des démarches et la réouverture des accueils physiques dans les services publics.",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c624",
+     "s": "Fondation iFRAP, comparateur de programmes (Allocations et prestations)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    },
+    {
+     "t": "Interdire les pratiques de notation des allocataires de prestations sociales.",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c624",
+     "s": "Fondation iFRAP, comparateur de programmes (Allocations et prestations)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    }
+   ],
+   "2": [
+    {
+     "absent": true,
+     "s": "Fondation iFRAP, comparateur de programmes",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027",
+     "d": "lu le 21 oct. 2026",
+     "t": "Proposition non encore connue"
+    }
+   ],
+   "3": [
+    {
+     "t": "Rétablir un l'impôt sur la fortune (ISF) avec un volet climatique.",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c581",
+     "s": "Fondation iFRAP, comparateur de programmes (Fiscalité)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    },
+    {
+     "t": "Taxer à 100 % la part des héritages dépassant 12 millions d’euros.",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c581",
+     "s": "Fondation iFRAP, comparateur de programmes (Fiscalité)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    }
+   ]
+  },
+  "philippe": {
+   "0": [],
+   "1": [
+    {
+     "t": "Créer une allocation familiale unique dès le premier enfant, à hauteur de 350€, en fusionnant les dispositifs existants trop complexes et trop éparpillés, dégressive avec le revenu.",
+     "u": "https://www.edouardphilippe.fr/priorites/pour-une-france-plus-attentive-a-ses-enfants",
+     "s": "edouardphilippe.fr, « Pour une France plus attentive à ses enfants »",
+     "d": "site du candidat, lu le 21 oct. 2026",
+     "n": "V"
+    },
+    {
+     "t": "Lutter contre le scandale des amendes non recouvrées : permettre le recouvrement forcé des amendes sur les prestations sociales.",
+     "u": "https://www.edouardphilippe.fr/priorites/pour-une-france-plus-sure",
+     "s": "edouardphilippe.fr, « Pour une France plus sûre »",
+     "d": "site du candidat, lu le 21 oct. 2026",
+     "n": "V"
+    }
+   ],
+   "2": [
+    {
+     "t": "Un objectif clair : diviser par deux l’immigration dans notre pays.",
+     "u": "https://www.edouardphilippe.fr/priorites/pour-une-france-plus-sure",
+     "s": "edouardphilippe.fr, « Pour une France plus sûre »",
+     "d": "site du candidat, lu le 21 oct. 2026",
+     "n": "V"
+    },
+    {
+     "t": "Suspendre le regroupement familial pour la durée du quinquennat.",
+     "u": "https://www.edouardphilippe.fr/priorites/pour-une-france-plus-sure",
+     "s": "edouardphilippe.fr, « Pour une France plus sûre »",
+     "d": "site du candidat, lu le 21 oct. 2026",
+     "n": "V"
+    }
+   ],
+   "3": []
+  },
+  "retailleau": {
+   "0": [
+    {
+     "t": "[Compte social unique] Il renforce également la lutte contre la fraude grâce au recensement des aides et améliore le service rendu aux usagers, avec des démarches simplifiées et un historique centralisé.",
+     "u": "https://republicains.fr/wp-content/uploads/2026/01/51705_LesRepublicains_Brochures_A5-40P_DEF.pdf#page=30",
+     "s": "Les Républicains, brochure « Le travail gagnant », p. 30",
+     "d": "document du parti, janv. 2026",
+     "n": "V"
+    },
+    {
+     "t": "Mettre fin aux fraudes aux prestations, au travail dissimulé et aux fraudes aux cotisations.",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c641",
+     "s": "Fondation iFRAP, comparateur de programmes (Économies et hausses de dépenses)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    }
+   ],
+   "1": [
+    {
+     "t": "Chaque adulte dispose d’un CSU retraçant toutes les aides, quelle qu’en soit l’origine : État, CAF ou mairie par exemple. […] hors situations de dépendance ou de handicap, le total des aides ne devrait jamais dépasser 70 % du SMIC net par adulte.",
+     "u": "https://republicains.fr/wp-content/uploads/2026/01/51705_LesRepublicains_Brochures_A5-40P_DEF.pdf#page=14",
+     "s": "Les Républicains, brochure « Le travail gagnant », p. 14",
+     "d": "document du parti, janv. 2026",
+     "n": "V"
+    },
+    {
+     "t": "Pour bénéficier pleinement des dispositifs familiaux, les ressortissants étrangers devront justifier de cinq années de résidence en France et d’exercice d’une activité professionnelle.",
+     "u": "https://republicains.fr/wp-content/uploads/2026/05/LR_Famille_vFinale.pdf#page=4",
+     "s": "Les Républicains, livret « Famille », p. 4",
+     "d": "document du parti, avr. 2026",
+     "n": "V"
+    }
+   ],
+   "2": [
+    {
+     "t": "Supprimer le droit du sol et revenir à l'assimilation.",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c584",
+     "s": "Fondation iFRAP, comparateur de programmes (Immigration)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    },
+    {
+     "t": "Conditionner l'accès des étrangers aux prestations sociales à cinq ans de séjour régulier et de travail en France, et subordonner l'aide sociale à la régularité du séjour. Inscrire ce principe dans la Constitution.",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c584",
+     "s": "Fondation iFRAP, comparateur de programmes (Immigration)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    }
+   ],
+   "3": []
+  },
+  "roussel": {
+   "0": [],
+   "1": [
+    {
+     "absent": true,
+     "s": "Fondation iFRAP, comparateur de programmes",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027",
+     "d": "lu le 21 oct. 2026",
+     "t": "Proposition non encore connue"
+    }
+   ],
+   "2": [
+    {
+     "absent": true,
+     "s": "Fondation iFRAP, comparateur de programmes",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027",
+     "d": "lu le 21 oct. 2026",
+     "t": "Proposition non encore connue"
+    }
+   ],
+   "3": [
+    {
+     "t": "Rétablir l'ISF (impôt sur la fortune) et tripler son montant.",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c581",
+     "s": "Fondation iFRAP, comparateur de programmes (Fiscalité)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    }
+   ]
+  },
+  "tondelier": {
+   "0": [
+    {
+     "t": "Renforcer les moyens de lutte contre la fraude, l’évasion fiscale et les paradis fiscaux qui mine le consentement à l’impôt.",
+     "u": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf#page=67",
+     "s": "Les Écologistes, programme « Pour une prospérité écologique », p. 67",
+     "d": "document du parti, juil. 2026",
+     "n": "V"
+    },
+    {
+     "t": "Augmenter le nombre d'agents de lutte contre la fraude et l'évasion fiscale.",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c581",
+     "s": "Fondation iFRAP, comparateur de programmes (Fiscalité)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    }
+   ],
+   "1": [
+    {
+     "t": "Supprimer les scores de risque qui ciblent les personnes pauvres.",
+     "u": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf#page=67",
+     "s": "Les Écologistes, programme « Pour une prospérité écologique », p. 67",
+     "d": "document du parti, juil. 2026",
+     "n": "V"
+    },
+    {
+     "t": "Nationaliser le versement du RSA mais maintenir l’accompagnement social au niveau des Départements.",
+     "u": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf#page=68",
+     "s": "Les Écologistes, programme « Pour une prospérité écologique », p. 68",
+     "d": "document du parti, juil. 2026",
+     "n": "V"
+    }
+   ],
+   "2": [
+    {
+     "t": "Garantir l’accès à l’Aide Médicale d’État (AME).",
+     "u": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf#page=112",
+     "s": "Les Écologistes, programme « Pour une prospérité écologique », p. 112",
+     "d": "document du parti, juil. 2026",
+     "n": "V"
+    },
+    {
+     "t": "Garantir l’application du droit du sol pour les enfants nés en France indépendamment de la situation des parents.",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c584",
+     "s": "Fondation iFRAP, comparateur de programmes (Immigration)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    }
+   ],
+   "3": [
+    {
+     "t": "Rétablir la fiscalité sur la grande fortune. Mettre en place une taxe Zucman de 2 % au-delà de 100 millions d’euros de patrimoine.",
+     "u": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf#page=66",
+     "s": "Les Écologistes, programme « Pour une prospérité écologique », p. 66",
+     "d": "document du parti, juil. 2026",
+     "n": "V"
+    },
+    {
+     "t": "Rétablir l’Impôt sur la Fortune (ISF) en lui ajoutant une composante climatique pour orienter le patrimoine vers des actifs verts.",
+     "u": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf#page=66",
+     "s": "Les Écologistes, programme « Pour une prospérité écologique », p. 66",
+     "d": "document du parti, juil. 2026",
+     "n": "V"
+    }
+   ]
+  },
+  "zemmour": {
+   "0": [],
+   "1": [
+    {
+     "absent": true,
+     "s": "Fondation iFRAP, comparateur de programmes",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027",
+     "d": "lu le 21 oct. 2026",
+     "t": "Proposition non encore connue"
+    }
+   ],
+   "2": [
+    {
+     "t": "Supprimer le droit au « regroupement familial » et tous les droits automatiques liés à l’immigration familiale.",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c584",
+     "s": "Fondation iFRAP, comparateur de programmes (Immigration)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    },
+    {
+     "t": "Revenir à l’esprit originel du droit d’asile en le limitant à une centaine d’individus chaque année (contre près de 140 000 aujourd’hui).",
+     "u": "https://www.ifrap.org/comparateurs/presidentielles-2027#c584",
+     "s": "Fondation iFRAP, comparateur de programmes (Immigration)",
+     "d": "lu le 21 oct. 2026",
+     "n": "S"
+    }
+   ],
+   "3": []
+  }
+ }
+}

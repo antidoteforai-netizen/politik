@@ -151,6 +151,21 @@ try {
   try { new Function(acc.match(/<script>([\s\S]*?)<\/script>/)[1]); ok.push("index.html : syntaxe du script valide"); } catch (e) { problems.push("index.html : " + e.message); }
   for (const id of ["portes", "actu", "roles", "methode"]) if (!acc.includes(`id="${id}"`)) problems.push(`conteneur manquant dans index.html : #${id}`);
   for (const m of acc.matchAll(/href:"([^"#]+)"/g)) if (!existsSync(join(root, "dashboard", m[1]))) problems.push(`index.html : lien vers une page absente : ${m[1]}`);
+  {
+    const cmp = readFileSync(join(root, "dashboard/comparer-2027.html"), "utf8");
+    const scripts = [...cmp.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m => m[1]);
+    try { scripts.forEach(c => new Function(c)); ok.push("comparer-2027.html : syntaxe du script valide"); } catch (e) { problems.push("comparer-2027.html : " + e.message); }
+    for (const id of ["slots", "pick", "sujets", "matrice", "bilan", "regles"]) if (!cmp.includes(`id="${id}"`)) problems.push(`conteneur manquant dans comparer-2027.html : #${id}`);
+    { const i = cmp.indexOf('src="positions-2027.js"'); if (i < 0 || i > cmp.indexOf("const PAGE_LEVELS")) problems.push("comparer-2027.html : positions-2027.js doit se charger avant le script de la page"); }
+    const pj = JSON.parse(readFileSync(join(root, "data/positions-2027.json"), "utf8"));
+    const copie = JSON.parse(readFileSync(join(root, "dashboard/positions-2027.json"), "utf8"));
+    if (JSON.stringify(pj) !== JSON.stringify(copie)) problems.push("dashboard/positions-2027.json n'est pas à jour : relancer scripts/build-positions.mjs");
+    const list = Object.values(pj.positions).flatMap(c => Object.values(c)).flat();
+    const nonV = list.filter(e => !e.absent && !["V", "S"].includes(e.n)).length;
+    if (nonV) problems.push(`positions-2027 : ${nonV} entrée(s) sans niveau V ou S`);
+    const dup = new Set(); for (const e of list) if (!e.absent) { const k = e.t; if (dup.has(k)) problems.push("positions-2027 : citation en double : " + k.slice(0, 50)); dup.add(k); }
+    ok.push(`positions-2027 : ${list.filter(e => !e.absent).length} positions sourcées, chacune avec lien, source, date et niveau`);
+  }
   const ent = JSON.parse(readFileSync(join(root, "data/entites.json"), "utf8")).entites;
   let manque = 0, sansCredit = 0, nImg = 0;
   for (const [k, e] of Object.entries(ent)) if (e.img) { nImg++; try { readFileSync(join(root, "dashboard", e.img)); } catch { manque++; } if (!e.credit || !e.credit.licence) sansCredit++; }

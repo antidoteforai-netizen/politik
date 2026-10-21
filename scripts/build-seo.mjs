@@ -24,6 +24,7 @@ const P = {
   "17-octobre-2026.html": ["Le 17 octobre 2026 : ce que disent les sources · Politik", "Violences, dégradations, agents mobilisés et aides aux commerçants après le 17 octobre 2026 : qui dit quoi, et ce qui n'est pas encore chiffré.", [["Dossiers", "index.html#dossiers"]]],
   "cybersecurite.html": ["Cybersécurité de l'État : plan et incidents · Politik", "Le plan d'action de l'État contre les vols de données, les incidents de 2026 et le rapport de l'ANSSI sur la DGFiP, expliqués simplement.", [["États des lieux", "index.html#etats"]]],
   "presidentielle-2027.html": ["Présidentielle 2027 : candidats et repères · Politik", "Compte à rebours, candidats déclarés et historique des présidentielles de 1958 à 2022, sans sondage ni prévision.", []],
+  "comparer-2027.html": ["Comparer deux candidats à la présidentielle 2027 · Politik", "Comparez deux candidats sujet par sujet : fraude sociale, prestations, immigration, fiscalité des patrimoines. Phrases copiées de leurs documents, avec lien et date.", [["Présidentielle 2027", "presidentielle-2027.html"]]],
   "secteurs.html": ["Comment va la France, sujet par sujet · Politik", "Quinze familles de sujets, du pouvoir d'achat à la sécurité : où en est la France, chiffre par chiffre, avec la source de chacun.", [["États des lieux", "index.html#etats"]]],
   "benchmark-usa.html": ["Données publiques : ce que font les États-Unis · Politik", "Ce que font les États-Unis avec leurs données publiques : outils pour voter, suivre les dépenses ou demander l'asile, et ce qu'on peut en apprendre.", []],
   "donnees.html": ["Sources et données : le registre complet · Politik", "D'où vient chaque chiffre : le registre des API, jeux de données et documents utilisés par Politik, avec leur niveau de fiabilité.", []]
@@ -122,6 +123,7 @@ Les chiffres portent une pastille : V (publié par l'institution), S (source sec
 - [Qui possède les médias](${BASE}/medias.html): ${P["medias.html"][1]}
 - [Le 17 octobre 2026](${BASE}/17-octobre-2026.html): ${P["17-octobre-2026.html"][1]}
 - [Présidentielle 2027](${BASE}/presidentielle-2027.html): ${P["presidentielle-2027.html"][1]}
+- [Comparer deux candidats](${BASE}/comparer-2027.html): ${P["comparer-2027.html"][1]}
 - [Benchmark États-Unis](${BASE}/benchmark-usa.html): ${P["benchmark-usa.html"][1]}
 - [Sources et données](${BASE}/donnees.html): ${P["donnees.html"][1]}
 

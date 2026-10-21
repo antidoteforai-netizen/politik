@@ -153,3 +153,13 @@ main>section{scroll-margin-top:96px}
 @media (max-width:860px){main>section>.sec-head,main>.sec-head{grid-template-columns:minmax(0,1fr);gap:6px}}
 body.falc h1,body.falc h2{font-weight:700;letter-spacing:0}
 body.falc .eyebrow,body.falc .subbar-label,body.falc .tile .lab{font-family:var(--font-falc);letter-spacing:.02em}
+
+/* Encart « comparer deux candidats » (présidentielle-2027) et bouton plein */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:999px;background:var(--ink);color:var(--paper);font-weight:600;text-decoration:none}
+.btn:hover,.btn:focus-visible{background:var(--accent-ink);color:#fff;outline:none}
+.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.cta-cmp{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:18px 28px;margin-bottom:16px;background:var(--accent-soft);border-color:transparent}
+.cta-cmp>div{justify-self:start;text-align:left}
+@media (max-width:760px){.cta-cmp{grid-template-columns:minmax(0,1fr)}.cta-cmp .btn{justify-self:start}}
+.cta-cmp h3{font-size:1.5rem;margin:4px 0 10px}
+.cmp-feat{margin:0;padding-left:18px;display:grid;gap:4px;max-width:60ch}

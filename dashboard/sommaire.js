@@ -69,7 +69,7 @@
       rowS.innerHTML = secs.map(function (s, i) { return '<a href="#' + s.id + '">' + esc((labels[i] || (s.querySelector("h2") || {}).textContent || s.id).trim()) + "</a>"; }).join("");
       links = [].slice.call(rowS.querySelectorAll("a"));
     }
-    function center(a) { var p = a.parentNode; if (p.scrollWidth <= p.clientWidth) return; p.scrollTo({ left: a.offsetLeft - (p.clientWidth - a.offsetWidth) / 2, behavior: "auto" }); }
+    function center(a) { var p = a.parentNode; if (p.scrollWidth <= p.clientWidth) return; var lab = p.querySelector(".subbar-label"), lw = lab ? lab.offsetWidth : 0; p.scrollTo({ left: a.offsetLeft - lw - (p.clientWidth - lw - a.offsetWidth) / 2, behavior: "auto" }); }
     var ticking = false;
     function spy() {
       ticking = false;

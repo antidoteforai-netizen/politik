@@ -19,6 +19,7 @@ const PAGES = [
   { id: "medias", titre: "Qui possède les médias", fichier: "medias.html" },
   { id: "secteurs", titre: "Comment va la France", fichier: "secteurs.html" },
   { id: "presidentielle", titre: "Présidentielle 2027", fichier: "presidentielle-2027.html" },
+  { id: "comparer", titre: "Comparer deux candidats", fichier: "comparer-2027.html" },
   { id: "benchmark", titre: "Benchmark États-Unis", fichier: "benchmark-usa.html" },
 ];
 const entrees = [];
@@ -82,6 +83,15 @@ for (const [id, f] of [["presidentielle", "presidentielle-2027.html"], ["secteur
   const h = read("dashboard/" + f);
   for (const m of h.matchAll(/src:"([^"]{3,160})"/g)) add({ page: id, type: /data\.gouv|insee|ministère|minist|senat\.fr|assemblee|arcom|conseil/i.test(m[1]) && !/via|presse|politicaa/i.test(m[1]) ? "document" : "reference", titre: m[1], url: "", niveau: /officiel|INSEE|Insee|DREES|SSMSI|Justice|Intérieur|DGFiP|Urssaf|CNAF|OFPRA/.test(m[1]) ? "V" : "S", statut: "cité" });
   for (const m of h.matchAll(/https?:\/\/[^\s"'<>)]+/g)) if (!/fonts\.|w3\.org/.test(m[0])) add({ page: id, type: "reference", titre: m[0].replace(/^https?:\/\//, ""), url: m[0], niveau: "S", statut: "lien" });
+}
+
+// 5 bis. Comparateur de candidats : une entrée par document source des positions (data/positions-2027.json).
+{
+  const pos = JSON.parse(read("data/positions-2027.json")).positions;
+  for (const [cand, subs] of Object.entries(pos)) for (const list of Object.values(subs)) for (const e of list) {
+    const u = e.u.split("#page=")[0];
+    for (const page of ["comparer", "presidentielle"]) add({ page, type: e.n === "V" ? "document" : "reference", titre: e.s.replace(/, p\. \d+$/, ""), producteur: new URL(u).host, url: u, niveau: e.absent ? "S" : e.n, statut: "positions de " + cand + ", lu le 21 octobre 2026" });
+  }
 }
 
 // 6. Benchmark : liens du document.

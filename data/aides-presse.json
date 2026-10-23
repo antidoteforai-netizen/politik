@@ -1,5 +1,5 @@
 {
-  "calcule_le": "2026-10-21",
+  "calcule_le": "2026-10-23",
   "sources": {
     "titres": "https://www.data.gouv.fr/fr/datasets/aides-a-la-presse-classement-des-titres-de-presse-aides/",
     "groupes": "https://www.data.gouv.fr/fr/datasets/aides-a-la-presse-classement-des-principaux-groupes-de-presse-aides/"

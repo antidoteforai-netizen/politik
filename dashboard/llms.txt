@@ -2,7 +2,7 @@
 
 > Politik rassemble des données publiques françaises (Gouvernement, argent public, médias, police, cybersécurité) et indique pour chaque chiffre sa source, sa date et son niveau de fiabilité. Site en français, sans parti pris, sans cookie de suivi.
 
-Les chiffres portent une pastille : V (publié par l'institution), S (source secondaire), D (déclaration ou annonce), A (à vérifier). Les textes existent en deux niveaux de lecture : termes de l'État et Facile À Lire et à Comprendre (FALC). Les données chiffrées sont relancées tous les deux jours ; 21 acteurs sur 21 ont été relus sur leur site officiel le 2026-10-27.
+Les chiffres portent une pastille : V (publié par l'institution), S (source secondaire), D (déclaration ou annonce), A (à vérifier). Les textes existent en deux niveaux de lecture : termes de l'État et Facile À Lire et à Comprendre (FALC). Les données chiffrées sont relancées tous les deux jours ; 21 acteurs sur 21 ont été relus sur leur site officiel le 2026-10-29.
 
 ## Pages principales
 - [Accueil](https://politik-eta.vercel.app/): Une page par ministère, des états des lieux sourcés et des dossiers décryptés : fraude, police, cybersécurité, médias. Chaque chiffre dit d'où il vient.

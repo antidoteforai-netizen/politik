@@ -1,5 +1,5 @@
 {
-  "calcule_le": "2026-10-29",
+  "calcule_le": "2026-10-31",
   "sources": {
     "protection": {
       "jeu": "beneficiaires-de-la-protection-internationale",
@@ -32,7 +32,7 @@
     },
     "cnam": {
       "jeu": "donnees-nationales-sur-les-depenses-dassurance-maladie-relatives-aux-soins-de-ville",
-      "maj": "2026-10-29",
+      "maj": "2026-10-30",
       "ondam": "LFSS 2025 et avis du comité d'alerte du 20 avril 2026 (securite-sociale.fr)"
     },
     "urssaf_encaissements": {

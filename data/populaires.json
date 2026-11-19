@@ -1,5 +1,5 @@
 {
- "lu_le": "2026-11-17",
+ "lu_le": "2026-11-19",
  "service_public": {
   "source": "https://www.service-public.gouv.fr/",
   "plus_lues": [
@@ -72,64 +72,64 @@
     "titre": "Le calendrier scolaire",
     "url": "https://www.data.gouv.fr/datasets/le-calendrier-scolaire",
     "producteur": "Ministères de l'Éducation nationale",
-    "telechargements": 255705801,
-    "vues": 1870051,
-    "reutilisations": 14
+    "telechargements": 255974102,
+    "vues": 1872020,
+    "reutilisations": 15
    },
    {
     "titre": "Jours fériés en France",
     "url": "https://www.data.gouv.fr/datasets/jours-feries-en-france",
     "producteur": "data.gouv.fr",
-    "telechargements": 50832787,
-    "vues": 737809,
+    "telechargements": 50875959,
+    "vues": 738718,
     "reutilisations": 10
    },
    {
     "titre": "Données statiques et temps réel du réseau Astuce Métropole Rouen Normandie",
     "url": "https://www.data.gouv.fr/datasets/donnees-statiques-et-temps-reel-du-reseau-astuce-metropole-rouen-normandie",
     "producteur": "Métropole Rouen Normandie",
-    "telechargements": 32914889,
-    "vues": 23157,
+    "telechargements": 33266088,
+    "vues": 23185,
     "reutilisations": 17
    },
    {
     "titre": "Historique des tarifs réglementés de vente d'électricité pour les consommateurs résidentiels",
     "url": "https://www.data.gouv.fr/datasets/historique-des-tarifs-reglementes-de-vente-delectricite-pour-les-consommateurs-residentiels",
     "producteur": "Commission de régulation de l'énergie (CRE)",
-    "telechargements": 31275119,
-    "vues": 152956,
+    "telechargements": 31312381,
+    "vues": 154286,
     "reutilisations": 5
    },
    {
     "titre": "Fil Bleu - Syndicat des Mobilités - GTFS & GTFS-RT",
     "url": "https://www.data.gouv.fr/datasets/fil-bleu-syndicat-des-mobilites-gtfs-gtfs-rt",
     "producteur": "Tours Métropole Val de Loire",
-    "telechargements": 23145851,
-    "vues": 13315,
+    "telechargements": 23323763,
+    "vues": 13327,
     "reutilisations": 14
    },
    {
     "titre": "Offre de transport TAM en temps réel - GTFS-RT (urbain et suburbain)",
     "url": "https://www.data.gouv.fr/datasets/offre-de-transport-tam-en-temps-reel-gtfs-rt-urbain-et-suburbain",
     "producteur": "Montpellier Méditerranée Métropole",
-    "telechargements": 21197901,
-    "vues": 9027,
+    "telechargements": 21279416,
+    "vues": 9053,
     "reutilisations": 13
    },
    {
     "titre": "Réseau de transport urbain de la Métropole Toulon Provence Méditerranée",
     "url": "https://www.data.gouv.fr/datasets/reseau-de-transport-urbain-de-la-metropole-toulon-provence-mediterranee",
     "producteur": "Métropole Toulon Provence Méditerranée",
-    "telechargements": 19693034,
-    "vues": 10099,
+    "telechargements": 19915128,
+    "vues": 10107,
     "reutilisations": 13
    },
    {
     "titre": "Fichiers GTFS - EUROMETROPOLE de METZ",
     "url": "https://www.data.gouv.fr/datasets/fichiers-gtfs-eurometropole-de-metz",
     "producteur": "Eurométropole de Metz",
-    "telechargements": 18767405,
-    "vues": 13643,
+    "telechargements": 18795545,
+    "vues": 13663,
     "reutilisations": 16
    }
   ]

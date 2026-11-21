@@ -1,5 +1,5 @@
 {
-  "genere_le": "2026-11-19",
+  "genere_le": "2026-11-21",
   "pages": [
     {
       "id": "index",
@@ -3587,7 +3587,7 @@
       "producteur": "service-public.gouv.fr",
       "url": "https://www.service-public.gouv.fr/",
       "niveau": "V",
-      "statut": "lu le 2026-11-19"
+      "statut": "lu le 2026-11-21"
     },
     {
       "page": "index",
@@ -3596,7 +3596,7 @@
       "producteur": "data.gouv.fr",
       "url": "https://www.data.gouv.fr/api/2/datasets/",
       "niveau": "V",
-      "statut": "lu le 2026-11-19"
+      "statut": "lu le 2026-11-21"
     },
     {
       "page": "benchmark",

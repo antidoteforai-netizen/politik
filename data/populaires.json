@@ -1,5 +1,5 @@
 {
- "lu_le": "2026-11-21",
+ "lu_le": "2026-11-23",
  "service_public": {
   "source": "https://www.service-public.gouv.fr/",
   "plus_lues": [
@@ -72,40 +72,40 @@
     "titre": "Le calendrier scolaire",
     "url": "https://www.data.gouv.fr/datasets/le-calendrier-scolaire",
     "producteur": "Ministères de l'Éducation nationale",
-    "telechargements": 256502633,
-    "vues": 1875985,
-    "reutilisations": 15
+    "telechargements": 256915367,
+    "vues": 1878980,
+    "reutilisations": 17
    },
    {
     "titre": "Jours fériés en France",
     "url": "https://www.data.gouv.fr/datasets/jours-feries-en-france",
     "producteur": "data.gouv.fr",
-    "telechargements": 50973373,
-    "vues": 740685,
-    "reutilisations": 10
+    "telechargements": 51045738,
+    "vues": 742201,
+    "reutilisations": 12
    },
    {
     "titre": "Données statiques et temps réel du réseau Astuce Métropole Rouen Normandie",
     "url": "https://www.data.gouv.fr/datasets/donnees-statiques-et-temps-reel-du-reseau-astuce-metropole-rouen-normandie",
     "producteur": "Métropole Rouen Normandie",
-    "telechargements": 33971491,
-    "vues": 23249,
+    "telechargements": 34588583,
+    "vues": 23284,
     "reutilisations": 17
    },
    {
     "titre": "Historique des tarifs réglementés de vente d'électricité pour les consommateurs résidentiels",
     "url": "https://www.data.gouv.fr/datasets/historique-des-tarifs-reglementes-de-vente-delectricite-pour-les-consommateurs-residentiels",
     "producteur": "Commission de régulation de l'énergie (CRE)",
-    "telechargements": 31398874,
-    "vues": 154781,
-    "reutilisations": 5
+    "telechargements": 31471621,
+    "vues": 155546,
+    "reutilisations": 6
    },
    {
     "titre": "Fil Bleu - Syndicat des Mobilités - GTFS & GTFS-RT",
     "url": "https://www.data.gouv.fr/datasets/fil-bleu-syndicat-des-mobilites-gtfs-gtfs-rt",
     "producteur": "Tours Métropole Val de Loire",
-    "telechargements": 23685748,
-    "vues": 13362,
+    "telechargements": 23992851,
+    "vues": 13410,
     "reutilisations": 14
    },
    {
@@ -120,17 +120,17 @@
     "titre": "Réseau de transport urbain de la Métropole Toulon Provence Méditerranée",
     "url": "https://www.data.gouv.fr/datasets/reseau-de-transport-urbain-de-la-metropole-toulon-provence-mediterranee",
     "producteur": "Métropole Toulon Provence Méditerranée",
-    "telechargements": 20349738,
-    "vues": 10140,
+    "telechargements": 20727925,
+    "vues": 10181,
     "reutilisations": 14
    },
    {
     "titre": "Fichiers GTFS - EUROMETROPOLE de METZ",
     "url": "https://www.data.gouv.fr/datasets/fichiers-gtfs-eurometropole-de-metz",
     "producteur": "Eurométropole de Metz",
-    "telechargements": 18849988,
-    "vues": 13695,
-    "reutilisations": 16
+    "telechargements": 18895286,
+    "vues": 13713,
+    "reutilisations": 17
    }
   ]
  }

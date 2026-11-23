@@ -1,5 +1,5 @@
 {
-  "calcule_le": "2026-11-21",
+  "calcule_le": "2026-11-23",
   "sources": {
     "protection": {
       "jeu": "beneficiaires-de-la-protection-internationale",
@@ -32,7 +32,7 @@
     },
     "cnam": {
       "jeu": "donnees-nationales-sur-les-depenses-dassurance-maladie-relatives-aux-soins-de-ville",
-      "maj": "2026-11-21",
+      "maj": "2026-11-23",
       "ondam": "LFSS 2025 et avis du comité d'alerte du 20 avril 2026 (securite-sociale.fr)"
     },
     "urssaf_encaissements": {
@@ -487,12 +487,17 @@
     ]
   },
   "caf_rsa": {
-    "mois": "2026-03",
-    "foyers": 1847267,
-    "personnes": 3720310,
-    "montant_mensuel_meur": 1047.0,
-    "montant_annualise_meur": 12564,
+    "mois": "2026-04",
+    "foyers": 1850008,
+    "personnes": 3721055,
+    "montant_mensuel_meur": 1048.6,
+    "montant_annualise_meur": 12583,
     "serie_12_mois": [
+      {
+        "mois": "2026-04",
+        "foyers": 1850008,
+        "montant_meur": 1048.6
+      },
       {
         "mois": "2026-03",
         "foyers": 1847267,
@@ -552,11 +557,6 @@
         "mois": "2025-04",
         "foyers": 1831964,
         "montant_meur": 1017.6
-      },
-      {
-        "mois": "2025-03",
-        "foyers": 1821241,
-        "montant_meur": 1008.8
       }
     ]
   },
@@ -1055,70 +1055,70 @@
     "note": "Somme des départements, unité de compte SSMSI ; périmètre différent de l'index 93 de l'état 4001 (archive 2012-2021)."
   },
   "rsa_departements": {
-    "mois": "2026-03",
+    "mois": "2026-04",
     "top": [
       {
         "code": "974",
         "nom": "LA REUNION",
-        "foyers": 90224,
-        "personnes": 202157,
-        "foyers_pour_1000": 101.4,
+        "foyers": 90042,
+        "personnes": 201546,
+        "foyers_pour_1000": 101.2,
         "taux_pauvrete_2020": 35.6
       },
       {
         "code": "972",
         "nom": "MARTINIQUE",
-        "foyers": 28384,
-        "personnes": 48419,
-        "foyers_pour_1000": 78.7,
+        "foyers": 28165,
+        "personnes": 47970,
+        "foyers_pour_1000": 78.1,
         "taux_pauvrete_2020": 26.7
       },
       {
         "code": "66",
         "nom": "PYRENEES ORIENTALES",
-        "foyers": 27038,
-        "personnes": 53003,
+        "foyers": 27007,
+        "personnes": 52891,
         "foyers_pour_1000": 54.4,
         "taux_pauvrete_2020": 20.7
       },
       {
         "code": "93",
         "nom": "SEINE SAINT DENIS",
-        "foyers": 84071,
-        "personnes": 174772,
-        "foyers_pour_1000": 49.3,
+        "foyers": 84327,
+        "personnes": 174766,
+        "foyers_pour_1000": 49.5,
         "taux_pauvrete_2020": 27.6
-      },
-      {
-        "code": "09",
-        "nom": "ARIEGE",
-        "foyers": 6409,
-        "personnes": 11181,
-        "foyers_pour_1000": 41.2,
-        "taux_pauvrete_2020": 17.9
       },
       {
         "code": "11",
         "nom": "AUDE",
-        "foyers": 15634,
-        "personnes": 30914,
+        "foyers": 15651,
+        "personnes": 30872,
         "foyers_pour_1000": 41.2,
         "taux_pauvrete_2020": 20.0
       },
       {
+        "code": "09",
+        "nom": "ARIEGE",
+        "foyers": 6405,
+        "personnes": 11127,
+        "foyers_pour_1000": 41.1,
+        "taux_pauvrete_2020": 17.9
+      },
+      {
         "code": "30",
         "nom": "GARD",
-        "foyers": 28823,
-        "personnes": 58606,
+        "foyers": 28839,
+        "personnes": 58486,
         "foyers_pour_1000": 37.4,
         "taux_pauvrete_2020": 19.4
       },
       {
         "code": "59",
         "nom": "NORD",
-        "foyers": 93478,
-        "personnes": 198819,
-        "foyers_pour_1000": 35.7,
+        "foyers": 93173,
+        "personnes": 197417,
+        "foyers_pour_1000": 35.6,
         "taux_pauvrete_2020": 18.4
       }
     ],
@@ -1126,7 +1126,7 @@
       {
         "code": "01",
         "nom": "AIN",
-        "foyers": 8184,
+        "foyers": 8167,
         "personnes": 16002,
         "foyers_pour_1000": 12.0,
         "taux_pauvrete_2020": 10.5
@@ -1134,25 +1134,25 @@
       {
         "code": "15",
         "nom": "CANTAL",
-        "foyers": 1679,
-        "personnes": 3359,
-        "foyers_pour_1000": 11.6,
+        "foyers": 1680,
+        "personnes": 3379,
+        "foyers_pour_1000": 11.7,
         "taux_pauvrete_2020": 13.2
       },
       {
         "code": "74",
         "nom": "HAUTE SAVOIE",
-        "foyers": 9679,
-        "personnes": 17781,
-        "foyers_pour_1000": 11.2,
+        "foyers": 9739,
+        "personnes": 17902,
+        "foyers_pour_1000": 11.3,
         "taux_pauvrete_2020": 9.4
       },
       {
         "code": "85",
         "nom": "VENDEE",
-        "foyers": 7242,
-        "personnes": 13212,
-        "foyers_pour_1000": 10.1,
+        "foyers": 7331,
+        "personnes": 13366,
+        "foyers_pour_1000": 10.3,
         "taux_pauvrete_2020": 8.9
       }
     ],
